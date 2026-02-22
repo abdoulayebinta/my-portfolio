@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Logo } from "@/components/logo";
 
 const navItems = [
   { name: "About", href: "/#about" },
@@ -40,24 +41,22 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="font-bold text-xl tracking-tighter flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AI</span>
-            </div>
-            <span>Alex.PM</span>
+          <Link href="/" className="flex items-center gap-2">
+            <Logo />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full" />
               </Link>
             ))}
             <Button
@@ -96,7 +95,7 @@ export function Navbar() {
       {/* Mobile Nav */}
       {isOpen && (
         <div
-          className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border p-4 shadow-lg"
+          className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-border p-4 shadow-lg animate-in slide-in-from-top-5"
         >
           <nav className="flex flex-col gap-4">
             {navItems.map((item) => (

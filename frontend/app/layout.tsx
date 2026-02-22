@@ -8,20 +8,20 @@ import NextTopLoader from "nextjs-toploader";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alex.PM | AI Product Manager Portfolio",
+  title: "Abdoulaye Bah | AI Product Manager Portfolio",
   description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
-  keywords: ["Product Manager", "AI", "Data", "Machine Learning", "Portfolio", "Strategy"],
+  keywords: ["Product Manager", "AI", "Data", "Machine Learning", "Portfolio", "Strategy", "Abdoulaye Bah", "Abdoulaye Binta Bah"],
   openGraph: {
-    title: "Alex.PM | AI Product Manager Portfolio",
+    title: "Abdoulaye Bah | AI Product Manager Portfolio",
     description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
     type: "website",
     locale: "en_US",
-    url: "https://alex.pm",
-    siteName: "Alex.PM",
+    url: "https://abdoulaye.pm",
+    siteName: "Abdoulaye Bah",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex.PM | AI Product Manager Portfolio",
+    title: "Abdoulaye Bah | AI Product Manager Portfolio",
     description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
   },
 };
