@@ -40,7 +40,7 @@ export function Hero() {
             <p
               className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed"
             >
-              Hi, I'm <strong className="text-foreground">Abdoulaye Binta Bah</strong>. A Strategic AI & Data Product Manager bridging the gap between technical complexity and user value. Specializing in LLMs, Predictive Analytics, and Enterprise Scale.
+              Hi, I'm <strong className="text-foreground">Abdoulaye Binta Bah</strong>. A Strategic AI & Data Product Manager shaping decision intelligence across healthcare, education, and global systems. Specializing in LLMs, Predictive Analytics, and Enterprise Scale.
             </p>
 
             <div
