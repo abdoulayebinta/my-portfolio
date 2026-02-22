@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
@@ -96,10 +95,7 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
+        <div
           className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border p-4 shadow-lg"
         >
           <nav className="flex flex-col gap-4">
@@ -114,7 +110,7 @@ export function Navbar() {
               </Link>
             ))}
           </nav>
-        </motion.div>
+        </div>
       )}
     </header>
   );

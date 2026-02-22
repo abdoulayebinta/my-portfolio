@@ -8,7 +8,6 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -52,11 +51,7 @@ export default function BlogPostPage() {
             </Button>
           </Link>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <div className="flex flex-wrap gap-4 items-center text-sm text-muted-foreground mb-6">
               <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
               <span className="flex items-center gap-1"><Clock size={14} /> {post.readTime}</span>
@@ -104,7 +99,7 @@ export default function BlogPostPage() {
               {renderContent(post.content)}
             </div>
 
-          </motion.div>
+          </div>
         </div>
       </article>
 

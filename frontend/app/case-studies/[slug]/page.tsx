@@ -8,7 +8,6 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, CheckCircle, Layers, Lightbulb, Target, TrendingUp } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function CaseStudyPage() {
   const params = useParams();
@@ -36,11 +35,7 @@ export default function CaseStudyPage() {
             </Button>
           </Link>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <div className="flex flex-wrap gap-2 mb-6">
               {study.tags.map((tag) => (
                 <span key={tag} className="px-3 py-1 text-sm font-medium rounded-full bg-purple-500/10 text-purple-500 border border-purple-500/20">
@@ -54,7 +49,7 @@ export default function CaseStudyPage() {
             <p className="text-xl text-muted-foreground max-w-3xl mb-8">
               {study.description}
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -83,14 +78,11 @@ export default function CaseStudyPage() {
             <div className="lg:col-span-9 space-y-16">
               
               {/* Image */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
+              <div 
                 className="rounded-3xl overflow-hidden aspect-video shadow-2xl"
               >
                 <img src={study.image} alt={study.title} className="w-full h-full object-cover" />
-              </motion.div>
+              </div>
 
               {/* Sections */}
               <div className="prose prose-lg dark:prose-invert max-w-none">

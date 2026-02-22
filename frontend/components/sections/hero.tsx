@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Database, Globe } from "lucide-react";
 import Link from "next/link";
@@ -18,10 +17,7 @@ export function Hero() {
 
       <div className="container mx-auto px-4 md:px-6 z-10 relative">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-border backdrop-blur-sm mb-6"
           >
             <span className="relative flex h-2 w-2">
@@ -29,31 +25,22 @@ export function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
             <span className="text-xs font-medium text-muted-foreground">Open to new opportunities</span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          <h1
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
             Building the next generation of <br />
             <span className="text-gradient">Intelligent Products</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <p
             className="text-xl text-muted-foreground mb-8 max-w-2xl"
           >
             Strategic AI & Data Product Manager bridging the gap between technical complexity and user value. Specializing in LLMs, Predictive Analytics, and Enterprise Scale.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+          <div
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link href="#case-studies">
@@ -67,13 +54,10 @@ export function Hero() {
                 Contact Me
               </Button>
             </Link>
-          </motion.div>
+          </div>
 
           {/* Floating Cards / Visuals */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+          <div
             className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 w-full"
           >
             <div className="glass-card p-6 rounded-2xl flex flex-col items-center hover:-translate-y-1 transition-transform duration-300">
@@ -97,7 +81,7 @@ export function Hero() {
               <h3 className="font-semibold mb-2">Global Impact</h3>
               <p className="text-sm text-muted-foreground">Scaling products to millions of users worldwide.</p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

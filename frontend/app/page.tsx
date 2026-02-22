@@ -9,7 +9,6 @@ import { CaseStudies } from "@/components/sections/case-studies";
 import { Blog } from "@/components/sections/blog";
 import { Contact } from "@/components/sections/contact";
 import { testimonials } from "@/lib/data";
-import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 export default function Home() {
@@ -42,12 +41,8 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">What People Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
-              <motion.div 
+              <div 
                 key={t.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="bg-secondary/20 p-8 rounded-2xl border border-border relative"
               >
                 <Quote className="absolute top-6 right-6 text-purple-500/20 w-10 h-10" />
@@ -59,7 +54,7 @@ export default function Home() {
                     <p className="text-xs text-muted-foreground">{t.role}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

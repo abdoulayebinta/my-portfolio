@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { blogPosts } from "@/lib/data";
 import Link from "next/link";
 import { ArrowUpRight, Calendar, Clock } from "lucide-react";
@@ -19,12 +18,8 @@ export function Blog() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post, index) => (
-            <motion.div
+            <div
               key={post.slug}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
             >
               <Link href={`/blog/${post.slug}`} className="block">
@@ -58,7 +53,7 @@ export function Blog() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

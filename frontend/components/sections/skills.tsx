@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { skills } from "@/lib/data";
 import { CheckCircle2 } from "lucide-react";
 
@@ -18,11 +17,7 @@ export function Skills() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Product Skills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <div
             className="bg-background border border-border rounded-2xl p-8 shadow-sm"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
@@ -37,14 +32,10 @@ export function Skills() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* AI Skills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          <div
             className="bg-background border border-border rounded-2xl p-8 shadow-sm relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-bl-full -mr-8 -mt-8" />
@@ -60,14 +51,10 @@ export function Skills() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Technical Skills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <div
             className="bg-background border border-border rounded-2xl p-8 shadow-sm"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
@@ -84,7 +71,7 @@ export function Skills() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

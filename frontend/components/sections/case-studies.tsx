@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { caseStudies } from "@/lib/data";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -25,12 +24,8 @@ export function CaseStudies() {
 
         <div className="grid grid-cols-1 gap-12">
           {caseStudies.map((study, index) => (
-            <motion.div
+            <div
               key={study.slug}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-secondary/20 rounded-3xl p-6 md:p-8 border border-border hover:border-purple-500/30 transition-colors"
             >
               <div className="order-2 md:order-1">
@@ -62,7 +57,7 @@ export function CaseStudies() {
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
