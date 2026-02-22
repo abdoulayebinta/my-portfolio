@@ -3,12 +3,27 @@ import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AI Product Manager Portfolio",
-  description: "Portfolio of a Strategic AI & Data Product Manager",
+  title: "Alex.PM | AI Product Manager Portfolio",
+  description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
+  keywords: ["Product Manager", "AI", "Data", "Machine Learning", "Portfolio", "Strategy"],
+  openGraph: {
+    title: "Alex.PM | AI Product Manager Portfolio",
+    description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
+    type: "website",
+    locale: "en_US",
+    url: "https://alex.pm",
+    siteName: "Alex.PM",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alex.PM | AI Product Manager Portfolio",
+    description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
+  },
 };
 
 export default function RootLayout({
@@ -159,6 +174,17 @@ export default function RootLayout({
 })();
 `}
         </Script>
+        <NextTopLoader 
+          color="#8b5cf6"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #8b5cf6,0 0 5px #8b5cf6"
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
