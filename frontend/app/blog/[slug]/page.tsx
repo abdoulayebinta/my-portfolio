@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import { Logo } from "@/components/logo";
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -70,11 +71,9 @@ export default function BlogPostPage() {
 
             <div className="flex items-center justify-between border-y border-border py-6 mb-12">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold">
-                  AI
-                </div>
+                <Logo variant="icon" />
                 <div>
-                  <p className="font-medium text-sm">Alex.PM</p>
+                  <p className="font-medium text-sm">Abdoulaye Bah</p>
                   <p className="text-xs text-muted-foreground">Product Manager</p>
                 </div>
               </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,13 +23,13 @@ export function Contact() {
             </p>
 
             <div className="space-y-6 mb-12">
-              <a href="mailto:hello@alex.pm" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors border border-border">
+              <a href="mailto:hello@abdoulaye.pm" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors border border-border">
                 <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
                   <Mail size={24} />
                 </div>
                 <div>
                   <h3 className="font-semibold">Email Me</h3>
-                  <p className="text-sm text-muted-foreground">hello@alex.pm</p>
+                  <p className="text-sm text-muted-foreground">hello@abdoulaye.pm</p>
                 </div>
               </a>
 
