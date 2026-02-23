@@ -6,7 +6,7 @@ import {
   Brain, Database, LineChart, Code2, Cloud, 
   GitBranch, Terminal, Cpu, Layers, Search, 
   BarChart3, Users, Zap, Lock, Globe, Server,
-  ArrowRight, Workflow, Microscope
+  ArrowRight, Workflow, Microscope, TrendingUp, Map, Network
 } from "lucide-react";
 
 const categories = [
@@ -53,9 +53,6 @@ const skillsData = {
     ]
   }
 };
-
-// Helper for icons in data object
-import { TrendingUp, Map } from "lucide-react";
 
 export function Skills() {
   const [activeTab, setActiveTab] = useState<"ai" | "engineering" | "product">("ai");
@@ -119,13 +116,13 @@ export function Skills() {
           <div className="lg:col-span-9">
             <div className="bg-secondary/5 border border-border rounded-3xl p-8 min-h-[600px] relative overflow-hidden">
               {/* Content Header */}
-              <div className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500 key={activeTab}">
+              <div key={activeTab} className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <h3 className="text-2xl font-bold mb-2">{skillsData[activeTab].title}</h3>
                 <p className="text-muted-foreground">{skillsData[activeTab].description}</p>
               </div>
 
               {/* Skills Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 key={`${activeTab}-grid`}>
+              <div key={`${activeTab}-grid`} className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
                 {skillsData[activeTab].items.map((skill, index) => (
                   <div 
                     key={skill.name}
