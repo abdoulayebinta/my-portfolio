@@ -39,7 +39,7 @@ export function Hero() {
             <p
               className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed"
             >
-              Hi, I'm <strong className="text-foreground">Abdoulaye Binta Bah</strong>. Specializing in LLMs, Predictive Analytics, and Enterprise Scale to bridge the gap between technical complexity and user value.
+              Hi, I'm <strong className="text-foreground">Abdoulaye Binta Bah</strong>. AI & Data Product Manager with global experience building real-time data and decision platforms at scale, from crisis response to enterprise AI systems.
             </p>
 
             <div
