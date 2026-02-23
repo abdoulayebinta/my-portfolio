@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, Building2, GraduationCap, HeartPulse, Landmark } from "lucide-react";
+import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, Building2, GraduationCap, HeartPulse, Landmark, Cpu, Network, Zap, Layers, Bot } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
@@ -63,7 +63,7 @@ export function Hero() {
             </p>
 
             <div
-              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10"
             >
               <Link href="#case-studies" className="w-full sm:w-auto">
                 <Button size="lg" variant="gradient" className="w-full sm:w-auto group text-base h-12 px-8">
@@ -76,6 +76,27 @@ export function Hero() {
                   Contact Me
                 </Button>
               </Link>
+            </div>
+
+            {/* Core AI Competencies */}
+            <div className="w-full border-t border-border/50 pt-6">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">
+                Core AI Competencies
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { name: "LLMs & GenAI", icon: Bot },
+                  { name: "Decision Intelligence", icon: Brain },
+                  { name: "Predictive Systems", icon: Zap },
+                  { name: "RAG Architecture", icon: Layers },
+                  { name: "Enterprise AI", icon: Network }
+                ].map((tech) => (
+                  <div key={tech.name} className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary/40 border border-white/5 hover:border-purple-500/30 hover:bg-secondary/60 transition-all duration-300 group cursor-default">
+                    <tech.icon size={14} className="text-purple-500 group-hover:text-purple-400 transition-colors" />
+                    <span className="text-xs font-medium text-foreground/80 group-hover:text-foreground transition-colors">{tech.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
