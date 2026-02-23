@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, Building2, GraduationCap, HeartPulse, Landmark, Cpu, Network, Zap, Layers, Bot } from "lucide-react";
+import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, Building2, GraduationCap, HeartPulse, Landmark, Cpu, Network, Zap, Layers, Bot, Activity } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
@@ -61,6 +61,23 @@ export function Hero() {
             >
               Hi, I'm <strong className="text-foreground">Abdoulaye Binta Bah</strong>. AI & Data Product Manager with global experience building real-time data and decision platforms at scale, from crisis response to enterprise AI systems.
             </p>
+
+            {/* Bold Differentiator */}
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 mb-10 max-w-xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="p-2 rounded-full bg-purple-500/20 text-purple-500 mt-0.5 relative z-10">
+                <Activity size={20} />
+              </div>
+              <div className="relative z-10">
+                <h3 className="font-bold text-foreground text-xs uppercase tracking-widest mb-1 flex items-center gap-2">
+                  Strategic Impact
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Designed platforms used in <span className="text-foreground font-semibold">crisis environments</span> and supported health systems across <span className="text-foreground font-semibold">20+ countries</span>.
+                </p>
+              </div>
+            </div>
 
             <div
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10"
