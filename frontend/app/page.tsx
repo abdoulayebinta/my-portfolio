@@ -4,6 +4,7 @@ import React from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/sections/hero";
+import { AboutStory } from "@/components/sections/about-story";
 import { Skills } from "@/components/sections/skills";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { Blog } from "@/components/sections/blog";
@@ -18,19 +19,7 @@ export default function Home() {
       
       <Hero />
       
-      <section id="about" className="py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I am a Product Manager with a background in Data Science and Engineering. I've spent the last 5 years building AI-powered products that solve real-world problems.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              My philosophy is simple: <strong className="text-foreground">Technology should serve humanity, not the other way around.</strong> I thrive in ambiguous environments, love turning chaos into structure, and am obsessed with user experience.
-            </p>
-          </div>
-        </div>
-      </section>
+      <AboutStory />
 
       <CaseStudies />
       
