@@ -42,6 +42,12 @@ export const caseStudies = [
     description: "Building a 0-1 predictive maintenance platform for manufacturing giants using IoT data and deep learning.",
     tags: ["B2B", "IoT", "Deep Learning", "0-1"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    metadata: {
+      role: "Lead Product Manager",
+      timeline: "18 Months",
+      team: "5 ML Engineers, 3 Backend, 2 Frontend, 1 Designer",
+      stack: ["Python", "TensorFlow", "Kafka", "AWS"]
+    },
     content: {
       context: "At IndustrialAI, we noticed that manufacturing clients were losing millions due to unplanned downtime. The existing solutions were rule-based and reactive.",
       problem: "Manufacturers lacked real-time visibility into machine health. Downtime costs averaged $260k/hour. Existing tools generated too many false positives, leading to alert fatigue.",
@@ -60,6 +66,12 @@ export const caseStudies = [
     description: "Reducing support ticket volume by 60% with a RAG-based conversational AI agent.",
     tags: ["GenAI", "LLM", "RAG", "B2C"],
     image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2006&auto=format&fit=crop",
+    metadata: {
+      role: "Senior PM",
+      timeline: "8 Months",
+      team: "3 AI Engineers, 2 Full Stack, 1 UX Researcher",
+      stack: ["OpenAI API", "Pinecone", "LangChain", "Next.js"]
+    },
     content: {
       context: "Support costs were scaling linearly with user growth. CSAT scores were dropping due to long wait times.",
       problem: "L1 support agents were overwhelmed with repetitive queries. Traditional chatbots were rigid and frustrating for users.",
@@ -78,6 +90,12 @@ export const caseStudies = [
     description: "Assisting radiologists in detecting early signs of anomalies in X-rays with Computer Vision.",
     tags: ["Healthcare", "Computer Vision", "Regulated", "Mobile"],
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+    metadata: {
+      role: "Product Lead",
+      timeline: "24 Months",
+      team: "4 Research Scientists, 3 Engineers, Clinical Partners",
+      stack: ["PyTorch", "DICOM", "Edge AI", "iPadOS"]
+    },
     content: {
       context: "Radiologists are overworked, leading to burnout and potential diagnostic errors.",
       problem: "High volume of scans means less time per patient. Subtle anomalies are easily missed in early stages.",

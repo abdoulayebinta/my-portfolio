@@ -6,8 +6,12 @@ import { caseStudies } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, CheckCircle, Layers, Lightbulb, Target, TrendingUp } from "lucide-react";
+import { ArrowLeft, Target, Lightbulb, Layers, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users } from "lucide-react";
 import Link from "next/link";
+import { CaseStudyHeader } from "@/components/case-study/header";
+import { CaseStudySection } from "@/components/case-study/section";
+import { MetricCard } from "@/components/case-study/metric-card";
+import { SystemArchitectureDiagram } from "@/components/case-study/diagram";
 
 export default function CaseStudyPage() {
   const params = useParams();
@@ -22,141 +26,123 @@ export default function CaseStudyPage() {
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-500/5 to-transparent" />
-        </div>
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <Link href="/#case-studies">
-            <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies
-            </Button>
-          </Link>
+      <CaseStudyHeader 
+        title={study.title}
+        description={study.description}
+        tags={study.tags}
+        role={study.metadata.role}
+        timeline={study.metadata.timeline}
+        team={study.metadata.team}
+        image={study.image}
+      />
+
+      <div className="container mx-auto px-4 md:px-6 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
-          <div>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {study.tags.map((tag) => (
-                <span key={tag} className="px-3 py-1 text-sm font-medium rounded-full bg-purple-500/10 text-purple-500 border border-purple-500/20">
-                  {tag}
-                </span>
+          {/* Sidebar Navigation */}
+          <div className="hidden lg:block lg:col-span-3">
+            <div className="sticky top-32 space-y-1 border-l border-border pl-6">
+              <p className="font-semibold mb-4 text-xs uppercase tracking-widest text-muted-foreground">Table of Contents</p>
+              {[
+                { id: "context", label: "Context & Problem" },
+                { id: "vision", label: "Opportunity & Vision" },
+                { id: "strategy", label: "Strategy & Product" },
+                { id: "ai", label: "Data & AI" },
+                { id: "system", label: "System Architecture" },
+                { id: "tradeoffs", label: "Tradeoffs" },
+                { id: "execution", label: "Execution" },
+                { id: "impact", label: "Metrics & Impact" },
+                { id: "lessons", label: "Lessons Learned" },
+              ].map((item) => (
+                <a 
+                  key={item.id} 
+                  href={`#${item.id}`}
+                  className="block py-2 text-sm text-muted-foreground hover:text-purple-500 transition-colors"
+                >
+                  {item.label}
+                </a>
               ))}
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              {study.title}
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mb-8">
-              {study.description}
-            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Main Content */}
-      <section className="pb-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Main Content */}
+          <div className="lg:col-span-9">
             
-            {/* Sidebar / Table of Contents (Sticky) */}
-            <div className="hidden lg:block lg:col-span-3">
-              <div className="sticky top-24 space-y-1">
-                <p className="font-semibold mb-4 text-sm uppercase tracking-wider text-muted-foreground">Contents</p>
-                {['Context', 'Problem', 'Vision', 'AI Opportunity', 'System Design', 'Decisions', 'Results'].map((item) => (
-                  <a 
-                    key={item} 
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
-                    className="block py-2 text-sm text-muted-foreground hover:text-purple-500 transition-colors border-l-2 border-transparent hover:border-purple-500 pl-4"
-                  >
-                    {item}
-                  </a>
-                ))}
+            <CaseStudySection id="context" title="Context & Problem" icon={<Target size={24} />}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
+                  <h3 className="font-semibold text-foreground mb-2">The Context</h3>
+                  <p>{study.content.context}</p>
+                </div>
+                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
+                  <h3 className="font-semibold text-foreground mb-2">The Problem</h3>
+                  <p>{study.content.problem}</p>
+                </div>
               </div>
+            </CaseStudySection>
+
+            <CaseStudySection id="vision" title="Opportunity & Vision" icon={<Lightbulb size={24} />}>
+              <p className="text-xl font-medium text-foreground mb-6 italic border-l-4 border-purple-500 pl-6 py-2">
+                "{study.content.vision}"
+              </p>
+            </CaseStudySection>
+
+            <CaseStudySection id="ai" title="Data & AI Opportunities" icon={<Brain size={24} />}>
+              <div className="bg-gradient-to-br from-purple-500/5 to-blue-500/5 p-8 rounded-2xl border border-purple-500/10">
+                <p className="mb-4">{study.content.aiOpportunity}</p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {study.metadata.stack.map((tech) => (
+                    <span key={tech} className="px-3 py-1 bg-background border border-border rounded-md text-xs font-mono text-muted-foreground">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </CaseStudySection>
+
+            <CaseStudySection id="system" title="System Architecture" icon={<Network size={24} />}>
+              <p className="mb-6">{study.content.systemDesign}</p>
+              <SystemArchitectureDiagram />
+            </CaseStudySection>
+
+            <CaseStudySection id="tradeoffs" title="Tradeoffs & Prioritization" icon={<AlertTriangle size={24} />}>
+              <p>{study.content.decisions}</p>
+            </CaseStudySection>
+
+            <CaseStudySection id="execution" title="Execution & Collaboration" icon={<Users size={24} />}>
+              <p>{study.content.execution}</p>
+            </CaseStudySection>
+
+            <CaseStudySection id="impact" title="Metrics & Impact" icon={<TrendingUp size={24} />}>
+              <p className="mb-8">{study.content.metrics}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {/* Mocking metrics parsing for visual demo */}
+                <MetricCard value="40%" label="Reduction" description="In unplanned downtime" trend="up" />
+                <MetricCard value="$5M" label="ARR" description="Generated in 18 months" trend="up" />
+                <MetricCard value="95%" label="Accuracy" description="On critical failure modes" trend="up" />
+              </div>
+            </CaseStudySection>
+
+            <CaseStudySection id="lessons" title="Lessons Learned" icon={<CheckCircle size={24} />}>
+              <div className="bg-secondary/30 p-8 rounded-2xl border-l-4 border-green-500">
+                <p className="italic text-foreground">"{study.content.lessons}"</p>
+              </div>
+            </CaseStudySection>
+
+            <div className="mt-16 pt-8 border-t border-border flex justify-between items-center">
+              <Link href="/#case-studies">
+                <Button variant="ghost">
+                  <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies
+                </Button>
+              </Link>
+              <Button variant="default">
+                Next Case Study <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
 
-            {/* Content Body */}
-            <div className="lg:col-span-9 space-y-16">
-              
-              {/* Image */}
-              <div 
-                className="rounded-3xl overflow-hidden aspect-video shadow-2xl"
-              >
-                <img src={study.image} alt={study.title} className="w-full h-full object-cover" />
-              </div>
-
-              {/* Sections */}
-              <div className="prose prose-lg dark:prose-invert max-w-none">
-                
-                <div id="context" className="scroll-mt-24">
-                  <h2 className="flex items-center gap-3 text-2xl font-bold mb-4">
-                    <div className="p-2 bg-blue-500/10 rounded-lg text-blue-500"><Lightbulb size={24} /></div>
-                    Context & Background
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">{study.content.context}</p>
-                </div>
-
-                <div id="problem" className="scroll-mt-24">
-                  <h2 className="flex items-center gap-3 text-2xl font-bold mb-4">
-                    <div className="p-2 bg-red-500/10 rounded-lg text-red-500"><Target size={24} /></div>
-                    The Problem
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">{study.content.problem}</p>
-                </div>
-
-                <div id="vision" className="scroll-mt-24">
-                  <h2 className="flex items-center gap-3 text-2xl font-bold mb-4">
-                    <div className="p-2 bg-purple-500/10 rounded-lg text-purple-500"><Target size={24} /></div>
-                    Vision & Strategy
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">{study.content.vision}</p>
-                </div>
-
-                <div id="ai-opportunity" className="scroll-mt-24 bg-secondary/30 p-8 rounded-2xl border border-border">
-                  <h2 className="flex items-center gap-3 text-2xl font-bold mb-4">
-                    <div className="p-2 bg-green-500/10 rounded-lg text-green-500"><Layers size={24} /></div>
-                    AI & Data Opportunity
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">{study.content.aiOpportunity}</p>
-                </div>
-
-                <div id="system-design" className="scroll-mt-24">
-                  <h2 className="flex items-center gap-3 text-2xl font-bold mb-4">
-                    <div className="p-2 bg-orange-500/10 rounded-lg text-orange-500"><Layers size={24} /></div>
-                    System Design
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">{study.content.systemDesign}</p>
-                  {/* Placeholder for diagram */}
-                  <div className="my-8 p-8 bg-secondary/50 rounded-xl border border-dashed border-muted-foreground/30 flex items-center justify-center text-muted-foreground">
-                    [System Architecture Diagram Placeholder]
-                  </div>
-                </div>
-
-                <div id="decisions" className="scroll-mt-24">
-                  <h2 className="flex items-center gap-3 text-2xl font-bold mb-4">
-                    <div className="p-2 bg-yellow-500/10 rounded-lg text-yellow-500"><CheckCircle size={24} /></div>
-                    Key Decisions & Tradeoffs
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">{study.content.decisions}</p>
-                </div>
-
-                <div id="results" className="scroll-mt-24">
-                  <h2 className="flex items-center gap-3 text-2xl font-bold mb-4">
-                    <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-500"><TrendingUp size={24} /></div>
-                    Metrics & Impact
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">{study.content.metrics}</p>
-                </div>
-
-                <div className="mt-12 pt-12 border-t border-border">
-                  <h3 className="text-xl font-bold mb-4">Lessons Learned</h3>
-                  <p className="text-muted-foreground italic">"{study.content.lessons}"</p>
-                </div>
-
-              </div>
-            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <Footer />
     </main>
