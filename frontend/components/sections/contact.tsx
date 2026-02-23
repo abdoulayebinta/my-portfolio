@@ -1,12 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Linkedin, Calendar } from "lucide-react";
 
 export function Contact() {
+  // Use mounted state to prevent hydration mismatches if extensions inject elements
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background Gradients */}
@@ -57,37 +64,43 @@ export function Contact() {
 
           {/* Right Side: Form */}
           <div className="bg-card border border-border rounded-2xl p-8 shadow-lg">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">Name</label>
-                  <Input id="name" placeholder="John Doe" />
+            {mounted ? (
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-medium">Name</label>
+                    <Input id="name" placeholder="John Doe" />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium">Email</label>
+                    <Input id="email" type="email" placeholder="john@company.com" />
+                  </div>
                 </div>
+                
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <Input id="email" type="email" placeholder="john@company.com" />
+                  <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                  <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                    <option>Recruiting / Hiring</option>
+                    <option>Collaboration</option>
+                    <option>Networking</option>
+                    <option>Other</option>
+                  </select>
                 </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
-                <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                  <option>Recruiting / Hiring</option>
-                  <option>Collaboration</option>
-                  <option>Networking</option>
-                  <option>Other</option>
-                </select>
-              </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">Message</label>
-                <Textarea id="message" placeholder="Hi, I'd like to discuss..." className="min-h-[120px]" />
-              </div>
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium">Message</label>
+                  <Textarea id="message" placeholder="Hi, I'd like to discuss..." className="min-h-[120px]" />
+                </div>
 
-              <Button type="submit" className="w-full" variant="gradient">
-                Send Message
-              </Button>
-            </form>
+                <Button type="submit" className="w-full" variant="gradient">
+                  Send Message
+                </Button>
+              </form>
+            ) : (
+              <div className="h-[400px] flex items-center justify-center">
+                <div className="w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" />
+              </div>
+            )}
           </div>
 
         </div>
