@@ -149,26 +149,34 @@ export function Hero() {
         <div
           className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500"
         >
-          <div className="glass-card p-6 rounded-2xl flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300 group">
-            <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center mb-4 text-purple-500 group-hover:scale-110 transition-transform">
-              <Brain size={24} />
+          <div className="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/10 bg-secondary/20 backdrop-blur-sm">
+            <div className="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mb-6 text-purple-500 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-purple-500/0 group-hover:shadow-purple-500/30">
+              <Brain size={28} />
             </div>
-            <h3 className="font-semibold mb-2">AI Strategy</h3>
-            <p className="text-sm text-muted-foreground">Defining the "Why" and "How" of AI adoption.</p>
+            <h3 className="font-bold text-lg mb-3 group-hover:text-purple-400 transition-colors">AI Product Strategy</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+              Driving product vision for Generative AI and ML, moving from experimental pilots to scalable enterprise solutions.
+            </p>
           </div>
-          <div className="glass-card p-6 rounded-2xl flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300 group">
-            <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4 text-blue-500 group-hover:scale-110 transition-transform">
-              <Database size={24} />
+
+          <div className="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 bg-secondary/20 backdrop-blur-sm">
+            <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 text-blue-500 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-blue-500/0 group-hover:shadow-blue-500/30">
+              <Database size={28} />
             </div>
-            <h3 className="font-semibold mb-2">Data Systems</h3>
-            <p className="text-sm text-muted-foreground">Architecting scalable data pipelines & infrastructure.</p>
+            <h3 className="font-bold text-lg mb-3 group-hover:text-blue-400 transition-colors">Intelligent Data Systems</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+              Architecting real-time data platforms that enable critical decision intelligence during global crises and operations.
+            </p>
           </div>
-          <div className="glass-card p-6 rounded-2xl flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300 group">
-            <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center mb-4 text-orange-500 group-hover:scale-110 transition-transform">
-              <Globe size={24} />
+
+          <div className="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10 bg-secondary/20 backdrop-blur-sm">
+            <div className="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center mb-6 text-orange-500 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-orange-500/0 group-hover:shadow-orange-500/30">
+              <Globe size={28} />
             </div>
-            <h3 className="font-semibold mb-2">Global Impact</h3>
-            <p className="text-sm text-muted-foreground">Scaling products to millions of users worldwide.</p>
+            <h3 className="font-bold text-lg mb-3 group-hover:text-orange-400 transition-colors">Global Scale & Impact</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+              Scaling data and AI products used by millions across global health and education ecosystems.
+            </p>
           </div>
         </div>
       </div>
