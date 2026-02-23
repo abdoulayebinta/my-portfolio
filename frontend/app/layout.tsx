@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { LanguageProvider } from "@/context/language-context";
 import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -10,13 +11,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Abdoulaye Bah | AI Product Manager Portfolio",
   description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
-  keywords: ["Product Manager", "AI", "Data", "Machine Learning", "Portfolio", "Strategy", "Abdoulaye Bah", "Abdoulaye Binta Bah"],
+  keywords: ["Product Manager", "AI", "Data", "Machine Learning", "Portfolio", "Strategy"],
   openGraph: {
     title: "Abdoulaye Bah | AI Product Manager Portfolio",
     description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
     type: "website",
     locale: "en_US",
-    url: "https://abdoulaye.pm",
+    url: "https://alex.pm",
     siteName: "Abdoulaye Bah",
   },
   twitter: {
@@ -185,14 +186,16 @@ export default function RootLayout({
           speed={200}
           shadow="0 0 10px #8b5cf6,0 0 5px #8b5cf6"
         />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

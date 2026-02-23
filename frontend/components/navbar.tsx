@@ -8,28 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Logo } from "@/components/logo";
-
-interface NavItem {
-  name: string;
-  href: string;
-  children?: NavItem[];
-}
-
-const navItems: NavItem[] = [
-  { name: "About", href: "/#about" },
-  { name: "Case Studies", href: "/#case-studies" },
-  { name: "Skills", href: "/#skills" },
-  { 
-    name: "Insights", 
-    href: "/#insights",
-    children: [
-      { name: "Blogs", href: "/#insights" },
-      { name: "Videos", href: "/#insights" } // Linking to same section for now as they are combined
-    ]
-  },
-  { name: "Resume", href: "/resume.pdf" },
-  { name: "Contact", href: "/#contact" },
-];
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { useLanguage } from "@/context/language-context";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -37,6 +17,7 @@ export function Navbar() {
   const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null);
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
+  const { t } = useLanguage();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +34,22 @@ export function Navbar() {
       setActiveDropdown(name);
     }
   };
+
+  const navItems = [
+    { name: t.nav.about, href: "/#about" },
+    { name: t.nav.caseStudies, href: "/#case-studies" },
+    { name: t.nav.skills, href: "/#skills" },
+    { 
+      name: t.nav.insights, 
+      href: "/#insights",
+      children: [
+        { name: t.nav.blogs, href: "/#insights" },
+        { name: t.nav.videos, href: "/#insights" }
+      ]
+    },
+    { name: t.nav.resume, href: "/resume.pdf" },
+    { name: t.nav.contact, href: "/#contact" },
+  ];
 
   return (
     <header
@@ -71,7 +68,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-8">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.children ? (
@@ -109,20 +106,24 @@ export function Navbar() {
                 )}
               </div>
             ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="ml-2"
-            >
-              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
+            
+            <div className="flex items-center gap-2 ml-2 border-l border-border pl-4">
+              <LanguageSwitcher />
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile Menu Toggle */}
           <div className="flex items-center gap-4 md:hidden">
+             <LanguageSwitcher />
              <Button
               variant="ghost"
               size="icon"
