@@ -6,7 +6,7 @@ import { caseStudies } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Target, Lightbulb, Layers, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target, Lightbulb, Layers, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users } from "lucide-react";
 import Link from "next/link";
 import { CaseStudyHeader } from "@/components/case-study/header";
 import { CaseStudySection } from "@/components/case-study/section";
