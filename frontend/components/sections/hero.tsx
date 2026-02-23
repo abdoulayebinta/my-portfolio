@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, Building2, GraduationCap, HeartPulse, Landmark } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
@@ -16,7 +16,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 z-10 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center mb-24">
           
           {/* Left Column: Text Content */}
           <div className="flex flex-col items-start text-left animate-in fade-in slide-in-from-bottom-8 duration-1000">
@@ -118,9 +118,36 @@ export function Hero() {
 
         </div>
 
+        {/* Credibility Strip */}
+        <div className="w-full border-y border-white/5 bg-white/5 backdrop-blur-sm py-8 mb-24 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto px-4">
+            <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest whitespace-nowrap">
+              Trusted by teams across
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+              <div className="flex items-center gap-2 group">
+                <HeartPulse className="w-6 h-6 text-blue-500 group-hover:scale-110 transition-transform" />
+                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">Healthcare</span>
+              </div>
+              <div className="flex items-center gap-2 group">
+                <GraduationCap className="w-6 h-6 text-purple-500 group-hover:scale-110 transition-transform" />
+                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">EdTech</span>
+              </div>
+              <div className="flex items-center gap-2 group">
+                <Landmark className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
+                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">Government</span>
+              </div>
+              <div className="flex items-center gap-2 group">
+                <Globe className="w-6 h-6 text-green-500 group-hover:scale-110 transition-transform" />
+                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">Global NGOs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Feature Cards - Moved to bottom */}
         <div
-          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500"
         >
           <div className="glass-card p-6 rounded-2xl flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300 group">
             <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center mb-4 text-purple-500 group-hover:scale-110 transition-transform">
