@@ -5,19 +5,30 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, Building2, GraduationCap, HeartPulse, Landmark, Cpu, Network, Zap, Layers, Bot, Activity } from "lucide-react";
 import Link from "next/link";
 import { BackgroundAnimation } from "@/components/ui/background-animation";
+import { useLanguage } from "@/context/language-context";
 
 export function Hero() {
+  const { t } = useLanguage();
+
+  // Helper to parse markdown-like bold syntax
+  const renderWithBold = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={i} className="text-foreground">{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Large Blur Blobs - Rendered first (bottom layer) */}
+        <BackgroundAnimation />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[128px] animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[128px] animate-pulse delay-1000" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_1px,transparent_1px)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_24px]" />
-        
-        {/* Network Animation - Rendered on top of blobs for better visibility */}
-        <BackgroundAnimation />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 z-10 relative">
@@ -32,39 +43,39 @@ export function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              <span className="text-xs font-medium text-muted-foreground">Open to new opportunities</span>
+              <span className="text-xs font-medium text-muted-foreground">{t.hero.openToWork}</span>
             </div>
 
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"
             >
-              AI & Data Product Manager shaping <span className="text-gradient">decision intelligence</span> across healthcare, education, and global systems.
+              {t.hero.headline.part1} <span className="text-gradient">{t.hero.headline.highlight}</span> {t.hero.headline.part2}
             </h1>
 
             {/* Social Proof Badges */}
             <div className="flex flex-wrap gap-3 mb-8">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium">
                 <CheckCircle2 size={16} />
-                <span>Ex-World Health Organization</span>
+                <span>{t.hero.badges.who}</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 text-sm font-medium">
                 <CheckCircle2 size={16} />
-                <span>7+ Years Experience</span>
+                <span>{t.hero.badges.experience}</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-600 dark:text-orange-400 text-sm font-medium">
                 <CheckCircle2 size={16} />
-                <span>Global Impact</span>
+                <span>{t.hero.badges.impact}</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm font-medium">
                 <CheckCircle2 size={16} />
-                <span>Millions of Users</span>
+                <span>{t.hero.badges.users}</span>
               </div>
             </div>
 
             <p
               className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed"
             >
-              Hi, I'm <strong className="text-foreground">Abdoulaye Binta Bah</strong>. AI & Data Product Manager with global experience building real-time data and decision platforms at scale, from crisis response to enterprise AI systems.
+              {renderWithBold(t.hero.subheadline)}
             </p>
 
             {/* Bold Differentiator */}
@@ -75,11 +86,11 @@ export function Hero() {
               </div>
               <div className="relative z-10">
                 <h3 className="font-bold text-foreground text-xs uppercase tracking-widest mb-1 flex items-center gap-2">
-                  Strategic Impact
+                  {t.hero.impactCard.title}
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Designed platforms used in <span className="text-foreground font-semibold">crisis environments</span> and supported health systems across <span className="text-foreground font-semibold">20+ countries</span>.
+                  {renderWithBold(t.hero.impactCard.description)}
                 </p>
               </div>
             </div>
@@ -89,13 +100,13 @@ export function Hero() {
             >
               <Link href="#case-studies" className="w-full sm:w-auto">
                 <Button size="lg" variant="gradient" className="w-full sm:w-auto group text-base h-12 px-8">
-                  View Case Studies
+                  {t.hero.cta.caseStudies}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="#contact" className="w-full sm:w-auto">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto text-base h-12 px-8 bg-background/50 backdrop-blur-sm hover:bg-background/80">
-                  Contact Me
+                  {t.hero.cta.contact}
                 </Button>
               </Link>
             </div>
@@ -103,7 +114,7 @@ export function Hero() {
             {/* Core AI Competencies */}
             <div className="w-full border-t border-border/50 pt-6">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">
-                Core AI Competencies
+                {t.hero.competencies}
               </p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -165,24 +176,24 @@ export function Hero() {
         <div className="w-full border-y border-white/5 bg-white/5 backdrop-blur-sm py-8 mb-24 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto px-4">
             <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest whitespace-nowrap">
-              Trusted by teams across
+              {t.hero.trustedBy}
             </p>
             <div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
               <div className="flex items-center gap-2 group">
                 <HeartPulse className="w-6 h-6 text-blue-500 group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">Healthcare</span>
+                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">{t.hero.sectors.healthcare}</span>
               </div>
               <div className="flex items-center gap-2 group">
                 <GraduationCap className="w-6 h-6 text-purple-500 group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">EdTech</span>
+                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">{t.hero.sectors.edtech}</span>
               </div>
               <div className="flex items-center gap-2 group">
                 <Landmark className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">Government</span>
+                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">{t.hero.sectors.government}</span>
               </div>
               <div className="flex items-center gap-2 group">
                 <Globe className="w-6 h-6 text-green-500 group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">Global NGOs</span>
+                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">{t.hero.sectors.ngos}</span>
               </div>
             </div>
           </div>
@@ -196,9 +207,9 @@ export function Hero() {
             <div className="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mb-6 text-purple-500 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-purple-500/0 group-hover:shadow-purple-500/30">
               <Brain size={28} />
             </div>
-            <h3 className="font-bold text-lg mb-3 group-hover:text-purple-400 transition-colors">AI Product Strategy</h3>
+            <h3 className="font-bold text-lg mb-3 group-hover:text-purple-400 transition-colors">{t.hero.cards.strategy.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
-              Driving product vision for Generative AI and ML, moving from experimental pilots to scalable enterprise solutions.
+              {t.hero.cards.strategy.desc}
             </p>
           </div>
 
@@ -206,9 +217,9 @@ export function Hero() {
             <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 text-blue-500 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-blue-500/0 group-hover:shadow-blue-500/30">
               <Database size={28} />
             </div>
-            <h3 className="font-bold text-lg mb-3 group-hover:text-blue-400 transition-colors">Intelligent Data Systems</h3>
+            <h3 className="font-bold text-lg mb-3 group-hover:text-blue-400 transition-colors">{t.hero.cards.data.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
-              Architecting real-time data platforms that enable critical decision intelligence during global crises and operations.
+              {t.hero.cards.data.desc}
             </p>
           </div>
 
@@ -216,9 +227,9 @@ export function Hero() {
             <div className="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center mb-6 text-orange-500 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-orange-500/0 group-hover:shadow-orange-500/30">
               <Globe size={28} />
             </div>
-            <h3 className="font-bold text-lg mb-3 group-hover:text-orange-400 transition-colors">Global Scale & Impact</h3>
+            <h3 className="font-bold text-lg mb-3 group-hover:text-orange-400 transition-colors">{t.hero.cards.scale.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
-              Scaling data and AI products used by millions across global health and education ecosystems.
+              {t.hero.cards.scale.desc}
             </p>
           </div>
         </div>

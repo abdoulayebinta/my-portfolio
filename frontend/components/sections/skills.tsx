@@ -8,54 +8,45 @@ import {
   BarChart3, Users, Zap, Lock, Globe, Server,
   ArrowRight, Workflow, Microscope, TrendingUp, Map, Network
 } from "lucide-react";
-
-const categories = [
-  { id: "ai", label: "AI & Machine Learning", icon: Brain },
-  { id: "engineering", label: "Data & Engineering", icon: Code2 },
-  { id: "product", label: "Product Science", icon: LineChart },
-];
-
-const skillsData = {
-  ai: {
-    title: "AI & ML Competencies",
-    description: "Deep technical understanding of modern AI architectures and deployment strategies.",
-    items: [
-      { name: "LLMs & Transformers", level: "Advanced", icon: Brain, desc: "GPT-4, Claude, Llama 2, Fine-tuning" },
-      { name: "RAG Architecture", level: "Advanced", icon: Layers, desc: "Vector DBs, Embeddings, Context Windows" },
-      { name: "Computer Vision", level: "Intermediate", icon: Search, desc: "CNNs, Object Detection, Segmentation" },
-      { name: "MLOps", level: "Intermediate", icon: Workflow, desc: "Model Registry, Monitoring, Deployment" },
-      { name: "Prompt Engineering", level: "Expert", icon: Terminal, desc: "Chain-of-thought, Few-shot, System Prompts" },
-      { name: "AI Ethics", level: "Advanced", icon: Lock, desc: "Bias Detection, Safety Guardrails, Compliance" },
-    ]
-  },
-  engineering: {
-    title: "Technical Stack",
-    description: "Hands-on experience with the tools and infrastructure that power scalable products.",
-    items: [
-      { name: "Python & SQL", level: "Expert", icon: Code2, desc: "Data Analysis, Scripting, Complex Queries" },
-      { name: "Cloud Infrastructure", level: "Advanced", icon: Cloud, desc: "AWS (S3, EC2, Lambda), GCP, Azure" },
-      { name: "API Design", level: "Advanced", icon: Server, desc: "REST, GraphQL, Swagger/OpenAPI" },
-      { name: "Data Pipelines", level: "Intermediate", icon: GitBranch, desc: "ETL/ELT, Airflow, Kafka, dbt" },
-      { name: "Web Technologies", level: "Intermediate", icon: Globe, desc: "React, Next.js, Node.js, Tailwind" },
-      { name: "DevTools", level: "Advanced", icon: Terminal, desc: "Git, Docker, CI/CD, Jira/Linear" },
-    ]
-  },
-  product: {
-    title: "Product Strategy & Analytics",
-    description: "Data-driven decision making and strategic frameworks for product growth.",
-    items: [
-      { name: "A/B Testing", level: "Expert", icon: Microscope, desc: "Experiment Design, Statistical Significance" },
-      { name: "Product Analytics", level: "Expert", icon: BarChart3, desc: "Amplitude, Mixpanel, SQL, Tableau" },
-      { name: "User Research", level: "Advanced", icon: Users, desc: "Interviews, Surveys, Usability Testing" },
-      { name: "Growth Strategy", level: "Advanced", icon: TrendingUp, desc: "Acquisition, Retention, Monetization" },
-      { name: "Roadmapping", level: "Expert", icon: Map, desc: "Prioritization, Stakeholder Alignment" },
-      { name: "Agile/Scrum", level: "Expert", icon: Zap, desc: "Sprint Planning, Backlog Grooming" },
-    ]
-  }
-};
+import { useLanguage } from "@/context/language-context";
 
 export function Skills() {
   const [activeTab, setActiveTab] = useState<"ai" | "engineering" | "product">("ai");
+  const { t } = useLanguage();
+
+  const categories = [
+    { id: "ai", label: t.skills.categories.ai, icon: Brain },
+    { id: "engineering", label: t.skills.categories.engineering, icon: Code2 },
+    { id: "product", label: t.skills.categories.product, icon: LineChart },
+  ];
+
+  // Map icons to the translated data structure
+  const iconMap: Record<string, any> = {
+    "LLMs & Transformers": Brain,
+    "RAG Architecture": Layers,
+    "Computer Vision": Search,
+    "MLOps": Workflow,
+    "Prompt Engineering": Terminal,
+    "AI Ethics": Lock,
+    "Python & SQL": Code2,
+    "Cloud Infrastructure": Cloud,
+    "API Design": Server,
+    "Data Pipelines": GitBranch,
+    "Web Technologies": Globe,
+    "DevTools": Terminal,
+    "A/B Testing": Microscope,
+    "Product Analytics": BarChart3,
+    "User Research": Users,
+    "Growth Strategy": TrendingUp,
+    "Roadmapping": Map,
+    "Agile/Scrum": Zap
+  };
+
+  const skillsData = {
+    ai: t.skills.ai,
+    engineering: t.skills.engineering,
+    product: t.skills.product
+  };
 
   return (
     <section id="skills" className="py-24 bg-background relative overflow-hidden">
@@ -64,9 +55,9 @@ export function Skills() {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Arsenal</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.skills.title}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Bridging the gap between complex engineering and strategic product value.
+            {t.skills.subtitle}
           </p>
         </div>
 
@@ -123,29 +114,34 @@ export function Skills() {
 
               {/* Skills Grid */}
               <div key={`${activeTab}-grid`} className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-                {skillsData[activeTab].items.map((skill, index) => (
-                  <div 
-                    key={skill.name}
-                    className="group p-4 rounded-xl bg-background border border-border hover:border-purple-500/30 transition-all duration-300 hover:shadow-md"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="p-2 rounded-lg bg-secondary text-foreground group-hover:bg-purple-500/10 group-hover:text-purple-500 transition-colors">
-                        <skill.icon size={20} />
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="font-semibold text-sm">{skill.name}</h4>
-                          <span className="px-2 py-0.5 rounded-full bg-secondary text-[10px] font-medium text-muted-foreground border border-border">
-                            {skill.level}
-                          </span>
+                {skillsData[activeTab].items.map((skill, index) => {
+                  // Fallback icon if name doesn't match exactly (though it should with current data)
+                  const Icon = iconMap[skill.name] || Code2;
+                  
+                  return (
+                    <div 
+                      key={skill.name}
+                      className="group p-4 rounded-xl bg-background border border-border hover:border-purple-500/30 transition-all duration-300 hover:shadow-md"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="p-2 rounded-lg bg-secondary text-foreground group-hover:bg-purple-500/10 group-hover:text-purple-500 transition-colors">
+                          <Icon size={20} />
                         </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed">
-                          {skill.desc}
-                        </p>
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="font-semibold text-sm">{skill.name}</h4>
+                            <span className="px-2 py-0.5 rounded-full bg-secondary text-[10px] font-medium text-muted-foreground border border-border">
+                              {skill.level}
+                            </span>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            {skill.desc}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Interactive Architecture Diagram (Only for Engineering/AI tabs) */}
@@ -153,7 +149,7 @@ export function Skills() {
                 <div className="mt-12 pt-8 border-t border-border animate-in fade-in duration-1000 delay-300">
                   <h4 className="text-sm font-semibold mb-6 flex items-center gap-2">
                     <Network size={16} className="text-purple-500" />
-                    Typical AI Product Architecture
+                    {t.skills.diagram.title}
                   </h4>
                   
                   <div className="relative flex flex-col md:flex-row items-center justify-between gap-4 p-6 rounded-2xl bg-background/50 border border-border overflow-x-auto">
@@ -162,7 +158,7 @@ export function Skills() {
                       <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 border border-blue-500/20">
                         <Database size={20} />
                       </div>
-                      <span className="text-xs font-medium">Data Ingestion</span>
+                      <span className="text-xs font-medium">{t.skills.diagram.ingestion}</span>
                     </div>
 
                     <div className="h-px w-12 bg-border md:block hidden relative">
@@ -175,7 +171,7 @@ export function Skills() {
                       <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 border border-orange-500/20">
                         <Cpu size={20} />
                       </div>
-                      <span className="text-xs font-medium">Processing</span>
+                      <span className="text-xs font-medium">{t.skills.diagram.processing}</span>
                     </div>
 
                     <div className="h-px w-12 bg-border md:block hidden relative">
@@ -188,7 +184,7 @@ export function Skills() {
                       <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-500 border border-purple-500/20 shadow-lg shadow-purple-500/10">
                         <Brain size={32} />
                       </div>
-                      <span className="text-xs font-bold text-purple-500">AI Model (LLM)</span>
+                      <span className="text-xs font-bold text-purple-500">{t.skills.diagram.model}</span>
                     </div>
 
                     <div className="h-px w-12 bg-border md:block hidden relative">
@@ -201,7 +197,7 @@ export function Skills() {
                       <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 border border-green-500/20">
                         <Globe size={20} />
                       </div>
-                      <span className="text-xs font-medium">User Interface</span>
+                      <span className="text-xs font-medium">{t.skills.diagram.ui}</span>
                     </div>
                   </div>
                 </div>
