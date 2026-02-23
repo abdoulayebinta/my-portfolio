@@ -112,13 +112,115 @@ export const caseStudies = [
 
 export const blogPosts = [
   {
-    slug: "future-of-product-management-ai",
-    title: "The Future of Product Management in the Age of AI",
+    slug: "ai-in-healthcare-beyond-diagnosis",
+    title: "AI in Healthcare: Beyond Diagnosis to Operational Resilience",
+    excerpt: "How predictive models are optimizing hospital resource allocation and patient flow during critical surges.",
+    date: "2024-01-15",
+    readTime: "6 min read",
+    tags: ["Healthcare", "AI", "Operations"],
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+    content: `
+      ## The Operational Challenge
+      
+      While diagnostic AI gets the headlines, the immediate value for health systems lies in operational efficiency. Hospitals are complex logistical hubs where bottlenecks cost lives.
+
+      ### Predictive Resource Allocation
+      
+      By analyzing historical admission rates, local epidemiological data, and real-time ER throughput, we can predict bed shortages 48 hours in advance. This allows administrators to:
+      
+      1. **Optimize Staffing**: Call in nurses before the surge hits.
+      2. **Manage Inventory**: Ensure critical supplies are available.
+      3. **Divert Ambulances**: Proactively balance loads across regional networks.
+
+      ### Case Study: Crisis Response
+      
+      During the recent global health crisis, we deployed a lightweight prediction model that helped regional health ministries reduce patient wait times by 35% through better load balancing.
+    `
+  },
+  {
+    slug: "personalized-learning-at-scale",
+    title: "The Promise of AI in Education: True Personalization at Scale",
+    excerpt: "Moving from standardized curriculums to adaptive learning paths powered by LLMs and knowledge graphs.",
+    date: "2023-12-10",
+    readTime: "5 min read",
+    tags: ["Education", "EdTech", "Personalization"],
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop",
+    content: `
+      ## The "One Size Fits All" Problem
+      
+      Traditional education forces students to learn at the same pace. AI offers a way out, but only if designed correctly.
+
+      ### Knowledge Graphs + LLMs
+      
+      By mapping curriculum concepts into a knowledge graph and using LLMs to generate explanations, we can create a tutor that understands *why* a student is stuck.
+      
+      - **Diagnosis**: Is it a conceptual gap or a calculation error?
+      - **Adaptation**: Explain it with a sports analogy if the student loves soccer.
+      - **Scaffolding**: Provide hints, not just answers.
+
+      ### The Role of the Teacher
+      
+      AI doesn't replace teachers; it gives them superpowers. By automating grading and basic remediation, teachers can focus on mentorship and complex problem-solving.
+    `
+  },
+  {
+    slug: "decision-intelligence-enterprise",
+    title: "Decision Intelligence: The Next Frontier for Enterprise AI",
+    excerpt: "Why the next wave of value isn't just generating content, but helping leaders make better, faster decisions.",
+    date: "2023-11-28",
+    readTime: "7 min read",
+    tags: ["Enterprise", "Strategy", "Decision Science"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    content: `
+      ## From Dashboards to Decisions
+      
+      We are drowning in dashboards. Executives don't need more charts; they need recommendations with confidence intervals.
+
+      ### The DI Stack
+      
+      Decision Intelligence (DI) combines data science, social science, and managerial science.
+      
+      1. **Causal Inference**: Understanding cause and effect, not just correlation.
+      2. **Simulation**: Running "what-if" scenarios (e.g., "What if we raise prices by 5%?").
+      3. **Optimization**: Finding the best action under constraints.
+
+      ### Building Trust
+      
+      For an enterprise to trust an AI decision, the system must be explainable. "The black box said so" is not an acceptable strategy in the boardroom.
+    `
+  },
+  {
+    slug: "responsible-ai-product-development",
+    title: "Frameworks for Responsible AI Product Development",
+    excerpt: "Practical steps for PMs to bake ethics, fairness, and transparency into the product lifecycle from day one.",
+    date: "2023-11-05",
+    readTime: "8 min read",
+    tags: ["Ethics", "Responsible AI", "Product Management"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
+    content: `
+      ## Ethics as a Non-Functional Requirement
+      
+      Responsible AI isn't a checklist at the end of development; it's a constraint that shapes the product definition.
+
+      ### The 3-Step Framework
+      
+      1. **Data Audits**: Before training, analyze your dataset for representation bias. Who is missing?
+      2. **Model Cards**: Document the model's intended use, limitations, and performance across different demographics.
+      3. **Feedback Loops**: Design UI mechanisms for users to report bias or errors easily.
+
+      ### The "Red Team" Approach
+      
+      Hire diverse teams to try and break your model. If you can't find the flaws, you aren't looking hard enough.
+    `
+  },
+  {
+    slug: "product-strategy-age-of-llms",
+    title: "Product Strategy in the Age of LLMs",
     excerpt: "How Generative AI is reshaping the PM role, from writing PRDs to strategic decision making.",
     date: "2023-10-15",
-    readTime: "5 min read",
-    tags: ["Product Management", "AI", "Career"],
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop",
+    readTime: "6 min read",
+    tags: ["Product Strategy", "LLMs", "GenAI"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
     content: `
       ## The Shift is Here
       
@@ -133,34 +235,6 @@ export const blogPosts = [
       1. **Data Fluency**: You don't need to be a data scientist, but you need to understand how models work, their limitations, and how to evaluate them.
       2. **Ethical Thinking**: As we deploy autonomous agents, understanding the societal impact of our products is no longer optional.
       3. **Prompt Engineering**: Knowing how to communicate with LLMs is becoming as important as communicating with engineers.
-
-      ## Conclusion
-      
-      The PMs who embrace AI will not be replaced; they will replace those who don't. The future belongs to the "AI-Native" Product Manager.
-    `
-  },
-  {
-    slug: "building-trust-in-ai-systems",
-    title: "Building Trust in AI Systems: A UX Perspective",
-    excerpt: "Why accuracy isn't enough. Designing for transparency, explainability, and user control.",
-    date: "2023-11-02",
-    readTime: "7 min read",
-    tags: ["UX", "AI Ethics", "Design"],
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop",
-    content: `
-      ## The Black Box Problem
-      
-      Users are skeptical of "magic" algorithms. When a system recommends a movie or denies a loan application, the "why" matters just as much as the "what".
-
-      ### Principles of Trusted AI
-      
-      1. **Transparency**: Be clear about when AI is being used.
-      2. **Explainability**: Provide rationale for decisions (e.g., "We recommended this because you liked X").
-      3. **Control**: Allow users to override or give feedback to the model.
-
-      ### Case Study: Smart Feed
-      
-      When we introduced an algorithmic feed, engagement dropped. Users felt a loss of agency. By adding a simple "Show me more like this" and "Show me less" control, trust—and engagement—returned.
     `
   }
 ];
