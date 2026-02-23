@@ -4,14 +4,14 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, Building2, GraduationCap, HeartPulse, Landmark, Cpu, Network, Zap, Layers, Bot, Activity } from "lucide-react";
 import Link from "next/link";
-import { NetworkBackground } from "@/components/ui/network-background";
+import { BackgroundAnimation } from "@/components/ui/background-animation";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <NetworkBackground />
+        <BackgroundAnimation />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[128px] animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[128px] animate-pulse delay-1000" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_1px,transparent_1px)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_24px]" />

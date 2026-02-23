@@ -13,7 +13,8 @@ const navItems = [
   { name: "About", href: "/#about" },
   { name: "Case Studies", href: "/#case-studies" },
   { name: "Skills", href: "/#skills" },
-  { name: "Blog", href: "/#blog" },
+  { name: "Insights", href: "/#insights" },
+  { name: "Resume", href: "/resume.pdf" }, // Placeholder for resume
   { name: "Contact", href: "/#contact" },
 ];
 

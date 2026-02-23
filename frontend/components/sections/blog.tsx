@@ -3,16 +3,16 @@
 import React from "react";
 import { blogPosts } from "@/lib/data";
 import Link from "next/link";
-import { ArrowUpRight, Calendar, Clock } from "lucide-react";
+import { ArrowUpRight, Calendar, Clock, PlayCircle } from "lucide-react";
 
 export function Blog() {
   return (
-    <section id="blog" className="py-24 bg-secondary/30">
+    <section id="insights" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Thought Leadership</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Insights & Thought Leadership</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Exploring the intersection of AI, Product Management, and Ethics.
+            Exploring the intersection of AI, Product Management, and Ethics through articles and talks.
           </p>
         </div>
 
@@ -55,9 +55,24 @@ export function Blog() {
               </Link>
             </div>
           ))}
+          
+          {/* Placeholder for Video/Talk */}
+          <div className="group bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col justify-center items-center p-8 text-center min-h-[300px] relative">
+             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5" />
+             <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <PlayCircle size={32} className="text-muted-foreground group-hover:text-purple-500 transition-colors" />
+             </div>
+             <h3 className="text-xl font-bold mb-2">Upcoming Talk: AI in Healthcare</h3>
+             <p className="text-muted-foreground text-sm max-w-xs">
+               Join me at the Global Health Tech Summit 2024 where I'll be discussing the future of diagnostic AI.
+             </p>
+             <Button variant="outline" className="mt-6" disabled>Coming Soon</Button>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+import { Button } from "@/components/ui/button";
 
