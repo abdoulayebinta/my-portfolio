@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Linkedin, Calendar } from "lucide-react";
+import { useLanguage } from "@/context/language-context";
 
 export function Contact() {
   // Use mounted state to prevent hydration mismatches if extensions inject elements
   const [mounted, setMounted] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -24,9 +26,9 @@ export function Contact() {
           
           {/* Left Side: Info */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Build Something Extraordinary</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t.contact.title}</h2>
             <p className="text-muted-foreground text-lg mb-8">
-              I'm currently open to new opportunities in AI Product Management. Whether you're a recruiter, founder, or fellow PM, I'd love to connect.
+              {t.contact.subtitle}
             </p>
 
             <div className="space-y-6 mb-12">
@@ -35,8 +37,8 @@ export function Contact() {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Email Me</h3>
-                  <p className="text-sm text-muted-foreground">hello@abdoulaye.pm</p>
+                  <h3 className="font-semibold">{t.contact.email.title}</h3>
+                  <p className="text-sm text-muted-foreground">{t.contact.email.value}</p>
                 </div>
               </a>
 
@@ -45,8 +47,8 @@ export function Contact() {
                   <Linkedin size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold">LinkedIn</h3>
-                  <p className="text-sm text-muted-foreground">Connect professionally</p>
+                  <h3 className="font-semibold">{t.contact.linkedin.title}</h3>
+                  <p className="text-sm text-muted-foreground">{t.contact.linkedin.value}</p>
                 </div>
               </a>
 
@@ -55,8 +57,8 @@ export function Contact() {
                   <Calendar size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Book a Call</h3>
-                  <p className="text-sm text-muted-foreground">Schedule 15 mins</p>
+                  <h3 className="font-semibold">{t.contact.calendar.title}</h3>
+                  <p className="text-sm text-muted-foreground">{t.contact.calendar.value}</p>
                 </div>
               </a>
             </div>
@@ -68,32 +70,32 @@ export function Contact() {
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">Name</label>
-                    <Input id="name" placeholder="John Doe" />
+                    <label htmlFor="name" className="text-sm font-medium">{t.contact.form.name}</label>
+                    <Input id="name" placeholder={t.contact.form.namePlaceholder} />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">Email</label>
-                    <Input id="email" type="email" placeholder="john@company.com" />
+                    <label htmlFor="email" className="text-sm font-medium">{t.contact.form.email}</label>
+                    <Input id="email" type="email" placeholder={t.contact.form.emailPlaceholder} />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                  <label htmlFor="subject" className="text-sm font-medium">{t.contact.form.subject}</label>
                   <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                    <option>Recruiting / Hiring</option>
-                    <option>Collaboration</option>
-                    <option>Networking</option>
-                    <option>Other</option>
+                    <option>{t.contact.form.subjects.recruiting}</option>
+                    <option>{t.contact.form.subjects.collaboration}</option>
+                    <option>{t.contact.form.subjects.networking}</option>
+                    <option>{t.contact.form.subjects.other}</option>
                   </select>
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">Message</label>
-                  <Textarea id="message" placeholder="Hi, I'd like to discuss..." className="min-h-[120px]" />
+                  <label htmlFor="message" className="text-sm font-medium">{t.contact.form.message}</label>
+                  <Textarea id="message" placeholder={t.contact.form.messagePlaceholder} className="min-h-[120px]" />
                 </div>
 
                 <Button type="submit" className="w-full" variant="gradient">
-                  Send Message
+                  {t.contact.form.submit}
                 </Button>
               </form>
             ) : (

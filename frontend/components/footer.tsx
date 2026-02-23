@@ -4,8 +4,11 @@ import React from "react";
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { useLanguage } from "@/context/language-context";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-background border-t border-border py-12">
       <div className="container mx-auto px-4 md:px-6">
@@ -15,22 +18,22 @@ export function Footer() {
               <Logo />
             </Link>
             <p className="text-muted-foreground max-w-sm mt-4">
-              Building the future of AI products. Focused on strategy, systems thinking, and human-centric design.
+              {t.footer.tagline}
             </p>
           </div>
           
           <div>
-            <h3 className="font-semibold mb-4">Navigation</h3>
+            <h3 className="font-semibold mb-4">{t.footer.navigation}</h3>
             <ul className="space-y-2">
-              <li><Link href="/#about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-              <li><Link href="/#case-studies" className="text-muted-foreground hover:text-foreground transition-colors">Case Studies</Link></li>
-              <li><Link href="/#blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
-              <li><Link href="/#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
+              <li><Link href="/#about" className="text-muted-foreground hover:text-foreground transition-colors">{t.nav.about}</Link></li>
+              <li><Link href="/#case-studies" className="text-muted-foreground hover:text-foreground transition-colors">{t.nav.caseStudies}</Link></li>
+              <li><Link href="/#insights" className="text-muted-foreground hover:text-foreground transition-colors">{t.nav.insights}</Link></li>
+              <li><Link href="/#contact" className="text-muted-foreground hover:text-foreground transition-colors">{t.nav.contact}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Connect</h3>
+            <h3 className="font-semibold mb-4">{t.footer.connect}</h3>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110 transform duration-200"><Linkedin size={20} /></a>
               <a href="#" className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110 transform duration-200"><Twitter size={20} /></a>
@@ -42,10 +45,10 @@ export function Footer() {
         
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Abdoulaye Bah. All rights reserved.
+            © {new Date().getFullYear()} Abdoulaye Bah. {t.footer.rights}
           </p>
           <p className="text-sm text-muted-foreground">
-            Designed & Built with Next.js & Tailwind
+            {t.footer.builtWith}
           </p>
         </div>
       </div>

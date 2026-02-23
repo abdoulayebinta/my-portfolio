@@ -5,20 +5,23 @@ import { blogPosts } from "@/lib/data";
 import Link from "next/link";
 import { ArrowUpRight, Calendar, Clock, PlayCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/context/language-context";
 
 export function Blog() {
+  const { t } = useLanguage();
+
   return (
     <section id="insights" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Insights & Thought Leadership</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.insights.title}</h2>
             <p className="text-muted-foreground text-lg">
-              Exploring the intersection of AI, Product Management, and Ethics through articles and talks.
+              {t.insights.subtitle}
             </p>
           </div>
           <Button variant="ghost" className="hidden md:flex">
-            View All Articles <ArrowRight className="ml-2 h-4 w-4" />
+            {t.insights.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
 
@@ -36,7 +39,7 @@ export function Blog() {
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Read Article <ArrowUpRight size={12} />
+                    {t.insights.readBtn} <ArrowUpRight size={12} />
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
@@ -73,19 +76,19 @@ export function Blog() {
              <div className="w-16 h-16 rounded-full bg-background border border-border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
                 <PlayCircle size={32} className="text-purple-500" />
              </div>
-             <h3 className="text-xl font-bold mb-3">Upcoming Talk: AI in Healthcare</h3>
+             <h3 className="text-xl font-bold mb-3">{t.insights.talk.title}</h3>
              <p className="text-muted-foreground text-sm max-w-xs mb-6">
-               Join me at the Global Health Tech Summit 2024 where I'll be discussing the future of diagnostic AI.
+               {t.insights.talk.desc}
              </p>
              <Button variant="outline" className="bg-background/50 backdrop-blur-sm group-hover:bg-purple-500 group-hover:text-white group-hover:border-purple-500 transition-all">
-               Register Interest
+               {t.insights.talk.btn}
              </Button>
           </div>
         </div>
         
         <div className="mt-12 text-center md:hidden">
           <Button variant="outline" className="w-full">
-            View All Articles <ArrowRight className="ml-2 h-4 w-4" />
+            {t.insights.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>

@@ -5,20 +5,23 @@ import { caseStudies } from "@/lib/data";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/context/language-context";
 
 export function CaseStudies() {
+  const { t } = useLanguage();
+
   return (
     <section id="case-studies" className="py-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Selected Case Studies</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.caseStudies.title}</h2>
             <p className="text-muted-foreground max-w-2xl">
-              Deep dives into complex problems solved with AI, Data, and Product Strategy.
+              {t.caseStudies.subtitle}
             </p>
           </div>
           <Button variant="ghost" className="hidden md:flex">
-            View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+            {t.caseStudies.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
 
@@ -44,7 +47,7 @@ export function CaseStudies() {
                 </p>
                 <Link href={`/case-studies/${study.slug}`}>
                   <Button variant="outline" className="group-hover:bg-purple-500 group-hover:text-white group-hover:border-purple-500 transition-all">
-                    Read Case Study
+                    {t.caseStudies.readBtn}
                   </Button>
                 </Link>
               </div>
