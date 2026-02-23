@@ -11,10 +11,13 @@ export function Hero() {
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <BackgroundAnimation />
+        {/* Large Blur Blobs - Rendered first (bottom layer) */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[128px] animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[128px] animate-pulse delay-1000" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_1px,transparent_1px)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_24px]" />
+        
+        {/* Network Animation - Rendered on top of blobs for better visibility */}
+        <BackgroundAnimation />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 z-10 relative">
