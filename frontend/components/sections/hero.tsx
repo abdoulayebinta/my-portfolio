@@ -31,16 +31,15 @@ export function Hero() {
             </div>
 
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"
             >
-              Building the next generation of <br />
-              <span className="text-gradient">Intelligent Products</span>
+              AI & Data Product Manager shaping <span className="text-gradient">decision intelligence</span> across healthcare, education, and global systems.
             </h1>
 
             <p
               className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed"
             >
-              Hi, I'm <strong className="text-foreground">Abdoulaye Binta Bah</strong>. A Strategic AI & Data Product Manager shaping decision intelligence across healthcare, education, and global systems. Specializing in LLMs, Predictive Analytics, and Enterprise Scale.
+              Hi, I'm <strong className="text-foreground">Abdoulaye Binta Bah</strong>. Specializing in LLMs, Predictive Analytics, and Enterprise Scale to bridge the gap between technical complexity and user value.
             </p>
 
             <div
