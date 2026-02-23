@@ -82,31 +82,33 @@ export function Hero() {
           {/* Right Column: Professional Photo */}
           <div className="relative flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-8 duration-1000 delay-200">
             <div className="relative w-full max-w-md aspect-[4/5] group">
-              {/* Abstract Background Shapes behind image */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-purple-600 to-blue-600 rounded-[2rem] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
-              <div className="absolute -top-8 -right-8 w-24 h-24 bg-orange-500/30 rounded-full blur-xl animate-pulse" />
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-500/30 rounded-full blur-xl animate-pulse delay-700" />
+              {/* Enhanced Animated Glow Background */}
+              <div className="absolute -inset-1 bg-gradient-to-tr from-purple-600 via-blue-600 to-cyan-500 rounded-[2rem] blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-700 animate-pulse" />
+              <div className="absolute -inset-4 bg-gradient-to-bl from-indigo-600 via-purple-600 to-pink-500 rounded-[2rem] blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-1000" />
               
-              {/* Image Container */}
-              <div className="relative h-full w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-purple-500/10 bg-secondary/20 backdrop-blur-sm transform transition-transform duration-500 group-hover:scale-[1.01]">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
+              {/* Image Container with Darker, Premium Styling */}
+              <div className="relative h-full w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50 bg-black/80 backdrop-blur-sm transform transition-transform duration-500 group-hover:scale-[1.01]">
                 
-                {/* Placeholder Professional Image */}
+                {/* Dark Gradient Overlay for Contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-blue-900/20 z-10 mix-blend-overlay" />
+                
+                {/* Placeholder Professional Image - Using a darker, more dramatic placeholder */}
                 <img 
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop" 
                   alt="Abdoulaye Bah - AI Product Manager" 
-                  className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105 filter brightness-90 contrast-110 saturate-0 group-hover:saturate-100 transition-all"
                 />
 
-                {/* Floating Badge on Image */}
+                {/* Floating Badge on Image - Enhanced Glassmorphism */}
                 <div className="absolute bottom-6 left-6 right-6 z-20">
-                  <div className="glass p-4 rounded-xl flex items-center gap-3 border border-white/20 bg-black/40 backdrop-blur-md">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center text-white shadow-lg">
+                  <div className="glass p-4 rounded-xl flex items-center gap-3 border border-white/10 bg-black/60 backdrop-blur-xl shadow-2xl">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-purple-500/20">
                       <Sparkles size={20} />
                     </div>
                     <div>
-                      <p className="text-white font-semibold text-sm">Abdoulaye Bah</p>
-                      <p className="text-white/70 text-xs">AI Product Leader</p>
+                      <p className="text-white font-semibold text-sm tracking-wide">Abdoulaye Bah</p>
+                      <p className="text-white/60 text-xs font-medium uppercase tracking-wider">AI Product Leader</p>
                     </div>
                   </div>
                 </div>
