@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Database, Globe, Sparkles } from "lucide-react";
+import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
@@ -35,6 +35,26 @@ export function Hero() {
             >
               AI & Data Product Manager shaping <span className="text-gradient">decision intelligence</span> across healthcare, education, and global systems.
             </h1>
+
+            {/* Social Proof Badges */}
+            <div className="flex flex-wrap gap-3 mb-8">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium">
+                <CheckCircle2 size={16} />
+                <span>Ex-World Health Organization</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 text-sm font-medium">
+                <CheckCircle2 size={16} />
+                <span>7+ Years Experience</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-600 dark:text-orange-400 text-sm font-medium">
+                <CheckCircle2 size={16} />
+                <span>Global Impact</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm font-medium">
+                <CheckCircle2 size={16} />
+                <span>Millions of Users</span>
+              </div>
+            </div>
 
             <p
               className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed"
