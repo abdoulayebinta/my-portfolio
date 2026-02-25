@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-import { getPostBySlug, getFeaturedImage, getTags, formatDate, BlogPost } from "@/lib/wordpress";
+import { getPostBySlug, getFeaturedImage, getTags, formatDate } from "@/lib/wordpress";
 
 export default function BlogPostPage() {
   const params = useParams();
