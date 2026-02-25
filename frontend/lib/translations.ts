@@ -55,6 +55,13 @@ export const translations = {
         ngos: "Global NGOs",
       }
     },
+    featuredVideo: {
+      label: "Featured Insight",
+      title: "How I build AI products at global scale",
+      description: "A deep dive into my framework for scaling decision intelligence systems in complex, regulated environments. I break down the strategy behind the WHO crisis response platform.",
+      watchBtn: "Watch Video",
+      duration: "12 min watch"
+    },
     about: {
       badge: "My Journey",
       title: {
@@ -259,6 +266,13 @@ export const translations = {
         government: "Gouvernement",
         ngos: "ONG Mondiales",
       }
+    },
+    featuredVideo: {
+      label: "Aperçu en vedette",
+      title: "Comment je construis des produits IA à l'échelle mondiale",
+      description: "Une plongée approfondie dans mon cadre pour faire évoluer les systèmes d'intelligence décisionnelle dans des environnements complexes et réglementés. Je décortique la stratégie derrière la plateforme de réponse aux crises de l'OMS.",
+      watchBtn: "Regarder la vidéo",
+      duration: "12 min de visionnage"
     },
     about: {
       badge: "Mon Parcours",
