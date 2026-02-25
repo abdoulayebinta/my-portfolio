@@ -7,10 +7,12 @@ import { ArrowUpRight, Calendar, Clock, PlayCircle, ArrowRight } from "lucide-re
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/language-context";
 import { getPosts, getFeaturedImage, getTags, formatDate, BlogPost } from "@/lib/wordpress";
+import Image from "next/image";
 
 export function Blog() {
   const { t, language } = useLanguage();
   const [posts, setPosts] = useState<any[]>(localPosts);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isUsingWordPress, setIsUsingWordPress] = useState(false);
 
   useEffect(() => {
@@ -52,17 +54,18 @@ export function Blog() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
+          {posts.map((post) => (
             <div
               key={post.slug}
               className="group flex flex-col bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg hover:border-purple-500/30 transition-all duration-300 h-full"
             >
               <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
                 <div className="aspect-[16/9] overflow-hidden relative">
-                  <img 
+                  <Image 
                     src={post.image} 
                     alt={post.title} 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {t.insights.readBtn} <ArrowUpRight size={12} />
