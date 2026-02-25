@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Database, Server, Globe, Smartphone, ArrowRight, Cpu, Lock } from "lucide-react";
+import { Database, Server, Globe, ArrowRight, Cpu, Lock } from "lucide-react";
 
 export function SystemArchitectureDiagram() {
   return (
