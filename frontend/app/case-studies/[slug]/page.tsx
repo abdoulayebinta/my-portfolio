@@ -6,7 +6,7 @@ import { caseStudies } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Target, Lightbulb, Layers, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target, Lightbulb, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users } from "lucide-react";
 import Link from "next/link";
 import { CaseStudyHeader } from "@/components/case-study/header";
 import { CaseStudySection } from "@/components/case-study/section";
@@ -83,7 +83,7 @@ export default function CaseStudyPage() {
 
             <CaseStudySection id="vision" title="Opportunity & Vision" icon={<Lightbulb size={24} />}>
               <p className="text-xl font-medium text-foreground mb-6 italic border-l-4 border-purple-500 pl-6 py-2">
-                "{study.content.vision}"
+                &quot;{study.content.vision}&quot;
               </p>
             </CaseStudySection>
 
@@ -125,7 +125,7 @@ export default function CaseStudyPage() {
 
             <CaseStudySection id="lessons" title="Lessons Learned" icon={<CheckCircle size={24} />}>
               <div className="bg-secondary/30 p-8 rounded-2xl border-l-4 border-green-500">
-                <p className="italic text-foreground">"{study.content.lessons}"</p>
+                <p className="italic text-foreground">&quot;{study.content.lessons}&quot;</p>
               </div>
             </CaseStudySection>
 

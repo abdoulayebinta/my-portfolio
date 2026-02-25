@@ -10,12 +10,26 @@ import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter } from "lucide-re
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { getPostBySlug, getFeaturedImage, getTags, formatDate } from "@/lib/wordpress";
+import Image from "next/image";
+
+// Define a type for the post state to avoid 'any'
+interface PostState {
+  slug: string;
+  title: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  image: string;
+  content: string;
+  isHtml: boolean;
+  excerpt?: string;
+}
 
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params.slug as string;
   
-  const [post, setPost] = useState<any>(null);
+  const [post, setPost] = useState<PostState | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -138,8 +152,14 @@ export default function BlogPostPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden mb-12 shadow-lg">
-              <img src={post.image} alt={post.title} className="w-full h-auto" />
+            <div className="rounded-2xl overflow-hidden mb-12 shadow-lg relative aspect-video">
+              <Image 
+                src={post.image} 
+                alt={post.title} 
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
 
             <div className="prose prose-lg dark:prose-invert max-w-none">
