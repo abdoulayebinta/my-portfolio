@@ -1,27 +1,74 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, notFound } from "next/navigation";
-import { blogPosts } from "@/lib/data";
+import { blogPosts as localPosts } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "@/components/logo";
+import { getPostBySlug, getFeaturedImage, getTags, formatDate, BlogPost } from "@/lib/wordpress";
 
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params.slug as string;
-  const post = blogPosts.find((p) => p.slug === slug);
+  
+  const [post, setPost] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadPost() {
+      setLoading(true);
+      
+      // Try fetching from WordPress first
+      const wpPost = await getPostBySlug(slug);
+      
+      if (wpPost) {
+        setPost({
+          slug: wpPost.slug,
+          title: wpPost.title.rendered,
+          date: formatDate(wpPost.date),
+          readTime: "5 min read",
+          tags: getTags(wpPost),
+          image: getFeaturedImage(wpPost),
+          content: wpPost.content.rendered,
+          isHtml: true
+        });
+      } else {
+        // Fallback to local data
+        const localPost = localPosts.find((p) => p.slug === slug);
+        if (localPost) {
+          setPost({ ...localPost, isHtml: false });
+        }
+      }
+      setLoading(false);
+    }
+
+    if (slug) {
+      loadPost();
+    }
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-background text-foreground">
+        <Navbar />
+        <div className="pt-32 pb-24 container mx-auto px-4 flex justify-center">
+          <div className="w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" />
+        </div>
+        <Footer />
+      </main>
+    );
+  }
 
   if (!post) {
     return notFound();
   }
 
   // Simple markdown parser for the content (since we're using a string in data.ts)
-  // In a real app, use next-mdx-remote or similar
-  const renderContent = (content: string) => {
+  const renderLocalContent = (content: string) => {
     return content.split('\n').map((line, index) => {
       if (line.trim().startsWith('### ')) {
         return <h3 key={index} className="text-2xl font-bold mt-8 mb-4">{line.replace('### ', '')}</h3>;
@@ -46,9 +93,9 @@ export default function BlogPostPage() {
       <article className="pt-32 pb-24">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           
-          <Link href="/#blog">
+          <Link href="/#insights">
             <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Insights
             </Button>
           </Link>
 
@@ -57,7 +104,7 @@ export default function BlogPostPage() {
               <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
               <span className="flex items-center gap-1"><Clock size={14} /> {post.readTime}</span>
               <div className="flex gap-2">
-                {post.tags.map(tag => (
+                {post.tags.map((tag: string) => (
                   <span key={tag} className="bg-secondary px-2 py-1 rounded-md text-xs text-secondary-foreground">
                     {tag}
                   </span>
@@ -65,9 +112,10 @@ export default function BlogPostPage() {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-              {post.title}
-            </h1>
+            <h1 
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+              dangerouslySetInnerHTML={{ __html: post.title }}
+            />
 
             <div className="flex items-center justify-between border-y border-border py-6 mb-12">
               <div className="flex items-center gap-3">
@@ -95,7 +143,11 @@ export default function BlogPostPage() {
             </div>
 
             <div className="prose prose-lg dark:prose-invert max-w-none">
-              {renderContent(post.content)}
+              {post.isHtml ? (
+                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              ) : (
+                renderLocalContent(post.content)
+              )}
             </div>
 
           </div>

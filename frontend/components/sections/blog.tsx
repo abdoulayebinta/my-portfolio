@@ -1,14 +1,40 @@
 "use client";
 
-import React from "react";
-import { blogPosts } from "@/lib/data";
+import React, { useEffect, useState } from "react";
+import { blogPosts as localPosts } from "@/lib/data";
 import Link from "next/link";
 import { ArrowUpRight, Calendar, Clock, PlayCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/language-context";
+import { getPosts, getFeaturedImage, getTags, formatDate, BlogPost } from "@/lib/wordpress";
 
 export function Blog() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [posts, setPosts] = useState<any[]>(localPosts);
+  const [isUsingWordPress, setIsUsingWordPress] = useState(false);
+
+  useEffect(() => {
+    async function fetchWPPosts() {
+      const wpPosts = await getPosts(language);
+      if (wpPosts && wpPosts.length > 0) {
+        // Transform WP posts to match our local data structure for the UI
+        const transformedPosts = wpPosts.map((post: BlogPost) => ({
+          slug: post.slug,
+          title: post.title.rendered,
+          excerpt: post.excerpt.rendered.replace(/<[^>]*>?/gm, '').slice(0, 150) + '...',
+          date: formatDate(post.date),
+          readTime: "5 min read", // Placeholder as WP doesn't provide this by default
+          tags: getTags(post),
+          image: getFeaturedImage(post),
+          content: post.content.rendered
+        }));
+        setPosts(transformedPosts);
+        setIsUsingWordPress(true);
+      }
+    }
+
+    fetchWPPosts();
+  }, [language]);
 
   return (
     <section id="insights" className="py-24 bg-secondary/30">
@@ -26,7 +52,7 @@ export function Blog() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <div
               key={post.slug}
               className="group flex flex-col bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg hover:border-purple-500/30 transition-all duration-300 h-full"
@@ -47,14 +73,16 @@ export function Blog() {
                     <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
                     <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-purple-500 transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-3 mb-6 flex-grow">
-                    {post.excerpt}
-                  </p>
+                  <h3 
+                    className="text-xl font-bold mb-3 group-hover:text-purple-500 transition-colors line-clamp-2"
+                    dangerouslySetInnerHTML={{ __html: post.title }}
+                  />
+                  <div 
+                    className="text-muted-foreground text-sm line-clamp-3 mb-6 flex-grow"
+                    dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                  />
                   <div className="flex flex-wrap gap-2 mt-auto">
-                    {post.tags.slice(0, 2).map(tag => (
+                    {post.tags.slice(0, 2).map((tag: string) => (
                       <span key={tag} className="text-[10px] uppercase tracking-wider font-medium bg-secondary px-2 py-1 rounded-md text-secondary-foreground border border-border">
                         {tag}
                       </span>
