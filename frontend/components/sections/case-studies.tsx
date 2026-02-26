@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/language-context";
+import Image from "next/image";
 
 export function CaseStudies() {
   const { t } = useLanguage();
@@ -26,7 +27,7 @@ export function CaseStudies() {
         </div>
 
         <div className="grid grid-cols-1 gap-12">
-          {caseStudies.map((study, index) => (
+          {caseStudies.map((study) => (
             <div
               key={study.slug}
               className="group relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-secondary/20 rounded-3xl p-6 md:p-8 border border-border hover:border-purple-500/30 transition-colors"
@@ -54,10 +55,11 @@ export function CaseStudies() {
               
               <div className="order-1 md:order-2 relative aspect-video rounded-2xl overflow-hidden bg-muted">
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 z-10 group-hover:opacity-0 transition-opacity duration-500" />
-                <img 
+                <Image 
                   src={study.image} 
                   alt={study.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </div>
