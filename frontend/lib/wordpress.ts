@@ -19,7 +19,7 @@ export interface BlogPost {
   };
 }
 
-export async function getPosts(_lang: string = 'en'): Promise<BlogPost[]> {
+export async function getPosts(): Promise<BlogPost[]> {
   try {
     // In a real scenario, you might filter by language category or tag
     // For now, we just fetch the latest posts
