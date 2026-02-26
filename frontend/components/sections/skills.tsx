@@ -6,7 +6,7 @@ import {
   Brain, Database, LineChart, Code2, Cloud, 
   GitBranch, Terminal, Cpu, Layers, Search, 
   BarChart3, Users, Zap, Lock, Globe, Server,
-  ArrowRight, Workflow, Microscope, TrendingUp, Map, Network
+  ArrowRight, Workflow, Microscope, TrendingUp, Map, Network, LucideIcon
 } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 
@@ -21,7 +21,7 @@ export function Skills() {
   ];
 
   // Map icons to the translated data structure
-  const iconMap: Record<string, any> = {
+  const iconMap: Record<string, LucideIcon> = {
     "LLMs & Transformers": Brain,
     "RAG Architecture": Layers,
     "Computer Vision": Search,
@@ -68,7 +68,7 @@ export function Skills() {
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setActiveTab(cat.id as any)}
+                onClick={() => setActiveTab(cat.id as "ai" | "engineering" | "product")}
                 className={cn(
                   "w-full flex items-center gap-3 px-4 py-4 rounded-xl text-left transition-all duration-300 border",
                   activeTab === cat.id
@@ -114,7 +114,7 @@ export function Skills() {
 
               {/* Skills Grid */}
               <div key={`${activeTab}-grid`} className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-                {skillsData[activeTab].items.map((skill, index) => {
+                {skillsData[activeTab].items.map((skill) => {
                   // Fallback icon if name doesn't match exactly (though it should with current data)
                   const Icon = iconMap[skill.name] || Code2;
                   
