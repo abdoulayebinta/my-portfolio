@@ -12,8 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    // Apply these ignores to all TS and JS files
-    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+    // No 'files' key — applies globally and overrides all prior configs
     rules: {
       "react/no-unescaped-entities": "off",
       "@typescript-eslint/no-unused-vars": "off",
