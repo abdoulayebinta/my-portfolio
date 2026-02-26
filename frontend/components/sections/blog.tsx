@@ -17,7 +17,8 @@ export function Blog() {
 
   useEffect(() => {
     async function fetchWPPosts() {
-      const wpPosts = await getPosts(language);
+      // getPosts currently doesn't use the language parameter, so we remove it to fix the type error
+      const wpPosts = await getPosts();
       if (wpPosts && wpPosts.length > 0) {
         // Transform WP posts to match our local data structure for the UI
         const transformedPosts = wpPosts.map((post: BlogPost) => ({
