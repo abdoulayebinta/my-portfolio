@@ -17,7 +17,7 @@ export const translations = {
         highlight: "intelligent and data-driven learning platforms",
         part2: "for educators and students across Canada.",
       },
-      subheadline: "I build **intelligent, data-driven products** that help educators and organizations make better decisions. My experience spans education, healthcare, and global crisis environments, including product leadership at the **World Health Organization**.",
+      subheadline: "Hi, I'm **Abdoulaye**. I build **intelligent, data-driven products** that help educators and organizations make better decisions. My experience spans education, healthcare, and global crisis environments, including product leadership at the **World Health Organization**.",
       valueProof: [
         "🌍 Platforms supporting millions of learners and educators",
         "📊 Data-driven products improving engagement and discovery",
@@ -234,7 +234,12 @@ export const translations = {
         highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
         part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
-      subheadline: "Je conçois des **produits intelligents et axés sur les données** qui aident les éducateurs et les organisations à prendre de meilleures décisions. Mon expérience couvre l'éducation, la santé et les environnements de crise mondiale, incluant un leadership produit à l'**Organisation Mondiale de la Santé**.",
+      subheadline: "Bonjour, je suis **Abdoulaye**. Je conçois des **produits intelligents et axés sur les données** qui aident les éducateurs et les organisations à prendre de meilleures décisions. Mon expérience couvre l'éducation, la santé et les environnements de crise mondiale, incluant un leadership produit à l'**Organisation Mondiale de la Santé**.",
+      valueProof: [
+        "🌍 Plateformes soutenant des millions d'apprenants et d'éducateurs",
+        "📊 Produits axés sur les données améliorant l'engagement et la découverte",
+        "🤝 Partenaire de confiance pour l'ingénierie, la recherche et le secteur public"
+      ],
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Me contacter",
