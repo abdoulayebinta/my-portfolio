@@ -17,7 +17,7 @@ export const translations = {
         highlight: "intelligent and data-driven learning platforms",
         part2: "for educators and students across Canada.",
       },
-      subheadline: "I specialize in **AI-powered product strategy, personalization, and decision intelligence**. Previously, I built real-time crisis and healthcare data platforms at the **World Health Organization** used to support high-stakes decision-making across 20+ countries.",
+      subheadline: "I build **intelligent, data-driven products** that help educators and organizations make better decisions. My experience spans education, healthcare, and global crisis environments, including product leadership at the **World Health Organization**.",
       valueProof: [
         "🌍 Platforms supporting millions of learners and educators",
         "📊 Data-driven products improving engagement and discovery",
@@ -230,16 +230,11 @@ export const translations = {
     hero: {
       openToWork: "Ouvert aux nouvelles opportunités",
       headline: {
-        part1: "Chef de Produit chez TFO dirigeant IDÉLLO et Boukili, bâtissant",
+        part1: "Chef de Produit chez TFO dirigeant la stratégie et l'évolution d'IDÉLLO et Boukili, bâtissant",
         highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
         part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
-      subheadline: "Je me spécialise dans **la stratégie produit alimentée par l'IA, la personnalisation et l'intelligence décisionnelle**. Auparavant, j'ai construit des plateformes de données de santé et de crise en temps réel à l'**Organisation Mondiale de la Santé**, utilisées pour soutenir la prise de décision à enjeux élevés dans plus de 20 pays.",
-      valueProof: [
-        "🌍 Plateformes soutenant des millions d'apprenants et d'éducateurs",
-        "📊 Produits axés sur les données améliorant l'engagement et la découverte",
-        "🤝 Partenaire de confiance pour l'ingénierie, la recherche et le secteur public"
-      ],
+      subheadline: "Je conçois des **produits intelligents et axés sur les données** qui aident les éducateurs et les organisations à prendre de meilleures décisions. Mon expérience couvre l'éducation, la santé et les environnements de crise mondiale, incluant un leadership produit à l'**Organisation Mondiale de la Santé**.",
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Me contacter",
