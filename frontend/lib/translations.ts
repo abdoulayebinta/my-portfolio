@@ -13,11 +13,11 @@ export const translations = {
     hero: {
       openToWork: "Open to new opportunities",
       headline: {
-        part1: "Product Manager at TFO leading the strategy and evolution of IDÉLLO and Boukili, building",
-        highlight: "intelligent, data-driven learning platforms",
+        part1: "Product Manager at TFO leading IDÉLLO and Boukili, building",
+        highlight: "intelligent and data-driven learning platforms",
         part2: "for educators and students across Canada.",
       },
-      subheadline: "Hi, I'm **Abdoulaye Binta Bah**. AI & Data Product Manager with global experience building real-time data and decision platforms at scale, from crisis response to enterprise AI systems.",
+      subheadline: "I specialize in **AI-powered product strategy, personalization, and decision intelligence**. Previously, I built real-time crisis and healthcare data platforms at the **World Health Organization** used to support high-stakes decision-making across 20+ countries.",
       cta: {
         caseStudies: "View Case Studies",
         contact: "Contact Me",
@@ -225,11 +225,11 @@ export const translations = {
     hero: {
       openToWork: "Ouvert aux nouvelles opportunités",
       headline: {
-        part1: "Chef de Produit chez TFO dirigeant la stratégie et l'évolution d'IDÉLLO et Boukili, bâtissant",
+        part1: "Chef de Produit chez TFO dirigeant IDÉLLO et Boukili, bâtissant",
         highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
         part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
-      subheadline: "Bonjour, je suis **Abdoulaye Binta Bah**. Product Manager IA & Data avec une expérience mondiale dans la création de plateformes de données et de décision en temps réel à grande échelle, de la réponse aux crises aux systèmes d'IA d'entreprise.",
+      subheadline: "Je me spécialise dans **la stratégie produit alimentée par l'IA, la personnalisation et l'intelligence décisionnelle**. Auparavant, j'ai construit des plateformes de données de santé et de crise en temps réel à l'**Organisation Mondiale de la Santé**, utilisées pour soutenir la prise de décision à enjeux élevés dans plus de 20 pays.",
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Me contacter",
