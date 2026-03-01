@@ -18,6 +18,11 @@ export const translations = {
         part2: "for educators and students across Canada.",
       },
       subheadline: "I specialize in **AI-powered product strategy, personalization, and decision intelligence**. Previously, I built real-time crisis and healthcare data platforms at the **World Health Organization** used to support high-stakes decision-making across 20+ countries.",
+      valueProof: [
+        "🌍 Platforms supporting millions of learners and educators",
+        "📊 Data-driven products improving engagement and discovery",
+        "🤝 Trusted partner to engineering, research, and public sector stakeholders"
+      ],
       cta: {
         caseStudies: "View Case Studies",
         contact: "Contact Me",
@@ -230,6 +235,11 @@ export const translations = {
         part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
       subheadline: "Je me spécialise dans **la stratégie produit alimentée par l'IA, la personnalisation et l'intelligence décisionnelle**. Auparavant, j'ai construit des plateformes de données de santé et de crise en temps réel à l'**Organisation Mondiale de la Santé**, utilisées pour soutenir la prise de décision à enjeux élevés dans plus de 20 pays.",
+      valueProof: [
+        "🌍 Plateformes soutenant des millions d'apprenants et d'éducateurs",
+        "📊 Produits axés sur les données améliorant l'engagement et la découverte",
+        "🤝 Partenaire de confiance pour l'ingénierie, la recherche et le secteur public"
+      ],
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Me contacter",

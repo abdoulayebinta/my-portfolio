@@ -56,24 +56,14 @@ export function Hero() {
               {t.hero.headline.part1} <span className="text-gradient">{t.hero.headline.highlight}</span> {t.hero.headline.part2}
             </h1>
 
-            {/* Social Proof Badges */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium">
-                <CheckCircle2 size={16} />
-                <span>{t.hero.badges.who}</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 text-sm font-medium">
-                <CheckCircle2 size={16} />
-                <span>{t.hero.badges.experience}</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-600 dark:text-orange-400 text-sm font-medium">
-                <CheckCircle2 size={16} />
-                <span>{t.hero.badges.impact}</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm font-medium">
-                <CheckCircle2 size={16} />
-                <span>{t.hero.badges.users}</span>
-              </div>
+            {/* Value Proof Bar */}
+            <div className="flex flex-col gap-2 mb-8 w-full">
+              {t.hero.valueProof.map((proof, index) => (
+                <div key={index} className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                  <span className="text-lg">{proof.split(' ')[0]}</span>
+                  <span>{proof.substring(proof.indexOf(' ') + 1)}</span>
+                </div>
+              ))}
             </div>
 
             <p
