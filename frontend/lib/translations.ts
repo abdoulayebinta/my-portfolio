@@ -13,9 +13,9 @@ export const translations = {
     hero: {
       openToWork: "Open to new opportunities",
       headline: {
-        part1: "AI & Data Product Manager shaping",
-        highlight: "decision intelligence",
-        part2: "across healthcare, education, and global systems.",
+        part1: "Product Manager at TFO leading the strategy and evolution of IDÉLLO and Boukili, building",
+        highlight: "intelligent, data-driven learning platforms",
+        part2: "for educators and students across Canada.",
       },
       subheadline: "Hi, I'm **Abdoulaye Binta Bah**. AI & Data Product Manager with global experience building real-time data and decision platforms at scale, from crisis response to enterprise AI systems.",
       cta: {
@@ -225,9 +225,9 @@ export const translations = {
     hero: {
       openToWork: "Ouvert aux nouvelles opportunités",
       headline: {
-        part1: "Product Manager IA & Data façonnant",
-        highlight: "l'intelligence décisionnelle",
-        part2: "dans la santé, l'éducation et les systèmes mondiaux.",
+        part1: "Chef de Produit chez TFO dirigeant la stratégie et l'évolution d'IDÉLLO et Boukili, bâtissant",
+        highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
+        part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
       subheadline: "Bonjour, je suis **Abdoulaye Binta Bah**. Product Manager IA & Data avec une expérience mondiale dans la création de plateformes de données et de décision en temps réel à grande échelle, de la réponse aux crises aux systèmes d'IA d'entreprise.",
       cta: {
