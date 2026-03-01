@@ -18,11 +18,7 @@ export const translations = {
         part2: "for educators and students across Canada.",
       },
       subheadline: "Hi, I'm **Abdoulaye**. I build **intelligent, data-driven products** that help educators and organizations make better decisions. My experience spans education, healthcare, and global crisis environments, including product leadership at the **World Health Organization**.",
-      valueProof: [
-        "🌍 Platforms supporting millions of learners and educators",
-        "📊 Data-driven products improving engagement and discovery",
-        "🤝 Trusted partner to engineering, research, and public sector stakeholders"
-      ],
+      valueProof: [], // Removed from here as requested
       cta: {
         caseStudies: "View Case Studies",
         contact: "Contact Me",
@@ -36,6 +32,11 @@ export const translations = {
       impactCard: {
         title: "Strategic Impact",
         description: "Designed platforms used in **crisis environments** and supported health systems across **20+ countries**.",
+        bullets: [
+          "🚀 **Scaled platforms supporting millions** of learners and educators globally.",
+          "📊 **Data-driven products** improving engagement and discovery.",
+          "🤝 **Trusted partner** to engineering, research, and public sector stakeholders."
+        ]
       },
       competencies: "Core AI Competencies",
       cards: {
@@ -235,11 +236,7 @@ export const translations = {
         part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
       subheadline: "Bonjour, je suis **Abdoulaye**. Je conçois des **produits intelligents et axés sur les données** qui aident les éducateurs et les organisations à prendre de meilleures décisions. Mon expérience couvre l'éducation, la santé et les environnements de crise mondiale, incluant un leadership produit à l'**Organisation Mondiale de la Santé**.",
-      valueProof: [
-        "🌍 Plateformes soutenant des millions d'apprenants et d'éducateurs",
-        "📊 Produits axés sur les données améliorant l'engagement et la découverte",
-        "🤝 Partenaire de confiance pour l'ingénierie, la recherche et le secteur public"
-      ],
+      valueProof: [], // Removed from here as requested
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Me contacter",
@@ -253,6 +250,11 @@ export const translations = {
       impactCard: {
         title: "Impact Stratégique",
         description: "Conception de plateformes utilisées dans des **environnements de crise** et soutien aux systèmes de santé dans **20+ pays**.",
+        bullets: [
+          "🚀 **Plateformes à l'échelle** soutenant des millions d'apprenants et d'éducateurs.",
+          "📊 **Produits axés sur les données** améliorant l'engagement et la découverte.",
+          "🤝 **Partenaire de confiance** pour l'ingénierie, la recherche et le secteur public."
+        ]
       },
       competencies: "Compétences Clés en IA",
       cards: {
