@@ -17,8 +17,8 @@ export const translations = {
         highlight: "digital learning tools",
         part2: "for Canada's Francophone communities.",
       },
-      subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+.",
-      valueProof: [], 
+      subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+. Before that I was at the **WHO** building crisis response systems.",
+      valueProof: [], // Removed from here as requested
       cta: {
         caseStudies: "View Case Studies",
         contact: "Contact Me",
@@ -219,7 +219,7 @@ export const translations = {
     footer: {
       tagline: "Building the future of AI products. Focused on strategy, systems thinking, and human-centric design.",
       navigation: "Navigation",
-      connect: "Connect",
+      connect: "Connexion",
       rights: "All rights reserved.",
       builtWith: "Designed & Built with Next.js & Tailwind"
     }
@@ -242,7 +242,7 @@ export const translations = {
         highlight: "des outils d'apprentissage numériques",
         part2: "pour les communautés francophones du Canada.",
       },
-      subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus.",
+      subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Auparavant, j'étais à l'**OMS** pour construire des systèmes de réponse aux crises.",
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Me contacter",
