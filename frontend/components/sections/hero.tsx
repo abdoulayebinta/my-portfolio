@@ -74,6 +74,14 @@ export function Hero() {
               {renderWithBold(t.hero.subheadline)}
             </p>
 
+            {/* Strategic Impact Header */}
+            <div className="flex items-center gap-2 mb-4">
+              <Activity size={16} className="text-purple-500" />
+              <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                {t.hero.impactCard.title}
+              </span>
+            </div>
+
             {/* Split Strategic Impact Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 w-full">
               {t.hero.impactCards?.map((card, index) => (
