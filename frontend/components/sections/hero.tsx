@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity, Search, BarChart3, ShieldCheck } from "lucide-react";
+import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity, Search, BarChart3, ShieldCheck, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { BackgroundAnimation } from "@/components/ui/background-animation";
 import { useLanguage } from "@/context/language-context";
@@ -195,7 +195,7 @@ export function Hero() {
 
           <div className="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 bg-secondary/20 backdrop-blur-sm">
             <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 text-blue-500 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-blue-500/0 group-hover:shadow-blue-500/30">
-              <Database size={28} />
+              <BookOpen size={28} />
             </div>
             <h3 className="font-bold text-lg mb-3 group-hover:text-blue-400 transition-colors">{t.hero.cards.data.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
