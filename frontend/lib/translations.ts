@@ -17,7 +17,7 @@ export const translations = {
         highlight: "digital learning tools",
         part2: "for Canada's Francophone communities.",
       },
-      subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+. Before that I was at the **WHO** building crisis response systems.",
+      subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO**, where I lead the development of **IDÉLLO** — Canada's leading French-language K–12 educational platform serving teachers, students and schools across Ontario and Canada — and **Boukili**, a free interactive reading app used by children ages 4+ to learn French. Before TFO, I built real-time health data platforms at the **World Health Organization**, supporting Ministries of Health across 20+ countries during active health emergencies.",
       valueProof: [], 
       cta: {
         caseStudies: "View Case Studies",
@@ -206,11 +206,11 @@ export const translations = {
         value: "Schedule 15 mins"
       },
       form: {
-        name: "Name",
-        namePlaceholder: "John Doe",
+        name: "Nom",
+        namePlaceholder: "Jean Dupont",
         email: "Email",
-        emailPlaceholder: "john@company.com",
-        subject: "Subject",
+        emailPlaceholder: "jean@entreprise.com",
+        subject: "Sujet",
         subjects: {
           recruiting: "Recrutement / Embauche",
           collaboration: "Collaboration",
@@ -218,15 +218,15 @@ export const translations = {
           other: "Autre"
         },
         message: "Message",
-        messagePlaceholder: "Hi, I'd like to discuss...",
-        submit: "Send Message"
+        messagePlaceholder: "Bonjour, j'aimerais discuter de...",
+        submit: "Envoyer le message"
       }
     },
     footer: {
       tagline: "Building the future of AI products. Focused on strategy, systems thinking, and human-centric design.",
       navigation: "Navigation",
-      connect: "Connect",
-      rights: "All rights reserved.",
+      connect: "Connexion",
+      rights: "Tous droits réservés.",
       builtWith: "Designed & Built with Next.js & Tailwind"
     }
   },
@@ -244,11 +244,11 @@ export const translations = {
     hero: {
       openToWork: "Ouvert aux nouvelles opportunités",
       headline: {
-        part1: "Product Manager bâtissant",
-        highlight: "des outils d'apprentissage numériques",
-        part2: "pour les communautés francophones du Canada.",
+        part1: "Chef de Produit chez TFO dirigeant la stratégie et l'évolution d'IDÉLLO et Boukili, bâtissant",
+        highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
+        part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
-      subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Auparavant, j'étais à l'**OMS** pour construire des systèmes de réponse aux crises.",
+      subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO**, où je dirige le développement d'**IDÉLLO** — la principale plateforme éducative francophone K–12 au Canada, au service des enseignants, des élèves et des écoles de l'Ontario et du Canada — et de **Boukili**, une application de lecture interactive gratuite utilisée par les enfants de 4 ans et plus pour apprendre le français. Avant TFO, j'ai construit des plateformes de données de santé en temps réel à l'**Organisation Mondiale de la Santé**, soutenant les ministères de la santé dans plus de 20 pays lors d'urgences sanitaires actives.",
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Me contacter",
