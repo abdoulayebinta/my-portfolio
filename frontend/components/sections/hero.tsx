@@ -74,14 +74,6 @@ export function Hero() {
               {renderWithBold(t.hero.subheadline)}
             </p>
 
-            {/* Strategic Impact Header */}
-            <div className="flex items-center gap-2 mb-4">
-              <Activity size={16} className="text-purple-500" />
-              <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
-                {t.hero.impactCard.title}
-              </span>
-            </div>
-
             {/* Split Strategic Impact Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 w-full">
               {t.hero.impactCards?.map((card, index) => (
@@ -119,7 +111,7 @@ export function Hero() {
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">
                 {t.hero.competencies}
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mb-6">
                 {t.hero.exploring?.map((item, index) => {
                   const Icon = exploringIcons[index % exploringIcons.length];
                   return (
@@ -129,6 +121,15 @@ export function Hero() {
                     </div>
                   );
                 })}
+              </div>
+              
+              {/* Core Competencies Strip */}
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-border/30">
+                {t.hero.coreCompetencies?.map((item, index) => (
+                  <span key={index} className="text-[10px] font-medium text-muted-foreground/70 uppercase tracking-wider px-2 py-1 bg-secondary/20 rounded border border-transparent hover:border-purple-500/20 hover:text-purple-500 transition-colors cursor-default">
+                    {item}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

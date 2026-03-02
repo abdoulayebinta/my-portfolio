@@ -57,6 +57,15 @@ export const translations = {
         "Personalization and learning analytics",
         "Responsible and trustworthy AI in education"
       ],
+      coreCompetencies: [
+        "EdTech",
+        "HealthTech",
+        "Bilingual Products (FR/EN)",
+        "Agile Delivery",
+        "Ontario Curriculum Alignment",
+        "Data Platforms",
+        "0→1 & Growth"
+      ],
       cards: {
         strategy: {
           title: "AI Product Strategy",
@@ -237,7 +246,7 @@ export const translations = {
     footer: {
       tagline: "Building the future of AI products. Focused on strategy, systems thinking, and human-centric design.",
       navigation: "Navigation",
-      connect: "Connect",
+      connect: "Connexion",
       rights: "All rights reserved.",
       builtWith: "Designed & Built with Next.js & Tailwind"
     }
@@ -293,6 +302,15 @@ export const translations = {
         "Copilotes IA pour les éducateurs",
         "Personnalisation et analyse de l'apprentissage",
         "IA responsable et digne de confiance en éducation"
+      ],
+      coreCompetencies: [
+        "EdTech",
+        "HealthTech",
+        "Produits Bilingues (FR/EN)",
+        "Livraison Agile",
+        "Alignement Curriculum Ontario",
+        "Plateformes de Données",
+        "0→1 & Croissance"
       ],
       cards: {
         strategy: {
