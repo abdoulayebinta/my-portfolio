@@ -13,9 +13,9 @@ export const translations = {
     hero: {
       openToWork: "Open to new opportunities",
       headline: {
-        part1: "Product Manager at TFO leading IDÉLLO and Boukili, building",
-        highlight: "intelligent and data-driven learning platforms",
-        part2: "for educators and students across Canada.",
+        part1: "Product Manager building",
+        highlight: "digital learning tools",
+        part2: "for Canada's Francophone communities.",
       },
       subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+. Before that I was at the **WHO** building crisis response systems.",
       valueProof: [], 
@@ -212,7 +212,7 @@ export const translations = {
         emailPlaceholder: "john@company.com",
         subject: "Subject",
         subjects: {
-          recruiting: "Recruiting / Hiring",
+          recruiting: "Recrutement / Embauche",
           collaboration: "Collaboration",
           networking: "Réseautage",
           other: "Autre"
@@ -244,9 +244,9 @@ export const translations = {
     hero: {
       openToWork: "Ouvert aux nouvelles opportunités",
       headline: {
-        part1: "Chef de Produit chez TFO dirigeant la stratégie et l'évolution d'IDÉLLO et Boukili, bâtissant",
-        highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
-        part2: "pour les éducateurs et les élèves à travers le Canada.",
+        part1: "Product Manager bâtissant",
+        highlight: "des outils d'apprentissage numériques",
+        part2: "pour les communautés francophones du Canada.",
       },
       subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Auparavant, j'étais à l'**OMS** pour construire des systèmes de réponse aux crises.",
       cta: {
