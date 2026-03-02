@@ -10,6 +10,7 @@ import { Skills } from "@/components/sections/skills";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { Blog } from "@/components/sections/blog";
 import { Contact } from "@/components/sections/contact";
+import { AffiliationBadges } from "@/components/sections/affiliation-badges";
 import { testimonials } from "@/lib/data";
 import { Quote } from "lucide-react";
 import Image from "next/image";
@@ -20,6 +21,8 @@ export default function Home() {
       <Navbar />
       
       <Hero />
+
+      <AffiliationBadges />
 
       <FeaturedVideo />
       
