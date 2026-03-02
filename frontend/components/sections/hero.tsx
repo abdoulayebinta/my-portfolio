@@ -42,16 +42,7 @@ export function Hero() {
           
           {/* Left Column: Text Content */}
           <div className="flex flex-col items-start text-left animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-border backdrop-blur-sm mb-6 hover:bg-secondary/80 transition-colors cursor-default"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              <span className="text-xs font-medium text-muted-foreground">{t.hero.openToWork}</span>
-            </div>
-
+            
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"
             >
@@ -73,14 +64,6 @@ export function Hero() {
             >
               {renderWithBold(t.hero.subheadline)}
             </p>
-
-            {/* Strategic Impact Header */}
-            <div className="flex items-center gap-2 mb-4">
-              <Activity size={16} className="text-purple-500" />
-              <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
-                {t.hero.impactCard.title}
-              </span>
-            </div>
 
             {/* Split Strategic Impact Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 w-full">
