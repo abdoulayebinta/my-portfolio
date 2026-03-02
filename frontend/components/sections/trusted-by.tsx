@@ -15,14 +15,17 @@ export function TrustedBy() {
             {t.trustedBy.title}
           </p>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
           {t.trustedBy.logos.map((logo, index) => (
-            <div key={index} className="relative h-12 w-32 md:w-40">
+            <div 
+              key={index} 
+              className="relative h-16 w-32 md:w-40 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500 p-2 rounded-lg dark:bg-white/90 dark:hover:bg-white"
+            >
               <Image 
                 src={logo.src} 
                 alt={logo.name} 
                 fill
-                className="object-contain"
+                className="object-contain p-1"
               />
             </div>
           ))}
