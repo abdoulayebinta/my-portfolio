@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity, Search, BarChart3, ShieldCheck } from "lucide-react";
+import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity } from "lucide-react";
 import Link from "next/link";
 import { BackgroundAnimation } from "@/components/ui/background-animation";
 import { useLanguage } from "@/context/language-context";
@@ -23,6 +23,8 @@ export function Hero() {
   };
 
   const exploringIcons = [Search, Bot, BarChart3, ShieldCheck];
+  // Import missing icons
+  const { Search, BarChart3, ShieldCheck } = require("lucide-react");
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
@@ -74,32 +76,20 @@ export function Hero() {
               {renderWithBold(t.hero.subheadline)}
             </p>
 
-            {/* Bold Differentiator / Strategic Impact */}
-            <div className="flex flex-col gap-4 p-6 rounded-xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 mb-10 max-w-xl relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="flex items-center gap-3 relative z-10 mb-2">
-                <div className="p-2 rounded-full bg-purple-500/20 text-purple-500">
-                  <Activity size={20} />
+            {/* Split Strategic Impact Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 w-full">
+              {t.hero.impactCards?.map((card, index) => (
+                <div key={index} className="flex flex-col gap-3 p-5 rounded-xl bg-gradient-to-br from-purple-500/5 to-blue-500/5 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 group">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold uppercase tracking-widest text-purple-500">{card.title}</span>
+                    {index === 0 && <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />}
+                  </div>
+                  <h3 className="font-bold text-foreground text-sm">{card.subtitle}</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    {card.description}
+                  </p>
                 </div>
-                <h3 className="font-bold text-foreground text-sm uppercase tracking-widest flex items-center gap-2">
-                  {t.hero.impactCard.title}
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                </h3>
-              </div>
-
-              <div className="relative z-10 space-y-2">
-                {t.hero.impactCard.bullets && t.hero.impactCard.bullets.map((bullet, index) => (
-                  <p key={index} className="text-muted-foreground text-sm leading-relaxed">
-                    {renderWithBold(bullet)}
-                  </p>
-                ))}
-                {!t.hero.impactCard.bullets && (
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {renderWithBold(t.hero.impactCard.description)}
-                  </p>
-                )}
-              </div>
+              ))}
             </div>
 
             <div

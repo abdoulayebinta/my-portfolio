@@ -29,15 +29,18 @@ export const translations = {
         impact: "Global Impact",
         users: "Millions of Users",
       },
-      impactCard: {
-        title: "Strategic Impact",
-        description: "Designed platforms used in **crisis environments** and supported health systems across **20+ countries**.",
-        bullets: [
-          "🚀 **Scaled platforms supporting millions** of learners and educators globally.",
-          "📊 **Data-driven products** improving engagement and discovery.",
-          "🤝 **Trusted partner** to engineering, research, and public sector stakeholders."
-        ]
-      },
+      impactCards: [
+        {
+          title: "Current",
+          subtitle: "🇨🇦 IDÉLLO & Boukili at TFO",
+          description: "Managing two live bilingual EdTech platforms mandated by the Ontario Ministry of Education, serving teachers, parents and children across Canada."
+        },
+        {
+          title: "Previous",
+          subtitle: "🌍 World Health Organization",
+          description: "Built real-time health data dashboards used by Ministries of Health during active crises across 20+ countries."
+        }
+      ],
       competencies: "Currently Exploring",
       exploring: [
         "LLM-driven content discovery",
@@ -147,7 +150,7 @@ export const translations = {
         items: [
           { name: "Python & SQL", level: "Expert", desc: "Data Analysis, Scripting, Complex Queries" },
           { name: "Cloud Infrastructure", level: "Advanced", desc: "AWS (S3, EC2, Lambda), GCP, Azure" },
-          { name: "API Design", level: "Advanced", desc: "REST, GraphQL, Swagger/OpenAPI" },
+          { name: "Conception API", level: "Avancé", desc: "REST, GraphQL, Swagger/OpenAPI" },
           { name: "Data Pipelines", level: "Intermediate", desc: "ETL/ELT, Airflow, Kafka, dbt" },
           { name: "Web Technologies", level: "Intermediate", desc: "React, Next.js, Node.js, Tailwind" },
           { name: "DevTools", level: "Advanced", desc: "Git, Docker, CI/CD, Jira/Linear" },
@@ -206,27 +209,27 @@ export const translations = {
         value: "Schedule 15 mins"
       },
       form: {
-        name: "Nom",
-        namePlaceholder: "Jean Dupont",
+        name: "Name",
+        namePlaceholder: "John Doe",
         email: "Email",
-        emailPlaceholder: "jean@entreprise.com",
-        subject: "Sujet",
+        emailPlaceholder: "john@company.com",
+        subject: "Subject",
         subjects: {
-          recruiting: "Recrutement / Embauche",
+          recruiting: "Recruiting / Hiring",
           collaboration: "Collaboration",
-          networking: "Réseautage",
-          other: "Autre"
+          networking: "Networking",
+          other: "Other"
         },
         message: "Message",
-        messagePlaceholder: "Bonjour, j'aimerais discuter de...",
-        submit: "Envoyer le message"
+        messagePlaceholder: "Hi, I'd like to discuss...",
+        submit: "Send Message"
       }
     },
     footer: {
       tagline: "Building the future of AI products. Focused on strategy, systems thinking, and human-centric design.",
       navigation: "Navigation",
-      connect: "Connexion",
-      rights: "Tous droits réservés.",
+      connect: "Connect",
+      rights: "All rights reserved.",
       builtWith: "Designed & Built with Next.js & Tailwind"
     }
   },
@@ -248,7 +251,7 @@ export const translations = {
         highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
         part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
-      subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO**, où je dirige le développement d'**IDÉLLO** — la principale plateforme éducative francophone K–12 au Canada, au service des enseignants, des élèves et des écoles de l'Ontario et du Canada — et de **Boukili**, une application de lecture interactive gratuite utilisée par les enfants de 4 ans et plus pour apprendre le français. Avant TFO, j'ai construit des plateformes de données de santé en temps réel à l'**Organisation Mondiale de la Santé**, soutenant les ministères de la santé dans plus de 20 pays lors d'urgences sanitaires actives.",
+      subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Auparavant, j'étais à l'**OMS** pour construire des systèmes de réponse aux crises.",
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Me contacter",
@@ -259,10 +262,18 @@ export const translations = {
         impact: "Impact mondial",
         users: "Millions d'utilisateurs",
       },
-      impactCard: {
-        title: "Impact Stratégique",
-        description: "Conception de plateformes utilisées dans des **environnements de crise** et soutien aux systèmes de santé dans **20+ pays**.",
-      },
+      impactCards: [
+        {
+          title: "Actuel",
+          subtitle: "🇨🇦 IDÉLLO & Boukili chez TFO",
+          description: "Gestion de deux plateformes EdTech bilingues mandatées par le ministère de l'Éducation de l'Ontario, au service des enseignants, parents et enfants à travers le Canada."
+        },
+        {
+          title: "Précédent",
+          subtitle: "🌍 Organisation Mondiale de la Santé",
+          description: "Construction de tableaux de bord de données de santé en temps réel utilisés par les ministères de la santé lors de crises actives dans plus de 20 pays."
+        }
+      ],
       competencies: "Actuellement en exploration",
       exploring: [
         "Découverte de contenu pilotée par LLM",
