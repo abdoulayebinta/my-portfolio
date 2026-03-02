@@ -17,7 +17,7 @@ export const translations = {
         highlight: "digital learning tools",
         part2: "for Canada's Francophone communities.",
       },
-      subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO**, where I lead the development of **IDÉLLO** — Canada's leading French-language K–12 educational platform serving teachers, students and schools across Ontario and Canada — and **Boukili**, a free interactive reading app used by children ages 4+ to learn French. Before TFO, I built real-time health data platforms at the **World Health Organization**, supporting Ministries of Health across 20+ countries during active health emergencies.",
+      subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+. Before that I was at the **WHO** building crisis response systems.",
       valueProof: [], 
       cta: {
         caseStudies: "View Case Studies",
@@ -28,6 +28,15 @@ export const translations = {
         experience: "7+ Years Experience",
         impact: "Global Impact",
         users: "Millions of Users",
+      },
+      impactCard: {
+        title: "Strategic Impact",
+        description: "Designed platforms used in **crisis environments** and supported health systems across **20+ countries**.",
+        bullets: [
+          "🚀 **Scaled platforms supporting millions** of learners and educators globally.",
+          "📊 **Data-driven products** improving engagement and discovery.",
+          "🤝 **Trusted partner** to engineering, research, and public sector stakeholders."
+        ]
       },
       impactCards: [
         {
@@ -150,7 +159,7 @@ export const translations = {
         items: [
           { name: "Python & SQL", level: "Expert", desc: "Data Analysis, Scripting, Complex Queries" },
           { name: "Cloud Infrastructure", level: "Advanced", desc: "AWS (S3, EC2, Lambda), GCP, Azure" },
-          { name: "Conception API", level: "Avancé", desc: "REST, GraphQL, Swagger/OpenAPI" },
+          { name: "API Design", level: "Advanced", desc: "REST, GraphQL, Swagger/OpenAPI" },
           { name: "Data Pipelines", level: "Intermediate", desc: "ETL/ELT, Airflow, Kafka, dbt" },
           { name: "Web Technologies", level: "Intermediate", desc: "React, Next.js, Node.js, Tailwind" },
           { name: "DevTools", level: "Advanced", desc: "Git, Docker, CI/CD, Jira/Linear" },
@@ -162,10 +171,10 @@ export const translations = {
         items: [
           { name: "A/B Testing", level: "Expert", desc: "Experiment Design, Statistical Significance" },
           { name: "Product Analytics", level: "Expert", desc: "Amplitude, Mixpanel, SQL, Tableau" },
-          { name: "User Research", level: "Advanced", desc: "Interviews, Surveys, Usability Testing" },
-          { name: "Growth Strategy", level: "Advanced", desc: "Acquisition, Retention, Monetization" },
-          { name: "Roadmapping", level: "Expert", desc: "Prioritization, Stakeholder Alignment" },
-          { name: "Agile/Scrum", level: "Expert", desc: "Sprint Planning, Backlog Grooming" },
+          { name: "Recherche Utilisateur", level: "Avancé", desc: "Entretiens, Sondages, Tests d'utilisabilité" },
+          { name: "Stratégie de Croissance", level: "Avancé", desc: "Acquisition, Rétention, Monétisation" },
+          { name: "Roadmapping", level: "Expert", desc: "Priorisation, Alignement des parties prenantes" },
+          { name: "Agile/Scrum", level: "Expert", desc: "Planification de sprint, Gestion du backlog" },
         ]
       },
       diagram: {
@@ -261,6 +270,10 @@ export const translations = {
         experience: "7+ ans d'expérience",
         impact: "Impact mondial",
         users: "Millions d'utilisateurs",
+      },
+      impactCard: {
+        title: "Impact Stratégique",
+        description: "Conception de plateformes utilisées dans des **environnements de crise** et soutien aux systèmes de santé dans **20+ pays**.",
       },
       impactCards: [
         {
