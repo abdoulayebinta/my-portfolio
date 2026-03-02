@@ -56,37 +56,45 @@ export function Hero() {
               {t.hero.headline.part1} <span className="text-gradient">{t.hero.headline.highlight}</span> {t.hero.headline.part2}
             </h1>
 
+            {/* Value Proof Bar */}
+            <div className="flex flex-col gap-2 mb-8 w-full">
+              {t.hero.valueProof.map((proof, index) => (
+                <div key={index} className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                  <span className="text-lg">{proof.split(' ')[0]}</span>
+                  <span>{proof.substring(proof.indexOf(' ') + 1)}</span>
+                </div>
+              ))}
+            </div>
+
             <p
               className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed"
             >
               {renderWithBold(t.hero.subheadline)}
             </p>
 
-            {/* Bold Differentiator / Strategic Impact */}
-            <div className="flex flex-col gap-4 p-6 rounded-xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 mb-10 max-w-xl relative overflow-hidden group">
+            {/* Bold Differentiator */}
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 mb-10 max-w-xl relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="flex items-center gap-3 relative z-10 mb-2">
-                <div className="p-2 rounded-full bg-purple-500/20 text-purple-500">
-                  <Activity size={20} />
-                </div>
-                <h3 className="font-bold text-foreground text-sm uppercase tracking-widest flex items-center gap-2">
+              <div className="p-2 rounded-full bg-purple-500/20 text-purple-500 mt-0.5 relative z-10">
+                <Activity size={20} />
+              </div>
+              <div className="relative z-10">
+                <h3 className="font-bold text-foreground text-xs uppercase tracking-widest mb-1 flex items-center gap-2">
                   {t.hero.impactCard.title}
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 </h3>
-              </div>
-
-              <div className="relative z-10 space-y-2">
-                {t.hero.impactCard.bullets && t.hero.impactCard.bullets.map((bullet, index) => (
-                  <p key={index} className="text-muted-foreground text-sm leading-relaxed">
-                    {renderWithBold(bullet)}
-                  </p>
-                ))}
-                {!t.hero.impactCard.bullets && (
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {renderWithBold(t.hero.impactCard.description)}
-                  </p>
-                )}
+                <div className="space-y-2 mt-2">
+                  {t.hero.impactCard.bullets && t.hero.impactCard.bullets.map((bullet, index) => (
+                    <p key={index} className="text-muted-foreground text-sm leading-relaxed">
+                      {renderWithBold(bullet)}
+                    </p>
+                  ))}
+                  {!t.hero.impactCard.bullets && (
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {renderWithBold(t.hero.impactCard.description)}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -166,33 +174,6 @@ export function Hero() {
             </div>
           </div>
 
-        </div>
-
-        {/* Credibility Strip */}
-        <div className="w-full border-y border-white/5 bg-white/5 backdrop-blur-sm py-8 mb-24 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto px-4">
-            <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest whitespace-nowrap">
-              {t.hero.trustedBy}
-            </p>
-            <div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-              <div className="flex items-center gap-2 group">
-                <HeartPulse className="w-6 h-6 text-blue-500 group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">{t.hero.sectors.healthcare}</span>
-              </div>
-              <div className="flex items-center gap-2 group">
-                <GraduationCap className="w-6 h-6 text-purple-500 group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">{t.hero.sectors.edtech}</span>
-              </div>
-              <div className="flex items-center gap-2 group">
-                <Landmark className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">{t.hero.sectors.government}</span>
-              </div>
-              <div className="flex items-center gap-2 group">
-                <Globe className="w-6 h-6 text-green-500 group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-lg group-hover:text-foreground transition-colors">{t.hero.sectors.ngos}</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Feature Cards - Moved to bottom */}

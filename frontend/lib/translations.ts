@@ -18,11 +18,7 @@ export const translations = {
         part2: "for Canada's Francophone communities.",
       },
       subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+.",
-      valueProof: [
-        "🌍 Platforms supporting millions of learners and educators",
-        "📊 Data-driven products improving engagement and discovery",
-        "🤝 Trusted partner to engineering, research, and public sector stakeholders"
-      ],
+      valueProof: [], 
       cta: {
         caseStudies: "View Case Studies",
         contact: "Contact Me",
@@ -36,6 +32,11 @@ export const translations = {
       impactCard: {
         title: "Strategic Impact",
         description: "Designed platforms used in **crisis environments** and supported health systems across **20+ countries**.",
+        bullets: [
+          "🚀 **Scaled platforms supporting millions** of learners and educators globally.",
+          "📊 **Data-driven products** improving engagement and discovery.",
+          "🤝 **Trusted partner** to engineering, research, and public sector stakeholders."
+        ]
       },
       competencies: "Core AI Competencies",
       cards: {
@@ -143,7 +144,7 @@ export const translations = {
           { name: "API Design", level: "Advanced", desc: "REST, GraphQL, Swagger/OpenAPI" },
           { name: "Data Pipelines", level: "Intermediate", desc: "ETL/ELT, Airflow, Kafka, dbt" },
           { name: "Web Technologies", level: "Intermediate", desc: "React, Next.js, Node.js, Tailwind" },
-          { name: "Outils Dev", level: "Avancé", desc: "Git, Docker, CI/CD, Jira/Linear" },
+          { name: "DevTools", level: "Advanced", desc: "Git, Docker, CI/CD, Jira/Linear" },
         ]
       },
       product: {
@@ -237,9 +238,9 @@ export const translations = {
     hero: {
       openToWork: "Ouvert aux nouvelles opportunités",
       headline: {
-        part1: "Chef de Produit chez TFO dirigeant la stratégie et l'évolution d'IDÉLLO et Boukili, bâtissant",
-        highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
-        part2: "pour les éducateurs et les élèves à travers le Canada.",
+        part1: "Product Manager bâtissant",
+        highlight: "des outils d'apprentissage numériques",
+        part2: "pour les communautés francophones du Canada.",
       },
       subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus.",
       cta: {
