@@ -69,16 +69,16 @@ export const translations = {
       ],
       cards: {
         strategy: {
-          title: "AI Product Strategy",
-          desc: "Driving product vision for Generative AI and ML, moving from experimental pilots to scalable enterprise solutions.",
+          title: "IDÉLLO",
+          desc: "Canada's K–12 French-language platform with nearly 15,000 pieces of educational content including videos, games, podcasts and teaching tools, sorted by subject and grade level.",
         },
         data: {
-          title: "Intelligent Data Systems",
-          desc: "Architecting real-time data platforms that enable critical decision intelligence during global crises and operations.",
+          title: "Boukili",
+          desc: "An immersive, interactive reading app for children ages 4+, with hundreds of illustrated books, multiple reading modes, and teacher/parent dashboards.",
         },
         scale: {
-          title: "Global Scale & Impact",
-          desc: "Scaling data and AI products used by millions across global health and education ecosystems.",
+          title: "WHO Crisis Platforms",
+          desc: "Real-time health dashboards supporting Ministries of Health during global health emergencies across 20+ countries.",
         },
       },
       trustedBy: "Trusted by teams across",
@@ -88,6 +88,15 @@ export const translations = {
         government: "Government",
         ngos: "Global NGOs",
       }
+    },
+    trustedBy: {
+      title: "Trusted By",
+      logos: [
+        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
+        { name: "Ontario Ministry of Education", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
+        { name: "World Health Organization", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
+        { name: "York Region District School Board", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      ]
     },
     affiliations: [
       "Groupe Média TFO",
@@ -316,16 +325,16 @@ export const translations = {
       ],
       cards: {
         strategy: {
-          title: "Stratégie Produit IA",
-          desc: "Pilotage de la vision produit pour l'IA générative et le ML, passant de pilotes expérimentaux à des solutions d'entreprise évolutives.",
+          title: "IDÉLLO",
+          desc: "La plateforme francophone K–12 du Canada avec près de 15 000 contenus éducatifs incluant vidéos, jeux, podcasts et outils pédagogiques, classés par matière et niveau scolaire.",
         },
         data: {
-          title: "Systèmes de Données Intelligents",
-          desc: "Architecture de plateformes de données en temps réel permettant une intelligence décisionnelle critique lors de crises et d'opérations mondiales.",
+          title: "Boukili",
+          desc: "Une application de lecture immersive et interactive pour les enfants de 4 ans et plus, avec des centaines de livres illustrés, plusieurs modes de lecture et des tableaux de bord pour enseignants/parents.",
         },
         scale: {
-          title: "Échelle & Impact Mondial",
-          desc: "Mise à l'échelle de produits de données et d'IA utilisés par des millions de personnes dans les écosystèmes mondiaux de la santé et de l'éducation.",
+          title: "Plateformes de Crise OMS",
+          desc: "Tableaux de bord de santé en temps réel soutenant les ministères de la santé lors d'urgences sanitaires mondiales dans plus de 20 pays.",
         },
       },
       trustedBy: "Reconnu par les équipes de",
@@ -336,11 +345,20 @@ export const translations = {
         ngos: "ONG Mondiales",
       }
     },
+    trustedBy: {
+      title: "Ils nous font confiance",
+      logos: [
+        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
+        { name: "Ministère de l'Éducation de l'Ontario", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
+        { name: "Organisation Mondiale de la Santé", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
+        { name: "Conseil scolaire du district de York", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      ]
+    },
     affiliations: [
       "Groupe Média TFO",
       "Ministère de l'Éducation de l'Ontario",
       "15 000+ Ressources",
-      "Bilingue FR/EN",
+      "Bilingual FR/EN",
       "Ex-OMS"
     ],
     featuredVideo: {
