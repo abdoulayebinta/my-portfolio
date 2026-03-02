@@ -56,12 +56,12 @@ export function Hero() {
               {t.hero.headline.part1} <span className="text-gradient">{t.hero.headline.highlight}</span> {t.hero.headline.part2}
             </h1>
 
-            {/* Value Proof Bar */}
-            <div className="flex flex-col gap-2 mb-8 w-full">
-              {t.hero.valueProof.map((proof, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                  <span className="text-lg">{proof.split(' ')[0]}</span>
-                  <span>{proof.substring(proof.indexOf(' ') + 1)}</span>
+            {/* Affiliation Badges (Replaces old Social Proof) */}
+            <div className="flex flex-wrap gap-3 mb-8">
+              {t.affiliations.map((badge, index) => (
+                <div key={index} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary/50 border border-border text-muted-foreground text-sm font-medium hover:border-purple-500/30 hover:text-foreground transition-colors cursor-default">
+                  <CheckCircle2 size={14} className="text-purple-500" />
+                  <span>{badge}</span>
                 </div>
               ))}
             </div>
@@ -72,29 +72,31 @@ export function Hero() {
               {renderWithBold(t.hero.subheadline)}
             </p>
 
-            {/* Bold Differentiator */}
-            <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 mb-10 max-w-xl relative overflow-hidden group">
+            {/* Bold Differentiator / Strategic Impact */}
+            <div className="flex flex-col gap-4 p-6 rounded-xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 mb-10 max-w-xl relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="p-2 rounded-full bg-purple-500/20 text-purple-500 mt-0.5 relative z-10">
-                <Activity size={20} />
-              </div>
-              <div className="relative z-10">
-                <h3 className="font-bold text-foreground text-xs uppercase tracking-widest mb-1 flex items-center gap-2">
+              
+              <div className="flex items-center gap-3 relative z-10 mb-2">
+                <div className="p-2 rounded-full bg-purple-500/20 text-purple-500">
+                  <Activity size={20} />
+                </div>
+                <h3 className="font-bold text-foreground text-sm uppercase tracking-widest flex items-center gap-2">
                   {t.hero.impactCard.title}
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 </h3>
-                <div className="space-y-2 mt-2">
-                  {t.hero.impactCard.bullets && t.hero.impactCard.bullets.map((bullet, index) => (
-                    <p key={index} className="text-muted-foreground text-sm leading-relaxed">
-                      {renderWithBold(bullet)}
-                    </p>
-                  ))}
-                  {!t.hero.impactCard.bullets && (
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {renderWithBold(t.hero.impactCard.description)}
-                    </p>
-                  )}
-                </div>
+              </div>
+
+              <div className="relative z-10 space-y-2">
+                {t.hero.impactCard.bullets && t.hero.impactCard.bullets.map((bullet, index) => (
+                  <p key={index} className="text-muted-foreground text-sm leading-relaxed">
+                    {renderWithBold(bullet)}
+                  </p>
+                ))}
+                {!t.hero.impactCard.bullets && (
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {renderWithBold(t.hero.impactCard.description)}
+                  </p>
+                )}
               </div>
             </div>
 
