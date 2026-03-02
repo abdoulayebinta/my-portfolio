@@ -17,12 +17,8 @@ export const translations = {
         highlight: "digital learning tools",
         part2: "for Canada's Francophone communities.",
       },
-      subheadline: "Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+.",
-      valueProof: [
-        "🌍 Platforms supporting millions of learners and educators",
-        "📊 Data-driven products improving engagement and discovery",
-        "🤝 Trusted partner to engineering, research, and public sector stakeholders"
-      ],
+      subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+.",
+      valueProof: [], // Removed from here as requested
       cta: {
         caseStudies: "View Case Studies",
         contact: "Contact Me",
@@ -36,6 +32,11 @@ export const translations = {
       impactCard: {
         title: "Strategic Impact",
         description: "Designed platforms used in **crisis environments** and supported health systems across **20+ countries**.",
+        bullets: [
+          "🚀 **Scaled platforms supporting millions** of learners and educators globally.",
+          "📊 **Data-driven products** improving engagement and discovery.",
+          "🤝 **Trusted partner** to engineering, research, and public sector stakeholders."
+        ]
       },
       competencies: "Core AI Competencies",
       cards: {
@@ -234,7 +235,7 @@ export const translations = {
         highlight: "des outils d'apprentissage numériques",
         part2: "pour les communautés francophones du Canada.",
       },
-      subheadline: "Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus.",
+      subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus.",
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Me contacter",
