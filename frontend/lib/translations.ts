@@ -89,6 +89,15 @@ export const translations = {
         ngos: "Global NGOs",
       }
     },
+    trustedBy: {
+      title: "Trusted By",
+      logos: [
+        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
+        { name: "Ontario Ministry of Education", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
+        { name: "World Health Organization", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
+        { name: "York Region District School Board", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      ]
+    },
     affiliations: [
       "Groupe Média TFO",
       "Ontario Ministry of Education",
@@ -148,8 +157,8 @@ export const translations = {
       subtitle: "Bridging the gap between complex engineering and strategic product value.",
       categories: {
         ai: "AI & Machine Learning",
-        engineering: "Data & Ingénierie",
-        product: "Science Produit"
+        engineering: "Data & Engineering",
+        product: "Product Science"
       },
       ai: {
         title: "AI & ML Competencies",
@@ -228,11 +237,11 @@ export const translations = {
         value: "Schedule 15 mins"
       },
       form: {
-        name: "Nom",
-        namePlaceholder: "Jean Dupont",
+        name: "Name",
+        namePlaceholder: "John Doe",
         email: "Email",
-        emailPlaceholder: "jean@entreprise.com",
-        subject: "Sujet",
+        emailPlaceholder: "john@company.com",
+        subject: "Subject",
         subjects: {
           recruiting: "Recrutement / Embauche",
           collaboration: "Collaboration",
@@ -335,6 +344,15 @@ export const translations = {
         government: "Gouvernement",
         ngos: "ONG Mondiales",
       }
+    },
+    trustedBy: {
+      title: "Ils nous font confiance",
+      logos: [
+        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
+        { name: "Ministère de l'Éducation de l'Ontario", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
+        { name: "Organisation Mondiale de la Santé", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
+        { name: "Conseil scolaire du district de York", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      ]
     },
     affiliations: [
       "Groupe Média TFO",
