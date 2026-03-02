@@ -74,6 +74,14 @@ export function Hero() {
               {renderWithBold(t.hero.subheadline)}
             </p>
 
+            {/* Strategic Impact Header */}
+            <div className="flex items-center gap-2 mb-4">
+              <Activity size={16} className="text-purple-500" />
+              <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                {t.hero.impactCard.title}
+              </span>
+            </div>
+
             {/* Split Strategic Impact Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 w-full">
               {t.hero.impactCards?.map((card, index) => (
@@ -153,7 +161,7 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 mix-blend-multiply" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-blue-900/20 z-10 mix-blend-overlay" />
                 
-                {/* Professional Image - Using GitHub profile as fallback since Imgur link was broken */}
+                {/* Placeholder Professional Image - Using a darker, more dramatic placeholder */}
                 <Image 
                   src="https://github.com/abdoulayebinta.png" 
                   alt="Abdoulaye Bah - AI Product Manager" 
@@ -170,7 +178,7 @@ export function Hero() {
                     </div>
                     <div>
                       <p className="text-white font-semibold text-sm tracking-wide">Abdoulaye Bah</p>
-                      <p className="text-white/60 text-xs font-medium uppercase tracking-wider">AI Product Leader</p>
+                      <p className="text-white/60 text-xs font-medium uppercase tracking-wider">AI Product Manager</p>
                     </div>
                   </div>
                 </div>
@@ -196,7 +204,7 @@ export function Hero() {
 
           <div className="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 bg-secondary/20 backdrop-blur-sm">
             <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 text-blue-500 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 shadow-lg shadow-blue-500/0 group-hover:shadow-blue-500/30">
-              <BookOpen size={28} />
+              <Database size={28} />
             </div>
             <h3 className="font-bold text-lg mb-3 group-hover:text-blue-400 transition-colors">{t.hero.cards.data.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
