@@ -124,12 +124,17 @@ export function Hero() {
               </div>
               
               {/* Core Competencies Strip */}
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-border/30">
-                {t.hero.coreCompetencies?.map((item, index) => (
-                  <span key={index} className="text-[10px] font-medium text-muted-foreground/70 uppercase tracking-wider px-2 py-1 bg-secondary/20 rounded border border-transparent hover:border-purple-500/20 hover:text-purple-500 transition-colors cursor-default">
-                    {item}
-                  </span>
-                ))}
+              <div className="pt-4 border-t border-border/30">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">
+                  {t.hero.coreCompetenciesTitle}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {t.hero.coreCompetencies?.map((item, index) => (
+                    <span key={index} className="text-[10px] font-medium text-muted-foreground/70 uppercase tracking-wider px-2 py-1 bg-secondary/20 rounded border border-transparent hover:border-purple-500/20 hover:text-purple-500 transition-colors cursor-default">
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

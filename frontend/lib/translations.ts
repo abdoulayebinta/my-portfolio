@@ -51,6 +51,7 @@ export const translations = {
         }
       ],
       competencies: "Currently Exploring",
+      coreCompetenciesTitle: "Core Competencies",
       exploring: [
         "LLM-driven content discovery",
         "AI copilots for educators",
@@ -147,8 +148,8 @@ export const translations = {
       subtitle: "Bridging the gap between complex engineering and strategic product value.",
       categories: {
         ai: "AI & Machine Learning",
-        engineering: "Data & Engineering",
-        product: "Product Science"
+        engineering: "Data & Ingénierie",
+        product: "Science Produit"
       },
       ai: {
         title: "AI & ML Competencies",
@@ -180,10 +181,10 @@ export const translations = {
         items: [
           { name: "A/B Testing", level: "Expert", desc: "Experiment Design, Statistical Significance" },
           { name: "Product Analytics", level: "Expert", desc: "Amplitude, Mixpanel, SQL, Tableau" },
-          { name: "Recherche Utilisateur", level: "Avancé", desc: "Entretiens, Sondages, Tests d'utilisabilité" },
-          { name: "Stratégie de Croissance", level: "Avancé", desc: "Acquisition, Rétention, Monétisation" },
-          { name: "Roadmapping", level: "Expert", desc: "Priorisation, Alignement des parties prenantes" },
-          { name: "Agile/Scrum", level: "Expert", desc: "Planification de sprint, Gestion du backlog" },
+          { name: "User Research", level: "Advanced", desc: "Interviews, Surveys, Usability Testing" },
+          { name: "Growth Strategy", level: "Advanced", desc: "Acquisition, Retention, Monetization" },
+          { name: "Roadmapping", level: "Expert", desc: "Prioritization, Stakeholder Alignment" },
+          { name: "Agile/Scrum", level: "Expert", desc: "Sprint Planning, Backlog Grooming" },
         ]
       },
       diagram: {
@@ -227,16 +228,16 @@ export const translations = {
         value: "Schedule 15 mins"
       },
       form: {
-        name: "Name",
-        namePlaceholder: "John Doe",
+        name: "Nom",
+        namePlaceholder: "Jean Dupont",
         email: "Email",
-        emailPlaceholder: "john@company.com",
-        subject: "Subject",
+        emailPlaceholder: "jean@entreprise.com",
+        subject: "Sujet",
         subjects: {
-          recruiting: "Recruiting / Hiring",
+          recruiting: "Recrutement / Embauche",
           collaboration: "Collaboration",
-          networking: "Networking",
-          other: "Other"
+          networking: "Réseautage",
+          other: "Autre"
         },
         message: "Message",
         messagePlaceholder: "Hi, I'd like to discuss...",
@@ -297,6 +298,7 @@ export const translations = {
         }
       ],
       competencies: "Actuellement en exploration",
+      coreCompetenciesTitle: "Compétences Clés",
       exploring: [
         "Découverte de contenu pilotée par LLM",
         "Copilotes IA pour les éducateurs",
