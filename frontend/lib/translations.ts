@@ -13,12 +13,12 @@ export const translations = {
     hero: {
       openToWork: "Open to new opportunities",
       headline: {
-        part1: "Product Manager building",
-        highlight: "digital learning tools",
-        part2: "for Canada's Francophone communities.",
+        part1: "Product Manager at TFO leading IDÉLLO and Boukili, building",
+        highlight: "intelligent and data-driven learning platforms",
+        part2: "for educators and students across Canada.",
       },
       subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+. Before that I was at the **WHO** building crisis response systems.",
-      valueProof: [], // Removed from here as requested
+      valueProof: [], 
       cta: {
         caseStudies: "View Case Studies",
         contact: "Contact Me",
@@ -38,7 +38,13 @@ export const translations = {
           "🤝 **Trusted partner** to engineering, research, and public sector stakeholders."
         ]
       },
-      competencies: "Core AI Competencies",
+      competencies: "Currently Exploring",
+      exploring: [
+        "LLM-driven content discovery",
+        "AI copilots for educators",
+        "Personalization and learning analytics",
+        "Responsible and trustworthy AI in education"
+      ],
       cards: {
         strategy: {
           title: "AI Product Strategy",
@@ -208,8 +214,8 @@ export const translations = {
         subjects: {
           recruiting: "Recruiting / Hiring",
           collaboration: "Collaboration",
-          networking: "Networking",
-          other: "Other"
+          networking: "Réseautage",
+          other: "Autre"
         },
         message: "Message",
         messagePlaceholder: "Hi, I'd like to discuss...",
@@ -219,7 +225,7 @@ export const translations = {
     footer: {
       tagline: "Building the future of AI products. Focused on strategy, systems thinking, and human-centric design.",
       navigation: "Navigation",
-      connect: "Connexion",
+      connect: "Connect",
       rights: "All rights reserved.",
       builtWith: "Designed & Built with Next.js & Tailwind"
     }
@@ -238,9 +244,9 @@ export const translations = {
     hero: {
       openToWork: "Ouvert aux nouvelles opportunités",
       headline: {
-        part1: "Product Manager bâtissant",
-        highlight: "des outils d'apprentissage numériques",
-        part2: "pour les communautés francophones du Canada.",
+        part1: "Chef de Produit chez TFO dirigeant la stratégie et l'évolution d'IDÉLLO et Boukili, bâtissant",
+        highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
+        part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
       subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Auparavant, j'étais à l'**OMS** pour construire des systèmes de réponse aux crises.",
       cta: {
@@ -257,7 +263,13 @@ export const translations = {
         title: "Impact Stratégique",
         description: "Conception de plateformes utilisées dans des **environnements de crise** et soutien aux systèmes de santé dans **20+ pays**.",
       },
-      competencies: "Compétences Clés en IA",
+      competencies: "Actuellement en exploration",
+      exploring: [
+        "Découverte de contenu pilotée par LLM",
+        "Copilotes IA pour les éducateurs",
+        "Personnalisation et analyse de l'apprentissage",
+        "IA responsable et digne de confiance en éducation"
+      ],
       cards: {
         strategy: {
           title: "Stratégie Produit IA",

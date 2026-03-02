@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity } from "lucide-react";
+import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity, Search, BarChart3, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { BackgroundAnimation } from "@/components/ui/background-animation";
 import { useLanguage } from "@/context/language-context";
@@ -21,6 +21,8 @@ export function Hero() {
       return part;
     });
   };
+
+  const exploringIcons = [Search, Bot, BarChart3, ShieldCheck];
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
@@ -56,7 +58,7 @@ export function Hero() {
               {t.hero.headline.part1} <span className="text-gradient">{t.hero.headline.highlight}</span> {t.hero.headline.part2}
             </h1>
 
-            {/* Affiliation Badges (Replaces old Social Proof) */}
+            {/* Affiliation Badges */}
             <div className="flex flex-wrap gap-3 mb-8">
               {t.affiliations.map((badge, index) => (
                 <div key={index} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary/50 border border-border text-muted-foreground text-sm font-medium hover:border-purple-500/30 hover:text-foreground transition-colors cursor-default">
@@ -116,24 +118,21 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* Core AI Competencies */}
+            {/* Currently Exploring */}
             <div className="w-full border-t border-border/50 pt-6">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">
                 {t.hero.competencies}
               </p>
               <div className="flex flex-wrap gap-3">
-                {[
-                  { name: "LLMs & GenAI", icon: Bot },
-                  { name: "Decision Intelligence", icon: Brain },
-                  { name: "Predictive Systems", icon: Zap },
-                  { name: "RAG Architecture", icon: Layers },
-                  { name: "Enterprise AI", icon: Network }
-                ].map((tech) => (
-                  <div key={tech.name} className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary/40 border border-white/5 hover:border-purple-500/30 hover:bg-secondary/60 transition-all duration-300 group cursor-default">
-                    <tech.icon size={14} className="text-purple-500 group-hover:text-purple-400 transition-colors" />
-                    <span className="text-xs font-medium text-foreground/80 group-hover:text-foreground transition-colors">{tech.name}</span>
-                  </div>
-                ))}
+                {t.hero.exploring?.map((item, index) => {
+                  const Icon = exploringIcons[index % exploringIcons.length];
+                  return (
+                    <div key={index} className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary/40 border border-white/5 hover:border-purple-500/30 hover:bg-secondary/60 transition-all duration-300 group cursor-default">
+                      <Icon size={14} className="text-purple-500 group-hover:text-purple-400 transition-colors" />
+                      <span className="text-xs font-medium text-foreground/80 group-hover:text-foreground transition-colors">{item}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
