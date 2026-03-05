@@ -96,6 +96,15 @@ export const translations = {
         ngos: "Global NGOs",
       }
     },
+    trustedBy: {
+      title: "Trusted By",
+      logos: [
+        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
+        { name: "Ontario Ministry of Education", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
+        { name: "World Health Organization", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
+        { name: "York Region District School Board", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      ]
+    },
     affiliations: [
       "Groupe Média TFO",
       "Ontario Ministry of Education",
@@ -179,7 +188,7 @@ export const translations = {
           { name: "API Design", level: "Advanced", desc: "REST, GraphQL, Swagger/OpenAPI" },
           { name: "Data Pipelines", level: "Intermediate", desc: "ETL/ELT, Airflow, Kafka, dbt" },
           { name: "Web Technologies", level: "Intermediate", desc: "React, Next.js, Node.js, Tailwind" },
-          { name: "Outils Dev", level: "Avancé", desc: "Git, Docker, CI/CD, Jira/Linear" },
+          { name: "DevTools", level: "Advanced", desc: "Git, Docker, CI/CD, Jira/Linear" },
         ]
       },
       product: {
@@ -241,10 +250,10 @@ export const translations = {
         emailPlaceholder: "john@company.com",
         subject: "Subject",
         subjects: {
-          recruiting: "Recruiting / Hiring",
+          recruiting: "Recrutement / Embauche",
           collaboration: "Collaboration",
-          networking: "Networking",
-          other: "Other"
+          networking: "Réseautage",
+          other: "Autre"
         },
         message: "Message",
         messagePlaceholder: "Hi, I'd like to discuss...",
@@ -254,7 +263,7 @@ export const translations = {
     footer: {
       tagline: "Building the future of AI products. Focused on strategy, systems thinking, and human-centric design.",
       navigation: "Navigation",
-      connect: "Connect",
+      connect: "Connexion",
       rights: "All rights reserved.",
       builtWith: "Designed & Built with Next.js & Tailwind"
     }
@@ -350,6 +359,15 @@ export const translations = {
         government: "Gouvernement",
         ngos: "ONG Mondiales",
       }
+    },
+    trustedBy: {
+      title: "Ils nous font confiance",
+      logos: [
+        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
+        { name: "Ministère de l'Éducation de l'Ontario", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
+        { name: "Organisation Mondiale de la Santé", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
+        { name: "Conseil scolaire du district de York", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      ]
     },
     affiliations: [
       "Groupe Média TFO",
