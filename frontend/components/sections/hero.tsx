@@ -13,6 +13,7 @@ export function Hero() {
 
   // Helper to parse markdown-like bold syntax
   const renderWithBold = (text: string) => {
+    if (!text) return null;
     const parts = text.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, i) => {
       if (part.startsWith('**') && part.endsWith('**')) {
@@ -49,6 +50,16 @@ export function Hero() {
               {t.hero.headline.part1} <span className="text-gradient">{t.hero.headline.highlight}</span> {t.hero.headline.part2}
             </h1>
 
+            {/* Affiliation Badges */}
+            <div className="flex flex-wrap gap-3 mb-8">
+              {t.affiliations.map((badge, index) => (
+                <div key={index} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary/50 border border-border text-muted-foreground text-sm font-medium hover:border-purple-500/30 hover:text-foreground transition-colors cursor-default">
+                  <CheckCircle2 size={14} className="text-purple-500" />
+                  <span>{badge}</span>
+                </div>
+              ))}
+            </div>
+
             <p
               className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed pl-4 border-l-2 border-purple-500/50"
             >
@@ -59,12 +70,19 @@ export function Hero() {
               {renderWithBold(t.hero.bio)}
             </p>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-6 mb-10 w-full max-w-lg">
+            {/* Premium Stats Grid */}
+            <div className="grid grid-cols-2 gap-4 mb-10 w-full max-w-lg">
               {t.hero.stats?.map((stat, index) => (
-                <div key={index} className="flex flex-col">
-                  <span className="text-3xl font-bold text-foreground">{stat.value}</span>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{stat.label}</span>
+                <div 
+                  key={index} 
+                  className="flex flex-col items-center justify-center p-6 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 border border-white/5 hover:border-purple-500/20 transition-all duration-300 group"
+                >
+                  <span className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500 mb-1 group-hover:scale-110 transition-transform duration-300">
+                    {stat.value}
+                  </span>
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest text-center">
+                    {stat.label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -90,6 +108,26 @@ export function Hero() {
               </a>
             </div>
 
+            {/* Core AI Competencies */}
+            <div className="w-full border-t border-border/50 pt-6">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">
+                {t.hero.competencies}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { name: "LLMs & GenAI", icon: Bot },
+                  { name: "Decision Intelligence", icon: Brain },
+                  { name: "Predictive Systems", icon: Zap },
+                  { name: "RAG Architecture", icon: Layers },
+                  { name: "Enterprise AI", icon: Network }
+                ].map((tech) => (
+                  <div key={tech.name} className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary/40 border border-white/5 hover:border-purple-500/30 hover:bg-secondary/60 transition-all duration-300 group cursor-default">
+                    <tech.icon size={14} className="text-purple-500 group-hover:text-purple-400 transition-colors" />
+                    <span className="text-xs font-medium text-foreground/80 group-hover:text-foreground transition-colors">{tech.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Professional Photo */}
