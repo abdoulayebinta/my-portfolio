@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity, Search, BarChart3, ShieldCheck, BookOpen } from "lucide-react";
+import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity, Search, BarChart3, ShieldCheck, BookOpen, Download, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { BackgroundAnimation } from "@/components/ui/background-animation";
 import { useLanguage } from "@/context/language-context";
@@ -49,34 +49,22 @@ export function Hero() {
               {t.hero.headline.part1} <span className="text-gradient">{t.hero.headline.highlight}</span> {t.hero.headline.part2}
             </h1>
 
-            {/* Affiliation Badges */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              {t.affiliations.map((badge, index) => (
-                <div key={index} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary/50 border border-border text-muted-foreground text-sm font-medium hover:border-purple-500/30 hover:text-foreground transition-colors cursor-default">
-                  <CheckCircle2 size={14} className="text-purple-500" />
-                  <span>{badge}</span>
-                </div>
-              ))}
-            </div>
-
             <p
-              className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed"
+              className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed pl-4 border-l-2 border-purple-500/50"
             >
               {renderWithBold(t.hero.subheadline)}
             </p>
 
-            {/* Split Strategic Impact Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 w-full">
-              {t.hero.impactCards?.map((card, index) => (
-                <div key={index} className="flex flex-col gap-3 p-5 rounded-xl bg-gradient-to-br from-purple-500/5 to-blue-500/5 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 group">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-widest text-purple-500">{card.title}</span>
-                    {index === 0 && <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />}
-                  </div>
-                  <h3 className="font-bold text-foreground text-sm">{card.subtitle}</h3>
-                  <p className="text-muted-foreground text-xs leading-relaxed">
-                    {card.description}
-                  </p>
+            <p className="text-lg text-foreground/90 mb-8 max-w-xl leading-relaxed">
+              {renderWithBold(t.hero.bio)}
+            </p>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-6 mb-10 w-full max-w-lg">
+              {t.hero.stats?.map((stat, index) => (
+                <div key={index} className="flex flex-col">
+                  <span className="text-3xl font-bold text-foreground">{stat.value}</span>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -90,44 +78,18 @@ export function Hero() {
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="#contact" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base h-12 px-8 bg-background/50 backdrop-blur-sm hover:bg-background/80">
-                  {t.hero.cta.contact}
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base h-12 px-8 bg-background/50 backdrop-blur-sm hover:bg-background/80 gap-2">
+                  {t.hero.cta.contact} <ArrowRight className="w-4 h-4 -rotate-45" />
                 </Button>
-              </Link>
+              </a>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button size="lg" variant="ghost" className="w-full sm:w-auto text-base h-12 px-8 gap-2">
+                  {t.hero.cta.resume} <Download className="w-4 h-4" />
+                </Button>
+              </a>
             </div>
 
-            {/* Currently Exploring */}
-            <div className="w-full border-t border-border/50 pt-6">
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">
-                {t.hero.competencies}
-              </p>
-              <div className="flex flex-wrap gap-3 mb-6">
-                {t.hero.exploring?.map((item, index) => {
-                  const Icon = exploringIcons[index % exploringIcons.length];
-                  return (
-                    <div key={index} className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary/40 border border-white/5 hover:border-purple-500/30 hover:bg-secondary/60 transition-all duration-300 group cursor-default">
-                      <Icon size={14} className="text-purple-500 group-hover:text-purple-400 transition-colors" />
-                      <span className="text-xs font-medium text-foreground/80 group-hover:text-foreground transition-colors">{item}</span>
-                    </div>
-                  );
-                })}
-              </div>
-              
-              {/* Core Competencies Strip */}
-              <div className="pt-4 border-t border-border/30">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">
-                  {t.hero.coreCompetenciesTitle}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {t.hero.coreCompetencies?.map((item, index) => (
-                    <span key={index} className="text-[10px] font-medium text-muted-foreground/70 uppercase tracking-wider px-2 py-1 bg-secondary/20 rounded border border-transparent hover:border-purple-500/20 hover:text-purple-500 transition-colors cursor-default">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Professional Photo */}
