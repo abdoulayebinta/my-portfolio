@@ -3,7 +3,7 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code2, Globe2, HeartPulse, Lightbulb, BrainCircuit } from "lucide-react";
+import { ArrowRight, Code2, Globe2, HeartPulse, Lightbulb, BrainCircuit, Github } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 
 export function AboutStory() {
@@ -101,9 +101,11 @@ export function AboutStory() {
             {renderWithBold(t.about.philosophy.text)}
           </p>
           <div className="flex justify-center gap-4">
-            <Button variant="outline" className="rounded-full">
-              {t.about.philosophy.resumeBtn}
-            </Button>
+            <a href="https://github.com/abdoulayebinta" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="rounded-full gap-2">
+                {t.about.philosophy.githubBtn} <Github className="w-4 h-4" />
+              </Button>
+            </a>
             <Button variant="default" className="rounded-full bg-foreground text-background hover:bg-foreground/90">
               {t.about.philosophy.chatBtn} <ArrowRight className="ml-2 w-4 h-4" />
             </Button>

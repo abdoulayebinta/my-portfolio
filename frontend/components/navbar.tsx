@@ -47,7 +47,7 @@ export function Navbar() {
         { name: t.nav.videos, href: "/#insights" }
       ]
     },
-    { name: t.nav.resume, href: "/resume.pdf" },
+    { name: t.nav.github, href: "https://github.com/abdoulayebinta" },
     { name: t.nav.contact, href: "/#contact" },
   ];
 
@@ -81,6 +81,8 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
+                    target={item.name === t.nav.github ? "_blank" : undefined}
+                    rel={item.name === t.nav.github ? "noopener noreferrer" : undefined}
                     className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
                   >
                     {item.name}
@@ -181,6 +183,8 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
+                    target={item.name === t.nav.github ? "_blank" : undefined}
+                    rel={item.name === t.nav.github ? "noopener noreferrer" : undefined}
                     onClick={() => setIsOpen(false)}
                     className="text-base font-medium text-foreground hover:text-primary transition-colors py-3 px-2 rounded-md hover:bg-secondary/30"
                   >

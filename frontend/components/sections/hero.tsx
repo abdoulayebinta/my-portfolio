@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity, Search, BarChart3, ShieldCheck, BookOpen, Download, Linkedin } from "lucide-react";
+import { ArrowRight, Brain, Database, Globe, Sparkles, CheckCircle2, HeartPulse, GraduationCap, Landmark, Cpu, Network, Zap, Layers, Bot, Activity, Search, BarChart3, ShieldCheck, BookOpen, Download, Linkedin, Github } from "lucide-react";
 import Link from "next/link";
 import { BackgroundAnimation } from "@/components/ui/background-animation";
 import { useLanguage } from "@/context/language-context";
@@ -101,9 +101,9 @@ export function Hero() {
                   {t.hero.cta.contact} <ArrowRight className="w-4 h-4 -rotate-45" />
                 </Button>
               </a>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a href="https://github.com/abdoulayebinta" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button size="lg" variant="ghost" className="w-full sm:w-auto text-base h-12 px-8 gap-2">
-                  {t.hero.cta.resume} <Download className="w-4 h-4" />
+                  {t.hero.cta.resume} <Github className="w-4 h-4" />
                 </Button>
               </a>
             </div>

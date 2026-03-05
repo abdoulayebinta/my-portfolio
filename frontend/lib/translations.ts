@@ -7,7 +7,7 @@ export const translations = {
       insights: "Insights",
       blogs: "Blogs",
       videos: "Videos",
-      resume: "Resume",
+      github: "Github",
       contact: "Contact",
     },
     hero: {
@@ -28,7 +28,7 @@ export const translations = {
       cta: {
         caseStudies: "View Case Studies",
         contact: "Connect on LinkedIn",
-        resume: "Download Resume"
+        github: "View Github"
       },
       badges: {
         who: "Ex-World Health Organization",
@@ -181,7 +181,7 @@ export const translations = {
       philosophy: {
         title: "Why I do what I do",
         text: "\"Whether it's a doctor in a remote clinic or an executive in a boardroom, the challenge is the same: **too much noise, not enough signal.** My passion is building the AI & data layer that turns complexity into clarity.\"",
-        resumeBtn: "Read my Resume",
+        githubBtn: "View my Github",
         chatBtn: "Let's Chat"
       }
     },
@@ -302,7 +302,7 @@ export const translations = {
       insights: "Idées",
       blogs: "Articles",
       videos: "Vidéos",
-      resume: "CV",
+      github: "Github",
       contact: "Contact",
     },
     hero: {
@@ -323,7 +323,7 @@ export const translations = {
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Connectons-nous sur LinkedIn",
-        resume: "Télécharger le CV"
+        resume: "Voir Github"
       },
       badges: {
         who: "Ex-Organisation Mondiale de la Santé",
@@ -387,38 +387,12 @@ export const translations = {
       }
     },
     trustedBy: {
-      title: "Organisations pour lesquelles j'ai construit des produits",
-      items: [
-        { 
-          name: "Groupe Média TFO", 
-          location: "Toronto, ON · Actuel",
-          description: "Direction IDÉLLO & Boukili"
-        },
-        { 
-          name: "Ministère de l'Éducation de l'Ontario", 
-          location: "Partenaire Mandat IDÉLLO",
-          description: "Alignement Stratégique"
-        },
-        { 
-          name: "Organisation Mondiale de la Santé", 
-          location: "Genève, Suisse",
-          description: "Systèmes de Réponse aux Crises"
-        },
-        { 
-          name: "eHealth Africa", 
-          location: "Libéria · Nigéria",
-          description: "Plateformes de Données de Santé"
-        },
-        { 
-          name: "Fondation Bill & Melinda Gates", 
-          location: "Campagne de Vaccination Guinée",
-          description: "Collecte de Données Terrain"
-        },
-        {
-          name: "Savics",
-          location: "Belgique",
-          description: "Innovation Tech Santé"
-        }
+      title: "Ils nous font confiance",
+      logos: [
+        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
+        { name: "Ministère de l'Éducation de l'Ontario", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
+        { name: "Organisation Mondiale de la Santé", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
+        { name: "Conseil scolaire du district de York", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
       ]
     },
     affiliations: [
@@ -471,7 +445,7 @@ export const translations = {
       philosophy: {
         title: "Pourquoi je fais ce que je fais",
         text: "\"Que ce soit un médecin dans une clinique isolée ou un cadre dans une salle de conseil, le défi est le même : **trop de bruit, pas assez de signal.** Ma passion est de construire la couche IA & données qui transforme la complexité en clarté.\"",
-        resumeBtn: "Lire mon CV",
+        githubBtn: "Voir mon Github",
         chatBtn: "Discutons"
       }
     },
