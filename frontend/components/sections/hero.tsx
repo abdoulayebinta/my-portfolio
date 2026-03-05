@@ -13,6 +13,7 @@ export function Hero() {
 
   // Helper to parse markdown-like bold syntax
   const renderWithBold = (text: string) => {
+    if (!text) return null;
     const parts = text.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, i) => {
       if (part.startsWith('**') && part.endsWith('**')) {
