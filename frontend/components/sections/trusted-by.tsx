@@ -2,31 +2,34 @@
 
 import React from "react";
 import { useLanguage } from "@/context/language-context";
-import Image from "next/image";
 
 export function TrustedBy() {
   const { t } = useLanguage();
 
   return (
-    <section className="w-full border-y border-border/50 bg-secondary/20 backdrop-blur-sm py-12">
+    <section className="w-full py-16 bg-background border-b border-border/50">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-8">
+        <div className="text-center mb-12">
           <p className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">
             {t.trustedBy.title}
           </p>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-          {t.trustedBy.logos.map((logo, index) => (
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {t.trustedBy.items.map((item, index) => (
             <div 
               key={index} 
-              className="relative h-16 w-32 md:w-40 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500 p-2 rounded-lg dark:bg-white/90 dark:hover:bg-white"
+              className="flex flex-col items-center justify-center p-8 rounded-xl bg-secondary/10 border border-border hover:border-purple-500/30 hover:bg-secondary/20 transition-all duration-300 group text-center h-full"
             >
-              <Image 
-                src={logo.src} 
-                alt={logo.name} 
-                fill
-                className="object-contain p-1"
-              />
+              <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-purple-500 transition-colors">
+                {item.name}
+              </h3>
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
+                {item.location}
+              </p>
+              <p className="text-sm text-muted-foreground/80">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>

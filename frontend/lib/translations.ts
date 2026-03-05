@@ -97,12 +97,38 @@ export const translations = {
       }
     },
     trustedBy: {
-      title: "Trusted By",
-      logos: [
-        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
-        { name: "Ontario Ministry of Education", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
-        { name: "World Health Organization", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
-        { name: "York Region District School Board", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      title: "Organisations I've Built Products For",
+      items: [
+        { 
+          name: "Groupe Média TFO", 
+          location: "Toronto, ON · Current",
+          description: "Leading IDÉLLO & Boukili"
+        },
+        { 
+          name: "Ontario Ministry of Education", 
+          location: "IDÉLLO Mandate Partner",
+          description: "Strategic Alignment"
+        },
+        { 
+          name: "World Health Organization", 
+          location: "Geneva, Switzerland",
+          description: "Crisis Response Systems"
+        },
+        { 
+          name: "eHealth Africa", 
+          location: "Liberia · Nigeria",
+          description: "Health Data Platforms"
+        },
+        { 
+          name: "Bill & Melinda Gates Foundation", 
+          location: "Guinea Vaccination Campaign",
+          description: "Field Data Collection"
+        },
+        {
+          name: "Savics",
+          location: "Belgium",
+          description: "Health Tech Innovation"
+        }
       ]
     },
     affiliations: [
@@ -250,10 +276,10 @@ export const translations = {
         emailPlaceholder: "john@company.com",
         subject: "Subject",
         subjects: {
-          recruiting: "Recrutement / Embauche",
+          recruiting: "Recruiting / Hiring",
           collaboration: "Collaboration",
-          networking: "Réseautage",
-          other: "Autre"
+          networking: "Networking",
+          other: "Other"
         },
         message: "Message",
         messagePlaceholder: "Hi, I'd like to discuss...",
@@ -263,7 +289,7 @@ export const translations = {
     footer: {
       tagline: "Building the future of AI products. Focused on strategy, systems thinking, and human-centric design.",
       navigation: "Navigation",
-      connect: "Connexion",
+      connect: "Connect",
       rights: "All rights reserved.",
       builtWith: "Designed & Built with Next.js & Tailwind"
     }
@@ -361,12 +387,38 @@ export const translations = {
       }
     },
     trustedBy: {
-      title: "Ils nous font confiance",
-      logos: [
-        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
-        { name: "Ministère de l'Éducation de l'Ontario", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
-        { name: "Organisation Mondiale de la Santé", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
-        { name: "Conseil scolaire du district de York", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      title: "Organisations pour lesquelles j'ai construit des produits",
+      items: [
+        { 
+          name: "Groupe Média TFO", 
+          location: "Toronto, ON · Actuel",
+          description: "Direction IDÉLLO & Boukili"
+        },
+        { 
+          name: "Ministère de l'Éducation de l'Ontario", 
+          location: "Partenaire Mandat IDÉLLO",
+          description: "Alignement Stratégique"
+        },
+        { 
+          name: "Organisation Mondiale de la Santé", 
+          location: "Genève, Suisse",
+          description: "Systèmes de Réponse aux Crises"
+        },
+        { 
+          name: "eHealth Africa", 
+          location: "Libéria · Nigéria",
+          description: "Plateformes de Données de Santé"
+        },
+        { 
+          name: "Fondation Bill & Melinda Gates", 
+          location: "Campagne de Vaccination Guinée",
+          description: "Collecte de Données Terrain"
+        },
+        {
+          name: "Savics",
+          location: "Belgique",
+          description: "Innovation Tech Santé"
+        }
       ]
     },
     affiliations: [
