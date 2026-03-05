@@ -13,22 +13,15 @@ export const translations = {
     hero: {
       openToWork: "Open to new opportunities",
       headline: {
-        part1: "From Writing Code",
-        highlight: "to Saving Lives with Data —",
-        part2: "and Scaling Learning Across Canada.",
+        part1: "Product Manager building",
+        highlight: "digital learning tools",
+        part2: "for Canada's Francophone communities.",
       },
-      subheadline: "A product journey across **global health** and **digital education**, focused on building intelligent systems that improve human outcomes.",
-      bio: "I'm **Abdoulaye Binta Bah** — Product Manager at **Groupe Média TFO**, where I manage **IDÉLLO.org**, Canada's leading K–12 French-language educational platform with 15,000+ resources, and **Boukili.ca**, a free interactive reading app for children ages 4+. Before Toronto, I built real-time health crisis platforms at the **World Health Organization in Geneva**, serving Ministries of Health across 20+ countries during active emergencies.",
-      stats: [
-        { value: "145K", label: "Active Users on IDÉLLO" },
-        { value: "15K+", label: "Learning Resources" },
-        { value: "20+", label: "Countries at WHO" },
-        { value: "7+", label: "Years in Tech" }
-      ],
+      subheadline: "Hi, I'm **Abdoulaye**. Currently at **Groupe Média TFO** — managing **IDÉLLO**, Canada's leading K–12 French-language platform with 15,000+ resources, and **Boukili**, a free interactive reading app for children ages 4+. Before that I was at the **WHO** building crisis response systems.",
+      valueProof: [], 
       cta: {
         caseStudies: "View Case Studies",
-        contact: "Connect on LinkedIn",
-        resume: "Download Resume"
+        contact: "Let's connect",
       },
       badges: {
         who: "Ex-World Health Organization",
@@ -76,16 +69,16 @@ export const translations = {
       ],
       cards: {
         strategy: {
-          title: "AI Product Strategy",
-          desc: "Driving product vision for Generative AI and ML, moving from experimental pilots to scalable enterprise solutions.",
+          title: "IDÉLLO",
+          desc: "Canada's K–12 French-language platform with nearly 15,000 pieces of educational content including videos, games, podcasts and teaching tools, sorted by subject and grade level.",
         },
         data: {
-          title: "Intelligent Data Systems",
-          desc: "Architecting real-time data platforms that enable critical decision intelligence during global crises and operations.",
+          title: "Boukili",
+          desc: "An immersive, interactive reading app for children ages 4+, with hundreds of illustrated books, multiple reading modes, and teacher/parent dashboards.",
         },
         scale: {
-          title: "Global Scale & Impact",
-          desc: "Scaling data and AI products used by millions across global health and education ecosystems.",
+          title: "WHO Crisis Platforms",
+          desc: "Real-time health dashboards supporting Ministries of Health during global health emergencies across 20+ countries.",
         },
       },
       trustedBy: "Trusted by teams across",
@@ -95,6 +88,15 @@ export const translations = {
         government: "Government",
         ngos: "Global NGOs",
       }
+    },
+    trustedBy: {
+      title: "Trusted By",
+      logos: [
+        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
+        { name: "Ontario Ministry of Education", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
+        { name: "World Health Organization", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
+        { name: "York Region District School Board", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      ]
     },
     affiliations: [
       "Groupe Média TFO",
@@ -241,10 +243,10 @@ export const translations = {
         emailPlaceholder: "john@company.com",
         subject: "Subject",
         subjects: {
-          recruiting: "Recrutement / Embauche",
+          recruiting: "Recruiting / Hiring",
           collaboration: "Collaboration",
-          networking: "Réseautage",
-          other: "Autre"
+          networking: "Networking",
+          other: "Other"
         },
         message: "Message",
         messagePlaceholder: "Hi, I'd like to discuss...",
@@ -273,22 +275,14 @@ export const translations = {
     hero: {
       openToWork: "Ouvert aux nouvelles opportunités",
       headline: {
-        part1: "De l'écriture de code",
-        highlight: "à sauver des vies avec la data —",
-        part2: "et faire évoluer l'apprentissage au Canada.",
+        part1: "Chef de Produit chez TFO dirigeant la stratégie et l'évolution d'IDÉLLO et Boukili, bâtissant",
+        highlight: "des plateformes d'apprentissage intelligentes et axées sur les données",
+        part2: "pour les éducateurs et les élèves à travers le Canada.",
       },
-      subheadline: "Un parcours produit à travers la **santé mondiale** et l'**éducation numérique**, axé sur la construction de systèmes intelligents qui améliorent les résultats humains.",
-      bio: "Je suis **Abdoulaye Binta Bah** — Product Manager chez **Groupe Média TFO**, où je gère **IDÉLLO.org**, la principale plateforme éducative francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili.ca**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Avant Toronto, j'ai construit des plateformes de crise sanitaire en temps réel à l'**Organisation Mondiale de la Santé à Genève**, servant les ministères de la santé dans plus de 20 pays lors d'urgences actives.",
-      stats: [
-        { value: "145K", label: "Utilisateurs actifs sur IDÉLLO" },
-        { value: "15K+", label: "Ressources d'apprentissage" },
-        { value: "20+", label: "Pays à l'OMS" },
-        { value: "7+", label: "Années dans la Tech" }
-      ],
+      subheadline: "Bonjour, je suis **Abdoulaye**. Actuellement chez **Groupe Média TFO** — je gère **IDÉLLO**, la principale plateforme francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Auparavant, j'étais à l'**OMS** pour construire des systèmes de réponse aux crises.",
       cta: {
         caseStudies: "Voir les études de cas",
-        contact: "Connectons-nous sur LinkedIn",
-        resume: "Télécharger le CV"
+        contact: "Connectons-nous",
       },
       badges: {
         who: "Ex-Organisation Mondiale de la Santé",
@@ -331,16 +325,16 @@ export const translations = {
       ],
       cards: {
         strategy: {
-          title: "Stratégie Produit IA",
-          desc: "Pilotage de la vision produit pour l'IA générative et le ML, passant de pilotes expérimentaux à des solutions d'entreprise évolutives.",
+          title: "IDÉLLO",
+          desc: "La plateforme francophone K–12 du Canada avec près de 15 000 contenus éducatifs incluant vidéos, jeux, podcasts et outils pédagogiques, classés par matière et niveau scolaire.",
         },
         data: {
-          title: "Systèmes de Données Intelligents",
-          desc: "Architecture de plateformes de données en temps réel permettant une intelligence décisionnelle critique lors de crises et d'opérations mondiales.",
+          title: "Boukili",
+          desc: "Une application de lecture immersive et interactive pour les enfants de 4 ans et plus, avec des centaines de livres illustrés, plusieurs modes de lecture et des tableaux de bord pour enseignants/parents.",
         },
         scale: {
-          title: "Échelle & Impact Mondial",
-          desc: "Mise à l'échelle de produits de données et d'IA utilisés par des millions de personnes dans les écosystèmes mondiaux de la santé et de l'éducation.",
+          title: "Plateformes de Crise OMS",
+          desc: "Tableaux de bord de santé en temps réel soutenant les ministères de la santé lors d'urgences sanitaires mondiales dans plus de 20 pays.",
         },
       },
       trustedBy: "Reconnu par les équipes de",
@@ -350,6 +344,15 @@ export const translations = {
         government: "Gouvernement",
         ngos: "ONG Mondiales",
       }
+    },
+    trustedBy: {
+      title: "Ils nous font confiance",
+      logos: [
+        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
+        { name: "Ministère de l'Éducation de l'Ontario", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
+        { name: "Organisation Mondiale de la Santé", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
+        { name: "Conseil scolaire du district de York", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      ]
     },
     affiliations: [
       "Groupe Média TFO",
