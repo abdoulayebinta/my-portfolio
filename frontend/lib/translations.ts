@@ -387,12 +387,38 @@ export const translations = {
       }
     },
     trustedBy: {
-      title: "Ils nous font confiance",
-      logos: [
-        { name: "Groupe Média TFO", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Groupe_M%C3%A9dia_TFO_logo.svg/1200px-Groupe_M%C3%A9dia_TFO_logo.svg.png" },
-        { name: "Ministère de l'Éducation de l'Ontario", src: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Ontario_Ministry_of_Education_logo.svg/1200px-Ontario_Ministry_of_Education_logo.svg.png" },
-        { name: "Organisation Mondiale de la Santé", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/WHO_logo.svg/1200px-WHO_logo.svg.png" },
-        { name: "Conseil scolaire du district de York", src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/York_Region_District_School_Board_logo.svg/1200px-York_Region_District_School_Board_logo.svg.png" }
+      title: "Organisations pour lesquelles j'ai construit des produits",
+      items: [
+        {
+          name: "Groupe Média TFO",
+          location: "Toronto, ON · Actuel",
+          description: "Direction d'IDÉLLO & Boukili"
+        },
+        {
+          name: "Ministère de l'Éducation de l'Ontario",
+          location: "Partenaire mandaté IDÉLLO",
+          description: "Alignement Stratégique"
+        },
+        {
+          name: "Organisation Mondiale de la Santé",
+          location: "Genève, Suisse",
+          description: "Systèmes de réponse aux crises"
+        },
+        {
+          name: "eHealth Africa",
+          location: "Libéria · Nigéria",
+          description: "Plateformes de données de santé"
+        },
+        {
+          name: "Bill & Melinda Gates Foundation",
+          location: "Campagne de vaccination en Guinée",
+          description: "Collecte de données terrain"
+        },
+        {
+          name: "Savics",
+          location: "Belgique",
+          description: "Innovation en HealthTech"
+        }
       ]
     },
     affiliations: [
