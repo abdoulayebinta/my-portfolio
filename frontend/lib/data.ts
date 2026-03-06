@@ -14,24 +14,45 @@ export const skills = {
 export const testimonials = [
   {
     id: 1,
-    name: "Sarah Chen",
-    role: "VP of Product at TechCorp",
-    content: "One of the most strategic product minds I've worked with. Their ability to bridge the gap between complex AI technologies and user needs is unmatched.",
-    avatar: "https://i.pravatar.cc/150?u=sarah"
+    name: "Joëlle Drouin",
+    role: "Director, Marketing & Recruitment · Collège La Cité",
+    content: "I'm happy to recommend Abdoulaye Bah. He's a brilliant, kind product leader with an exceptional work ethic who drives TFO's educational digital products from discovery to delivery. Data-driven and AI-literate, he turns complex needs into testable solutions, builds trust across teams, and consistently connects strategy to impact.",
+    avatar: "/testimonials/Joelle.jpeg"
   },
   {
     id: 2,
-    name: "Michael Ross",
-    role: "Engineering Director at DataFlow",
-    content: "Rarely do you find a PM who understands the technical constraints of ML systems so well while still pushing for an exceptional user experience.",
-    avatar: "https://i.pravatar.cc/150?u=michael"
+    name: "Erika Aslanoglou",
+    role: "Product Manager · WHO Partners Platform, RAP Unit",
+    content: "Abdoulaye consistently delivered high-quality work on various projects. His ability to navigate complex challenges and deliver results made him an invaluable member of our team. In the fast-paced environment of WHO, his forward-thinking approach and dependability were crucial to our success.",
+    avatar: "/testimonials/Erika.jpeg"
   },
   {
     id: 3,
-    name: "Elena Rodriguez",
-    role: "Head of AI at FutureScale",
-    content: "Transformed our vague AI concepts into a concrete product roadmap that delivered 300% growth in user engagement.",
-    avatar: "https://i.pravatar.cc/150?u=elena"
+    name: "Manuel Loistl",
+    role: "Health Emergencies · WHO | Investor · Extropy Ventures",
+    content: "Abdoulaye was a very proactive and reliable team member on health informatics projects in Liberia. He showed a strong interest in his work, made suggestions on how to improve solutions and products, welcomed new responsibilities, and consistently delivered the expected results.",
+    avatar: "/testimonials/Manuel.jpeg"
+  },
+  {
+    id: 4,
+    name: "Aïssa Ghouti",
+    role: "Chief Technology Officer · Savics",
+    content: "Abdoulaye is a serious hard worker we can always rely on. He worked with us on several electronic health projects in English and French-speaking developing countries, both as Software Engineer and external IT Consultant.",
+    avatar: "/testimonials/Aissa.jpeg"
+  },
+  {
+    id: 5,
+    name: "Wisdom Nwokocha",
+    role: "Senior Technical Writer & Software Engineer",
+    content: "Abdoulaye did an exceptional job on a tight deadline project. He built a secure REST API with Node.js, Express.js, and MongoDB with vast technical knowledge. He is proactive, a great team player, and communicates effectively in both French and English.",
+    avatar: "/testimonials/Wisdom.jpeg"
+  },
+  {
+    id: 6,
+    name: "Mandy Govender",
+    role: "Digital Health Strategist",
+    content: "Abdoulaye is an absolute pleasure to work with. He is committed to producing his best, willing to think outside the box, and is a valued team player.",
+    avatar: "https://ui-avatars.com/api/?name=Mandy+Govender&background=db2777&color=fff&size=150"
   }
 ];
 

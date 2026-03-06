@@ -3,8 +3,10 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code2, Globe2, HeartPulse, Lightbulb, BrainCircuit, Github } from "lucide-react";
+import { ArrowRight, Code2, Globe2, HeartPulse, Lightbulb, BrainCircuit, Github, Quote } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
+import { testimonials } from "@/lib/data";
+import Image from "next/image";
 
 export function AboutStory() {
   const { t } = useLanguage();
@@ -109,6 +111,36 @@ export function AboutStory() {
             <Button variant="default" className="rounded-full bg-foreground text-background hover:bg-foreground/90">
               {t.about.philosophy.chatBtn} <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
+          </div>
+        </div>
+
+        {/* Testimonials */}
+        <div className="mt-24">
+          <h3 className="text-2xl md:text-3xl font-bold mb-12 text-center">What Colleagues Say</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="bg-secondary/20 p-8 rounded-2xl border border-border relative hover:border-purple-500/30 transition-colors"
+              >
+                <Quote className="absolute top-6 right-6 text-purple-500/20 w-10 h-10" />
+                <p className="text-muted-foreground mb-6 italic">&quot;{testimonial.content}&quot;</p>
+                <div className="flex items-center gap-4">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0">
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm">{testimonial.name}</h4>
+                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
