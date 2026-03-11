@@ -189,8 +189,8 @@ export default function RootLayout({
         <LanguageProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
-            enableSystem
+            defaultTheme="light"
+            storageKey="portfolio-theme"
             disableTransitionOnChange
           >
             {children}
