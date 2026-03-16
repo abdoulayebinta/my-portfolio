@@ -91,18 +91,18 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10"
             >
               <Link href="#case-studies" className="w-full sm:w-auto">
-                <Button size="lg" variant="gradient" className="w-full sm:w-auto group text-base h-12 px-8">
+                <Button size="lg" variant="gradient" className="w-full sm:w-auto group text-base h-12 px-8 cursor-pointer">
                   {t.hero.cta.caseStudies}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base h-12 px-8 bg-background/50 backdrop-blur-sm hover:bg-background/80 gap-2">
+              <a href="https://www.linkedin.com/in/abdoulayebintabah/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base h-12 px-8 bg-background/50 backdrop-blur-sm hover:bg-background/80 gap-2 cursor-pointer">
                   {t.hero.cta.contact} <ArrowRight className="w-4 h-4 -rotate-45" />
                 </Button>
               </a>
               <a href="https://github.com/abdoulayebinta" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button size="lg" variant="ghost" className="w-full sm:w-auto text-base h-12 px-8 gap-2">
+                <Button size="lg" variant="ghost" className="w-full sm:w-auto text-base h-12 px-8 gap-2 cursor-pointer">
                   {t.hero.cta.resume} <Github className="w-4 h-4" />
                 </Button>
               </a>
