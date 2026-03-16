@@ -13,9 +13,9 @@ export const translations = {
     hero: {
       openToWork: "Open to new opportunities",
       headline: {
-        part1: "From Writing Code",
-        highlight: "to Saving Lives with Data —",
-        part2: "and Scaling Learning Across Canada.",
+        part1: "AI Product Manager building",
+        highlight: "intelligent systems",
+        part2: "at the intersection of global health and education",
       },
       subheadline: "A product journey across **global health** and **digital education**, focused on building intelligent systems that improve human outcomes.",
       bio: "I'm **Abdoulaye Binta Bah** — Product Manager at **Groupe Média TFO**, where I manage **IDÉLLO.org**, Canada's leading K–12 French-language educational platform with 15,000+ resources, and **Boukili.ca**, a free interactive reading app for children ages 4+. Before Toronto, I built real-time health crisis platforms at the **World Health Organization in Geneva**, serving Ministries of Health across 20+ countries during active emergencies.",
@@ -308,9 +308,9 @@ export const translations = {
     hero: {
       openToWork: "Ouvert aux nouvelles opportunités",
       headline: {
-        part1: "De l'écriture de code",
-        highlight: "à sauver des vies avec la data —",
-        part2: "et faire évoluer l'apprentissage au Canada.",
+        part1: "Chef de produit IA qui construit des",
+        highlight: "systèmes intelligents",
+        part2: "à l'intersection de la santé mondiale et de l'éducation",
       },
       subheadline: "Un parcours produit à travers la **santé mondiale** et l'**éducation numérique**, axé sur la construction de systèmes intelligents qui améliorent les résultats humains.",
       bio: "Je suis **Abdoulaye Binta Bah** — Product Manager chez **Groupe Média TFO**, où je gère **IDÉLLO.org**, la principale plateforme éducative francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili.ca**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Avant Toronto, j'ai construit des plateformes de crise sanitaire en temps réel à l'**Organisation Mondiale de la Santé à Genève**, servant les ministères de la santé dans plus de 20 pays lors d'urgences actives.",
