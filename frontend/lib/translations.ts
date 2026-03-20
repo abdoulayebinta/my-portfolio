@@ -11,24 +11,33 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      openToWork: "Open to new opportunities",
+      openToWork: "Open to senior AI PM roles",
+      tags: ["Ex-WHO Geneva", "Toronto, ON", "7+ yrs eng → PM"],
       headline: {
-        part1: "AI Product Manager building",
-        highlight: "intelligent systems",
-        part2: "at the intersection of global health and education",
+        line1: "Senior AI Product Manager.",
+        line2: "Engineering roots.",
+        line3: "Zero hand-waving.",
       },
-      subheadline: "A product journey across **global health** and **digital education**, focused on building intelligent systems that improve human outcomes.",
+      subheadline: "I started writing production code, moved into PM to solve harder problems, and built **data-critical systems at the WHO** used across 20+ countries. I write specs engineers trust, make architectural trade-offs, and ship — not just strategize.",
       bio: "I'm **Abdoulaye Binta Bah** — Product Manager at **Groupe Média TFO**, where I manage **IDÉLLO.org**, Canada's leading K–12 French-language educational platform with 15,000+ resources, and **Boukili.ca**, a free interactive reading app for children ages 4+. Before Toronto, I built real-time health crisis platforms at the **World Health Organization in Geneva**, serving Ministries of Health across 20+ countries during active emergencies.",
       stats: [
-        { value: "145K", label: "Active Users on IDÉLLO" },
-        { value: "15K+", label: "Learning Resources" },
+        { value: "145K", label: "Monthly Active Users" },
         { value: "20+", label: "Countries at WHO" },
-        { value: "7+", label: "Years in Tech" }
+        { value: "7 yrs", label: "Eng → PM Track" }
       ],
       cta: {
-        caseStudies: "View Case Studies",
+        caseStudies: "View case studies",
         contact: "Connect on LinkedIn",
         github: "View Github"
+      },
+      profileCard: {
+        name: "Abdoulaye Bah",
+        role: "AI PRODUCT MANAGER · TORONTO",
+        currentlyAt: { label: "CURRENTLY AT", value: "Groupe Média TFO" },
+        previously: { label: "PREVIOUSLY", value: "WHO Geneva" },
+        products: { label: "PRODUCTS", value: "IDÉLLO · Boukili" },
+        stack: { label: "STACK FLUENCY", value: "LLMs · RAG · MLOps" },
+        cta: { linkedin: "LinkedIn", github: "GitHub", bookCall: "Book call" }
       },
       badges: {
         who: "Ex-World Health Organization",
@@ -306,24 +315,33 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      openToWork: "Ouvert aux nouvelles opportunités",
+      openToWork: "Ouvert aux postes PM senior en IA",
+      tags: ["Ex-OMS Genève", "Toronto, ON", "7+ ans ing → PM"],
       headline: {
-        part1: "Chef de produit IA qui construit des",
-        highlight: "systèmes intelligents",
-        part2: "à l'intersection de la santé mondiale et de l'éducation",
+        line1: "Chef de produit IA Senior.",
+        line2: "Racines en ingénierie.",
+        line3: "Sans détours.",
       },
-      subheadline: "Un parcours produit à travers la **santé mondiale** et l'**éducation numérique**, axé sur la construction de systèmes intelligents qui améliorent les résultats humains.",
+      subheadline: "J'ai commencé à écrire du code en production, suis passé PM pour résoudre des problèmes plus difficiles, et j'ai construit des **systèmes critiques à l'OMS** utilisés dans 20+ pays. J'écris des specs que les ingénieurs font confiance, prends des décisions architecturales, et livre — pas seulement stratégiser.",
       bio: "Je suis **Abdoulaye Binta Bah** — Product Manager chez **Groupe Média TFO**, où je gère **IDÉLLO.org**, la principale plateforme éducative francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili.ca**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Avant Toronto, j'ai construit des plateformes de crise sanitaire en temps réel à l'**Organisation Mondiale de la Santé à Genève**, servant les ministères de la santé dans plus de 20 pays lors d'urgences actives.",
       stats: [
-        { value: "145K", label: "Utilisateurs actifs sur IDÉLLO" },
-        { value: "15K+", label: "Ressources d'apprentissage" },
+        { value: "145K", label: "Utilisateurs actifs" },
         { value: "20+", label: "Pays à l'OMS" },
-        { value: "7+", label: "Années dans la Tech" }
+        { value: "7 ans", label: "Ing → PM" }
       ],
       cta: {
         caseStudies: "Voir les études de cas",
         contact: "Connectons-nous sur LinkedIn",
         resume: "Voir Github"
+      },
+      profileCard: {
+        name: "Abdoulaye Bah",
+        role: "CHEF DE PRODUIT IA · TORONTO",
+        currentlyAt: { label: "ACTUELLEMENT", value: "Groupe Média TFO" },
+        previously: { label: "PRÉCÉDEMMENT", value: "OMS Genève" },
+        products: { label: "PRODUITS", value: "IDÉLLO · Boukili" },
+        stack: { label: "STACK", value: "LLMs · RAG · MLOps" },
+        cta: { linkedin: "LinkedIn", github: "GitHub", bookCall: "Prendre RDV" }
       },
       badges: {
         who: "Ex-Organisation Mondiale de la Santé",
