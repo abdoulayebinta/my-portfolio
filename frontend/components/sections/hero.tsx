@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowDown, Sparkles } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { BackgroundAnimation } from "@/components/ui/background-animation";
@@ -66,11 +66,11 @@ export function Hero() {
             </p>
 
             {/* Stats */}
-            <div className="flex gap-10 mb-10">
+            <div className="flex gap-3 mb-10">
               {t.hero.stats?.map((stat: { value: string; label: string }, index: number) => (
-                <div key={index} className="flex flex-col gap-0.5">
-                  <span className="text-3xl font-bold text-foreground">{stat.value}</span>
-                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">{stat.label}</span>
+                <div key={index} className="flex flex-col gap-1 px-4 py-3 rounded-xl bg-secondary/40 border border-border backdrop-blur-sm">
+                  <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{stat.value}</span>
+                  <span className="text-[0.6rem] font-semibold text-muted-foreground uppercase tracking-widest">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -161,6 +161,14 @@ export function Hero() {
           </div>
 
         </div>
+
+        {/* Down arrow */}
+        <div className="flex justify-center mt-12">
+          <a href="#trusted-by" aria-label="Scroll down" className="flex items-center justify-center w-11 h-11 rounded-full border-2 border-purple-500 bg-white dark:bg-background text-purple-600 dark:text-purple-400 shadow-lg shadow-purple-500/30 hover:bg-purple-500 hover:text-white dark:hover:bg-purple-500 dark:hover:text-white transition-all duration-300 cursor-pointer animate-bounce">
+            <ArrowDown className="w-5 h-5" />
+          </a>
+        </div>
+
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ export function TrustedBy() {
   const { t } = useLanguage();
 
   return (
-    <section className="w-full py-16 bg-background border-b border-border/50">
+    <section id="trusted-by" className="w-full py-16 bg-background border-b border-border/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <p className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">

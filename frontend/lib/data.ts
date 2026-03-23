@@ -58,27 +58,27 @@ export const testimonials = [
 
 export const caseStudies = [
   {
-    slug: "enterprise-predictive-analytics",
-    title: "Enterprise Predictive Analytics Platform",
-    description: "Building a 0-1 predictive maintenance platform for manufacturing giants using IoT data and deep learning.",
-    tags: ["B2B", "IoT", "Deep Learning", "0-1"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    slug: "idellia-ai-pedagogical-copilot",
+    title: "IDÉLLIA: Building the AI Pedagogical Co-Pilot for Franco-Ontarian Education",
+    description: "How I designed a RAG-based instructional assistant that transforms 15,000 certified educational assets into curriculum-aligned \"Learning Journeys\" — in under 2 minutes.",
+    tags: ["RAG", "EdTech", "GenAI", "0-1"],
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop",
     metadata: {
-      role: "Lead Product Manager",
-      timeline: "18 Months",
-      team: "5 ML Engineers, 3 Backend, 2 Frontend, 1 Designer",
-      stack: ["Python", "TensorFlow", "Kafka", "AWS"]
+      role: "Product Manager",
+      timeline: "PRD Complete · In Development",
+      team: "TFO (Télévision française de l'Ontario)",
+      stack: ["RAG", "LLMs", "Anonymous Class Code System", "idello.org"]
     },
     content: {
-      context: "At IndustrialAI, we noticed that manufacturing clients were losing millions due to unplanned downtime. The existing solutions were rule-based and reactive.",
-      problem: "Manufacturers lacked real-time visibility into machine health. Downtime costs averaged $260k/hour. Existing tools generated too many false positives, leading to alert fatigue.",
-      vision: "To create an autonomous 'immune system' for factories that predicts failures before they happen and prescribes the optimal maintenance window.",
-      aiOpportunity: "Leveraging time-series data from IoT sensors (vibration, temperature, acoustic) to detect anomalies using Autoencoders and predict RUL (Remaining Useful Life) using LSTMs.",
-      systemDesign: "We built a scalable pipeline using Kafka for ingestion, Spark for processing, and a microservices architecture for the serving layer. Models were versioned using MLflow.",
-      decisions: "We chose to prioritize precision over recall initially to build trust with operators who were skeptical of AI. We also decided to build a 'Human-in-the-loop' feedback mechanism.",
-      execution: "Led a cross-functional team of 5 ML engineers, 3 backend devs, and 2 designers. Adopted a dual-track agile process to manage research uncertainty alongside software delivery.",
-      metrics: "Reduced unplanned downtime by 40% for pilot customers. Generated $5M in ARR within the first 18 months. Achieved 95% model accuracy on critical failure modes.",
-      lessons: "Data quality was the biggest bottleneck. If I were to do it again, I would invest earlier in automated data validation tools."
+      context: "TFO's platform Idéllo hosts over 15,000 certified educational assets used by Franco-Ontarian teachers across Canada. Despite the richness of the content library, teachers struggled to discover and sequence relevant resources into coherent lesson plans — a process that could take hours.",
+      problem: "Franco-Ontarian educators lacked a fast, curriculum-aligned way to build structured learning sequences from Idéllo's vast content library. Discovery was manual, time-consuming, and disconnected from Ontario curriculum expectations.",
+      vision: "To build IDÉLLIA — an AI pedagogical co-pilot that acts as a knowledgeable teaching assistant, capable of generating fully structured, curriculum-aligned Learning Journeys from 15,000+ assets in under 2 minutes.",
+      aiOpportunity: "Retrieval-Augmented Generation (RAG) was the core architectural choice: embedding Idéllo's asset metadata and curriculum tags into a vector store, then using an LLM to generate coherent, sequenced Learning Journeys grounded in real content — not hallucinated resources.",
+      systemDesign: "Designed an Anonymous Class Code System to allow teachers to share AI-generated journeys with students without requiring student accounts — a key privacy and adoption unlock. The RAG pipeline retrieves assets by curriculum strand, grade level, and learning objective, then passes them to the generation layer.",
+      decisions: "Chose RAG over fine-tuning to keep the system grounded in real, licensed Idéllo content. Prioritized teacher trust by surfacing source assets alongside generated journeys, so educators could verify and edit before sharing.",
+      execution: "Led end-to-end product definition: user research with Franco-Ontarian teachers, PRD authoring, RAG architecture decisions, and coordination with engineering and curriculum experts. Defined the v1 scope to focus on Learning Journey generation before expanding to real-time classroom features.",
+      metrics: "PRD complete and development underway. Target: reduce lesson planning time from ~2 hours to under 2 minutes. Designed for 145K+ monthly active users on the Idéllo platform.",
+      lessons: "The biggest insight was that teachers didn't just want AI to suggest content — they wanted to stay in control. Building edit/override flows into the UX from day one was critical to adoption strategy."
     }
   },
   {

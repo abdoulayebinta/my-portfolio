@@ -12,6 +12,7 @@ import { CaseStudyHeader } from "@/components/case-study/header";
 import { CaseStudySection } from "@/components/case-study/section";
 import { MetricCard } from "@/components/case-study/metric-card";
 import { SystemArchitectureDiagram } from "@/components/case-study/diagram";
+import { IdellIaCaseStudy } from "@/components/case-study/idellia-case-study";
 
 export default function CaseStudyPage() {
   const params = useParams();
@@ -20,6 +21,16 @@ export default function CaseStudyPage() {
 
   if (!study) {
     return notFound();
+  }
+
+  if (slug === "idellia-ai-pedagogical-copilot") {
+    return (
+      <>
+        <Navbar />
+        <IdellIaCaseStudy />
+        <Footer />
+      </>
+    );
   }
 
   return (
