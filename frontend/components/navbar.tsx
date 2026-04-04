@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Moon, Sun, ChevronDown, Download } from "lucide-react";
+import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
+import { ResumeDownloadButton } from "@/components/resume-download-button";
 import { useTheme } from "next-themes";
 import { Logo } from "@/components/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -110,12 +111,7 @@ export function Navbar() {
             ))}
             
             <div className="flex items-center gap-2 ml-2 border-l border-border pl-4">
-              <a href="/Abdoulaye_Resume.pdf" download="Abdoulaye_Resume.pdf">
-                <Button variant="outline" size="sm" className="gap-1.5 cursor-pointer">
-                  <Download className="h-3.5 w-3.5" />
-                  Resume
-                </Button>
-              </a>
+              <ResumeDownloadButton variant="outline" size="sm" label="Resume" />
               <LanguageSwitcher />
               <Button
                 variant="ghost"
@@ -157,12 +153,7 @@ export function Navbar() {
           className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-border p-4 shadow-lg animate-in slide-in-from-top-5 max-h-[calc(100vh-5rem)] overflow-y-auto"
         >
           <nav className="flex flex-col gap-2">
-            <a href="/Abdoulaye_Resume.pdf" download="Abdoulaye_Resume.pdf" className="w-full">
-              <Button variant="outline" className="w-full gap-2 cursor-pointer">
-                <Download className="h-4 w-4" />
-                Download Resume
-              </Button>
-            </a>
+            <ResumeDownloadButton variant="outline" size="default" label="Download Resume" className="w-full justify-center" />
             {navItems.map((item) => (
               <div key={item.name} className="flex flex-col">
                 {item.children ? (

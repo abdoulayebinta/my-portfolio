@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail, Download } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { ResumeDownloadButton } from "@/components/resume-download-button";
 import { Logo } from "@/components/logo";
 import { useLanguage } from "@/context/language-context";
 
@@ -29,11 +30,7 @@ export function Footer() {
               <li><Link href="/#case-studies" className="text-muted-foreground hover:text-foreground transition-colors">{t.nav.caseStudies}</Link></li>
               <li><Link href="/#insights" className="text-muted-foreground hover:text-foreground transition-colors">{t.nav.insights}</Link></li>
               <li><Link href="/#contact" className="text-muted-foreground hover:text-foreground transition-colors">{t.nav.contact}</Link></li>
-              <li>
-                <a href="/Abdoulaye_Resume.pdf" download="Abdoulaye_Resume.pdf" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors">
-                  <Download size={14} /> Download Resume
-                </a>
-              </li>
+              <li><ResumeDownloadButton variant="ghost" size="sm" label="Download Resume" className="px-0 text-muted-foreground hover:text-foreground" /></li>
             </ul>
           </div>
 

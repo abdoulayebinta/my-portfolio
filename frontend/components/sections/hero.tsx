@@ -2,7 +2,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDown, Sparkles, Download } from "lucide-react";
+import { ArrowRight, ArrowDown, Sparkles } from "lucide-react";
+import { ResumeDownloadButton } from "@/components/resume-download-button";
 import Link from "next/link";
 import Image from "next/image";
 import { BackgroundAnimation } from "@/components/ui/background-animation";
@@ -88,11 +89,7 @@ export function Hero() {
                   {t.hero.cta.contact} <ArrowRight className="w-4 h-4 -rotate-45" />
                 </Button>
               </a>
-              <a href="/Abdoulaye_Resume.pdf" download="Abdoulaye_Resume.pdf" className="w-full sm:w-auto">
-                <Button size="lg" variant="ghost" className="w-full sm:w-auto text-base h-12 px-8 gap-2 cursor-pointer">
-                  <Download className="w-4 h-4" /> Resume
-                </Button>
-              </a>
+              <ResumeDownloadButton variant="ghost" size="lg" label="Resume" className="w-full sm:w-auto text-base h-12 px-8" />
             </div>
           </div>
 

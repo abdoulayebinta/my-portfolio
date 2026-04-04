@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/context/language-context";
 import NextTopLoader from "nextjs-toploader";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -186,6 +187,7 @@ export default function RootLayout({
           speed={200}
           shadow="0 0 10px #8b5cf6,0 0 5px #8b5cf6"
         />
+        <Toaster position="bottom-right" richColors />
         <LanguageProvider>
           <ThemeProvider
             attribute="class"
