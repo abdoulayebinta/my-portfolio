@@ -9,7 +9,7 @@ import { toast } from "sonner";
 type State = "idle" | "loading" | "done";
 
 interface ResumeDownloadButtonProps {
-  variant?: "default" | "outline" | "ghost";
+  variant?: "default" | "outline" | "ghost" | "magenta";
   size?: "default" | "sm" | "lg" | "icon";
   className?: string;
   label?: string;

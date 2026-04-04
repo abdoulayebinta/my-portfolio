@@ -42,7 +42,7 @@ export function Hero() {
             {/* Open to work badge */}
             <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background/50 backdrop-blur-sm mb-6 text-sm font-medium">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              {t.hero.openToWork}
+              Open to AI PM / TPM roles in GTA (Toronto)
             </div>
 
             {/* Tags */}
@@ -89,7 +89,7 @@ export function Hero() {
                   {t.hero.cta.contact} <ArrowRight className="w-4 h-4 -rotate-45" />
                 </Button>
               </a>
-              <ResumeDownloadButton variant="ghost" size="lg" label="Resume" className="w-full sm:w-auto text-base h-12 px-8" />
+              <ResumeDownloadButton variant="magenta" size="lg" label="Resume" className="w-full sm:w-auto text-base h-12 px-8" />
             </div>
           </div>
 

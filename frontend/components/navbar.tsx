@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
@@ -16,7 +15,6 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
   const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null);
-  const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const { t } = useLanguage();
 
@@ -111,7 +109,7 @@ export function Navbar() {
             ))}
             
             <div className="flex items-center gap-2 ml-2 border-l border-border pl-4">
-              <ResumeDownloadButton variant="outline" size="sm" label="Resume" />
+              <ResumeDownloadButton variant="magenta" size="sm" label="Resume" />
               <LanguageSwitcher />
               <Button
                 variant="ghost"
@@ -153,7 +151,7 @@ export function Navbar() {
           className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-border p-4 shadow-lg animate-in slide-in-from-top-5 max-h-[calc(100vh-5rem)] overflow-y-auto"
         >
           <nav className="flex flex-col gap-2">
-            <ResumeDownloadButton variant="outline" size="default" label="Download Resume" className="w-full justify-center" />
+            <ResumeDownloadButton variant="magenta" size="default" label="Download Resume" className="w-full justify-center" />
             {navItems.map((item) => (
               <div key={item.name} className="flex flex-col">
                 {item.children ? (
