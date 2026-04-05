@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDown, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowDown, Sparkles, GraduationCap, HeartPulse, BarChart3, Landmark } from "lucide-react";
 import { ResumeDownloadButton } from "@/components/resume-download-button";
 import Link from "next/link";
 import Image from "next/image";
@@ -55,11 +55,26 @@ export function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-5 leading-[1.1]">
               <span className="block">{t.hero.headline.line1}</span>
               <span className="block">{t.hero.headline.line2}</span>
               <span className="block italic text-gradient">{t.hero.headline.line3}</span>
             </h1>
+
+            {/* Domain tags — directly under headline */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {[
+                { label: "EdTech", icon: GraduationCap, color: "text-blue-500 border-blue-500/30 bg-blue-500/5" },
+                { label: "Healthcare", icon: HeartPulse, color: "text-rose-500 border-rose-500/30 bg-rose-500/5" },
+                { label: "GovTech", icon: Landmark, color: "text-amber-500 border-amber-500/30 bg-amber-500/5" },
+                { label: "Data Platforms", icon: BarChart3, color: "text-purple-500 border-purple-500/30 bg-purple-500/5" },
+              ].map(({ label, icon: Icon, color }) => (
+                <span key={label} className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold tracking-wide ${color}`}>
+                  <Icon size={12} />
+                  {label}
+                </span>
+              ))}
+            </div>
 
             {/* Subheadline */}
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
