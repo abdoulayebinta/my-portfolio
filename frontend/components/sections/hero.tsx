@@ -67,29 +67,36 @@ export function Hero() {
             </p>
 
             {/* Stats */}
-            <div className="flex gap-3 mb-10">
-              {t.hero.stats?.map((stat: { value: string; label: string }, index: number) => (
-                <div key={index} className="flex flex-col gap-1 px-4 py-3 rounded-xl bg-secondary/40 border border-border backdrop-blur-sm">
-                  <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{stat.value}</span>
-                  <span className="text-[0.6rem] font-semibold text-muted-foreground uppercase tracking-widest">{stat.label}</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-10 w-full max-w-xl">
+              {t.hero.stats?.map((stat: { value: string; label: string; context: string }, index: number) => (
+                <div key={index} className="flex flex-col gap-0.5 px-3 py-3 rounded-xl bg-secondary/40 border border-border backdrop-blur-sm">
+                  <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{stat.value}</span>
+                  <span className="text-[0.65rem] font-semibold text-foreground/80 leading-tight">{stat.label}</span>
+                  <span className="text-[0.6rem] text-muted-foreground leading-tight">{stat.context}</span>
                 </div>
               ))}
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full sm:w-auto">
+              {/* Primary */}
               <Link href="#case-studies" className="w-full sm:w-auto">
                 <Button size="lg" variant="gradient" className="w-full sm:w-auto group text-base h-12 px-8 cursor-pointer">
                   {t.hero.cta.caseStudies}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href="https://www.linkedin.com/in/abdoulayebintabah/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base h-12 px-8 bg-background/50 backdrop-blur-sm hover:bg-background/80 gap-2 cursor-pointer">
-                  {t.hero.cta.contact} <ArrowRight className="w-4 h-4 -rotate-45" />
-                </Button>
-              </a>
+              {/* Secondary */}
               <ResumeDownloadButton variant="magenta" size="lg" label="Resume" className="w-full sm:w-auto text-base h-12 px-8" />
+              {/* Tertiary */}
+              <a
+                href="https://www.linkedin.com/in/abdoulayebintabah/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4 decoration-muted-foreground/40 hover:decoration-foreground cursor-pointer whitespace-nowrap"
+              >
+                {t.hero.cta.contact}
+              </a>
             </div>
           </div>
 

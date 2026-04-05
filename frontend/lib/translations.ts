@@ -21,9 +21,10 @@ export const translations = {
       subheadline: "I started writing production code, moved into PM to solve harder problems, and built **data-critical systems at the WHO** used across 20+ countries. I write specs engineers trust, make architectural trade-offs, and ship — not just strategize.",
       bio: "I'm **Abdoulaye Binta Bah** — Product Manager at **Groupe Média TFO**, where I manage **IDÉLLO.org**, Canada's leading K–12 French-language educational platform with 15,000+ resources, and **Boukili.ca**, a free interactive reading app for children ages 4+. Before Toronto, I built real-time health crisis platforms at the **World Health Organization in Geneva**, serving Ministries of Health across 20+ countries during active emergencies.",
       stats: [
-        { value: "145K", label: "Monthly Active Users" },
-        { value: "20+", label: "Countries at WHO" },
-        { value: "7 yrs", label: "Eng → PM Track" }
+        { value: "145K", label: "Monthly Active Users", context: "on Idéllo · TFO" },
+        { value: "15K+", label: "Educational Resources", context: "curated & catalogued" },
+        { value: "20+", label: "Countries Reached", context: "health crisis systems · WHO" },
+        { value: "7 yrs", label: "Eng → PM", context: "shipping in prod since 2017" }
       ],
       cta: {
         caseStudies: "View case studies",
@@ -325,9 +326,10 @@ export const translations = {
       subheadline: "J'ai commencé à écrire du code en production, suis passé PM pour résoudre des problèmes plus difficiles, et j'ai construit des **systèmes critiques à l'OMS** utilisés dans 20+ pays. J'écris des specs que les ingénieurs font confiance, prends des décisions architecturales, et livre — pas seulement stratégiser.",
       bio: "Je suis **Abdoulaye Binta Bah** — Product Manager chez **Groupe Média TFO**, où je gère **IDÉLLO.org**, la principale plateforme éducative francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili.ca**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Avant Toronto, j'ai construit des plateformes de crise sanitaire en temps réel à l'**Organisation Mondiale de la Santé à Genève**, servant les ministères de la santé dans plus de 20 pays lors d'urgences actives.",
       stats: [
-        { value: "145K", label: "Utilisateurs actifs" },
-        { value: "20+", label: "Pays à l'OMS" },
-        { value: "7 ans", label: "Ing → PM" }
+        { value: "145K", label: "Utilisateurs actifs", context: "sur Idéllo · TFO" },
+        { value: "15K+", label: "Ressources éducatives", context: "cataloguées et gérées" },
+        { value: "20+", label: "Pays touchés", context: "systèmes de crise · OMS" },
+        { value: "7 ans", label: "Ing → PM", context: "en prod depuis 2017" }
       ],
       cta: {
         caseStudies: "Voir les études de cas",
