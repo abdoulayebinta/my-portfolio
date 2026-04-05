@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       about: "About",
       caseStudies: "Case Studies",
-      skills: "Skills",
+      skills: "Stack & Arch",
       insights: "Insights",
       blogs: "Blogs",
       videos: "Videos",
@@ -308,7 +308,7 @@ export const translations = {
     nav: {
       about: "À propos",
       caseStudies: "Études de cas",
-      skills: "Compétences",
+      skills: "Stack & Arch",
       insights: "Idées",
       blogs: "Articles",
       videos: "Vidéos",
