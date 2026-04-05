@@ -46,7 +46,6 @@ export function Navbar() {
         { name: t.nav.videos, href: "/#insights" }
       ]
     },
-    { name: t.nav.github, href: "https://github.com/abdoulayebinta" },
     { name: t.nav.contact, href: "/#contact" },
   ];
 

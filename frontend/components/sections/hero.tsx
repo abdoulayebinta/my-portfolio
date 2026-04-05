@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDown, Sparkles, GraduationCap, HeartPulse, BarChart3, Landmark, CalendarCheck } from "lucide-react";
+import { ArrowRight, ArrowDown, Sparkles, GraduationCap, HeartPulse, BarChart3, Landmark } from "lucide-react";
 import { ResumeDownloadButton } from "@/components/resume-download-button";
 import Link from "next/link";
 import Image from "next/image";
@@ -94,31 +94,15 @@ export function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full sm:w-auto">
-              {/* Primary — keep visitors on site */}
+              {/* Primary — one dominant action */}
               <Link href="#case-studies" className="w-full sm:w-auto">
                 <Button size="lg" variant="gradient" className="w-full sm:w-auto group text-base h-12 px-8 cursor-pointer">
                   {t.hero.cta.caseStudies}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              {/* Secondary — highest-conversion action for convinced visitors */}
-              <a href="#contact" className="w-full sm:w-auto">
-                <Button size="lg" variant="magenta" className="w-full sm:w-auto text-base h-12 px-8 gap-2 cursor-pointer">
-                  <CalendarCheck className="w-4 h-4" />
-                  Book a Call
-                </Button>
-              </a>
-              {/* Tertiary — resume, quieter */}
-              <ResumeDownloadButton variant="outline" size="lg" label="Resume" className="w-full sm:w-auto text-base h-12 px-8" />
-              {/* Quaternary — exits site, minimal weight */}
-              <a
-                href="https://www.linkedin.com/in/abdoulayebintabah/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4 decoration-muted-foreground/40 hover:decoration-foreground cursor-pointer whitespace-nowrap"
-              >
-                {t.hero.cta.contact}
-              </a>
+              {/* Secondary — resume for convinced visitors */}
+              <ResumeDownloadButton variant="outline" size="lg" label="Download Resume" className="w-full sm:w-auto text-base h-12 px-8" />
             </div>
           </div>
 
