@@ -24,7 +24,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-20">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[128px] animate-pulse" />
@@ -40,13 +40,13 @@ export function Hero() {
           <div className="flex flex-col items-start text-left animate-in fade-in slide-in-from-bottom-8 duration-1000">
 
             {/* Open to work badge */}
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background/50 backdrop-blur-sm mb-6 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background/50 backdrop-blur-sm mb-4 text-sm font-medium">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               Open to AI PM / TPM roles in GTA (Toronto)
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-4">
               {t.hero.tags.map((tag: string, i: number) => (
                 <span key={i} className="px-3 py-1 rounded-full border border-border text-muted-foreground text-sm font-medium bg-secondary/30">
                   {tag}
@@ -55,14 +55,14 @@ export function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-5 leading-[1.1]">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-[1.1]">
               <span className="block">{t.hero.headline.line1}</span>
-              <span className="block">{t.hero.headline.line2}</span>
-              <span className="block italic text-gradient">{t.hero.headline.line3}</span>
+              {t.hero.headline.line2 && <span className="block">{t.hero.headline.line2}</span>}
+              {t.hero.headline.line3 && <span className="block italic text-gradient">{t.hero.headline.line3}</span>}
             </h1>
 
             {/* Domain tags — directly under headline */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-4">
               {[
                 { label: "EdTech", icon: GraduationCap, color: "text-blue-500 border-blue-500/30 bg-blue-500/5" },
                 { label: "Healthcare", icon: HeartPulse, color: "text-rose-500 border-rose-500/30 bg-rose-500/5" },
@@ -77,12 +77,12 @@ export function Hero() {
             </div>
 
             {/* Subheadline */}
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-6 max-w-xl leading-relaxed">
               {renderWithBold(t.hero.subheadline)}
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-10 w-full max-w-xl">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8 w-full max-w-xl">
               {t.hero.stats?.map((stat: { value: string; label: string; context: string }, index: number) => (
                 <div key={index} className="flex flex-col gap-0.5 px-3 py-3 rounded-xl bg-secondary/40 border border-border backdrop-blur-sm">
                   <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{stat.value}</span>
@@ -131,14 +131,14 @@ export function Hero() {
               <div className="absolute -inset-1 bg-gradient-to-tr from-purple-600 via-blue-600 to-cyan-500 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-700 animate-pulse" />
               <div className="absolute -inset-4 bg-gradient-to-bl from-indigo-600 via-purple-600 to-pink-500 rounded-2xl blur-3xl opacity-20 group-hover:opacity-35 transition-opacity duration-1000" />
               {/* Gradient overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10" />
               <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-blue-900/20 z-10 mix-blend-overlay" />
               {/* Photo */}
               <Image
                 src="https://github.com/abdoulayebinta.png"
                 alt="Abdoulaye Bah"
                 fill
-                className="object-cover object-center filter brightness-90 contrast-110 saturate-0 group-hover:saturate-100 transition-all duration-700 group-hover:scale-105"
+                className="object-cover object-center filter brightness-105 contrast-105 transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                 priority
               />
               {/* Glassmorphism name badge */}
@@ -158,14 +158,26 @@ export function Hero() {
             {/* Info Grid — 4 separate cards */}
             <div className="grid grid-cols-2 gap-2 w-[24.5rem]">
               {([
-                t.hero.profileCard.currentlyAt,
-                t.hero.profileCard.previously,
+                { ...t.hero.profileCard.currentlyAt, logo: "tfo.org" },
+                { ...t.hero.profileCard.previously,  logo: "who.int" },
                 t.hero.profileCard.products,
                 t.hero.profileCard.stack,
-              ] as { label: string; value: string }[]).map((item, i) => (
+              ] as { label: string; value: string; logo?: string }[]).map((item, i) => (
                 <div key={i} className="rounded-xl bg-secondary/30 border border-border backdrop-blur-sm px-3 py-2.5 flex flex-col gap-0.5 hover:border-purple-500/30 transition-colors">
                   <p className="text-[0.58rem] font-semibold text-muted-foreground uppercase tracking-widest">{item.label}</p>
-                  <p className="text-xs font-semibold text-foreground">{item.value}</p>
+                  <div className="flex items-center gap-1.5">
+                    {item.logo && (
+                      <Image
+                        src={`https://www.google.com/s2/favicons?domain=${item.logo}&sz=32`}
+                        alt={item.value}
+                        width={14}
+                        height={14}
+                        className="rounded-sm shrink-0"
+                        unoptimized
+                      />
+                    )}
+                    <p className="text-xs font-semibold text-foreground">{item.value}</p>
+                  </div>
                 </div>
               ))}
             </div>

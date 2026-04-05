@@ -14,11 +14,11 @@ export const translations = {
       openToWork: "Open to senior AI PM roles",
       tags: ["Ex-WHO Geneva", "Toronto, ON", "7+ yrs eng → PM"],
       headline: {
-        line1: "Senior AI Product Manager.",
-        line2: "Engineering roots.",
-        line3: "Zero hand-waving.",
+        line1: "AI Product Manager",
+        line2: "with engineering DNA.",
+        line3: "",
       },
-      subheadline: "Engineer turned PM — I ship **AI products** that work at **global scale**, not just in decks.",
+      subheadline: "I ship **LLM-powered products**, dashboards, and data platforms — from **discovery to production**.",
       bio: "I'm **Abdoulaye Binta Bah** — Product Manager at **Groupe Média TFO**, where I manage **IDÉLLO.org**, Canada's leading K–12 French-language educational platform with 15,000+ resources, and **Boukili.ca**, a free interactive reading app for children ages 4+. Before Toronto, I built real-time health crisis platforms at the **World Health Organization in Geneva**, serving Ministries of Health across 20+ countries during active emergencies.",
       stats: [
         { value: "145K", label: "Monthly Active Users", context: "on Idéllo · TFO" },
@@ -319,11 +319,11 @@ export const translations = {
       openToWork: "Ouvert aux postes PM senior en IA",
       tags: ["Ex-OMS Genève", "Toronto, ON", "7+ ans ing → PM"],
       headline: {
-        line1: "Chef de produit IA Senior.",
-        line2: "Racines en ingénierie.",
-        line3: "Sans détours.",
+        line1: "Chef de produit IA",
+        line2: "avec une culture ingénierie.",
+        line3: "",
       },
-      subheadline: "Ingénieur devenu PM — je livre des **produits IA** qui fonctionnent à **l'échelle mondiale**, pas seulement en présentations.",
+      subheadline: "Je livre des **produits propulsés par les LLM**, des tableaux de bord et des plateformes de données — de la **découverte à la production**.",
       bio: "Je suis **Abdoulaye Binta Bah** — Product Manager chez **Groupe Média TFO**, où je gère **IDÉLLO.org**, la principale plateforme éducative francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili.ca**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Avant Toronto, j'ai construit des plateformes de crise sanitaire en temps réel à l'**Organisation Mondiale de la Santé à Genève**, servant les ministères de la santé dans plus de 20 pays lors d'urgences actives.",
       stats: [
         { value: "145K", label: "Utilisateurs actifs", context: "sur Idéllo · TFO" },
