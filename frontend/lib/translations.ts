@@ -14,7 +14,7 @@ export const translations = {
       openToWork: "Open to senior AI PM roles",
       tags: ["WHO Global Health", "Toronto, ON", "Bilingual FR/EN", "Certified AI PM"],
       headline: {
-        line1: "Technical Product Manager.",
+        line1: "Technical PM — AI & Data.",
         line2: "Engineer at heart. Strategist by training.",
         line3: "Zero hand-waving.",
       },
@@ -24,7 +24,7 @@ export const translations = {
         { value: "145K", label: "Monthly Active Users", context: "on Idéllo · TFO" },
         { value: "15K+", label: "Educational Resources", context: "curated & catalogued" },
         { value: "20+", label: "Countries Reached", context: "health crisis systems · WHO" },
-        { value: "7 yrs", label: "Eng → PM", context: "shipping in prod since 2017" }
+        { value: "2", label: "Platforms in Production", context: "Idello.org · Boukili.ca at TFO" }
       ],
       cta: {
         caseStudies: "View case studies",
@@ -36,7 +36,7 @@ export const translations = {
         role: "AI PRODUCT MANAGER · TORONTO",
         currentlyAt: { label: "CURRENTLY AT", value: "Groupe Média TFO" },
         previously: { label: "PREVIOUSLY", value: "WHO Geneva" },
-        products: { label: "PRODUCTS", value: "IDÉLLO · Boukili" },
+        products: { label: "PRODUCTS", value: "Idello.org · Boukili.ca" },
         stack: { label: "STACK FLUENCY", value: "LLMs · RAG" },
         cta: { linkedin: "LinkedIn", github: "GitHub", bookCall: "Book call" }
       },
@@ -319,7 +319,7 @@ export const translations = {
       openToWork: "Ouvert aux postes PM senior en IA",
       tags: ["Ex-OMS Genève", "Toronto, ON", "7+ ans ing → PM"],
       headline: {
-        line1: "Chef de produit technique.",
+        line1: "PM Technique — IA & Data.",
         line2: "Ingénieur de cœur. Stratège de formation.",
         line3: "Sans détours.",
       },
@@ -329,7 +329,7 @@ export const translations = {
         { value: "145K", label: "Utilisateurs actifs", context: "sur Idéllo · TFO" },
         { value: "15K+", label: "Ressources éducatives", context: "cataloguées et gérées" },
         { value: "20+", label: "Pays touchés", context: "systèmes de crise · OMS" },
-        { value: "7 ans", label: "Ing → PM", context: "en prod depuis 2017" }
+        { value: "2", label: "Plateformes en production", context: "Idello.org · Boukili.ca chez TFO" }
       ],
       cta: {
         caseStudies: "Voir les études de cas",
@@ -341,7 +341,7 @@ export const translations = {
         role: "CHEF DE PRODUIT IA · TORONTO",
         currentlyAt: { label: "ACTUELLEMENT", value: "Groupe Média TFO" },
         previously: { label: "PRÉCÉDEMMENT", value: "OMS Genève" },
-        products: { label: "PRODUITS", value: "IDÉLLO · Boukili" },
+        products: { label: "PRODUITS", value: "Idello.org · Boukili.ca" },
         stack: { label: "STACK", value: "LLMs · RAG" },
         cta: { linkedin: "LinkedIn", github: "GitHub", bookCall: "Prendre RDV" }
       },
