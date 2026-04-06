@@ -55,7 +55,6 @@ export function Hero() {
             {/* Credential tags */}
             <div className="flex flex-wrap gap-2 mb-3">
               {[
-                { label: "WHO Global Health", icon: null, favicon: "who.int" },
                 { label: "Toronto, ON",       icon: MapPin,      favicon: null },
                 { label: "Bilingual FR/EN",   icon: null,        favicon: null },
                 { label: "AI PM Certified · Google (Maven)", icon: BadgeCheck, favicon: null },
