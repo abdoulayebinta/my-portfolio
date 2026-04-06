@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDown, Sparkles, BarChart3, CalendarCheck, MapPin, BadgeCheck, BrainCircuit, Layers, Code2 } from "lucide-react";
+import { ArrowRight, ArrowDown, Sparkles, CalendarCheck, MapPin, BadgeCheck } from "lucide-react";
 import { ResumeDownloadButton } from "@/components/resume-download-button";
 import Link from "next/link";
 import Image from "next/image";
@@ -31,7 +31,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-20">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-8 pb-20">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[128px] animate-pulse" />
@@ -72,7 +72,7 @@ export function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-[2.55rem] md:text-[3.1875rem] lg:text-[3.825rem] font-bold tracking-tight mb-7 leading-[1.1]">
+            <h1 className="text-[2rem] md:text-[2.55rem] lg:text-[3rem] font-bold tracking-tight mb-7 leading-[1.1]">
               <span className="block">{t.hero.headline.line1}</span>
               {t.hero.headline.line2 && <span className="block">{t.hero.headline.line2}</span>}
               {t.hero.headline.line3 && <span className="block">{t.hero.headline.line3}</span>}
@@ -82,13 +82,12 @@ export function Hero() {
             {/* Capability tags */}
             <div className="flex flex-wrap gap-2 mb-7">
               {[
-                { label: "Data Platforms",    icon: BarChart3,     color: "text-purple-500 border-purple-500/30 bg-purple-500/5" },
-                { label: "LLM Workflows",     icon: BrainCircuit,  color: "text-blue-500 border-blue-500/30 bg-blue-500/5" },
-                { label: "Platform Redesign", icon: Layers,        color: "text-amber-500 border-amber-500/30 bg-amber-500/5" },
-                { label: "API-first Products",icon: Code2,         color: "text-rose-500 border-rose-500/30 bg-rose-500/5" },
-              ].map(({ label, icon: Icon, color }) => (
-                <span key={label} className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold tracking-wide ${color}`}>
-                  <Icon size={12} />
+                { label: "Data Platforms",     color: "text-purple-500 border-purple-500/30 bg-purple-500/5" },
+                { label: "LLM Workflows",      color: "text-blue-500 border-blue-500/30 bg-blue-500/5" },
+                { label: "Platform Redesign",  color: "text-amber-500 border-amber-500/30 bg-amber-500/5" },
+                { label: "API-first Products", color: "text-rose-500 border-rose-500/30 bg-rose-500/5" },
+              ].map(({ label, color }) => (
+                <span key={label} className={`inline-flex items-center px-3 py-1.5 rounded-full border text-xs font-semibold tracking-wide ${color}`}>
                   {label}
                 </span>
               ))}
@@ -220,9 +219,19 @@ export function Hero() {
 
         {/* Down arrow */}
         <div className="flex justify-center mt-12">
-          <a href="#trusted-by" aria-label="Scroll down" className="flex items-center justify-center w-11 h-11 rounded-full border-2 border-purple-500 bg-white dark:bg-background text-purple-600 dark:text-purple-400 shadow-lg shadow-purple-500/30 hover:bg-purple-500 hover:text-white dark:hover:bg-purple-500 dark:hover:text-white transition-all duration-300 cursor-pointer animate-bounce">
+          <button
+            aria-label="Scroll down"
+            onClick={() => {
+              const element = document.getElementById("trusted-by");
+              if (!element) return;
+              const navHeight = 80;
+              const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight;
+              window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            }}
+            className="flex items-center justify-center w-11 h-11 rounded-full border-2 border-purple-500 bg-white dark:bg-background text-purple-600 dark:text-purple-400 shadow-lg shadow-purple-500/30 hover:bg-purple-500 hover:text-white dark:hover:bg-purple-500 dark:hover:text-white transition-all duration-300 cursor-pointer animate-bounce"
+          >
             <ArrowDown className="w-5 h-5" />
-          </a>
+          </button>
         </div>
 
       </div>

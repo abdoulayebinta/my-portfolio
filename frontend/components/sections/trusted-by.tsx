@@ -20,32 +20,11 @@ const orgs = [
     accent: "#009FE3",
   },
   {
-    name: "Idéllo",
-    full: "Idéllo · idello.org",
-    domain: "idello.org",
-    role: "EdTech Platform",
-    accent: "#7C3AED",
-  },
-  {
-    name: "Ontario Gov",
-    full: "Ontario Ministry of Education",
-    domain: "ontario.ca",
-    role: "Mandate Partner",
-    accent: "#C8102E",
-  },
-  {
     name: "eHealth Africa",
     full: "eHealth Africa",
     domain: "ehealthafrica.org",
     role: "Health Systems",
     accent: "#16A34A",
-  },
-  {
-    name: "Gates Foundation",
-    full: "Bill & Melinda Gates Foundation",
-    domain: "gatesfoundation.org",
-    role: "Global Health",
-    accent: "#2563EB",
   },
   {
     name: "Savics",
