@@ -47,13 +47,13 @@ export function Hero() {
           <div className="flex flex-col items-start text-left animate-in fade-in slide-in-from-bottom-8 duration-1000">
 
             {/* Open to work badge */}
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background/50 backdrop-blur-sm mb-4 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background/50 backdrop-blur-sm mb-6 text-sm font-medium">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Open to AI PM / TPM roles in GTA
+              Open to AI PM / TPM roles · Canada & Remote
             </div>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-4">
+            {/* Credential tags */}
+            <div className="flex flex-wrap gap-2 mb-3">
               {[
                 { label: "WHO Global Health", icon: null, favicon: "who.int" },
                 { label: "Toronto, ON",       icon: MapPin,      favicon: null },
@@ -72,15 +72,8 @@ export function Hero() {
               ))}
             </div>
 
-            {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-[1.1]">
-              <span className="block">{t.hero.headline.line1}</span>
-              {t.hero.headline.line2 && <span className="block">{t.hero.headline.line2}</span>}
-              {t.hero.headline.line3 && <span className="block italic text-gradient">{t.hero.headline.line3}</span>}
-            </h1>
-
-            {/* Domain tags — directly under headline */}
-            <div className="flex flex-wrap gap-2 mb-4">
+            {/* Domain tags */}
+            <div className="flex flex-wrap gap-2 mb-10">
               {[
                 { label: "EdTech", icon: GraduationCap, color: "text-blue-500 border-blue-500/30 bg-blue-500/5" },
                 { label: "HealthTech", icon: HeartPulse, color: "text-rose-500 border-rose-500/30 bg-rose-500/5" },
@@ -94,13 +87,20 @@ export function Hero() {
               ))}
             </div>
 
+            {/* Headline */}
+            <h1 className="text-[2.55rem] md:text-[3.1875rem] lg:text-[3.825rem] font-bold tracking-tight mb-7 leading-[1.1]">
+              <span className="block">{t.hero.headline.line1}</span>
+              {t.hero.headline.line2 && <span className="block">{t.hero.headline.line2}</span>}
+              {t.hero.headline.line3 && <span className="block italic text-gradient">{t.hero.headline.line3}</span>}
+            </h1>
+
             {/* Subheadline */}
-            <p className="text-lg text-muted-foreground mb-6 max-w-xl leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-9 max-w-xl leading-relaxed">
               {renderWithBold(t.hero.subheadline)}
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8 w-full max-w-xl">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-9 w-full max-w-xl">
               {t.hero.stats?.map((stat: { value: string; label: string; context: string }, index: number) => (
                 <div key={index} className="flex flex-col gap-0.5 px-3 py-3 rounded-xl bg-secondary/40 border border-border backdrop-blur-sm">
                   <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{stat.value}</span>
