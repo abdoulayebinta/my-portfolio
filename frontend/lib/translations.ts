@@ -23,7 +23,7 @@ export const translations = {
       bio: "I'm **Abdoulaye Binta Bah** — Product Manager at **Groupe Média TFO**, where I manage **IDÉLLO.org**, Canada's leading K–12 French-language educational platform with 15,000+ resources, and **Boukili.ca**, a free interactive reading app for children ages 4+. Before Toronto, I built real-time health crisis platforms at the **World Health Organization in Geneva**, serving Ministries of Health across 20+ countries during active emergencies.",
       stats: [
         { value: "145K", label: "Monthly Active Users", context: "on Idéllo · TFO" },
-        { value: "15K+", label: "Educational Resources", context: "curated & catalogued" },
+        { value: "5", label: "Products Shipped", context: "end-to-end in production" },
         { value: "20+", label: "Countries Reached", context: "health crisis systems · WHO" },
         { value: "2", label: "Platforms in Production", context: "Idello.org · Boukili.ca at TFO" }
       ],
@@ -329,7 +329,7 @@ export const translations = {
       bio: "Je suis **Abdoulaye Binta Bah** — Product Manager chez **Groupe Média TFO**, où je gère **IDÉLLO.org**, la principale plateforme éducative francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili.ca**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Avant Toronto, j'ai construit des plateformes de crise sanitaire en temps réel à l'**Organisation Mondiale de la Santé à Genève**, servant les ministères de la santé dans plus de 20 pays lors d'urgences actives.",
       stats: [
         { value: "145K", label: "Utilisateurs actifs", context: "sur Idéllo · TFO" },
-        { value: "15K+", label: "Ressources éducatives", context: "cataloguées et gérées" },
+        { value: "5", label: "Produits livrés", context: "de bout en bout en production" },
         { value: "20+", label: "Pays touchés", context: "systèmes de crise · OMS" },
         { value: "2", label: "Plateformes en production", context: "Idello.org · Boukili.ca chez TFO" }
       ],
