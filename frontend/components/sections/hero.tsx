@@ -58,7 +58,7 @@ export function Hero() {
                 { label: "WHO Global Health", icon: null, favicon: "who.int" },
                 { label: "Toronto, ON",       icon: MapPin,      favicon: null },
                 { label: "Bilingual FR/EN",   icon: null,        favicon: null },
-                { label: "Certified AI PM",   icon: BadgeCheck,  favicon: null },
+                { label: "AI PM Certified · Google (Maven)", icon: BadgeCheck, favicon: null },
               ].map(({ label, icon: Icon, favicon }) => (
                 <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-muted-foreground text-sm font-medium bg-secondary/30">
                   {favicon
@@ -182,6 +182,14 @@ export function Hero() {
                   </div>
                 </div>
               ))}
+              {/* Certification — full width */}
+              <div className="col-span-2 rounded-xl bg-secondary/30 border border-border backdrop-blur-sm px-3 py-2.5 flex flex-col gap-0.5 hover:border-purple-500/30 transition-colors">
+                <p className="text-[0.58rem] font-semibold text-muted-foreground uppercase tracking-widest">Certification</p>
+                <div className="flex items-center gap-1.5">
+                  <BadgeCheck size={14} className="text-purple-500 shrink-0" />
+                  <p className="text-xs font-semibold text-foreground">AI PM Certified — Google · Maven (Dr. Marily Nika)</p>
+                </div>
+              </div>
             </div>
 
             {/* CTA Buttons */}
