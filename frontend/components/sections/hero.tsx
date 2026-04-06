@@ -83,7 +83,7 @@ export function Hero() {
             <div className="flex flex-wrap gap-2 mb-4">
               {[
                 { label: "EdTech", icon: GraduationCap, color: "text-blue-500 border-blue-500/30 bg-blue-500/5" },
-                { label: "Healthcare", icon: HeartPulse, color: "text-rose-500 border-rose-500/30 bg-rose-500/5" },
+                { label: "HealthTech", icon: HeartPulse, color: "text-rose-500 border-rose-500/30 bg-rose-500/5" },
                 { label: "GovTech", icon: Landmark, color: "text-amber-500 border-amber-500/30 bg-amber-500/5" },
                 { label: "Data Platforms", icon: BarChart3, color: "text-purple-500 border-purple-500/30 bg-purple-500/5" },
               ].map(({ label, icon: Icon, color }) => (
