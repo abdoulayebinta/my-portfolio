@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDown, Sparkles, GraduationCap, HeartPulse, BarChart3, Landmark, CalendarCheck, MapPin, BadgeCheck } from "lucide-react";
+import { ArrowRight, ArrowDown, Sparkles, BarChart3, CalendarCheck, MapPin, BadgeCheck, BrainCircuit, Layers, Code2 } from "lucide-react";
 import { ResumeDownloadButton } from "@/components/resume-download-button";
 import Link from "next/link";
 import Image from "next/image";
@@ -53,7 +53,7 @@ export function Hero() {
             </div>
 
             {/* Credential tags */}
-            <div className="flex flex-wrap gap-2 mb-3">
+            <div className="flex flex-wrap gap-2 mb-10">
               {[
                 { label: "Toronto, ON",       icon: MapPin,      favicon: null },
                 { label: "Bilingual FR/EN",   icon: null,        favicon: null },
@@ -71,13 +71,20 @@ export function Hero() {
               ))}
             </div>
 
-            {/* Domain tags */}
-            <div className="flex flex-wrap gap-2 mb-10">
+            {/* Headline */}
+            <h1 className="text-[2.55rem] md:text-[3.1875rem] lg:text-[3.825rem] font-bold tracking-tight mb-7 leading-[1.1]">
+              <span className="block">{t.hero.headline.line1}</span>
+              {t.hero.headline.line2 && <span className="block">{t.hero.headline.line2}</span>}
+              {t.hero.headline.line3 && <span className="block italic text-gradient">{t.hero.headline.line3}</span>}
+            </h1>
+
+            {/* Capability tags */}
+            <div className="flex flex-wrap gap-2 mb-7">
               {[
-                { label: "EdTech", icon: GraduationCap, color: "text-blue-500 border-blue-500/30 bg-blue-500/5" },
-                { label: "HealthTech", icon: HeartPulse, color: "text-rose-500 border-rose-500/30 bg-rose-500/5" },
-                { label: "GovTech", icon: Landmark, color: "text-amber-500 border-amber-500/30 bg-amber-500/5" },
-                { label: "Data Platforms", icon: BarChart3, color: "text-purple-500 border-purple-500/30 bg-purple-500/5" },
+                { label: "Data Platforms",    icon: BarChart3,     color: "text-purple-500 border-purple-500/30 bg-purple-500/5" },
+                { label: "LLM Workflows",     icon: BrainCircuit,  color: "text-blue-500 border-blue-500/30 bg-blue-500/5" },
+                { label: "Platform Redesign", icon: Layers,        color: "text-amber-500 border-amber-500/30 bg-amber-500/5" },
+                { label: "API-first Products",icon: Code2,         color: "text-rose-500 border-rose-500/30 bg-rose-500/5" },
               ].map(({ label, icon: Icon, color }) => (
                 <span key={label} className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold tracking-wide ${color}`}>
                   <Icon size={12} />
@@ -85,13 +92,6 @@ export function Hero() {
                 </span>
               ))}
             </div>
-
-            {/* Headline */}
-            <h1 className="text-[2.55rem] md:text-[3.1875rem] lg:text-[3.825rem] font-bold tracking-tight mb-7 leading-[1.1]">
-              <span className="block">{t.hero.headline.line1}</span>
-              {t.hero.headline.line2 && <span className="block">{t.hero.headline.line2}</span>}
-              {t.hero.headline.line3 && <span className="block italic text-gradient">{t.hero.headline.line3}</span>}
-            </h1>
 
             {/* Subheadline */}
             <p className="text-lg text-muted-foreground mb-9 max-w-xl leading-relaxed">
