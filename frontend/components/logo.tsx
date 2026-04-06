@@ -40,7 +40,7 @@ export function Logo({ variant = "full", className }: LogoProps) {
           </span>
           {variant === "full" && (
             <span className="text-[0.65rem] text-muted-foreground font-medium tracking-widest uppercase">
-              AI & Data Product Manager
+              Technical Product Manager (AI / Data)
             </span>
           )}
         </div>

@@ -14,11 +14,11 @@ export const translations = {
       openToWork: "Open to senior AI PM roles",
       tags: ["Ex-WHO Geneva", "Toronto, ON", "7+ yrs eng → PM"],
       headline: {
-        line1: "AI Product Manager",
-        line2: "with engineering DNA.",
-        line3: "",
+        line1: "Technical Product Manager.",
+        line2: "Engineer at heart. Strategist by training.",
+        line3: "Zero hand-waving.",
       },
-      subheadline: "I ship **data-driven products** and platforms at scale — with a growing focus on **applied AI** and LLM workflows.",
+      subheadline: "From shipping production-grade code to scaling platforms for the **World Health Organization** across **20+ countries** — I build products that deliver.\nNow leading **Idello.org** and the full redesign of **Boukili.ca** at TFO.",
       bio: "I'm **Abdoulaye Binta Bah** — Product Manager at **Groupe Média TFO**, where I manage **IDÉLLO.org**, Canada's leading K–12 French-language educational platform with 15,000+ resources, and **Boukili.ca**, a free interactive reading app for children ages 4+. Before Toronto, I built real-time health crisis platforms at the **World Health Organization in Geneva**, serving Ministries of Health across 20+ countries during active emergencies.",
       stats: [
         { value: "145K", label: "Monthly Active Users", context: "on Idéllo · TFO" },
@@ -37,7 +37,7 @@ export const translations = {
         currentlyAt: { label: "CURRENTLY AT", value: "Groupe Média TFO" },
         previously: { label: "PREVIOUSLY", value: "WHO Geneva" },
         products: { label: "PRODUCTS", value: "IDÉLLO · Boukili" },
-        stack: { label: "STACK FLUENCY", value: "LLMs · RAG · MLOps" },
+        stack: { label: "STACK FLUENCY", value: "LLMs · RAG" },
         cta: { linkedin: "LinkedIn", github: "GitHub", bookCall: "Book call" }
       },
       badges: {
@@ -319,11 +319,11 @@ export const translations = {
       openToWork: "Ouvert aux postes PM senior en IA",
       tags: ["Ex-OMS Genève", "Toronto, ON", "7+ ans ing → PM"],
       headline: {
-        line1: "Chef de produit IA",
-        line2: "avec une culture ingénierie.",
-        line3: "",
+        line1: "Chef de produit technique.",
+        line2: "Ingénieur de cœur. Stratège de formation.",
+        line3: "Sans détours.",
       },
-      subheadline: "Je livre des **produits et plateformes axés sur les données** à grande échelle — avec un focus croissant sur l'**IA appliquée** et les workflows LLM.",
+      subheadline: "Du code en production à des plateformes déployées pour l'**Organisation Mondiale de la Santé** dans **20+ pays** — je construis des produits qui livrent.\nAujourd'hui, je pilote **Idello.org** et la refonte complète de **Boukili.ca** chez TFO.",
       bio: "Je suis **Abdoulaye Binta Bah** — Product Manager chez **Groupe Média TFO**, où je gère **IDÉLLO.org**, la principale plateforme éducative francophone K–12 au Canada avec plus de 15 000 ressources, et **Boukili.ca**, une application de lecture interactive gratuite pour les enfants de 4 ans et plus. Avant Toronto, j'ai construit des plateformes de crise sanitaire en temps réel à l'**Organisation Mondiale de la Santé à Genève**, servant les ministères de la santé dans plus de 20 pays lors d'urgences actives.",
       stats: [
         { value: "145K", label: "Utilisateurs actifs", context: "sur Idéllo · TFO" },
@@ -342,7 +342,7 @@ export const translations = {
         currentlyAt: { label: "ACTUELLEMENT", value: "Groupe Média TFO" },
         previously: { label: "PRÉCÉDEMMENT", value: "OMS Genève" },
         products: { label: "PRODUITS", value: "IDÉLLO · Boukili" },
-        stack: { label: "STACK", value: "LLMs · RAG · MLOps" },
+        stack: { label: "STACK", value: "LLMs · RAG" },
         cta: { linkedin: "LinkedIn", github: "GitHub", bookCall: "Prendre RDV" }
       },
       badges: {

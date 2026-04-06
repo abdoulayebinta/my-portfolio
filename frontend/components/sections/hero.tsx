@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDown, Sparkles, GraduationCap, HeartPulse, BarChart3, Landmark } from "lucide-react";
+import { ArrowRight, ArrowDown, Sparkles, GraduationCap, HeartPulse, BarChart3, Landmark, CalendarCheck } from "lucide-react";
 import { ResumeDownloadButton } from "@/components/resume-download-button";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,12 +14,19 @@ export function Hero() {
 
   const renderWithBold = (text: string) => {
     if (!text) return null;
-    const parts = text.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, i) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={i} className="text-foreground">{part.slice(2, -2)}</strong>;
-      }
-      return part;
+    return text.split('\n').map((line, lineIdx, lines) => {
+      const parts = line.split(/(\*\*.*?\*\*)/g).map((part, i) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          return <strong key={i} className="text-foreground">{part.slice(2, -2)}</strong>;
+        }
+        return part;
+      });
+      return (
+        <React.Fragment key={lineIdx}>
+          {parts}
+          {lineIdx < lines.length - 1 && <br />}
+        </React.Fragment>
+      );
     });
   };
 
@@ -42,7 +49,7 @@ export function Hero() {
             {/* Open to work badge */}
             <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background/50 backdrop-blur-sm mb-4 text-sm font-medium">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Open to AI PM / TPM roles in GTA (Toronto)
+              Open to AI PM / TPM roles in GTA
             </div>
 
             {/* Tags */}
@@ -133,7 +140,7 @@ export function Hero() {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm leading-tight">{t.hero.profileCard.name}</p>
-                    <p className="text-white/60 text-[0.65rem] uppercase tracking-wider mt-0.5">AI Product Manager</p>
+                    <p className="text-white/60 text-[0.65rem] uppercase tracking-wider mt-0.5">Technical Product Manager (AI / Data)</p>
                   </div>
                 </div>
               </div>
@@ -169,18 +176,21 @@ export function Hero() {
             {/* CTA Buttons */}
             <div className="flex gap-2 w-[24.5rem]">
               <a href="https://www.linkedin.com/in/abdoulayebintabah/" target="_blank" rel="noopener noreferrer" className="flex-1">
-                <Button variant="outline" size="sm" className="w-full gap-1 cursor-pointer text-xs">
+                <Button variant="outline" size="sm" className="w-full gap-1.5 cursor-pointer text-xs">
+                  <Image src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=32" alt="LinkedIn" width={14} height={14} className="rounded-sm shrink-0" unoptimized />
                   {t.hero.profileCard.cta.linkedin} <ArrowRight className="w-3 h-3 -rotate-45" />
                 </Button>
               </a>
               <a href="https://github.com/abdoulayebinta" target="_blank" rel="noopener noreferrer" className="flex-1">
-                <Button variant="outline" size="sm" className="w-full gap-1 cursor-pointer text-xs">
+                <Button variant="outline" size="sm" className="w-full gap-1.5 cursor-pointer text-xs">
+                  <Image src="https://www.google.com/s2/favicons?domain=github.com&sz=32" alt="GitHub" width={14} height={14} className="rounded-sm shrink-0" unoptimized />
                   {t.hero.profileCard.cta.github} <ArrowRight className="w-3 h-3 -rotate-45" />
                 </Button>
               </a>
               <a href="#contact" className="flex-1">
-                <Button variant="outline" size="sm" className="w-full gap-1 cursor-pointer text-xs">
-                  {t.hero.profileCard.cta.bookCall} <ArrowRight className="w-3 h-3 -rotate-45" />
+                <Button variant="outline" size="sm" className="w-full gap-1.5 cursor-pointer text-xs">
+                  <CalendarCheck className="w-3.5 h-3.5 shrink-0" />
+                  {t.hero.profileCard.cta.bookCall}
                 </Button>
               </a>
             </div>
