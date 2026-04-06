@@ -75,7 +75,8 @@ export function Hero() {
             <h1 className="text-[2.55rem] md:text-[3.1875rem] lg:text-[3.825rem] font-bold tracking-tight mb-7 leading-[1.1]">
               <span className="block">{t.hero.headline.line1}</span>
               {t.hero.headline.line2 && <span className="block">{t.hero.headline.line2}</span>}
-              {t.hero.headline.line3 && <span className="block italic text-gradient">{t.hero.headline.line3}</span>}
+              {t.hero.headline.line3 && <span className="block">{t.hero.headline.line3}</span>}
+              {t.hero.headline.line4 && <span className="block italic text-gradient">{t.hero.headline.line4}</span>}
             </h1>
 
             {/* Capability tags */}
