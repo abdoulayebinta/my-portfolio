@@ -12,7 +12,7 @@ export const translations = {
     },
     hero: {
       openToWork: "Open to senior AI PM roles",
-      tags: ["Ex-WHO Geneva", "Toronto, ON", "7+ yrs eng → PM"],
+      tags: ["WHO Global Health", "Toronto, ON", "Certified AI PM"],
       headline: {
         line1: "Technical Product Manager.",
         line2: "Engineer at heart. Strategist by training.",
