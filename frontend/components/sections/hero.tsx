@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDown, Sparkles, GraduationCap, HeartPulse, BarChart3, Landmark, CalendarCheck } from "lucide-react";
+import { ArrowRight, ArrowDown, Sparkles, GraduationCap, HeartPulse, BarChart3, Landmark, CalendarCheck, MapPin, BadgeCheck } from "lucide-react";
 import { ResumeDownloadButton } from "@/components/resume-download-button";
 import Link from "next/link";
 import Image from "next/image";
@@ -54,9 +54,20 @@ export function Hero() {
 
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-4">
-              {t.hero.tags.map((tag: string, i: number) => (
-                <span key={i} className="px-3 py-1 rounded-full border border-border text-muted-foreground text-sm font-medium bg-secondary/30">
-                  {tag}
+              {[
+                { label: "WHO Global Health", icon: null, favicon: "who.int" },
+                { label: "Toronto, ON",       icon: MapPin,      favicon: null },
+                { label: "Bilingual FR/EN",   icon: null,        favicon: null },
+                { label: "Certified AI PM",   icon: BadgeCheck,  favicon: null },
+              ].map(({ label, icon: Icon, favicon }) => (
+                <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-muted-foreground text-sm font-medium bg-secondary/30">
+                  {favicon
+                    ? <Image src={`https://www.google.com/s2/favicons?domain=${favicon}&sz=32`} alt={label} width={13} height={13} className="rounded-sm shrink-0" unoptimized />
+                    : Icon
+                      ? <Icon size={13} />
+                      : <span className="text-sm leading-none">🇨🇦</span>
+                  }
+                  {label}
                 </span>
               ))}
             </div>
