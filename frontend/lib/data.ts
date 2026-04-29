@@ -82,6 +82,30 @@ export const caseStudies = [
     }
   },
   {
+    slug: "eidsr-digitizing-outbreak-response-west-africa",
+    title: "eidsr: Digitizing National Outbreak Response in West Africa",
+    description: "Transforming a manual, fragmented paper-and-Excel disease reporting system into a robust, offline-first digital framework for near-real-time outbreak detection.",
+    tags: ["HealthTech", "Offline-First", "DHIS2", "GovTech"],
+    image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2032&auto=format&fit=crop",
+    metadata: {
+      role: "Software Developer (Founding Technical Team)",
+      timeline: "Jan 2016 – Mar 2017",
+      team: "eHealth Africa",
+      stack: ["DHIS2", "Windows Standalone (Offline Tracker)", "mHero (SMS)", "Web"]
+    },
+    content: {
+      context: "Following the 2014–2015 West African Ebola epidemic, the Liberian Ministry of Health prioritized WHO's Integrated Disease Surveillance and Response (IDSR) guidelines to safeguard national health security. The mission-critical objective was to detect potential outbreaks within a 24–48 hour window across a massive nationwide infrastructure of 745 facilities and 90 districts. I served on the founding technical team starting in early 2016 to architect a digital ecosystem for near-real-time data dissemination and rapid response.",
+      problem: "Fragmented, paper-based disease surveillance left health authorities blind to emerging outbreaks. Data silos, lack of connectivity in remote areas, and manual aggregation created critical gaps in national health intelligence.",
+      vision: "To build eidsr — a digitized, offline-first Electronic Integrated Disease Surveillance and Response system — enabling near-real-time outbreak detection from community health workers up to national ministries of health.",
+      aiOpportunity: "While not AI-driven, eidsr leveraged smart data architecture: DHIS2 for aggregated national reporting, an offline-capable Windows tracker for areas without connectivity, and mHero for SMS-based reporting — creating a multi-channel pipeline that met health workers where they were.",
+      systemDesign: "Three-layer architecture: (1) Windows Standalone offline tracker for field data capture without internet, (2) DHIS2 web platform for national aggregation and dashboards, (3) mHero SMS layer for remote community health workers. Sync logic designed to reconcile offline data on reconnection.",
+      decisions: "Prioritized offline-first design over a pure web solution — a non-negotiable constraint in rural West Africa where connectivity was unreliable. Chose DHIS2 as the national backbone given its adoption by Ministries of Health and WHO alignment.",
+      execution: "Part of the founding technical team at eHealth Africa. Contributed to system design, development, and field deployment. Worked directly with national health authorities to configure disease indicators, reporting cadences, and alert thresholds aligned with WHO case definitions.",
+      metrics: "Successfully piloted and prepared for national scale-up. System enabled near-real-time reporting across multiple districts, replacing a process that previously took days with one that took hours.",
+      lessons: "Connectivity assumptions are the first thing to throw out when building for low-resource settings. Offline-first is not a feature — it's the foundation. Equally important: designing for health workers with limited digital literacy required radical simplicity in the field UI."
+    }
+  },
+  {
     slug: "generative-customer-support",
     title: "GenAI Customer Support Agent",
     description: "Reducing support ticket volume by 60% with a RAG-based conversational AI agent.",
