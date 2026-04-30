@@ -58,7 +58,7 @@ export default function CaseStudyPage() {
                 { id: "context", label: "Context & Problem" },
                 { id: "vision", label: "Opportunity & Market" },
                 { id: "strategy", label: "Vision & Strategy" },
-                { id: "ai", label: "Data & AI" },
+                { id: "ai", label: "Data Strategy & Automated Intelligence" },
                 { id: "system", label: "System Architecture" },
                 { id: "tradeoffs", label: "Tradeoffs" },
                 { id: "execution", label: "Execution" },
@@ -116,19 +116,20 @@ export default function CaseStudyPage() {
                   <p>We executed an "offline-first" strategy, architecting a standalone Windows application that ensured 100% system availability for field workers in zero-connectivity environments. Our approach prioritized bidirectional synchronization between local clients and a central DHIS2 server to bridge the rural-to-national data gap. We further integrated mHero SMS gateways and Epi Info analytics to create a resilient, multi-layered reporting pipeline capable of nationwide scale.</p>
                 </div>
               </div>
+              <img
+                src="/case-studies/eidsr-transformation.png"
+                alt="From Paper to Real-Time: Liberia's eIDSR Transformation"
+                className="w-full h-auto rounded-xl border border-border mt-8 shadow-lg"
+              />
             </CaseStudySection>
 
-            <CaseStudySection id="ai" title="Data & AI Opportunities" icon={<Brain size={24} />}>
-              <div className="bg-gradient-to-br from-purple-500/5 to-blue-500/5 p-8 rounded-2xl border border-purple-500/10">
-                <p className="mb-4">{study.content.aiOpportunity}</p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {study.metadata.stack.map((tech) => (
-                    <span key={tech} className="px-3 py-1 bg-background border border-border rounded-md text-xs font-mono text-muted-foreground">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <CaseStudySection id="ai" title="Data Strategy & Automated Intelligence" icon={<Brain size={24} />}>
+              <p className="mb-6">We engineered "automated intelligence" by architecting high-integrity data pipelines and logic engines that transformed Liberia's reactive reporting into a proactive early-warning system. I implemented automated SMS workflows via mHero and RapidPro that instantly triggered notifications to surveillance teams and specimen riders the moment a case was saved. To eliminate human error, I developed a dynamic UI form engine that utilized conditional rendering to activate disease-specific clinical modules and auto-calculated critical fields like patient age and "Epi-Week". Furthermore, I architected a SQL-based interoperability bridge that automatically populated local MS Access databases, allowing epidemiologists to perform real-time mapping and dashboarding in Epi Info without manual data cleaning or exports. This shift from insecure Excel files to a validated, SSL-encrypted database provided the robust data foundation required for national-scale epidemic intelligence</p>
+              <img
+                src="/case-studies/eidsr-data-strategy.png"
+                alt="Data Strategy & Automated Intelligence Architecture Diagram"
+                className="w-full h-auto rounded-xl border border-border mt-6 shadow-lg"
+              />
             </CaseStudySection>
 
             <CaseStudySection id="system" title="System Architecture" icon={<Network size={24} />}>
