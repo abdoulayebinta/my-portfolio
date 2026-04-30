@@ -56,7 +56,7 @@ export default function CaseStudyPage() {
               <p className="font-semibold mb-4 text-xs uppercase tracking-widest text-muted-foreground">Table of Contents</p>
               {[
                 { id: "context", label: "Context & Problem" },
-                { id: "vision", label: "Opportunity & Vision" },
+                { id: "vision", label: "Opportunity & Market" },
                 { id: "strategy", label: "Strategy & Product" },
                 { id: "ai", label: "Data & AI" },
                 { id: "system", label: "System Architecture" },
@@ -92,10 +92,17 @@ export default function CaseStudyPage() {
               </div>
             </CaseStudySection>
 
-            <CaseStudySection id="vision" title="Opportunity & Vision" icon={<Lightbulb size={24} />}>
-              <p className="text-xl font-medium text-foreground mb-6 italic border-l-4 border-purple-500 pl-6 py-2">
-                &quot;{study.content.vision}&quot;
-              </p>
+            <CaseStudySection id="vision" title="Opportunity & Market" icon={<Lightbulb size={24} />}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
+                  <h3 className="font-semibold text-foreground mb-2">The Opportunity</h3>
+                  <p>The project presented a transformative opportunity to replace fragmented, manual workflows with a unified, case-based digital ecosystem. By architecting an "offline-first" strategy, we bridged the critical communication gap between rural health facilities and national analysis teams. This enabled near-real-time data synchronization, providing a robust technical framework to detect and contain disease outbreaks within the mission-critical first 48-hour window.</p>
+                </div>
+                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
+                  <h3 className="font-semibold text-foreground mb-2">The Market</h3>
+                  <p>The solution was engineered to scale across a nationwide infrastructure of 745 health facilities, 90 districts, and 15 counties. It targeted a high-stakes user base of District Surveillance Officers and laboratory technicians, aiming for an 85% digital reporting rate. Delivery required aligning a complex ecosystem of global partners, including the WHO, CDC, and USAID, to build a sustainable, national-scale health engine for the entire population.</p>
+                </div>
+              </div>
             </CaseStudySection>
 
             <CaseStudySection id="ai" title="Data & AI Opportunities" icon={<Brain size={24} />}>
