@@ -6,7 +6,7 @@ import { caseStudies } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Target, Lightbulb, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target, Lightbulb, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users, Compass } from "lucide-react";
 import Link from "next/link";
 import { CaseStudyHeader } from "@/components/case-study/header";
 import { CaseStudySection } from "@/components/case-study/section";
@@ -57,7 +57,7 @@ export default function CaseStudyPage() {
               {[
                 { id: "context", label: "Context & Problem" },
                 { id: "vision", label: "Opportunity & Market" },
-                { id: "strategy", label: "Strategy & Product" },
+                { id: "strategy", label: "Vision & Strategy" },
                 { id: "ai", label: "Data & AI" },
                 { id: "system", label: "System Architecture" },
                 { id: "tradeoffs", label: "Tradeoffs" },
@@ -101,6 +101,19 @@ export default function CaseStudyPage() {
                 <div className="bg-secondary/10 p-6 rounded-xl border border-border">
                   <h3 className="font-semibold text-foreground mb-2">The Market</h3>
                   <p>The solution was engineered to scale across a nationwide infrastructure of 745 health facilities, 90 districts, and 15 counties. It targeted a high-stakes user base of District Surveillance Officers and laboratory technicians, aiming for an 85% digital reporting rate. Delivery required aligning a complex ecosystem of global partners, including the WHO, CDC, and USAID, to build a sustainable, national-scale health engine for the entire population.</p>
+                </div>
+              </div>
+            </CaseStudySection>
+
+            <CaseStudySection id="strategy" title="Vision & Strategy" icon={<Compass size={24} />}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
+                  <h3 className="font-semibold text-foreground mb-2">Vision</h3>
+                  <p>To safeguard national health security, we envisioned a seamless, case-based digital ecosystem that transformed Liberia's reactive reporting into a proactive early-warning engine. Our goal was to bridge the information gap from rural communities to national leadership, providing instantaneous, actionable intelligence to contain infectious threats within the mission-critical 24–48 hour window. By replacing error-prone manual aggregates with granular, real-time data flows, we sought to build a resilient infrastructure that empowered every tier of the health system to protect the nation's future</p>
+                </div>
+                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
+                  <h3 className="font-semibold text-foreground mb-2">Strategy</h3>
+                  <p>We executed an "offline-first" strategy, architecting a standalone Windows application that ensured 100% system availability for field workers in zero-connectivity environments. Our approach prioritized bidirectional synchronization between local clients and a central DHIS2 server to bridge the rural-to-national data gap. We further integrated mHero SMS gateways and Epi Info analytics to create a resilient, multi-layered reporting pipeline capable of nationwide scale.</p>
                 </div>
               </div>
             </CaseStudySection>
