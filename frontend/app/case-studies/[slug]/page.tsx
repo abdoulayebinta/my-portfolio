@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useParams, notFound } from "next/navigation";
 import { caseStudies } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Target, Lightbulb, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users, Compass } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target, Lightbulb, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users, Compass, X } from "lucide-react";
 import Link from "next/link";
 import { CaseStudyHeader } from "@/components/case-study/header";
 import { CaseStudySection } from "@/components/case-study/section";
@@ -18,6 +18,7 @@ export default function CaseStudyPage() {
   const params = useParams();
   const slug = params.slug as string;
   const study = caseStudies.find((s) => s.slug === slug);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   if (!study) {
     return notFound();
@@ -36,7 +37,30 @@ export default function CaseStudyPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
-      
+
+      {/* Image Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={selectedImage}
+              alt="Full size view"
+              className="w-full h-full object-contain rounded-xl"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 p-2 bg-background/80 hover:bg-background rounded-full transition-colors"
+              aria-label="Close"
+            >
+              <X size={24} />
+            </button>
+          </div>
+        </div>
+      )}
+
       <CaseStudyHeader 
         title={study.title}
         description={study.description}
@@ -106,30 +130,54 @@ export default function CaseStudyPage() {
             </CaseStudySection>
 
             <CaseStudySection id="strategy" title="Vision & Strategy" icon={<Compass size={24} />}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">Vision</h3>
-                  <p>To safeguard national health security, we envisioned a seamless, case-based digital ecosystem that transformed Liberia's reactive reporting into a proactive early-warning engine. Our goal was to bridge the information gap from rural communities to national leadership, providing instantaneous, actionable intelligence to contain infectious threats within the mission-critical 24–48 hour window. By replacing error-prone manual aggregates with granular, real-time data flows, we sought to build a resilient infrastructure that empowered every tier of the health system to protect the nation's future</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                {/* Left Column - Vision & Strategy Boxes */}
+                <div className="space-y-6">
+                  <div className="bg-secondary/10 p-6 rounded-xl border border-border">
+                    <h3 className="font-semibold text-foreground mb-2">Vision</h3>
+                    <p>To safeguard national health security, we envisioned a seamless, case-based digital ecosystem that transformed Liberia's reactive reporting into a proactive early-warning engine. Our goal was to bridge the information gap from rural communities to national leadership, providing instantaneous, actionable intelligence to contain infectious threats within the mission-critical 24–48 hour window. By replacing error-prone manual aggregates with granular, real-time data flows, we sought to build a resilient infrastructure that empowered every tier of the health system to protect the nation's future</p>
+                  </div>
+                  <div className="bg-secondary/10 p-6 rounded-xl border border-border">
+                    <h3 className="font-semibold text-foreground mb-2">Strategy</h3>
+                    <p>We executed an "offline-first" strategy, architecting a standalone Windows application that ensured 100% system availability for field workers in zero-connectivity environments. Our approach prioritized bidirectional synchronization between local clients and a central DHIS2 server to bridge the rural-to-national data gap. We further integrated mHero SMS gateways and Epi Info analytics to create a resilient, multi-layered reporting pipeline capable of nationwide scale.</p>
+                  </div>
                 </div>
-                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">Strategy</h3>
-                  <p>We executed an "offline-first" strategy, architecting a standalone Windows application that ensured 100% system availability for field workers in zero-connectivity environments. Our approach prioritized bidirectional synchronization between local clients and a central DHIS2 server to bridge the rural-to-national data gap. We further integrated mHero SMS gateways and Epi Info analytics to create a resilient, multi-layered reporting pipeline capable of nationwide scale.</p>
+
+                {/* Right Column - Transformation Diagram */}
+                <div className="flex flex-col">
+                  <img
+                    src="/case-studies/eidsr-transformation.png"
+                    alt="From Paper to Real-Time: Liberia's eIDSR Transformation"
+                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                    onClick={() => setSelectedImage("/case-studies/eidsr-transformation.png")}
+                  />
+                  <p className="text-xs text-muted-foreground mt-3 text-center italic">
+                    The transformation from manual, fragmented reporting to a unified, real-time digital ecosystem
+                  </p>
                 </div>
               </div>
-              <img
-                src="/case-studies/eidsr-transformation.png"
-                alt="From Paper to Real-Time: Liberia's eIDSR Transformation"
-                className="w-full h-auto rounded-xl border border-border mt-8 shadow-lg"
-              />
             </CaseStudySection>
 
             <CaseStudySection id="ai" title="Data Strategy & Automated Intelligence" icon={<Brain size={24} />}>
-              <p className="mb-6">We engineered "automated intelligence" by architecting high-integrity data pipelines and logic engines that transformed Liberia's reactive reporting into a proactive early-warning system. I implemented automated SMS workflows via mHero and RapidPro that instantly triggered notifications to surveillance teams and specimen riders the moment a case was saved. To eliminate human error, I developed a dynamic UI form engine that utilized conditional rendering to activate disease-specific clinical modules and auto-calculated critical fields like patient age and "Epi-Week". Furthermore, I architected a SQL-based interoperability bridge that automatically populated local MS Access databases, allowing epidemiologists to perform real-time mapping and dashboarding in Epi Info without manual data cleaning or exports. This shift from insecure Excel files to a validated, SSL-encrypted database provided the robust data foundation required for national-scale epidemic intelligence</p>
-              <img
-                src="/case-studies/eidsr-data-strategy.png"
-                alt="Data Strategy & Automated Intelligence Architecture Diagram"
-                className="w-full h-auto rounded-xl border border-border mt-6 shadow-lg"
-              />
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                {/* Left Column - Text */}
+                <div className="prose prose-invert max-w-none">
+                  <p>We engineered "automated intelligence" by architecting high-integrity data pipelines and logic engines that transformed Liberia's reactive reporting into a proactive early-warning system. I implemented automated SMS workflows via mHero and RapidPro that instantly triggered notifications to surveillance teams and specimen riders the moment a case was saved. To eliminate human error, I developed a dynamic UI form engine that utilized conditional rendering to activate disease-specific clinical modules and auto-calculated critical fields like patient age and "Epi-Week". Furthermore, I architected a SQL-based interoperability bridge that automatically populated local MS Access databases, allowing epidemiologists to perform real-time mapping and dashboarding in Epi Info without manual data cleaning or exports. This shift from insecure Excel files to a validated, SSL-encrypted database provided the robust data foundation required for national-scale epidemic intelligence</p>
+                </div>
+
+                {/* Right Column - Diagram */}
+                <div className="flex flex-col">
+                  <img
+                    src="/case-studies/eidsr-data-strategy.png"
+                    alt="Data Strategy & Automated Intelligence Architecture Diagram"
+                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                    onClick={() => setSelectedImage("/case-studies/eidsr-data-strategy.png")}
+                  />
+                  <p className="text-xs text-muted-foreground mt-3 text-center italic">
+                    Three-layer architecture: smart data capture, secure central database with logic engines, and real-time analytics
+                  </p>
+                </div>
+              </div>
             </CaseStudySection>
 
             <CaseStudySection id="system" title="System Architecture" icon={<Network size={24} />}>
