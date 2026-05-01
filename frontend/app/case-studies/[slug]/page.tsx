@@ -80,12 +80,11 @@ export default function CaseStudyPage() {
               <p className="font-semibold mb-4 text-xs uppercase tracking-widest text-muted-foreground">Table of Contents</p>
               {[
                 { id: "context", label: "Context & Problem" },
-                { id: "vision", label: "Opportunity & Market" },
+                { id: "insight", label: "Key Insight" },
                 { id: "strategy", label: "Vision & Strategy" },
-                { id: "ai", label: "Data Strategy & Automated Intelligence" },
-                { id: "system", label: "System Architecture" },
+                { id: "system", label: "Solution & System Design" },
                 { id: "tradeoffs", label: "Tradeoffs" },
-                { id: "execution", label: "Execution" },
+                { id: "execution", label: "Execution & Leadership" },
                 { id: "impact", label: "Metrics & Impact" },
                 { id: "lessons", label: "Lessons Learned" },
               ].map((item) => (
@@ -104,19 +103,48 @@ export default function CaseStudyPage() {
           <div className="lg:col-span-9">
             
             <CaseStudySection id="context" title="Context & Problem" icon={<Target size={24} />}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">The Context</h3>
-                  <p>{study.content.context}</p>
+              <div className="space-y-6">
+                {/* Opening Context */}
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed">Following the 2014–2015 West African Ebola epidemic, Liberia's Ministry of Health prioritized strengthening its disease surveillance system to prevent future outbreaks.</p>
+
+                  <p className="text-base leading-relaxed">The goal was ambitious: enable detection and response within 24–48 hours across a nationwide network of 745 health facilities and 90 districts. The challenge wasn't intent; it was infrastructure.</p>
                 </div>
-                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">The Problem</h3>
-                  <p>{study.content.problem}</p>
+
+                {/* Transition & Image */}
+                <div className="space-y-4">
+                  <p className="font-semibold text-foreground">In practice, the system operated like this:</p>
+
+                  <img
+                    src="/case-studies/eidsr-legacy-system.png"
+                    alt="Legacy System: Fragmented, Delayed, and Error-Prone"
+                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                    onClick={() => setSelectedImage("/case-studies/eidsr-legacy-system.png")}
+                  />
+
+                  <p className="text-sm text-muted-foreground italic">Manual, disconnected reporting across community, facility, district, and national levels introduced multi-week delays, inconsistent data, and security risks—making timely outbreak detection nearly impossible.</p>
+                </div>
+
+                {/* Post-Image Summary */}
+                <p className="text-base leading-relaxed pt-4">By the time national leadership received consolidated data, it was often weeks old, incomplete, and inconsistent—limiting their ability to respond effectively to emerging outbreaks.</p>
+
+                {/* Problem Breakdown */}
+                <div className="space-y-4 pt-2">
+                  <h3 className="font-semibold text-foreground text-base">The Core Problems</h3>
+
+                  <ul className="space-y-3 text-base leading-relaxed list-disc list-inside">
+                    <li><span className="font-semibold text-foreground">Reporting Delays:</span> Manual handoffs introduced multi-week delays in data availability</li>
+                    <li><span className="font-semibold text-foreground">Data Quality Issues:</span> Re-entry and manual processing led to errors and inconsistencies</li>
+                    <li><span className="font-semibold text-foreground">Fragmented Systems:</span> No integration across levels created data silos and limited visibility</li>
+                    <li><span className="font-semibold text-foreground">Security Risks:</span> Sensitive patient data was transmitted via unsecured channels</li>
+                  </ul>
+
+                  <p className="text-base leading-relaxed pt-4 border-t border-border/50 mt-4">As a result, outbreak detection was not just delayed—it was often too late to act effectively.</p>
                 </div>
               </div>
             </CaseStudySection>
 
-            <CaseStudySection id="vision" title="Opportunity & Market" icon={<Lightbulb size={24} />}>
+            <CaseStudySection id="insight" title="Key Insight" icon={<Lightbulb size={24} />}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
                 <div className="bg-secondary/10 p-6 rounded-xl border border-border">
                   <h3 className="font-semibold text-foreground mb-2">The Opportunity</h3>
@@ -158,7 +186,7 @@ export default function CaseStudyPage() {
               </div>
             </CaseStudySection>
 
-            <CaseStudySection id="ai" title="Data Strategy & Automated Intelligence" icon={<Brain size={24} />}>
+            <CaseStudySection id="system" title="Solution & System Design" icon={<Brain size={24} />}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                 {/* Left Column - Text */}
                 <div className="prose prose-invert max-w-none">
@@ -189,7 +217,7 @@ export default function CaseStudyPage() {
               <p>{study.content.decisions}</p>
             </CaseStudySection>
 
-            <CaseStudySection id="execution" title="Execution & Collaboration" icon={<Users size={24} />}>
+            <CaseStudySection id="execution" title="Execution & Leadership" icon={<Users size={24} />}>
               <p>{study.content.execution}</p>
             </CaseStudySection>
 
