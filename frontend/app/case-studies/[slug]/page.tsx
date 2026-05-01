@@ -185,23 +185,29 @@ export default function CaseStudyPage() {
             </CaseStudySection>
 
             <CaseStudySection id="system" title="Solution & System Design" icon={<Brain size={24} />}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                {/* Left Column - Text */}
-                <div className="prose prose-invert max-w-none">
-                  <p>We engineered "automated intelligence" by architecting high-integrity data pipelines and logic engines that transformed Liberia's reactive reporting into a proactive early-warning system. I implemented automated SMS workflows via mHero and RapidPro that instantly triggered notifications to surveillance teams and specimen riders the moment a case was saved. To eliminate human error, I developed a dynamic UI form engine that utilized conditional rendering to activate disease-specific clinical modules and auto-calculated critical fields like patient age and "Epi-Week". Furthermore, I architected a SQL-based interoperability bridge that automatically populated local MS Access databases, allowing epidemiologists to perform real-time mapping and dashboarding in Epi Info without manual data cleaning or exports. This shift from insecure Excel files to a validated, SSL-encrypted database provided the robust data foundation required for national-scale epidemic intelligence</p>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed">To address these challenges, we designed a multi-tier system architecture optimized for reliability in low-bandwidth and offline environments, ensuring continuous operation across all levels of the health system.</p>
+
+                  <p className="text-base leading-relaxed">At the edge, we developed a standalone desktop application that enabled district teams to capture, validate, and manage case data entirely offline. Local data persistence ensured that all functionality remained available regardless of connectivity.</p>
+
+                  <p className="text-base leading-relaxed">To support offline analysis, we implemented an interoperability layer that automatically populated a local database, allowing epidemiologists to perform reporting and mapping using familiar tools without relying on central servers.</p>
+
+                  <p className="text-base leading-relaxed">The data pipeline was initiated through SMS alerts, which automatically triggered case creation and synchronized records across both local clients and the central system—eliminating manual data entry and reducing delays.</p>
                 </div>
 
-                {/* Right Column - Diagram */}
-                <div className="flex flex-col">
+                <div className="space-y-4">
                   <img
-                    src="/case-studies/eidsr-data-strategy.png"
-                    alt="Data Strategy & Automated Intelligence Architecture Diagram"
+                    src="/case-studies/eidsr-system-architecture.png"
+                    alt="eIDSR System Architecture & Data Flow Diagram"
                     className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
-                    onClick={() => setSelectedImage("/case-studies/eidsr-data-strategy.png")}
+                    onClick={() => setSelectedImage("/case-studies/eidsr-system-architecture.png")}
                   />
-                  <p className="text-xs text-muted-foreground mt-3 text-center italic">
-                    Three-layer architecture: smart data capture, secure central database with logic engines, and real-time analytics
-                  </p>
+                  <p className="text-sm text-muted-foreground italic">This architecture transforms fragmented reporting into a synchronized, resilient system—automating data flow from SMS alerts to local and central systems while ensuring reliable access even without connectivity.</p>
+
+                  <p className="text-base leading-relaxed pt-4">The system enabled automated data flow from SMS alerts to both local and central systems, ensuring synchronized, reliable access to case data regardless of connectivity.</p>
+
+                  <p className="text-base leading-relaxed">This architecture ensured that the system could operate reliably at every level while scaling to support nationwide surveillance and response.</p>
                 </div>
               </div>
             </CaseStudySection>
