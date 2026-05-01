@@ -145,43 +145,41 @@ export default function CaseStudyPage() {
             </CaseStudySection>
 
             <CaseStudySection id="insight" title="Key Insight" icon={<Lightbulb size={24} />}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">The Opportunity</h3>
-                  <p>The project presented a transformative opportunity to replace fragmented, manual workflows with a unified, case-based digital ecosystem. By architecting an "offline-first" strategy, we bridged the critical communication gap between rural health facilities and national analysis teams. This enabled near-real-time data synchronization, providing a robust technical framework to detect and contain disease outbreaks within the mission-critical first 48-hour window.</p>
-                </div>
-                <div className="bg-secondary/10 p-6 rounded-xl border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">The Market</h3>
-                  <p>The solution was engineered to scale across a nationwide infrastructure of 745 health facilities, 90 districts, and 15 counties. It targeted a high-stakes user base of District Surveillance Officers and laboratory technicians, aiming for an 85% digital reporting rate. Delivery required aligning a complex ecosystem of global partners, including the WHO, CDC, and USAID, to build a sustainable, national-scale health engine for the entire population.</p>
-                </div>
+              <div className="space-y-4">
+                <p className="text-base leading-relaxed">The turning point in this project was not identifying the problems—it was reframing how the system needed to operate in a fundamentally constrained environment.</p>
+
+                <p className="text-base leading-relaxed">In low-connectivity environments, a web-only system is inherently fragile. True resilience requires an offline-first approach that allows data capture and processing to happen at the edge.</p>
+
+                <p className="text-base leading-relaxed">The system also had to serve fundamentally different users: District Surveillance Officers needed the depth and flexibility of desktop tools for case investigation, while frontline health workers required fast, low-friction input methods like SMS.</p>
+
+                <p className="text-base leading-relaxed">The breakthrough was recognizing that automated logic—such as SMS-to-case provisioning—could eliminate manual handoffs entirely, removing the bottlenecks responsible for weeks of delay.</p>
+
+                <p className="text-base leading-relaxed">Together, these insights reframed the problem from simply digitizing reporting to redesigning the entire system around resilience, user context, and automation—laying the foundation for a solution that could operate reliably at national scale.</p>
               </div>
             </CaseStudySection>
 
             <CaseStudySection id="strategy" title="Vision & Strategy" icon={<Compass size={24} />}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                {/* Left Column - Vision & Strategy Boxes */}
-                <div className="space-y-6">
-                  <div className="bg-secondary/10 p-6 rounded-xl border border-border">
-                    <h3 className="font-semibold text-foreground mb-2">Vision</h3>
-                    <p>To safeguard national health security, we envisioned a seamless, case-based digital ecosystem that transformed Liberia's reactive reporting into a proactive early-warning engine. Our goal was to bridge the information gap from rural communities to national leadership, providing instantaneous, actionable intelligence to contain infectious threats within the mission-critical 24–48 hour window. By replacing error-prone manual aggregates with granular, real-time data flows, we sought to build a resilient infrastructure that empowered every tier of the health system to protect the nation's future</p>
-                  </div>
-                  <div className="bg-secondary/10 p-6 rounded-xl border border-border">
-                    <h3 className="font-semibold text-foreground mb-2">Strategy</h3>
-                    <p>We executed an "offline-first" strategy, architecting a standalone Windows application that ensured 100% system availability for field workers in zero-connectivity environments. Our approach prioritized bidirectional synchronization between local clients and a central DHIS2 server to bridge the rural-to-national data gap. We further integrated mHero SMS gateways and Epi Info analytics to create a resilient, multi-layered reporting pipeline capable of nationwide scale.</p>
-                  </div>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed">Our vision was to transform Liberia's reactive, paper-based reporting system into a proactive early-warning engine capable of delivering timely, actionable intelligence to contain infectious threats.</p>
+
+                  <p className="text-base leading-relaxed">To achieve this, the strategy centered on an offline-first ecosystem—ensuring that data capture, validation, and access could occur reliably without dependence on continuous internet connectivity.</p>
+
+                  <p className="text-base leading-relaxed">We implemented a standalone Windows application to guarantee full functionality for district teams regardless of connectivity. This was complemented by bidirectional synchronization with a central DHIS2 server and SMS-based alerting via mHero, enabling real-time communication from the field.</p>
                 </div>
 
-                {/* Right Column - Transformation Diagram */}
-                <div className="flex flex-col">
+                <div className="space-y-4">
                   <img
-                    src="/case-studies/eidsr-transformation.png"
-                    alt="From Paper to Real-Time: Liberia's eIDSR Transformation"
+                    src="/case-studies/eidsr-legacy-vs-solution.png"
+                    alt="Legacy vs eIDSR: System Transformation Comparison"
                     className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
-                    onClick={() => setSelectedImage("/case-studies/eidsr-transformation.png")}
+                    onClick={() => setSelectedImage("/case-studies/eidsr-legacy-vs-solution.png")}
                   />
-                  <p className="text-xs text-muted-foreground mt-3 text-center italic">
-                    The transformation from manual, fragmented reporting to a unified, real-time digital ecosystem
-                  </p>
+                  <p className="text-sm text-muted-foreground italic">This shift redefined surveillance from delayed, reactive reporting to a resilient, real-time system capable of enabling action within 24–48 hours.</p>
+
+                  <p className="text-base leading-relaxed pt-4">The shift from fragmented, manual reporting to a connected, digital system enabled faster data flow, improved reliability, and near real-time visibility across all levels of the health system.</p>
+
+                  <p className="text-base leading-relaxed">This strategy provided a clear foundation for building a system that could operate reliably at scale while meeting the realities of the field.</p>
                 </div>
               </div>
             </CaseStudySection>
