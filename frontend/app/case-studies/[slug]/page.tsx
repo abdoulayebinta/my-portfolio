@@ -212,17 +212,57 @@ export default function CaseStudyPage() {
               </div>
             </CaseStudySection>
 
-            <CaseStudySection id="system" title="System Architecture" icon={<Network size={24} />}>
-              <p className="mb-6">{study.content.systemDesign}</p>
-              <SystemArchitectureDiagram />
-            </CaseStudySection>
+            <CaseStudySection id="tradeoffs" title="Tradeoffs" icon={<AlertTriangle size={24} />}>
+              <div className="space-y-4">
+                <p className="text-base leading-relaxed">Key product decisions required balancing usability, reliability, and security within the constraints of a low-connectivity, high-stakes environment.</p>
 
-            <CaseStudySection id="tradeoffs" title="Tradeoffs & Prioritization" icon={<AlertTriangle size={24} />}>
-              <p>{study.content.decisions}</p>
+                <div className="space-y-4 pt-2">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Desktop vs. Mobile</h4>
+                    <p className="text-base leading-relaxed">While mobile is typically preferred for field deployments, we chose a desktop-based application because District Surveillance Officers were already equipped with laptops and required a more robust interface for complex clinical workflows. Connectivity was intentionally controlled via USB internet dongles, enabling offline work with automatic synchronization when available—reducing reliance on personal devices and ensuring consistent, secure data transfer.</p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Security vs. Friction</h4>
+                    <p className="text-base leading-relaxed">We enforced authentication and encrypted data handling, requiring users to log in even in offline mode. While this introduced additional friction in time-sensitive situations, it was necessary to ensure patient data confidentiality and meet national security standards.</p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Simplicity vs. Resilience</h4>
+                    <p className="text-base leading-relaxed">An offline-first architecture introduced additional complexity in synchronization and data consistency. However, this tradeoff was essential to ensure the system remained functional and reliable in environments with intermittent or no connectivity.</p>
+                  </div>
+                </div>
+
+                <p className="text-base leading-relaxed pt-4 border-t border-border/50 mt-4">These tradeoffs were deliberate choices to ensure the system could operate effectively within the realities of the field while meeting critical reliability and security requirements.</p>
+              </div>
             </CaseStudySection>
 
             <CaseStudySection id="execution" title="Execution & Leadership" icon={<Users size={24} />}>
-              <p>{study.content.execution}</p>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed">As part of the founding technical team, I led the delivery of critical system components while working closely with field users to ensure the solution operated effectively in real-world conditions.</p>
+
+                  <p className="text-base leading-relaxed">I owned the development of the data synchronization layer and the dynamic form engine, ensuring reliable data flow between offline and central systems while improving usability for frontline users.</p>
+
+                  <p className="text-base leading-relaxed">I led system deployment and training for over 92 health professionals—including District Surveillance Officers and laboratory staff—across two pilot counties, ensuring successful adoption and operational readiness.</p>
+
+                  <p className="text-base leading-relaxed">Execution required rapid iteration based on field feedback. For example, we adapted SMS formatting logic after discovering that local GSM networks occasionally corrupted characters or altered message encoding, ensuring reliable data transmission.</p>
+                </div>
+
+                <div className="space-y-4">
+                  <img
+                    src="/case-studies/eidsr-training-deployment.png"
+                    alt="eIDSR Training and Field Deployment"
+                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                    onClick={() => setSelectedImage("/case-studies/eidsr-training-deployment.png")}
+                  />
+                  <p className="text-sm text-muted-foreground italic">Hands-on training sessions with District Surveillance Officers and laboratory staff ensured rapid adoption, enabling the system to be effectively used in real-world, low-resource settings.</p>
+
+                  <p className="text-base leading-relaxed pt-4">Hands-on training sessions enabled frontline health workers to adopt the system quickly, ensuring it could be effectively used in real-world conditions from day one.</p>
+
+                  <p className="text-base leading-relaxed">This hands-on, iterative approach ensured the system was not only built for the field, but proven in it.</p>
+                </div>
+              </div>
             </CaseStudySection>
 
             <CaseStudySection id="impact" title="Metrics & Impact" icon={<TrendingUp size={24} />}>
