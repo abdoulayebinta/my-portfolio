@@ -82,6 +82,30 @@ export const caseStudies = [
     }
   },
   {
+    slug: "unmc-digital-health-screening",
+    title: "UNMC Project — Digital Health Platform for Sickle Cell & Malaria Screening",
+    description: "Led business analysis and product coordination for the SMART initiative with the University of Nebraska Medical Center, delivering a digital health platform for sickle cell and malaria screening in low-resource settings. Translated complex clinical workflows into scalable Android/Web applications integrated with portable diagnostic hardware, helping achieve 97.2% diagnostic accuracy and accelerating early intervention for at-risk children.",
+    tags: ["HealthTech", "Mobile Health", "Diagnostics", "Low-Resource Settings"],
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
+    metadata: {
+      role: "Product Manager & Business Analyst",
+      timeline: "In Development",
+      team: "University of Nebraska Medical Center (UNMC)",
+      stack: ["Android", "Web", "Portable Diagnostics", "Clinical Workflows"]
+    },
+    content: {
+      context: "To be developed",
+      problem: "To be developed",
+      vision: "To be developed",
+      aiOpportunity: "To be developed",
+      systemDesign: "To be developed",
+      decisions: "To be developed",
+      execution: "To be developed",
+      metrics: "To be developed",
+      lessons: "To be developed"
+    }
+  },
+  {
     slug: "eidsr-digitizing-outbreak-response-west-africa",
     title: "eidsr: Digitizing National Outbreak Response in West Africa",
     description: "Transforming a manual, fragmented paper-and-Excel disease reporting system into a robust, offline-first digital framework for near-real-time outbreak detection.",

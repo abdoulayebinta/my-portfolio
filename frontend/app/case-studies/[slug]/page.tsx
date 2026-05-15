@@ -78,7 +78,19 @@ export default function CaseStudyPage() {
           <div className="hidden lg:block lg:col-span-3">
             <div className="sticky top-32 space-y-1 border-l border-border pl-6">
               <p className="font-semibold mb-4 text-xs uppercase tracking-widest text-muted-foreground">Table of Contents</p>
-              {[
+              {(slug === "unmc-digital-health-screening" ? [
+                { id: "executive-summary", label: "1. Executive Summary" },
+                { id: "role", label: "2. My Role & Ownership" },
+                { id: "context", label: "3. Context & Problem" },
+                { id: "insight", label: "4. Key Insight" },
+                { id: "strategy", label: "5. Vision & Strategy" },
+                { id: "user-workflow", label: "6. User & Workflow Analysis" },
+                { id: "system", label: "7. Solution & System Design" },
+                { id: "tradeoffs", label: "8. Product & Technical Tradeoffs" },
+                { id: "execution", label: "9. Execution & Cross-Functional Leadership" },
+                { id: "impact", label: "10. Metrics & Impact" },
+                { id: "lessons", label: "11. Challenges & Lessons Learned" },
+              ] : [
                 { id: "context", label: "Context & Problem" },
                 { id: "insight", label: "Key Insight" },
                 { id: "strategy", label: "Vision & Strategy" },
@@ -87,7 +99,7 @@ export default function CaseStudyPage() {
                 { id: "execution", label: "Execution & Leadership" },
                 { id: "impact", label: "Metrics & Impact" },
                 { id: "lessons", label: "Lessons Learned" },
-              ].map((item) => (
+              ]).map((item) => (
                 <a 
                   key={item.id} 
                   href={`#${item.id}`}
@@ -266,18 +278,62 @@ export default function CaseStudyPage() {
             </CaseStudySection>
 
             <CaseStudySection id="impact" title="Metrics & Impact" icon={<TrendingUp size={24} />}>
-              <p className="mb-8">{study.content.metrics}</p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {/* Mocking metrics parsing for visual demo */}
-                <MetricCard value="40%" label="Reduction" description="In unplanned downtime" trend="up" />
-                <MetricCard value="$5M" label="ARR" description="Generated in 18 months" trend="up" />
-                <MetricCard value="95%" label="Accuracy" description="On critical failure modes" trend="up" />
+              <div className="space-y-4">
+                <p className="text-base leading-relaxed">The system delivered measurable improvements in speed, data quality, and operational scale—transforming how outbreak surveillance and response were managed across the country.</p>
+
+                <ul className="space-y-3 text-base leading-relaxed list-disc list-inside pt-2">
+                  <li><span className="font-semibold text-foreground">National Scale:</span> Piloted across 78 health facilities, with architecture designed to scale to 745 facilities and 90 districts nationwide</li>
+                  <li><span className="font-semibold text-foreground">Latency Reduction:</span> Reduced reporting delays from multiple weeks to near real-time synchronization when connectivity was available</li>
+                  <li><span className="font-semibold text-foreground">System Adoption:</span> Trained 92+ healthcare professionals, achieving ~80% system utilization for case reporting in pilot regions</li>
+                  <li><span className="font-semibold text-foreground">Data Integrity:</span> Eliminated manual data errors through enforced validation, significantly improving completeness and consistency of clinical data</li>
+                  <li><span className="font-semibold text-foreground">Disease Coverage:</span> Digitized investigation workflows for 14 high-priority infectious diseases, aligning field reporting with WHO IDSR standards</li>
+                  <li><span className="font-semibold text-foreground">Operational Performance:</span> Enabled system targets of 85% facility reporting and 85% investigation rates for suspected outbreaks</li>
+                  <li><span className="font-semibold text-foreground">Workflow Automation:</span> Automated specimen pickup alerts and case notifications, ensuring faster coordination between surveillance teams and laboratories</li>
+                </ul>
+
+                <div className="space-y-4 pt-6">
+                  <img
+                    src="/case-studies/eidsr-metrics-impacts.png"
+                    alt="Digital Impact: Outbreak Detection Ready - eIDSR Metrics and Impacts"
+                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                    onClick={() => setSelectedImage("/case-studies/eidsr-metrics-impacts.png")}
+                  />
+                  <p className="text-sm text-muted-foreground italic">By combining high adoption with faster reporting and improved data quality, the system transformed surveillance from delayed reporting to timely, actionable outbreak response.</p>
+
+                  <p className="text-base leading-relaxed pt-4">The system reduced outbreak reporting timelines from weeks to as little as 24–48 hours, fundamentally changing the speed of national response.</p>
+
+                  <p className="text-base leading-relaxed">Together, these improvements enabled faster detection, better coordination, and more effective containment of infectious disease outbreaks.</p>
+                </div>
               </div>
             </CaseStudySection>
 
             <CaseStudySection id="lessons" title="Lessons Learned" icon={<CheckCircle size={24} />}>
-              <div className="bg-secondary/30 p-8 rounded-2xl border-l-4 border-green-500">
-                <p className="italic text-foreground">&quot;{study.content.lessons}&quot;</p>
+              <div className="space-y-4">
+                <p className="text-base leading-relaxed">Building and deploying the system at national scale surfaced critical lessons about designing for constrained environments, managing data dependencies, and aligning with real-world operational needs.</p>
+
+                <div className="space-y-4 pt-2">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Connectivity Constraints Were More Complex Than Expected</h4>
+                    <p className="text-base leading-relaxed">Variability across GSM networks meant that SMS delivery could be inconsistent, reinforcing that offline-first design is not a feature—but a foundational requirement for reliability.</p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Data Quality Depends on Strong Master Data Governance</h4>
+                    <p className="text-base leading-relaxed">The system's effectiveness depended heavily on the quality of external data sources. Incomplete or outdated registries disrupted automated workflows, highlighting the need for strong master data governance alongside flexible system design.</p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Design for Cognitive Load in High-Pressure Environments</h4>
+                    <p className="text-base leading-relaxed">Designing for high-pressure environments required minimizing cognitive load while enforcing data quality. Conditional workflows simplified data entry, while strict validation ensured that only complete, actionable data reached decision-makers.</p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Bridge Global Standards with Local Reality</h4>
+                    <p className="text-base leading-relaxed">Aligning global reporting standards with local operational realities was critical. Success required bridging the gap between international requirements and the practical constraints faced by frontline health workers.</p>
+                  </div>
+                </div>
+
+                <p className="text-base leading-relaxed pt-4 border-t border-border/50 mt-4">These lessons continue to shape how I approach building resilient, user-centered systems in complex and resource-constrained environments.</p>
               </div>
             </CaseStudySection>
 
