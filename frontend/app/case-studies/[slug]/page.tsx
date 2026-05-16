@@ -91,14 +91,14 @@ export default function CaseStudyPage() {
                 { id: "impact", label: "10. Metrics & Impact" },
                 { id: "lessons", label: "11. Challenges & Lessons Learned" },
               ] : [
-                { id: "context", label: "Context & Problem" },
-                { id: "insight", label: "Key Insight" },
-                { id: "strategy", label: "Vision & Strategy" },
-                { id: "system", label: "Solution & System Design" },
-                { id: "tradeoffs", label: "Tradeoffs" },
-                { id: "execution", label: "Execution & Leadership" },
-                { id: "impact", label: "Metrics & Impact" },
-                { id: "lessons", label: "Lessons Learned" },
+                { id: "context", label: "1. Context & Problem" },
+                { id: "insight", label: "2. Key Insight" },
+                { id: "strategy", label: "3. Vision & Strategy" },
+                { id: "system", label: "4. Solution & System Design" },
+                { id: "tradeoffs", label: "5. Tradeoffs" },
+                { id: "execution", label: "6. Execution & Leadership" },
+                { id: "impact", label: "7. Metrics & Impact" },
+                { id: "lessons", label: "8. Lessons Learned" },
               ]).map((item) => (
                 <a 
                   key={item.id} 
