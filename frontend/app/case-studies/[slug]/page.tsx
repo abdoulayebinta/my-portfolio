@@ -113,48 +113,25 @@ export default function CaseStudyPage() {
 
           {/* Main Content */}
           <div className="lg:col-span-9">
-            
-            <CaseStudySection id="context" title="Context & Problem" icon={<Target size={24} />}>
-              <div className="space-y-6">
-                {/* Opening Context */}
-                <div className="space-y-4">
-                  <p className="text-base leading-relaxed">Following the 2014–2015 West African Ebola epidemic, Liberia's Ministry of Health prioritized strengthening its disease surveillance system to prevent future outbreaks.</p>
 
-                  <p className="text-base leading-relaxed">The goal was ambitious: enable detection and response within 24–48 hours across a nationwide network of 745 health facilities and 90 districts. The challenge wasn't intent; it was infrastructure.</p>
-                </div>
+            {slug === "unmc-digital-health-screening" && (
+              <>
+                <CaseStudySection id="executive-summary" title="1. Executive Summary" icon={<Target size={24} />}>
+                  <p className="text-base leading-relaxed">The SMART (Sickle and Malaria Accurate Remote Testing) initiative, developed with the University of Nebraska Medical Center, delivered a digital health platform for sickle cell and malaria screening in low-resource settings across Nigeria. As a Business Analyst, I led clinical workflow analysis, requirements strategy, and cross-functional coordination for an Android/Web ecosystem integrated with portable diagnostic hardware. The platform achieved 97.2% diagnostic accuracy and enabled significantly earlier intervention for infants at risk of sickle cell disease.</p>
+                </CaseStudySection>
 
-                {/* Transition & Image */}
-                <div className="space-y-4">
-                  <p className="font-semibold text-foreground">In practice, the system operated like this:</p>
+                <CaseStudySection id="role" title="2. My Role & Ownership" icon={<Users size={24} />}>
+                  <p className="text-base leading-relaxed">As a Business Analyst, I supported clinical workflow analysis, requirements gathering, backlog documentation, and cross-functional coordination between clinical stakeholders and engineering teams. I helped translate complex medical and operational workflows into structured software requirements for the Android/Web platform, while contributing to workflow design, validation logic, and implementation planning throughout the project lifecycle.</p>
+                </CaseStudySection>
 
-                  <img
-                    src="/case-studies/eidsr-legacy-system.png"
-                    alt="Legacy System: Fragmented, Delayed, and Error-Prone"
-                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
-                    onClick={() => setSelectedImage("/case-studies/eidsr-legacy-system.png")}
-                  />
+                <CaseStudySection id="context" title="3. Context & Problem" icon={<AlertTriangle size={24} />}>
+                  <div className="space-y-6">
+                    <p className="text-base leading-relaxed">Sickle cell disease remains one of the leading causes of preventable child mortality in sub-Saharan Africa, with nearly 250,000 babies born annually with the condition. In many low-resource regions, infants are not diagnosed early enough to receive timely treatment, contributing to mortality rates as high as 50–90% before age five. Existing diagnostic workflows were fragmented, paper-driven, and difficult to scale across remote environments with limited electricity and inconsistent connectivity. Healthcare workers also lacked centralized systems to longitudinally track patients, laboratory results, and follow-up care throughout the diagnostic journey.</p>
+                  </div>
+                </CaseStudySection>
+              </>
+            )}
 
-                  <p className="text-sm text-muted-foreground italic">Manual, disconnected reporting across community, facility, district, and national levels introduced multi-week delays, inconsistent data, and security risks—making timely outbreak detection nearly impossible.</p>
-                </div>
-
-                {/* Post-Image Summary */}
-                <p className="text-base leading-relaxed pt-4">By the time national leadership received consolidated data, it was often weeks old, incomplete, and inconsistent—limiting their ability to respond effectively to emerging outbreaks.</p>
-
-                {/* Problem Breakdown */}
-                <div className="space-y-4 pt-2">
-                  <h3 className="font-semibold text-foreground text-base">The Core Problems</h3>
-
-                  <ul className="space-y-3 text-base leading-relaxed list-disc list-inside">
-                    <li><span className="font-semibold text-foreground">Reporting Delays:</span> Manual handoffs introduced multi-week delays in data availability</li>
-                    <li><span className="font-semibold text-foreground">Data Quality Issues:</span> Re-entry and manual processing led to errors and inconsistencies</li>
-                    <li><span className="font-semibold text-foreground">Fragmented Systems:</span> No integration across levels created data silos and limited visibility</li>
-                    <li><span className="font-semibold text-foreground">Security Risks:</span> Sensitive patient data was transmitted via unsecured channels</li>
-                  </ul>
-
-                  <p className="text-base leading-relaxed pt-4 border-t border-border/50 mt-4">As a result, outbreak detection was not just delayed—it was often too late to act effectively.</p>
-                </div>
-              </div>
-            </CaseStudySection>
 
             <CaseStudySection id="insight" title="Key Insight" icon={<Lightbulb size={24} />}>
               <div className="space-y-4">
