@@ -6,7 +6,7 @@ import { caseStudies } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Target, Lightbulb, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users, Compass, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target, Lightbulb, CheckCircle, TrendingUp, Brain, Network, AlertTriangle, Users, Compass, X, Activity } from "lucide-react";
 import Link from "next/link";
 import { CaseStudyHeader } from "@/components/case-study/header";
 import { CaseStudySection } from "@/components/case-study/section";
@@ -150,45 +150,97 @@ export default function CaseStudyPage() {
             )}
 
 
-            <CaseStudySection id="insight" title="Key Insight" icon={<Lightbulb size={24} />}>
-              <div className="space-y-4">
-                <p className="text-base leading-relaxed">The turning point in this project was not identifying the problems—it was reframing how the system needed to operate in a fundamentally constrained environment.</p>
+            {slug === "unmc-digital-health-screening" && (
+              <CaseStudySection id="insight" title="4. Key Insight" icon={<Lightbulb size={24} />}>
+                <div className="space-y-6">
+                  <p className="text-base leading-relaxed">The core insight was that diagnostic technology alone could not meaningfully improve patient outcomes without an integrated digital workflow system. While the Gazelle Hb Variant point-of-care diagnostic device enabled rapid screening in the field, healthcare workers still lacked reliable tools for patient registration, continuous patient tracking, laboratory workflows, and follow-up care. By combining point-of-care diagnostics with centralized digital records and structured clinical workflows, the platform transformed screening from a one-time diagnostic event into a continuous patient management process that supported earlier intervention and improved care coordination.</p>
 
-                <p className="text-base leading-relaxed">In low-connectivity environments, a web-only system is inherently fragile. True resilience requires an offline-first approach that allows data capture and processing to happen at the edge.</p>
-
-                <p className="text-base leading-relaxed">The system also had to serve fundamentally different users: District Surveillance Officers needed the depth and flexibility of desktop tools for case investigation, while frontline health workers required fast, low-friction input methods like SMS.</p>
-
-                <p className="text-base leading-relaxed">The breakthrough was recognizing that automated logic—such as SMS-to-case provisioning—could eliminate manual handoffs entirely, removing the bottlenecks responsible for weeks of delay.</p>
-
-                <p className="text-base leading-relaxed">Together, these insights reframed the problem from simply digitizing reporting to redesigning the entire system around resilience, user context, and automation—laying the foundation for a solution that could operate reliably at national scale.</p>
-              </div>
-            </CaseStudySection>
-
-            <CaseStudySection id="strategy" title="Vision & Strategy" icon={<Compass size={24} />}>
-              <div className="space-y-6">
-                <div className="space-y-4">
-                  <p className="text-base leading-relaxed">Our vision was to transform Liberia's reactive, paper-based reporting system into a proactive early-warning engine capable of delivering timely, actionable intelligence to contain infectious threats.</p>
-
-                  <p className="text-base leading-relaxed">To achieve this, the strategy centered on an offline-first ecosystem—ensuring that data capture, validation, and access could occur reliably without dependence on continuous internet connectivity.</p>
-
-                  <p className="text-base leading-relaxed">We implemented a standalone Windows application to guarantee full functionality for district teams regardless of connectivity. This was complemented by bidirectional synchronization with a central DHIS2 server and SMS-based alerting via mHero, enabling real-time communication from the field.</p>
-                </div>
-
-                <div className="space-y-4">
                   <img
-                    src="/case-studies/eidsr-legacy-vs-solution.png"
-                    alt="Legacy vs eIDSR: System Transformation Comparison"
+                    src="/case-studies/unmc-key-insight.png"
+                    alt="Key Insight: From fragmented one-time screening to integrated digital care workflow"
                     className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
-                    onClick={() => setSelectedImage("/case-studies/eidsr-legacy-vs-solution.png")}
+                    onClick={() => setSelectedImage("/case-studies/unmc-key-insight.png")}
                   />
-                  <p className="text-sm text-muted-foreground italic">This shift redefined surveillance from delayed, reactive reporting to a resilient, real-time system capable of enabling action within 24–48 hours.</p>
-
-                  <p className="text-base leading-relaxed pt-4">The shift from fragmented, manual reporting to a connected, digital system enabled faster data flow, improved reliability, and near real-time visibility across all levels of the health system.</p>
-
-                  <p className="text-base leading-relaxed">This strategy provided a clear foundation for building a system that could operate reliably at scale while meeting the realities of the field.</p>
+                  <p className="text-sm text-muted-foreground italic">Integrating point-of-care diagnostics with connected digital workflows transformed fragmented screening processes into a continuous patient management ecosystem supporting earlier intervention, coordinated follow-up care, and improved clinical outcomes.</p>
                 </div>
-              </div>
-            </CaseStudySection>
+              </CaseStudySection>
+            )}
+
+            {slug !== "unmc-digital-health-screening" && (
+              <CaseStudySection id="insight" title="Key Insight" icon={<Lightbulb size={24} />}>
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed">The turning point in this project was not identifying the problems—it was reframing how the system needed to operate in a fundamentally constrained environment.</p>
+
+                  <p className="text-base leading-relaxed">In low-connectivity environments, a web-only system is inherently fragile. True resilience requires an offline-first approach that allows data capture and processing to happen at the edge.</p>
+
+                  <p className="text-base leading-relaxed">The system also had to serve fundamentally different users: District Surveillance Officers needed the depth and flexibility of desktop tools for case investigation, while frontline health workers required fast, low-friction input methods like SMS.</p>
+
+                  <p className="text-base leading-relaxed">The breakthrough was recognizing that automated logic—such as SMS-to-case provisioning—could eliminate manual handoffs entirely, removing the bottlenecks responsible for weeks of delay.</p>
+
+                  <p className="text-base leading-relaxed">Together, these insights reframed the problem from simply digitizing reporting to redesigning the entire system around resilience, user context, and automation—laying the foundation for a solution that could operate reliably at national scale.</p>
+                </div>
+              </CaseStudySection>
+            )}
+
+            {slug === "unmc-digital-health-screening" && (
+              <CaseStudySection id="strategy" title="5. Vision & Strategy" icon={<Compass size={24} />}>
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <p className="text-base leading-relaxed">The vision for the UNMC Project was to establish a scalable digital health ecosystem capable of supporting early sickle cell diagnosis, continuous patient management, and centralized clinical oversight in low-resource settings. Rather than treating screening as a standalone diagnostic event, the platform was designed to connect point-of-care diagnostics, mobile clinical workflows, centralized patient records, and administrative oversight into a unified care coordination system.</p>
+
+                    <p className="text-base leading-relaxed">The strategy focused on building a phased, operationally practical platform that could support both frontline healthcare workers and researchers simultaneously. Android applications enabled field teams to capture patient registration, clinical evaluations, biometrics, and laboratory workflows directly at the point of care, while the web application provided centralized administration, laboratory monitoring, biometric matching, role-based access management, and research oversight. This hub-and-spoke architecture created a scalable foundation for continuous patient tracking, earlier intervention, and data-driven healthcare decision-making across distributed clinical environments.</p>
+                  </div>
+
+                  <img
+                    src="/case-studies/unmc-vision-strategy.png"
+                    alt="Vision & Strategy: Integrated Digital Health Ecosystem for Sickle Cell Screening"
+                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                    onClick={() => setSelectedImage("/case-studies/unmc-vision-strategy.png")}
+                  />
+                  <p className="text-sm text-muted-foreground italic">The platform strategy focused on connecting frontline clinical workflows with centralized oversight to create a scalable, data-driven care coordination ecosystem for low-resource healthcare environments.</p>
+                </div>
+              </CaseStudySection>
+            )}
+
+            {slug === "unmc-digital-health-screening" && (
+              <CaseStudySection id="user-workflow" title="6. User & Workflow Analysis" icon={<Activity size={24} />}>
+                <div className="space-y-6">
+                  <p className="text-base leading-relaxed">A major focus of the UNMC Project was understanding how frontline healthcare workers operated within low-resource clinical environments and translating those realities into practical digital workflows. The platform needed to support a wide range of operational activities including patient registration, guardian management, biometric capture, clinical evaluations, laboratory testing, medication tracking, and follow-up care coordination.</p>
+
+                  <p className="text-base leading-relaxed">Field workflows were intentionally designed to be structured, guided, and operationally efficient to minimize user error and improve data consistency during active screening activities. The Android application enabled healthcare workers to capture patient demographics, symptoms, medical history, laboratory requests, and diagnostic results directly at the point of care, while supporting offline-first workflows for environments with unreliable connectivity.</p>
+
+                  <p className="text-base leading-relaxed">At the same time, the web application was designed for centralized administrative and research oversight. Researchers and administrators used the platform to monitor laboratory activities, manage user access, validate clinical data, review aggregated patient records, and perform biometric matching between guardians and patient profiles. This separation between field operations and centralized oversight created a scalable workflow model capable of supporting both clinical care delivery and long-term research coordination.</p>
+                </div>
+              </CaseStudySection>
+            )}
+
+            {slug !== "unmc-digital-health-screening" && (
+              <CaseStudySection id="strategy" title="Vision & Strategy" icon={<Compass size={24} />}>
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <p className="text-base leading-relaxed">Our vision was to transform Liberia's reactive, paper-based reporting system into a proactive early-warning engine capable of delivering timely, actionable intelligence to contain infectious threats.</p>
+
+                    <p className="text-base leading-relaxed">To achieve this, the strategy centered on an offline-first ecosystem—ensuring that data capture, validation, and access could occur reliably without dependence on continuous internet connectivity.</p>
+
+                    <p className="text-base leading-relaxed">We implemented a standalone Windows application to guarantee full functionality for district teams regardless of connectivity. This was complemented by bidirectional synchronization with a central DHIS2 server and SMS-based alerting via mHero, enabling real-time communication from the field.</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <img
+                      src="/case-studies/eidsr-legacy-vs-solution.png"
+                      alt="Legacy vs eIDSR: System Transformation Comparison"
+                      className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                      onClick={() => setSelectedImage("/case-studies/eidsr-legacy-vs-solution.png")}
+                    />
+                    <p className="text-sm text-muted-foreground italic">This shift redefined surveillance from delayed, reactive reporting to a resilient, real-time system capable of enabling action within 24–48 hours.</p>
+
+                    <p className="text-base leading-relaxed pt-4">The shift from fragmented, manual reporting to a connected, digital system enabled faster data flow, improved reliability, and near real-time visibility across all levels of the health system.</p>
+
+                    <p className="text-base leading-relaxed">This strategy provided a clear foundation for building a system that could operate reliably at scale while meeting the realities of the field.</p>
+                  </div>
+                </div>
+              </CaseStudySection>
+            )}
 
             <CaseStudySection id="system" title="Solution & System Design" icon={<Brain size={24} />}>
               <div className="space-y-6">

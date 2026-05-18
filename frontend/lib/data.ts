@@ -88,7 +88,7 @@ export const caseStudies = [
     tags: ["HealthTech", "Mobile Health", "Diagnostics", "Low-Resource Settings"],
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
     metadata: {
-      role: "Product Manager & Business Analyst",
+      role: "Business Analyst",
       timeline: "In Development",
       team: "University of Nebraska Medical Center (UNMC)",
       stack: ["Android", "Web", "Portable Diagnostics", "Clinical Workflows"]
