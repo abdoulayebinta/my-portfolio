@@ -356,33 +356,57 @@ export default function CaseStudyPage() {
               </CaseStudySection>
             )}
 
-            <CaseStudySection id="execution" title="Execution & Leadership" icon={<Users size={24} />}>
-              <div className="space-y-6">
-                <div className="space-y-4">
-                  <p className="text-base leading-relaxed">As part of the founding technical team, I led the delivery of critical system components while working closely with field users to ensure the solution operated effectively in real-world conditions.</p>
+            {slug === "unmc-digital-health-screening" && (
+              <CaseStudySection id="execution" title="9. Execution & Cross-Functional Leadership" icon={<Users size={24} />}>
+                <div className="space-y-6">
+                  <p className="text-base leading-relaxed">The UNMC Project required close coordination across multidisciplinary teams including clinicians, researchers, software engineers, laboratory personnel, and operational stakeholders working across distributed environments. As a Business Analyst, I supported cross-functional collaboration by translating clinical and operational requirements into structured workflows, functional specifications, and implementation-ready documentation for the engineering team.</p>
 
-                  <p className="text-base leading-relaxed">I owned the development of the data synchronization layer and the dynamic form engine, ensuring reliable data flow between offline and central systems while improving usability for frontline users.</p>
+                  <p className="text-base leading-relaxed">Execution involved continuous alignment between frontline healthcare realities and technical implementation decisions. I worked closely with stakeholders to refine workflows for patient registration, laboratory operations, biometric capture, medication management, and follow-up care while ensuring the platform remained operationally practical for low-resource clinical environments.</p>
 
-                  <p className="text-base leading-relaxed">I led system deployment and training for over 92 health professionals—including District Surveillance Officers and laboratory staff—across two pilot counties, ensuring successful adoption and operational readiness.</p>
+                  <p className="text-base leading-relaxed">The project also required coordination around interoperability and platform connectivity between the Android application, Gazelle/HemeChip diagnostic device, centralized database, and web application. Supporting these integrations required structured requirement management, workflow validation, and ongoing collaboration between technical and non-technical stakeholders to ensure reliable data exchange, operational usability, and system scalability.</p>
 
-                  <p className="text-base leading-relaxed">Execution required rapid iteration based on field feedback. For example, we adapted SMS formatting logic after discovering that local GSM networks occasionally corrupted characters or altered message encoding, ensuring reliable data transmission.</p>
-                </div>
+                  <p className="text-base leading-relaxed">Throughout delivery, the team balanced evolving clinical requirements, infrastructure constraints, and deployment timelines through iterative prioritization and phased implementation planning. This collaborative execution model helped establish a scalable digital health platform capable of supporting both frontline clinical workflows and centralized administrative oversight.</p>
 
-                <div className="space-y-4">
                   <img
-                    src="/case-studies/eidsr-training-deployment.png"
-                    alt="eIDSR Training and Field Deployment"
+                    src="/case-studies/unmc-execution-leadership.png"
+                    alt="Execution & Cross-Functional Leadership: Team collaboration and delivery model"
                     className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
-                    onClick={() => setSelectedImage("/case-studies/eidsr-training-deployment.png")}
+                    onClick={() => setSelectedImage("/case-studies/unmc-execution-leadership.png")}
                   />
-                  <p className="text-sm text-muted-foreground italic">Hands-on training sessions with District Surveillance Officers and laboratory staff ensured rapid adoption, enabling the system to be effectively used in real-world, low-resource settings.</p>
-
-                  <p className="text-base leading-relaxed pt-4">Hands-on training sessions enabled frontline health workers to adopt the system quickly, ensuring it could be effectively used in real-world conditions from day one.</p>
-
-                  <p className="text-base leading-relaxed">This hands-on, iterative approach ensured the system was not only built for the field, but proven in it.</p>
+                  <p className="text-sm text-muted-foreground italic">Cross-functional collaboration between clinicians, researchers, engineers, laboratory teams, and operational stakeholders enabled the successful delivery of an interoperable digital health platform aligned with real-world clinical workflows and deployment realities.</p>
                 </div>
-              </div>
-            </CaseStudySection>
+              </CaseStudySection>
+            )}
+
+            {slug !== "unmc-digital-health-screening" && (
+              <CaseStudySection id="execution" title="Execution & Leadership" icon={<Users size={24} />}>
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <p className="text-base leading-relaxed">As part of the founding technical team, I led the delivery of critical system components while working closely with field users to ensure the solution operated effectively in real-world conditions.</p>
+
+                    <p className="text-base leading-relaxed">I owned the development of the data synchronization layer and the dynamic form engine, ensuring reliable data flow between offline and central systems while improving usability for frontline users.</p>
+
+                    <p className="text-base leading-relaxed">I led system deployment and training for over 92 health professionals—including District Surveillance Officers and laboratory staff—across two pilot counties, ensuring successful adoption and operational readiness.</p>
+
+                    <p className="text-base leading-relaxed">Execution required rapid iteration based on field feedback. For example, we adapted SMS formatting logic after discovering that local GSM networks occasionally corrupted characters or altered message encoding, ensuring reliable data transmission.</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <img
+                      src="/case-studies/eidsr-training-deployment.png"
+                      alt="eIDSR Training and Field Deployment"
+                      className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                      onClick={() => setSelectedImage("/case-studies/eidsr-training-deployment.png")}
+                    />
+                    <p className="text-sm text-muted-foreground italic">Hands-on training sessions with District Surveillance Officers and laboratory staff ensured rapid adoption, enabling the system to be effectively used in real-world, low-resource settings.</p>
+
+                    <p className="text-base leading-relaxed pt-4">Hands-on training sessions enabled frontline health workers to adopt the system quickly, ensuring it could be effectively used in real-world conditions from day one.</p>
+
+                    <p className="text-base leading-relaxed">This hands-on, iterative approach ensured the system was not only built for the field, but proven in it.</p>
+                  </div>
+                </div>
+              </CaseStudySection>
+            )}
 
             <CaseStudySection id="impact" title="Metrics & Impact" icon={<TrendingUp size={24} />}>
               <div className="space-y-4">
