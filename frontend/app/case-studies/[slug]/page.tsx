@@ -408,35 +408,59 @@ export default function CaseStudyPage() {
               </CaseStudySection>
             )}
 
-            <CaseStudySection id="impact" title="Metrics & Impact" icon={<TrendingUp size={24} />}>
-              <div className="space-y-4">
-                <p className="text-base leading-relaxed">The system delivered measurable improvements in speed, data quality, and operational scale—transforming how outbreak surveillance and response were managed across the country.</p>
+            {slug === "unmc-digital-health-screening" && (
+              <CaseStudySection id="impact" title="10. Metrics & Impact" icon={<TrendingUp size={24} />}>
+                <div className="space-y-6">
+                  <p className="text-base leading-relaxed">The UNMC Project established a scalable digital health platform that improved diagnostic workflows, centralized clinical data management, and strengthened coordination between frontline healthcare workers, laboratory teams, researchers, and administrators. By integrating point-of-care diagnostics with connected digital workflows, the platform supported earlier intervention, continuous patient management, and more reliable clinical oversight in low-resource settings.</p>
 
-                <ul className="space-y-3 text-base leading-relaxed list-disc list-inside pt-2">
-                  <li><span className="font-semibold text-foreground">National Scale:</span> Piloted across 78 health facilities, with architecture designed to scale to 745 facilities and 90 districts nationwide</li>
-                  <li><span className="font-semibold text-foreground">Latency Reduction:</span> Reduced reporting delays from multiple weeks to near real-time synchronization when connectivity was available</li>
-                  <li><span className="font-semibold text-foreground">System Adoption:</span> Trained 92+ healthcare professionals, achieving ~80% system utilization for case reporting in pilot regions</li>
-                  <li><span className="font-semibold text-foreground">Data Integrity:</span> Eliminated manual data errors through enforced validation, significantly improving completeness and consistency of clinical data</li>
-                  <li><span className="font-semibold text-foreground">Disease Coverage:</span> Digitized investigation workflows for 14 high-priority infectious diseases, aligning field reporting with WHO IDSR standards</li>
-                  <li><span className="font-semibold text-foreground">Operational Performance:</span> Enabled system targets of 85% facility reporting and 85% investigation rates for suspected outbreaks</li>
-                  <li><span className="font-semibold text-foreground">Workflow Automation:</span> Automated specimen pickup alerts and case notifications, ensuring faster coordination between surveillance teams and laboratories</li>
-                </ul>
+                  <p className="text-base leading-relaxed">The Gazelle/HemeChip diagnostic solution achieved 97.2% diagnostic accuracy compared to the clinical gold standard (HPLC), while also demonstrating 100% sensitivity for detecting severe sickle cell variants including HbSS and HbSC. The platform successfully supported data collection, clinical evaluations, and laboratory workflows for hundreds of pediatric patients participating in screening and follow-up programs across Nigeria.</p>
 
-                <div className="space-y-4 pt-6">
+                  <p className="text-base leading-relaxed">Operationally, the solution improved workflow standardization by digitizing patient registration, biometric identity capture, laboratory evaluations, medication management, and follow-up coordination into a centralized ecosystem accessible through both Android and web applications. The architecture also strengthened interoperability, platform connectivity, and centralized visibility across distributed healthcare environments through API-driven integrations, role-based access controls, and structured clinical data management.</p>
+
+                  <p className="text-base leading-relaxed">Beyond the technical implementation, the project established a scalable foundation for future healthcare interoperability, research collaboration, and longitudinal patient care coordination across low-resource clinical environments.</p>
+
                   <img
-                    src="/case-studies/eidsr-metrics-impacts.png"
-                    alt="Digital Impact: Outbreak Detection Ready - eIDSR Metrics and Impacts"
+                    src="/case-studies/unmc-metrics-impact.png"
+                    alt="Metrics & Impact: Diagnostic accuracy, clinical outcomes, and platform adoption"
                     className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
-                    onClick={() => setSelectedImage("/case-studies/eidsr-metrics-impacts.png")}
+                    onClick={() => setSelectedImage("/case-studies/unmc-metrics-impact.png")}
                   />
-                  <p className="text-sm text-muted-foreground italic">By combining high adoption with faster reporting and improved data quality, the system transformed surveillance from delayed reporting to timely, actionable outbreak response.</p>
-
-                  <p className="text-base leading-relaxed pt-4">The system reduced outbreak reporting timelines from weeks to as little as 24–48 hours, fundamentally changing the speed of national response.</p>
-
-                  <p className="text-base leading-relaxed">Together, these improvements enabled faster detection, better coordination, and more effective containment of infectious disease outbreaks.</p>
+                  <p className="text-sm text-muted-foreground italic">The platform delivered measurable clinical and operational impact by improving diagnostic accuracy, enabling earlier intervention, standardizing healthcare workflows, and strengthening continuous patient management across low-resource clinical environments.</p>
                 </div>
-              </div>
-            </CaseStudySection>
+              </CaseStudySection>
+            )}
+
+            {slug !== "unmc-digital-health-screening" && (
+              <CaseStudySection id="impact" title="Metrics & Impact" icon={<TrendingUp size={24} />}>
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed">The system delivered measurable improvements in speed, data quality, and operational scale—transforming how outbreak surveillance and response were managed across the country.</p>
+
+                  <ul className="space-y-3 text-base leading-relaxed list-disc list-inside pt-2">
+                    <li><span className="font-semibold text-foreground">National Scale:</span> Piloted across 78 health facilities, with architecture designed to scale to 745 facilities and 90 districts nationwide</li>
+                    <li><span className="font-semibold text-foreground">Latency Reduction:</span> Reduced reporting delays from multiple weeks to near real-time synchronization when connectivity was available</li>
+                    <li><span className="font-semibold text-foreground">System Adoption:</span> Trained 92+ healthcare professionals, achieving ~80% system utilization for case reporting in pilot regions</li>
+                    <li><span className="font-semibold text-foreground">Data Integrity:</span> Eliminated manual data errors through enforced validation, significantly improving completeness and consistency of clinical data</li>
+                    <li><span className="font-semibold text-foreground">Disease Coverage:</span> Digitized investigation workflows for 14 high-priority infectious diseases, aligning field reporting with WHO IDSR standards</li>
+                    <li><span className="font-semibold text-foreground">Operational Performance:</span> Enabled system targets of 85% facility reporting and 85% investigation rates for suspected outbreaks</li>
+                    <li><span className="font-semibold text-foreground">Workflow Automation:</span> Automated specimen pickup alerts and case notifications, ensuring faster coordination between surveillance teams and laboratories</li>
+                  </ul>
+
+                  <div className="space-y-4 pt-6">
+                    <img
+                      src="/case-studies/eidsr-metrics-impacts.png"
+                      alt="Digital Impact: Outbreak Detection Ready - eIDSR Metrics and Impacts"
+                      className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                      onClick={() => setSelectedImage("/case-studies/eidsr-metrics-impacts.png")}
+                    />
+                    <p className="text-sm text-muted-foreground italic">By combining high adoption with faster reporting and improved data quality, the system transformed surveillance from delayed reporting to timely, actionable outbreak response.</p>
+
+                    <p className="text-base leading-relaxed pt-4">The system reduced outbreak reporting timelines from weeks to as little as 24–48 hours, fundamentally changing the speed of national response.</p>
+
+                    <p className="text-base leading-relaxed">Together, these improvements enabled faster detection, better coordination, and more effective containment of infectious disease outbreaks.</p>
+                  </div>
+                </div>
+              </CaseStudySection>
+            )}
 
             <CaseStudySection id="lessons" title="Lessons Learned" icon={<CheckCircle size={24} />}>
               <div className="space-y-4">
