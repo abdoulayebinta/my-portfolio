@@ -462,35 +462,76 @@ export default function CaseStudyPage() {
               </CaseStudySection>
             )}
 
-            <CaseStudySection id="lessons" title="Lessons Learned" icon={<CheckCircle size={24} />}>
-              <div className="space-y-4">
-                <p className="text-base leading-relaxed">Building and deploying the system at national scale surfaced critical lessons about designing for constrained environments, managing data dependencies, and aligning with real-world operational needs.</p>
-
-                <div className="space-y-4 pt-2">
+            {slug === "unmc-digital-health-screening" && (
+              <CaseStudySection id="lessons" title="11. Challenges & Lessons Learned" icon={<CheckCircle size={24} />}>
+                <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Connectivity Constraints Were More Complex Than Expected</h4>
-                    <p className="text-base leading-relaxed">Variability across GSM networks meant that SMS delivery could be inconsistent, reinforcing that offline-first design is not a feature—but a foundational requirement for reliability.</p>
+                    <h3 className="font-semibold text-foreground text-base mb-2">Designing for Low-Resource Clinical Environments</h3>
+                    <p className="text-base leading-relaxed">One of the primary challenges was designing a platform capable of supporting complex clinical workflows while remaining simple, reliable, and usable for frontline healthcare workers operating in low-resource environments. Limited connectivity, evolving operational requirements, and varying levels of digital literacy required workflows that were guided, resilient, and operationally practical.</p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Data Quality Depends on Strong Master Data Governance</h4>
-                    <p className="text-base leading-relaxed">The system's effectiveness depended heavily on the quality of external data sources. Incomplete or outdated registries disrupted automated workflows, highlighting the need for strong master data governance alongside flexible system design.</p>
+                    <h3 className="font-semibold text-foreground text-base mb-2">Balancing Technical Complexity with Usability</h3>
+                    <p className="text-base leading-relaxed">The platform integrated multiple advanced capabilities including biometric identity management, diagnostic device integrations, centralized reporting, role-based access control, and interoperability workflows. While these features increased architectural complexity, the user experience still needed to remain intuitive for healthcare workers performing patient registration, laboratory workflows, and follow-up care during active field operations.</p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Design for Cognitive Load in High-Pressure Environments</h4>
-                    <p className="text-base leading-relaxed">Designing for high-pressure environments required minimizing cognitive load while enforcing data quality. Conditional workflows simplified data entry, while strict validation ensured that only complete, actionable data reached decision-makers.</p>
+                    <h3 className="font-semibold text-foreground text-base mb-2">The Importance of Phased Delivery</h3>
+                    <p className="text-base leading-relaxed">The project reinforced the importance of phased implementation and scope prioritization. The team focused first on stabilizing core workflows such as patient registration, clinical evaluations, diagnostic synchronization, medication tracking, and follow-up care. This approach reduced operational risk and established a reliable foundation before expanding into advanced analytics, automation, and enterprise-scale capabilities.</p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Bridge Global Standards with Local Reality</h4>
-                    <p className="text-base leading-relaxed">Aligning global reporting standards with local operational realities was critical. Success required bridging the gap between international requirements and the practical constraints faced by frontline health workers.</p>
+                    <h3 className="font-semibold text-foreground text-base mb-2">Interoperability as a Long-Term Strategy</h3>
+                    <p className="text-base leading-relaxed">Another key lesson was the long-term importance of interoperability and platform connectivity within healthcare systems. Designing around API-driven integrations, structured clinical data models, and healthcare interoperability concepts aligned with HL7 and FHIR-oriented workflows positioned the platform for future scalability, research collaboration, and ecosystem integration.</p>
                   </div>
+
+                  <div>
+                    <h3 className="font-semibold text-foreground text-base mb-2">Technology Alone Is Not Enough</h3>
+                    <p className="text-base leading-relaxed">Perhaps the most important lesson was that successful digital health platforms require more than strong technology. Sustainable healthcare transformation depends on aligning clinical realities, operational workflows, user adoption, system scalability, and cross-functional collaboration into a cohesive, user-centered ecosystem capable of supporting continuous patient care.</p>
+                  </div>
+
+                  <img
+                    src="/case-studies/unmc-challenges-lessons.png"
+                    alt="Challenges & Lessons Learned: Key challenges and lessons that shaped platform success"
+                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                    onClick={() => setSelectedImage("/case-studies/unmc-challenges-lessons.png")}
+                  />
+                  <p className="text-sm text-muted-foreground italic">The project highlighted the importance of adaptability, phased delivery, cross-functional collaboration, and user-centered design when building scalable digital health platforms for complex real-world clinical environments.</p>
                 </div>
+              </CaseStudySection>
+            )}
 
-                <p className="text-base leading-relaxed pt-4 border-t border-border/50 mt-4">These lessons continue to shape how I approach building resilient, user-centered systems in complex and resource-constrained environments.</p>
-              </div>
-            </CaseStudySection>
+            {slug !== "unmc-digital-health-screening" && (
+              <CaseStudySection id="lessons" title="Lessons Learned" icon={<CheckCircle size={24} />}>
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed">Building and deploying the system at national scale surfaced critical lessons about designing for constrained environments, managing data dependencies, and aligning with real-world operational needs.</p>
+
+                  <div className="space-y-4 pt-2">
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Connectivity Constraints Were More Complex Than Expected</h4>
+                      <p className="text-base leading-relaxed">Variability across GSM networks meant that SMS delivery could be inconsistent, reinforcing that offline-first design is not a feature—but a foundational requirement for reliability.</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Data Quality Depends on Strong Master Data Governance</h4>
+                      <p className="text-base leading-relaxed">The system's effectiveness depended heavily on the quality of external data sources. Incomplete or outdated registries disrupted automated workflows, highlighting the need for strong master data governance alongside flexible system design.</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Design for Cognitive Load in High-Pressure Environments</h4>
+                      <p className="text-base leading-relaxed">Designing for high-pressure environments required minimizing cognitive load while enforcing data quality. Conditional workflows simplified data entry, while strict validation ensured that only complete, actionable data reached decision-makers.</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Bridge Global Standards with Local Reality</h4>
+                      <p className="text-base leading-relaxed">Aligning global reporting standards with local operational realities was critical. Success required bridging the gap between international requirements and the practical constraints faced by frontline health workers.</p>
+                    </div>
+                  </div>
+
+                  <p className="text-base leading-relaxed pt-4 border-t border-border/50 mt-4">These lessons continue to shape how I approach building resilient, user-centered systems in complex and resource-constrained environments.</p>
+                </div>
+              </CaseStudySection>
+            )}
 
             <div className="mt-16 pt-8 border-t border-border flex justify-between items-center">
               <Link href="/#case-studies">
