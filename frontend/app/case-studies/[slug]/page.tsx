@@ -250,33 +250,62 @@ export default function CaseStudyPage() {
               </CaseStudySection>
             )}
 
-            <CaseStudySection id="system" title="Solution & System Design" icon={<Brain size={24} />}>
-              <div className="space-y-6">
-                <div className="space-y-4">
-                  <p className="text-base leading-relaxed">To address these challenges, we designed a multi-tier system architecture optimized for reliability in low-bandwidth and offline environments, ensuring continuous operation across all levels of the health system.</p>
+            {slug === "unmc-digital-health-screening" && (
+              <CaseStudySection id="system" title="7. Solution & System Design" icon={<Brain size={24} />}>
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <p className="text-base leading-relaxed">The UNMC Project used a centralized hub-and-spoke architecture to connect point-of-care diagnostics, mobile clinical workflows, and centralized administrative oversight into a unified digital health ecosystem. Clinical and biometric data captured through the Android application, along with diagnostic results from the Gazelle/HemeChip reader, were synchronized into a central electronic database through API-driven integrations and platform connectivity workflows.</p>
 
-                  <p className="text-base leading-relaxed">At the edge, we developed a standalone desktop application that enabled district teams to capture, validate, and manage case data entirely offline. Local data persistence ensured that all functionality remained available regardless of connectivity.</p>
+                    <p className="text-base leading-relaxed">The Android application supported frontline healthcare operations including patient registration, guardian management, biometric finger capture, clinical evaluations, laboratory workflows, medication management, and follow-up care. The Gazelle/HemeChip point-of-care diagnostic device integrated with the platform through interoperability services that enabled wireless transmission of hemoglobin electrophoresis results directly into the centralized system.</p>
 
-                  <p className="text-base leading-relaxed">To support offline analysis, we implemented an interoperability layer that automatically populated a local database, allowing epidemiologists to perform reporting and mapping using familiar tools without relying on central servers.</p>
+                    <p className="text-base leading-relaxed">The web application served as the administrative and research oversight layer, enabling user management, role-based access control, biometric matching, laboratory monitoring, standardized reporting, and review of aggregated patient records. The platform architecture emphasized interoperability, secure data exchange, and scalable integrations between diagnostic hardware, mobile applications, centralized databases, and administrative systems.</p>
 
-                  <p className="text-base leading-relaxed">The data pipeline was initiated through SMS alerts, which automatically triggered case creation and synchronized records across both local clients and the central system—eliminating manual data entry and reducing delays.</p>
-                </div>
+                    <p className="text-base leading-relaxed">The solution was also designed with healthcare interoperability principles in mind, leveraging structured clinical data models, API-based integrations, and platform connectivity patterns aligned with modern healthcare exchange concepts such as HL7 and FHIR-oriented workflows. This architecture created a scalable foundation for continuous patient management, operational visibility, and coordinated clinical decision-making across distributed healthcare environments.</p>
+                  </div>
 
-                <div className="space-y-4">
                   <img
-                    src="/case-studies/eidsr-system-architecture.png"
-                    alt="eIDSR System Architecture & Data Flow Diagram"
+                    src="/case-studies/unmc-solution-system-design.png"
+                    alt="Solution & System Design: Hub-and-spoke architecture for integrated digital health platform"
                     className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
-                    onClick={() => setSelectedImage("/case-studies/eidsr-system-architecture.png")}
+                    onClick={() => setSelectedImage("/case-studies/unmc-solution-system-design.png")}
                   />
-                  <p className="text-sm text-muted-foreground italic">This architecture transforms fragmented reporting into a synchronized, resilient system—automating data flow from SMS alerts to local and central systems while ensuring reliable access even without connectivity.</p>
 
-                  <p className="text-base leading-relaxed pt-4">The system enabled automated data flow from SMS alerts to both local and central systems, ensuring synchronized, reliable access to case data regardless of connectivity.</p>
-
-                  <p className="text-base leading-relaxed">This architecture ensured that the system could operate reliably at every level while scaling to support nationwide surveillance and response.</p>
+                  <div className="space-y-4">
+                    <p className="text-sm text-muted-foreground italic">The platform used a centralized hub-and-spoke architecture that integrated point-of-care diagnostics, Android clinical workflows, biometric identity management, APIs, and web-based administrative oversight to enable secure interoperability, continuous patient management, and scalable healthcare operations.</p>
+                  </div>
                 </div>
-              </div>
-            </CaseStudySection>
+              </CaseStudySection>
+            )}
+
+            {slug !== "unmc-digital-health-screening" && (
+              <CaseStudySection id="system" title="Solution & System Design" icon={<Brain size={24} />}>
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <p className="text-base leading-relaxed">To address these challenges, we designed a multi-tier system architecture optimized for reliability in low-bandwidth and offline environments, ensuring continuous operation across all levels of the health system.</p>
+
+                    <p className="text-base leading-relaxed">At the edge, we developed a standalone desktop application that enabled district teams to capture, validate, and manage case data entirely offline. Local data persistence ensured that all functionality remained available regardless of connectivity.</p>
+
+                    <p className="text-base leading-relaxed">To support offline analysis, we implemented an interoperability layer that automatically populated a local database, allowing epidemiologists to perform reporting and mapping using familiar tools without relying on central servers.</p>
+
+                    <p className="text-base leading-relaxed">The data pipeline was initiated through SMS alerts, which automatically triggered case creation and synchronized records across both local clients and the central system—eliminating manual data entry and reducing delays.</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <img
+                      src="/case-studies/eidsr-system-architecture.png"
+                      alt="eIDSR System Architecture & Data Flow Diagram"
+                      className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                      onClick={() => setSelectedImage("/case-studies/eidsr-system-architecture.png")}
+                    />
+                    <p className="text-sm text-muted-foreground italic">This architecture transforms fragmented reporting into a synchronized, resilient system—automating data flow from SMS alerts to local and central systems while ensuring reliable access even without connectivity.</p>
+
+                    <p className="text-base leading-relaxed pt-4">The system enabled automated data flow from SMS alerts to both local and central systems, ensuring synchronized, reliable access to case data regardless of connectivity.</p>
+
+                    <p className="text-base leading-relaxed">This architecture ensured that the system could operate reliably at every level while scaling to support nationwide surveillance and response.</p>
+                  </div>
+                </div>
+              </CaseStudySection>
+            )}
 
             <CaseStudySection id="tradeoffs" title="Tradeoffs" icon={<AlertTriangle size={24} />}>
               <div className="space-y-4">
