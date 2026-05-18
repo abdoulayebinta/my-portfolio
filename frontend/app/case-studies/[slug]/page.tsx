@@ -117,7 +117,17 @@ export default function CaseStudyPage() {
             {slug === "unmc-digital-health-screening" && (
               <>
                 <CaseStudySection id="executive-summary" title="1. Executive Summary" icon={<Target size={24} />}>
-                  <p className="text-base leading-relaxed">The SMART (Sickle and Malaria Accurate Remote Testing) initiative, developed with the University of Nebraska Medical Center, delivered a digital health platform for sickle cell and malaria screening in low-resource settings across Nigeria. As a Business Analyst, I led clinical workflow analysis, requirements strategy, and cross-functional coordination for an Android/Web ecosystem integrated with portable diagnostic hardware. The platform achieved 97.2% diagnostic accuracy and enabled significantly earlier intervention for infants at risk of sickle cell disease.</p>
+                  <div className="space-y-6">
+                    <p className="text-base leading-relaxed">The SMART (Sickle and Malaria Accurate Remote Testing) initiative, developed with the University of Nebraska Medical Center, delivered a digital health platform for sickle cell and malaria screening in low-resource settings across Nigeria. As a Business Analyst, I led clinical workflow analysis, requirements strategy, and cross-functional coordination for an Android/Web ecosystem integrated with portable diagnostic hardware. The platform achieved 97.2% diagnostic accuracy and enabled significantly earlier intervention for infants at risk of sickle cell disease.</p>
+
+                    <img
+                      src="/case-studies/unmc-executive-summary.png"
+                      alt="Digital health platform for sickle cell & malaria screening in low-resource settings"
+                      className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                      onClick={() => setSelectedImage("/case-studies/unmc-executive-summary.png")}
+                    />
+                    <p className="text-sm text-muted-foreground italic">Healthcare worker using the app to support early sickle cell screening in low-resource clinical environments.</p>
+                  </div>
                 </CaseStudySection>
 
                 <CaseStudySection id="role" title="2. My Role & Ownership" icon={<Users size={24} />}>
@@ -126,7 +136,14 @@ export default function CaseStudyPage() {
 
                 <CaseStudySection id="context" title="3. Context & Problem" icon={<AlertTriangle size={24} />}>
                   <div className="space-y-6">
-                    <p className="text-base leading-relaxed">Sickle cell disease remains one of the leading causes of preventable child mortality in sub-Saharan Africa, with nearly 250,000 babies born annually with the condition. In many low-resource regions, infants are not diagnosed early enough to receive timely treatment, contributing to mortality rates as high as 50–90% before age five. Existing diagnostic workflows were fragmented, paper-driven, and difficult to scale across remote environments with limited electricity and inconsistent connectivity. Healthcare workers also lacked centralized systems to longitudinally track patients, laboratory results, and follow-up care throughout the diagnostic journey.</p>
+                    <p className="text-base leading-relaxed">Sickle cell disease remains one of the leading causes of preventable child mortality in sub-Saharan Africa, with nearly 250,000 babies born annually with the condition. In many low-resource regions, infants are not diagnosed early enough to receive timely treatment, contributing to mortality rates as high as 50–90% before age five<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3708126/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">1</a></sup>. Existing diagnostic workflows were fragmented, paper-driven, and difficult to scale across remote environments with limited electricity and inconsistent connectivity. Healthcare workers also lacked centralized systems to longitudinally track patients, laboratory results, and follow-up care throughout the diagnostic journey.</p>
+
+                    <img
+                      src="/case-studies/unmc-context-problem.png"
+                      alt="Context & Problem: Sickle cell disease screening challenges and clinical workflow gaps"
+                      className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                      onClick={() => setSelectedImage("/case-studies/unmc-context-problem.png")}
+                    />
                   </div>
                 </CaseStudySection>
               </>
