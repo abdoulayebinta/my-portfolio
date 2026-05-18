@@ -307,30 +307,54 @@ export default function CaseStudyPage() {
               </CaseStudySection>
             )}
 
-            <CaseStudySection id="tradeoffs" title="Tradeoffs" icon={<AlertTriangle size={24} />}>
-              <div className="space-y-4">
-                <p className="text-base leading-relaxed">Key product decisions required balancing usability, reliability, and security within the constraints of a low-connectivity, high-stakes environment.</p>
+            {slug === "unmc-digital-health-screening" && (
+              <CaseStudySection id="tradeoffs" title="8. Product & Technical Tradeoffs" icon={<AlertTriangle size={24} />}>
+                <div className="space-y-6">
+                  <p className="text-base leading-relaxed">One of the primary challenges during the UNMC Project was balancing ambitious clinical and operational requirements against the realities of deployment timelines, infrastructure limitations, and evolving hardware dependencies. The platform needed to support complex workflows across diagnostics, biometrics, laboratory management, patient follow-up, and centralized administration while remaining usable within low-resource healthcare environments.</p>
 
-                <div className="space-y-4 pt-2">
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Desktop vs. Mobile</h4>
-                    <p className="text-base leading-relaxed">While mobile is typically preferred for field deployments, we chose a desktop-based application because District Surveillance Officers were already equipped with laptops and required a more robust interface for complex clinical workflows. Connectivity was intentionally controlled via USB internet dongles, enabling offline work with automatic synchronization when available—reducing reliance on personal devices and ensuring consistent, secure data transfer.</p>
-                  </div>
+                  <p className="text-base leading-relaxed">A key product tradeoff involved prioritizing operational simplicity for frontline healthcare workers without compromising the depth of clinical data required by researchers and administrators. The Android application was intentionally designed with guided workflows, simplified navigation, and offline-first capabilities to reduce user friction during active field operations, while the web application handled more advanced administrative, reporting, and oversight responsibilities.</p>
 
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Security vs. Friction</h4>
-                    <p className="text-base leading-relaxed">We enforced authentication and encrypted data handling, requiring users to log in even in offline mode. While this introduced additional friction in time-sensitive situations, it was necessary to ensure patient data confidentiality and meet national security standards.</p>
-                  </div>
+                  <p className="text-base leading-relaxed">The team also had to balance rapid implementation with interoperability and long-term scalability. Integrating the Gazelle/HemeChip diagnostic device, biometric fingerprint capture, centralized databases, and role-based administrative systems required API-driven integrations and platform connectivity patterns that could support future expansion and evolving healthcare interoperability standards such as HL7 and FHIR-oriented workflows.</p>
 
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Simplicity vs. Resilience</h4>
-                    <p className="text-base leading-relaxed">An offline-first architecture introduced additional complexity in synchronization and data consistency. However, this tradeoff was essential to ensure the system remained functional and reliable in environments with intermittent or no connectivity.</p>
-                  </div>
+                  <p className="text-base leading-relaxed">Another important tradeoff involved scope prioritization. Advanced automation capabilities, expanded reporting features, and additional workflow enhancements were phased strategically to ensure that core patient registration, laboratory workflows, diagnostic synchronization, and follow-up care processes remained stable and operationally reliable during deployment. This phased delivery approach reduced implementation risk while establishing a scalable technical foundation for future growth.</p>
+
+                  <img
+                    src="/case-studies/unmc-product-technical-tradeoffs.png"
+                    alt="Product & Technical Tradeoffs: MVP prioritization and key tradeoff decisions"
+                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                    onClick={() => setSelectedImage("/case-studies/unmc-product-technical-tradeoffs.png")}
+                  />
+                  <p className="text-sm text-muted-foreground italic">The platform followed a phased MVP strategy that prioritized stable clinical workflows, interoperability, and frontline usability first, while strategically deferring advanced analytics, automation, and enterprise-scale features to future releases.</p>
                 </div>
+              </CaseStudySection>
+            )}
 
-                <p className="text-base leading-relaxed pt-4 border-t border-border/50 mt-4">These tradeoffs were deliberate choices to ensure the system could operate effectively within the realities of the field while meeting critical reliability and security requirements.</p>
-              </div>
-            </CaseStudySection>
+            {slug !== "unmc-digital-health-screening" && (
+              <CaseStudySection id="tradeoffs" title="Tradeoffs" icon={<AlertTriangle size={24} />}>
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed">Key product decisions required balancing usability, reliability, and security within the constraints of a low-connectivity, high-stakes environment.</p>
+
+                  <div className="space-y-4 pt-2">
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Desktop vs. Mobile</h4>
+                      <p className="text-base leading-relaxed">While mobile is typically preferred for field deployments, we chose a desktop-based application because District Surveillance Officers were already equipped with laptops and required a more robust interface for complex clinical workflows. Connectivity was intentionally controlled via USB internet dongles, enabling offline work with automatic synchronization when available—reducing reliance on personal devices and ensuring consistent, secure data transfer.</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Security vs. Friction</h4>
+                      <p className="text-base leading-relaxed">We enforced authentication and encrypted data handling, requiring users to log in even in offline mode. While this introduced additional friction in time-sensitive situations, it was necessary to ensure patient data confidentiality and meet national security standards.</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Simplicity vs. Resilience</h4>
+                      <p className="text-base leading-relaxed">An offline-first architecture introduced additional complexity in synchronization and data consistency. However, this tradeoff was essential to ensure the system remained functional and reliable in environments with intermittent or no connectivity.</p>
+                    </div>
+                  </div>
+
+                  <p className="text-base leading-relaxed pt-4 border-t border-border/50 mt-4">These tradeoffs were deliberate choices to ensure the system could operate effectively within the realities of the field while meeting critical reliability and security requirements.</p>
+                </div>
+              </CaseStudySection>
+            )}
 
             <CaseStudySection id="execution" title="Execution & Leadership" icon={<Users size={24} />}>
               <div className="space-y-6">
