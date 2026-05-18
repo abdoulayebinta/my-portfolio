@@ -210,6 +210,14 @@ export default function CaseStudyPage() {
                   <p className="text-base leading-relaxed">Field workflows were intentionally designed to be structured, guided, and operationally efficient to minimize user error and improve data consistency during active screening activities. The Android application enabled healthcare workers to capture patient demographics, symptoms, medical history, laboratory requests, and diagnostic results directly at the point of care, while supporting offline-first workflows for environments with unreliable connectivity.</p>
 
                   <p className="text-base leading-relaxed">At the same time, the web application was designed for centralized administrative and research oversight. Researchers and administrators used the platform to monitor laboratory activities, manage user access, validate clinical data, review aggregated patient records, and perform biometric matching between guardians and patient profiles. This separation between field operations and centralized oversight created a scalable workflow model capable of supporting both clinical care delivery and long-term research coordination.</p>
+
+                  <img
+                    src="/case-studies/unmc-user-workflow.png"
+                    alt="User & Workflow Analysis: End-to-end clinical processes for sickle cell screening"
+                    className="w-full h-auto rounded-xl border border-border shadow-lg cursor-pointer hover:shadow-xl hover:border-purple-500/50 transition-all"
+                    onClick={() => setSelectedImage("/case-studies/unmc-user-workflow.png")}
+                  />
+                  <p className="text-sm text-muted-foreground italic">The platform streamlined end-to-end clinical workflows across patient registration, clinical evaluations, laboratory testing, medication management, and follow-up care—enabling healthcare workers to capture reliable patient data and coordinate continuous care in low-resource environments.</p>
                 </div>
               </CaseStudySection>
             )}
