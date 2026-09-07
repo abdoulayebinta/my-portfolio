@@ -266,11 +266,11 @@ export const translations = {
       }
     },
     contact: {
-      title: "Let's Build Something Extraordinary",
-      subtitle: "I'm currently open to new opportunities in AI Product Management. Whether you're a recruiter, founder, or fellow PM, I'd love to connect.",
+      title: "Let's Connect",
+      subtitle: "I'm open to Product Manager and Technical Product Manager opportunities across healthcare, EdTech, platforms, data, integrations, and AI. Whether you're a recruiter, hiring manager, product leader, or fellow builder, I'd be happy to connect.",
       email: {
         title: "Email Me",
-        value: "hello@abdoulaye.pm"
+        value: "bahabdoulayebinta@gmail.com"
       },
       linkedin: {
         title: "LinkedIn",

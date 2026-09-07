@@ -32,7 +32,7 @@ export function Contact() {
             </p>
 
             <div className="space-y-6 mb-12">
-              <a href="mailto:hello@abdoulaye.pm" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors border border-border">
+              <a href="mailto:bahabdoulayebinta@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors border border-border">
                 <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
                   <Mail size={24} />
                 </div>
@@ -42,7 +42,7 @@ export function Contact() {
                 </div>
               </a>
 
-              <a href="#" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors border border-border">
+              <a href="https://www.linkedin.com/in/abdoulayebintabah/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors border border-border">
                 <div className="w-12 h-12 rounded-full bg-blue-600/10 flex items-center justify-center text-blue-600">
                   <Linkedin size={24} />
                 </div>
