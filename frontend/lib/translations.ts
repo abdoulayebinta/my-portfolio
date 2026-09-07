@@ -274,7 +274,7 @@ export const translations = {
       },
       linkedin: {
         title: "LinkedIn",
-        value: "Connect professionally"
+        value: "linkedin.com/in/abdoulayebintabah"
       },
       calendar: {
         title: "Book a Call",

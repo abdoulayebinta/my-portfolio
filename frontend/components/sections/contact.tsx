@@ -32,7 +32,7 @@ export function Contact() {
             </p>
 
             <div className="space-y-6 mb-12">
-              <a href="mailto:bahabdoulayebinta@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors border border-border">
+              <a href="mailto:bahabdoulayebinta@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-soft-peach dark:hover:bg-soft-peach hover:border-primary border border-border hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background cursor-pointer">
                 <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
                   <Mail size={24} />
                 </div>
@@ -42,7 +42,7 @@ export function Contact() {
                 </div>
               </a>
 
-              <a href="https://www.linkedin.com/in/abdoulayebintabah/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors border border-border">
+              <a href="https://www.linkedin.com/in/abdoulayebintabah/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-soft-peach dark:hover:bg-soft-peach hover:border-primary border border-border hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background cursor-pointer">
                 <div className="w-12 h-12 rounded-full bg-blue-600/10 flex items-center justify-center text-blue-600">
                   <Linkedin size={24} />
                 </div>
@@ -52,7 +52,7 @@ export function Contact() {
                 </div>
               </a>
 
-              <a href="#" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors border border-border">
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 border border-border transition-all duration-200 cursor-default pointer-events-none opacity-75">
                 <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">
                   <Calendar size={24} />
                 </div>
@@ -60,7 +60,7 @@ export function Contact() {
                   <h3 className="font-semibold">{t.contact.calendar.title}</h3>
                   <p className="text-sm text-muted-foreground">{t.contact.calendar.value}</p>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
 
