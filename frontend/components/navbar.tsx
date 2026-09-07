@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
-import { ResumeDownloadButton } from "@/components/resume-download-button";
+import { Menu, X, Moon, Sun, Send } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Logo } from "@/components/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -14,7 +14,7 @@ import { useLanguage } from "@/context/language-context";
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
-  const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null);
+  const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const { t } = useLanguage();
 
@@ -22,177 +22,140 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  const toggleDropdown = (name: string) => {
-    if (activeDropdown === name) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(name);
-    }
+  const isActive = (href: string) => {
+    if (href === "/" && pathname === "/") return true;
+    if (href !== "/" && pathname.startsWith(href)) return true;
+    return false;
   };
 
   const navItems = [
-    { name: t.nav.about, href: "/#about" },
-    { name: t.nav.caseStudies, href: "/#case-studies" },
-    { name: t.nav.skills, href: "/#skills" },
-    { 
-      name: t.nav.insights, 
-      href: "/#insights",
-      children: [
-        { name: t.nav.blogs, href: "/#insights" },
-        { name: t.nav.videos, href: "/#insights" }
-      ]
-    },
-    { name: t.nav.contact, href: "/#contact" },
+    { name: "Home", href: "/" },
+    { name: "Work", href: "/work" },
+    { name: "Product Thinking", href: "/product-thinking" },
+    { name: t.nav.about, href: "/about" },
   ];
 
   return (
     <header
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
+        "sticky top-0 w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
+          ? "bg-background/90 backdrop-blur-sm border-b border-border/30 dark:border-border/20"
+          : "bg-transparent border-b border-transparent"
       )}
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <Logo />
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex items-center justify-between h-20 md:h-24">
+          {/* Brand Lockup */}
+          <Link
+            href="/"
+            className="group transition-opacity hover:opacity-80"
+          >
+            <Logo variant="full" />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-2 lg:gap-1">
             {navItems.map((item) => (
-              <div key={item.name} className="relative group">
-                {item.children ? (
-                  <button
-                    className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group-hover:text-foreground"
-                  >
-                    {item.name}
-                    <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
-                  </button>
-                ) : (
-                  <Link
-                    href={item.href}
-                    target={item.name === t.nav.github ? "_blank" : undefined}
-                    rel={item.name === t.nav.github ? "noopener noreferrer" : undefined}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
-                  >
-                    {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full" />
-                  </Link>
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "px-3 py-2 text-base font-medium transition-all relative rounded-md group",
+                  isActive(item.href)
+                    ? "text-primary dark:text-primary"
+                    : "text-muted-foreground hover:text-primary dark:hover:text-primary"
                 )}
-
-                {/* Dropdown Menu */}
-                {item.children && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top">
-                    <div className="bg-background/95 backdrop-blur-md border border-border rounded-xl shadow-xl p-2 min-w-[160px] flex flex-col gap-1">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors text-left"
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-            
-            <div className="flex items-center gap-2 ml-2 border-l border-border pl-4">
-              <ResumeDownloadButton variant="magenta" size="sm" label="Resume" />
-              <LanguageSwitcher />
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                <span className="sr-only">Toggle theme</span>
-              </Button>
-            </div>
+                {item.name}
+                <span className={cn(
+                  "absolute bottom-1.5 left-3 right-3 h-0.5 rounded-full transition-colors",
+                  isActive(item.href)
+                    ? "bg-primary dark:bg-primary"
+                    : "bg-primary/0 group-hover:bg-primary/50 dark:group-hover:bg-primary/50"
+                )} />
+              </Link>
+            ))}
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <div className="flex items-center gap-4 md:hidden">
-             <LanguageSwitcher />
-             <Button
+          {/* Right Controls */}
+          <div className="flex items-center gap-3">
+            {/* Get In Touch CTA */}
+            <Link href="/contact" className="hidden sm:inline-block">
+              <Button size="sm" className="gap-1.5">
+                <Send size={15} className="send-icon" />
+                Get In Touch
+              </Button>
+            </Link>
+
+            {/* Language Selector */}
+            <LanguageSwitcher />
+
+            {/* Theme Toggle */}
+            <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="h-9 w-9 hover:bg-secondary/50 dark:hover:bg-secondary/30"
             >
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
+
+            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground p-2"
+              className="md:hidden h-9 w-9 flex items-center justify-center rounded-md text-foreground hover:bg-secondary/50 dark:hover:bg-secondary/30 transition-colors"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Navigation */}
       {isOpen && (
         <div
-          className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-border p-4 shadow-lg animate-in slide-in-from-top-5 max-h-[calc(100vh-5rem)] overflow-y-auto"
+          className="md:hidden absolute top-[72px] left-0 w-full bg-background/95 backdrop-blur-sm border-b border-border/40 dark:border-border/30 animate-in slide-in-from-top-2 duration-200"
         >
-          <nav className="flex flex-col gap-2">
-            <ResumeDownloadButton variant="magenta" size="default" label="Download Resume" className="w-full justify-center" />
+          <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
             {navItems.map((item) => (
-              <div key={item.name} className="flex flex-col">
-                {item.children ? (
-                  <>
-                    <button
-                      onClick={() => toggleDropdown(item.name)}
-                      className="flex items-center justify-between text-base font-medium text-foreground hover:text-primary transition-colors py-3 px-2 rounded-md hover:bg-secondary/30"
-                    >
-                      {item.name}
-                      <ChevronDown 
-                        size={16} 
-                        className={cn("transition-transform duration-200", activeDropdown === item.name ? "rotate-180" : "")} 
-                      />
-                    </button>
-                    {activeDropdown === item.name && (
-                      <div className="flex flex-col pl-6 gap-2 pb-2 border-l-2 border-border ml-4 my-1">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.name}
-                            href={child.href}
-                            onClick={() => setIsOpen(false)}
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground py-2"
-                          >
-                            {child.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    target={item.name === t.nav.github ? "_blank" : undefined}
-                    rel={item.name === t.nav.github ? "noopener noreferrer" : undefined}
-                    onClick={() => setIsOpen(false)}
-                    className="text-base font-medium text-foreground hover:text-primary transition-colors py-3 px-2 rounded-md hover:bg-secondary/30"
-                  >
-                    {item.name}
-                  </Link>
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "px-3 py-2.5 text-sm font-medium rounded-md transition-colors",
+                  isActive(item.href)
+                    ? "bg-primary/10 dark:bg-primary/10 text-primary dark:text-primary font-semibold"
+                    : "text-muted-foreground hover:text-primary dark:hover:text-primary hover:bg-secondary/30"
                 )}
-              </div>
+              >
+                {item.name}
+              </Link>
             ))}
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 pt-2 border-t border-border/40"
+            >
+              <Button
+                size="sm"
+                className="w-full gap-1.5"
+              >
+                <Send size={15} className="send-icon" />
+                Get In Touch
+              </Button>
+            </Link>
           </nav>
         </div>
       )}

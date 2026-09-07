@@ -10,11 +10,11 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Abdoulaye Bah | AI Product Manager Portfolio",
+  title: "Abdoulaye Bah | Technical Product Manager",
   description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
   keywords: ["Product Manager", "AI", "Data", "Machine Learning", "Portfolio", "Strategy"],
   openGraph: {
-    title: "Abdoulaye Bah | AI Product Manager Portfolio",
+    title: "Abdoulaye Bah | Technical Product Manager",
     description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
     type: "website",
     locale: "en_US",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdoulaye Bah | AI Product Manager Portfolio",
+    title: "Abdoulaye Bah | Technical Product Manager",
     description: "Strategic AI & Data Product Manager bridging the gap between technical complexity and user value.",
   },
 };
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <Script id="route-tracking" strategy="afterInteractive">
           {`
 (function() {

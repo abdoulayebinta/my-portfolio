@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Sacramento&display=swap');
+
 @import "tailwindcss";
 
 @theme {
@@ -17,54 +19,420 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #09090b;
-  --primary: #18181b;
-  --primary-foreground: #fafafa;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #18181b;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --accent: #f4f4f5;
-  --accent-foreground: #18181b;
-  --card: #ffffff;
-  --card-foreground: #09090b;
-  --border: #e4e4e7;
+  /* Brand Colors */
+  --primary: #F26A3D;
+  --secondary: #FDD5B5;
+  --soft-peach: #FFF0E5;
+  --soft-surface: #FFF8F4;
+
+  /* Text Colors */
+  --text-primary: #171717;
+  --text-secondary: #6B6B6B;
+  --text-muted: #9A9A9A;
+
+  /* Surfaces */
+  --background: #FFFFFF;
+  --foreground: #171717;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FDD5B5;
+  --secondary-foreground: #171717;
+  --muted: #FFF0E5;
+  --muted-foreground: #6B6B6B;
+  --accent: #F26A3D;
+  --accent-foreground: #FFFFFF;
+  --card: #FFFFFF;
+  --card-foreground: #171717;
+  --border: #EAE6E2;
 }
 
 .dark {
-  --background: #050505;
-  --foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #18181b;
-  --secondary: #27272a;
-  --secondary-foreground: #fafafa;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --accent: #27272a;
-  --accent-foreground: #fafafa;
-  --card: #09090b;
-  --card-foreground: #fafafa;
-  --border: #27272a;
+  /* Brand Colors - warm dark palette */
+  --primary: #FF8058;
+  --secondary: #6B3827;
+  --soft-peach: #35231D;
+  --soft-surface: #1D1A18;
+
+  /* Text Colors - optimized for dark background */
+  --text-primary: #FAF8F6;
+  --text-secondary: #BDB7B2;
+  --text-muted: #837D79;
+
+  /* Surfaces */
+  --background: #151311;
+  --foreground: #FAF8F6;
+  --primary-foreground: #FFFFFF;
+  --secondary: #6B3827;
+  --secondary-foreground: #FAF8F6;
+  --muted: #35231D;
+  --muted-foreground: #BDB7B2;
+  --accent: #FF8058;
+  --accent-foreground: #FFFFFF;
+  --card: #24201D;
+  --card-foreground: #FAF8F6;
+  --border: #37312D;
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Headings - Manrope */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* Hero H1 - 52-56px desktop */
+  h1 {
+    @apply text-5xl md:text-6xl;
+    font-size: clamp(52px, 7vw, 56px);
+  }
+
+  /* H2 - 36-40px */
+  h2 {
+    @apply text-3xl md:text-4xl;
+    font-size: clamp(36px, 5vw, 40px);
+  }
+
+  /* H3 - 22-24px */
+  h3 {
+    @apply text-xl md:text-2xl;
+    font-size: clamp(22px, 3vw, 24px);
+  }
+
+  /* Large body - 18px */
+  .text-lg {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* Body - 16px */
+  .text-base, p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Small/meta - 12-14px */
+  .text-sm, small {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Extra small - 12px */
+  .text-xs {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  /* Button text - Inter, semibold */
+  button {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+  }
+
+  /* Navigation - Inter */
+  nav {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Labels and tags - Inter */
+  label, .tag, .label {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer components {
+  /* 8px-based spacing scale */
+  :root {
+    --spacing-1: 8px;
+    --spacing-2: 16px;
+    --spacing-3: 24px;
+    --spacing-4: 32px;
+    --spacing-5: 48px;
+    --spacing-6: 64px;
+    --spacing-7: 80px;
+    --spacing-8: 96px;
+  }
+
+  /* Container */
+  .container {
+    @apply w-full mx-auto;
+    max-width: 1240px;
+    padding-left: var(--spacing-4);
+    padding-right: var(--spacing-4);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding-left: var(--spacing-3);
+      padding-right: var(--spacing-3);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      padding-left: var(--spacing-2);
+      padding-right: var(--spacing-2);
+    }
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-20 md:py-24;
+    padding-top: var(--spacing-7);
+    padding-bottom: var(--spacing-7);
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding-top: var(--spacing-5);
+      padding-bottom: var(--spacing-5);
+    }
+  }
+
+  /* Major sections */
+  .section-major {
+    @apply py-24 md:py-28;
+    padding-top: var(--spacing-8);
+    padding-bottom: var(--spacing-8);
+  }
+
+  @media (max-width: 768px) {
+    .section-major {
+      padding-top: var(--spacing-5);
+      padding-bottom: var(--spacing-5);
+    }
   }
 }
 
 @layer utilities {
+  /* Signature-style name branding */
+  .signature-name {
+    font-family: 'Sacramento', cursive;
+    letter-spacing: 0.5px;
+  }
+
   .glass {
     @apply bg-white/5 backdrop-blur-xl border border-white/10;
   }
-  
+
   .glass-card {
     @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-primary;
   }
+
+  /* Card Design System */
+  .card-base {
+    @apply bg-background dark:bg-card text-foreground dark:text-card-foreground border border-border dark:border-border rounded-[10px] transition-all duration-200 hover:shadow-sm hover:-translate-y-0.5;
+  }
+
+  .card-default {
+    @apply bg-background dark:bg-card text-foreground dark:text-card-foreground border border-border dark:border-border rounded-[10px] p-6 transition-all duration-200 hover:shadow-sm hover:-translate-y-0.5;
+  }
+
+  .card-featured {
+    @apply bg-secondary dark:bg-secondary text-foreground dark:text-card-foreground border border-border/30 dark:border-border/20 rounded-[10px] p-6 transition-all duration-200 hover:shadow-sm hover:-translate-y-0.5;
+  }
+
+  .card-minimal {
+    @apply bg-transparent dark:bg-transparent border border-border/40 dark:border-border/30 rounded-[10px] p-6 transition-all duration-200 hover:shadow-sm hover:-translate-y-0.5;
+  }
+
+  /* Spacing utilities - 8px scale */
+  .gap-xs { @apply gap-2; /* 8px */ }
+  .gap-sm { @apply gap-4; /* 16px */ }
+  .gap-md { @apply gap-6; /* 24px */ }
+  .gap-lg { @apply gap-8; /* 32px */ }
+  .gap-xl { @apply gap-12; /* 48px */ }
+  .gap-2xl { @apply gap-16; /* 64px */ }
+  .gap-3xl { @apply gap-20; /* 80px */ }
+  .gap-4xl { @apply gap-24; /* 96px */ }
+
+  /* Padding utilities */
+  .p-xs { @apply p-2; /* 8px */ }
+  .p-sm { @apply p-4; /* 16px */ }
+  .p-md { @apply p-6; /* 24px */ }
+  .p-lg { @apply p-8; /* 32px */ }
+  .p-xl { @apply p-12; /* 48px */ }
+  .p-2xl { @apply p-16; /* 64px */ }
+  .p-3xl { @apply p-20; /* 80px */ }
+  .p-4xl { @apply p-24; /* 96px */ }
+
+  /* Tag & Label System */
+  .tag-default {
+    @apply px-3 py-1.5 text-xs font-medium text-foreground dark:text-foreground bg-secondary/50 dark:bg-secondary/40 border border-border/30 dark:border-border/20 rounded-full transition-colors duration-150;
+  }
+
+  .tag-featured {
+    @apply px-3 py-1.5 text-xs font-semibold text-white dark:text-white bg-primary dark:bg-primary border border-primary rounded-full uppercase tracking-wide;
+  }
+
+  .tag-status {
+    @apply px-3 py-1.5 text-xs font-semibold text-white dark:text-white bg-primary dark:bg-primary border border-primary rounded-full uppercase tracking-wide;
+  }
+
+  .label-small {
+    @apply text-xs font-medium text-muted-foreground dark:text-muted-foreground;
+  }
+
+  /* Section Heading Pattern */
+  .section-eyebrow {
+    @apply text-xs font-semibold text-primary dark:text-primary uppercase tracking-widest mb-3;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-foreground dark:text-foreground mb-4;
+  }
+
+  .section-description {
+    @apply text-base md:text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed max-w-2xl;
+  }
+
+  /* Section header container */
+  .section-header {
+    @apply mb-12 md:mb-16;
+  }
+
+  /* Margin utilities */
+  .m-xs { @apply m-2; /* 8px */ }
+  .m-sm { @apply m-4; /* 16px */ }
+  .m-md { @apply m-6; /* 24px */ }
+  .m-lg { @apply m-8; /* 32px */ }
+  .m-xl { @apply m-12; /* 48px */ }
+  .m-2xl { @apply m-16; /* 64px */ }
+  .m-3xl { @apply m-20; /* 80px */ }
+  .m-4xl { @apply m-24; /* 96px */ }
+}
+
+/* Hero Photo Zoom Effect */
+.hero-photo {
+  transition: transform 300ms ease-out;
+  transform: scale(1);
+}
+
+/* Only apply hover zoom on devices that support hover (desktop) */
+@media (hover: hover) {
+  .hero-photo:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo {
+    transition: none;
+  }
+}
+
+/* LinkedIn CTA Button Hover Enhancement */
+.linkedin-cta {
+  transition: all 200ms ease-out;
+}
+
+.linkedin-arrow {
+  transition: transform 200ms ease-out;
+  transform: translateX(0);
+}
+
+/* Desktop hover state - only on hover devices */
+@media (hover: hover) {
+  .linkedin-cta:hover {
+    background-color: #FFF0E5;
+    border-color: #F26A3D;
+    color: #F26A3D;
+    transform: translateY(-1px);
+  }
+
+  .linkedin-cta:hover .linkedin-arrow {
+    color: #F26A3D;
+    transform: translateX(3px);
+  }
+}
+
+/* Keyboard focus state */
+.linkedin-cta:focus-visible {
+  outline: 2px solid #F26A3D;
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .linkedin-cta {
+    transition: none;
+  }
+
+  .linkedin-arrow {
+    transition: none;
+  }
+
+  .linkedin-cta:hover {
+    transform: none;
+  }
+
+  .linkedin-cta:hover .linkedin-arrow {
+    transform: none;
+  }
+}
+
+/* Get In Touch Send Icon Hover Effect */
+.send-icon {
+  transition: transform 200ms ease-out;
+  transform: translateX(0) translateY(0);
+}
+
+/* Desktop hover state - only on hover devices */
+@media (hover: hover) {
+  button:has(.send-icon):hover .send-icon {
+    transform: translateX(2px) translateY(-2px);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .send-icon {
+    transition: none;
+  }
+
+  button:has(.send-icon):hover .send-icon {
+    transform: none;
+  }
+}
+
+/* Interactive Element Cursor */
+a,
+button,
+[role="button"],
+[role="link"],
+[role="tab"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+select {
+  cursor: pointer;
+}
+
+/* Disabled state cursor */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* Interactive link cursor */
+a:not([aria-disabled="true"]) {
+  cursor: pointer;
 }
 

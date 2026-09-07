@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import type { Metadata } from "next";
 import { useParams, notFound } from "next/navigation";
 import { blogPosts as localPosts } from "@/lib/data";
 import { Navbar } from "@/components/navbar";

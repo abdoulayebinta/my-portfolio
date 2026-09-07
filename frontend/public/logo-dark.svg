@@ -1,0 +1,18 @@
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- A: Triangle with white fill for dark mode -->
+  <polygon points="60,340 160,40 260,340" fill="white"/>
+  <!-- A: Inner dark triangle for hollow effect -->
+  <polygon points="120,280 160,140 200,280" fill="#050505"/>
+
+  <!-- B: Vertical bar in white -->
+  <rect x="270" y="40" width="60" height="300" rx="30" fill="white"/>
+
+  <!-- B: Top bump -->
+  <path d="M 330 70 Q 380 70 380 140 Q 380 180 330 180 L 270 180 L 270 70 Z" fill="white"/>
+
+  <!-- B: Bottom bump -->
+  <path d="M 330 190 Q 380 190 380 280 Q 380 330 330 330 L 270 330 L 270 190 Z" fill="white"/>
+
+  <!-- Teal accent line -->
+  <path d="M 140 120 Q 200 200 280 300" stroke="#20B2AA" stroke-width="50" stroke-linecap="round" fill="none"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- A: Triangle -->
+  <g>
+    <!-- Left stroke of A -->
+    <path d="M 50 320 L 150 60 L 250 320" stroke="#001F3F" stroke-width="50" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Horizontal bar of A -->
+    <line x1="90" y1="200" x2="210" y2="200" stroke="#001F3F" stroke-width="50" stroke-linecap="round"/>
+  </g>
+
+  <!-- B: Rounded rectangle -->
+  <g>
+    <!-- Vertical line of B -->
+    <line x1="280" y1="60" x2="280" y2="320" stroke="#001F3F" stroke-width="50" stroke-linecap="round"/>
+    <!-- Top curve of B -->
+    <path d="M 280 60 Q 360 60 360 150 Q 360 190 280 190" stroke="#001F3F" stroke-width="50" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Bottom curve of B -->
+    <path d="M 280 190 Q 360 190 360 270 Q 360 320 280 320" stroke="#001F3F" stroke-width="50" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Teal accent line -->
+  <path d="M 180 130 Q 220 200 260 280" stroke="#20B2AA" stroke-width="45" stroke-linecap="round" fill="none"/>
+</svg>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import type { Metadata } from "next";
 import { useParams, notFound } from "next/navigation";
 import { caseStudies } from "@/lib/data";
 import { Navbar } from "@/components/navbar";

@@ -10,40 +10,23 @@ interface LogoProps {
 
 export function Logo({ variant = "full", className }: LogoProps) {
   return (
-    <div className={cn("flex items-center gap-2.5 font-bold tracking-tight group", className)}>
-      {/* Icon / Symbol */}
-      <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-all duration-300 group-hover:scale-105">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-5 h-5"
-        >
-          {/* Abstract Monogram 'A' / Network Node */}
-          <path d="M12 2L2 7l10 5 10-5-10-5z" />
-          <path d="M2 17l10 5 10-5" />
-          <path d="M2 12l10 5 10-5" />
-        </svg>
-        
-        {/* Subtle glow effect */}
-        <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className={cn("flex items-center gap-2", className)}>
+      {/* AB Monogram - Premium minimal design */}
+      <div className="flex items-center justify-center w-10 h-10 relative group">
+        {/* Subtle background indicator */}
+        <div className="absolute inset-0 rounded-lg bg-secondary/40 dark:bg-secondary/30 transition-colors group-hover:bg-secondary/60 dark:group-hover:bg-secondary/50" />
+
+        {/* Monogram text */}
+        <span className="relative font-bold text-sm tracking-tight text-foreground dark:text-foreground transition-colors">
+          AB
+        </span>
       </div>
 
-      {/* Text */}
-      {variant !== "icon" && (
-        <div className="flex flex-col leading-none">
-          <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 group-hover:to-purple-500 transition-all duration-300">
-            {variant === "full" ? "Abdoulaye Bah" : "AB"}
-          </span>
-          {variant === "full" && (
-            <span className="text-[0.65rem] text-muted-foreground font-medium tracking-widest uppercase">
-              Technical Product Manager (AI / Data)
-            </span>
-          )}
-        </div>
+      {/* Signature-style name text - only for full variant */}
+      {variant === "full" && (
+        <span className="hidden sm:inline text-2xl md:text-[28px] lg:text-[32px] font-normal text-foreground dark:text-foreground tracking-wide signature-name">
+          Abdoulaye Bah
+        </span>
       )}
     </div>
   );
