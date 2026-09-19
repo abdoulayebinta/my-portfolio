@@ -176,6 +176,61 @@ export default function RootLayout({
 })();
 `}
         </Script>
+
+        {/* Cursor Fix Script - Ensures all interactive elements show pointer cursor */}
+        <Script id="cursor-fix" strategy="afterInteractive">
+          {`
+(function() {
+  'use strict';
+
+  // Function to apply cursor styles to interactive elements
+  function applyCursorStyles() {
+    // Apply cursor: pointer to interactive elements
+    const interactiveSelectors = 'a, button, [role="button"], [role="link"], [role="tab"], [role="menuitem"], [role="option"], select, input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"], input[type="radio"], input[type="file"], input[type="range"]';
+
+    document.querySelectorAll(interactiveSelectors).forEach(function(element) {
+      if (!element.hasAttribute('aria-disabled') && element.getAttribute('aria-disabled') !== 'true') {
+        element.style.cursor = 'pointer';
+      }
+    });
+
+    // Apply cursor: not-allowed to disabled elements
+    const disabledSelectors = 'a[aria-disabled="true"], button:disabled, input:disabled, select:disabled, textarea:disabled, [aria-disabled="true"]';
+    document.querySelectorAll(disabledSelectors).forEach(function(element) {
+      element.style.cursor = 'not-allowed';
+    });
+
+    // Apply cursor: text to text inputs
+    const textInputSelectors = 'input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="url"], input[type="number"], input[type="date"], input[type="time"], textarea';
+    document.querySelectorAll(textInputSelectors).forEach(function(element) {
+      element.style.cursor = 'text';
+    });
+  }
+
+  // Run on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyCursorStyles);
+  } else {
+    applyCursorStyles();
+  }
+
+  // Also run after a delay to catch dynamically added elements
+  setTimeout(applyCursorStyles, 500);
+
+  // Watch for dynamic content additions
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.addedNodes.length) {
+        applyCursorStyles();
+      }
+    });
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+`}
+        </Script>
+
         <NextTopLoader 
           color="#8b5cf6"
           initialPosition={0.08}

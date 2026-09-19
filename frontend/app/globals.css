@@ -407,32 +407,102 @@
   }
 }
 
-/* Interactive Element Cursor */
-a,
-button,
-[role="button"],
-[role="link"],
-[role="tab"],
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="checkbox"],
-input[type="radio"],
-select {
-  cursor: pointer;
+@layer base {
+  /* Interactive Element Cursor - Global */
+  a,
+  button,
+  [role="button"],
+  [role="link"],
+  [role="tab"],
+  [role="menuitem"],
+  [role="option"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="file"],
+  input[type="range"],
+  select {
+    cursor: pointer !important;
+  }
+
+  /* Exclude disabled and aria-disabled elements */
+  a[aria-disabled="true"],
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed !important;
+  }
+
+  /* Text inputs keep text cursor */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="url"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  textarea {
+    cursor: text !important;
+  }
 }
 
-/* Disabled state cursor */
+@layer utilities {
+  /* Guaranteed cursor pointer class for interactive elements */
+  .cursor-pointer-important {
+    cursor: pointer !important;
+  }
+
+  .cursor-not-allowed-important {
+    cursor: not-allowed !important;
+  }
+
+  .cursor-text-important {
+    cursor: text !important;
+  }
+}
+
+/* Failsafe: Direct CSS rule with highest specificity for cursor behavior */
+/* This applies after all Tailwind layers to ensure cursor: pointer works */
+a:not([aria-disabled="true"]),
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+[role="link"]:not([aria-disabled="true"]),
+select:not(:disabled),
+input[type="button"]:not(:disabled),
+input[type="submit"]:not(:disabled),
+input[type="reset"]:not(:disabled),
+input[type="checkbox"]:not(:disabled),
+input[type="radio"]:not(:disabled),
+input[type="file"]:not(:disabled),
+input[type="range"]:not(:disabled) {
+  cursor: pointer !important;
+}
+
+/* Disabled elements */
+a[aria-disabled="true"],
 button:disabled,
 input:disabled,
 select:disabled,
 textarea:disabled,
 [aria-disabled="true"] {
-  cursor: not-allowed;
+  cursor: not-allowed !important;
 }
 
-/* Interactive link cursor */
-a:not([aria-disabled="true"]) {
-  cursor: pointer;
+/* Text inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+textarea {
+  cursor: text !important;
 }
 
