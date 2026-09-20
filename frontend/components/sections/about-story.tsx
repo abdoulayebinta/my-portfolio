@@ -18,12 +18,12 @@ export function AboutStory() {
             {/* Text Column */}
             <div className="space-y-6 order-2 md:order-1">
               {/* Eyebrow */}
-              <div className="text-[12px] md:text-[13px] font-semibold text-muted-foreground uppercase tracking-widest">
+              <div className="text-[11px] md:text-[12px] font-semibold text-primary uppercase tracking-[0.14em]">
                 About
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-5xl md:text-[56px] font-bold leading-tight">
                 About Me
               </h1>
 
@@ -91,8 +91,8 @@ export function AboutStory() {
         <div className="container mx-auto px-4 md:px-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-8 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">My Career Journey</h2>
-            <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest whitespace-nowrap">
+            <h2 className="text-3xl md:text-[36px] font-bold">My Career Journey</h2>
+            <p className="text-[11px] md:text-[12px] font-semibold text-muted-foreground uppercase tracking-[0.14em] whitespace-nowrap">
               A Path From Engineering to Product, Driven by Impact
             </p>
           </div>
@@ -115,7 +115,7 @@ export function AboutStory() {
                 {/* Card */}
                 <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-3 h-full flex flex-col">
                   <div className="space-y-1">
-                    <h3 className="text-[18px] md:text-[18px] font-semibold text-foreground">eHealth Africa</h3>
+                    <h3 className="text-[18px] md:text-[20px] font-semibold text-foreground">eHealth Africa</h3>
                     <p className="text-[15px] text-muted-foreground font-medium">Software Developer</p>
                     <p className="text-xs text-muted-foreground">eIDSR</p>
                   </div>
@@ -253,8 +253,8 @@ export function AboutStory() {
             <div className="space-y-6">
               {/* Header */}
               <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
-                <h2 className="text-3xl md:text-4xl font-bold">How I Work</h2>
-                <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest whitespace-nowrap pt-2 md:pt-0">
+                <h2 className="text-3xl md:text-[32px] font-bold">How I Work</h2>
+                <p className="text-[11px] md:text-[12px] font-semibold text-muted-foreground uppercase tracking-[0.14em] whitespace-nowrap pt-2 md:pt-0">
                   Principles That Guide My Work Every Day
                 </p>
               </div>
@@ -303,8 +303,8 @@ export function AboutStory() {
             <div className="space-y-5 md:pl-4">
               {/* Header */}
               <div className="flex flex-col">
-                <h2 className="text-3xl md:text-4xl font-bold mb-1">What I Focus On</h2>
-                <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                <h2 className="text-3xl md:text-[32px] font-bold mb-1">What I Focus On</h2>
+                <p className="text-[11px] md:text-[12px] font-semibold text-muted-foreground uppercase tracking-[0.14em]">
                   Areas I'm Most Passionate About
                 </p>
               </div>
@@ -346,8 +346,8 @@ export function AboutStory() {
             <div className="space-y-6">
               {/* Header */}
               <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
-                <h2 className="text-3xl md:text-4xl font-bold">Beyond the Role</h2>
-                <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest whitespace-nowrap pt-2 md:pt-0">
+                <h2 className="text-3xl md:text-[30px] font-bold">Beyond the Role</h2>
+                <p className="text-[11px] md:text-[12px] font-semibold text-muted-foreground uppercase tracking-[0.14em] whitespace-nowrap pt-2 md:pt-0">
                   More Than a Job
                 </p>
               </div>
@@ -404,8 +404,8 @@ export function AboutStory() {
               {/* Header with Controls */}
               <div className="flex items-start justify-between">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-1">Recommendations</h2>
-                  <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                  <h2 className="text-3xl md:text-[30px] font-bold mb-1">Recommendations</h2>
+                  <p className="text-[11px] md:text-[12px] font-semibold text-muted-foreground uppercase tracking-[0.14em]">
                     Kind Words From People I've Worked With
                   </p>
                 </div>
