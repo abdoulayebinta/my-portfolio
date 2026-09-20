@@ -338,35 +338,67 @@ export function AboutStory() {
       {/* Divider */}
       <div className="border-t border-border/40" />
 
-      {/* Section 4: Beyond the Role + Recommendations */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">Beyond the Role</h2>
+      {/* Section 4: Beyond the Role */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
 
-          <div className="space-y-8">
-
-            {/* Subsection */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-bold">Interests & Influences</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Content to be added
-              </p>
+          {/* Section Header */}
+          <div className="space-y-3 mb-10">
+            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+              Beyond the Role
             </div>
-
-            {/* Recommendations/Resources */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-bold">Recommended Reads</h3>
-              <div className="space-y-3">
-                <div className="p-4 rounded-lg bg-soft-peach/30 border border-border/40">
-                  <p className="text-sm text-muted-foreground">Content to be added</p>
-                </div>
-                <div className="p-4 rounded-lg bg-soft-peach/30 border border-border/40">
-                  <p className="text-sm text-muted-foreground">Content to be added</p>
-                </div>
-              </div>
-            </div>
-
+            <h2 className="text-3xl md:text-4xl font-bold">Beyond the Role</h2>
+            <p className="text-sm text-muted-foreground pt-1">
+              More than a job.
+            </p>
           </div>
+
+          {/* Main Copy */}
+          <div className="space-y-5 mb-10">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              I'm a builder by nature. I enjoy experimenting with new technologies, understanding how products work underneath the interface, and turning ideas into something tangible.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Outside my day-to-day work, I use side projects to explore AI products, system design, APIs, data workflows, and new product ideas. Building keeps me close to the technology and improves the questions I ask as a Product Manager.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              I'm also documenting what I learn through my portfolio, GitHub, LinkedIn, and video content as I continue developing toward deeper Technical Product Management leadership.
+            </p>
+          </div>
+
+          {/* Pull Quote */}
+          <div className="py-8 mb-10 border-y border-border/40">
+            <p className="text-2xl md:text-3xl text-foreground italic signature-name text-center">
+              Same curiosity. Bigger impact.
+            </p>
+          </div>
+
+          {/* Links */}
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+            <a
+              href="https://github.com/abdoulayebinta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer]"
+            >
+              GitHub →
+            </a>
+            <Link
+              href="/product-thinking"
+              className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer]"
+            >
+              Product Thinking →
+            </Link>
+            <a
+              href="https://www.linkedin.com/in/abdoulayebintabah/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer]"
+            >
+              LinkedIn →
+            </a>
+          </div>
+
         </div>
       </section>
 
