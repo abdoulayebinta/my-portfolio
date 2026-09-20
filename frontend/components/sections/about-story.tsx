@@ -11,9 +11,9 @@ export function AboutStory() {
   return (
     <>
       {/* Section 1: About Me Introduction */}
-      <section className="pt-14 md:pt-16 pb-12 md:pb-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-[58%_42%] gap-8 md:gap-12 items-start max-w-5xl">
+      <section className="pt-12 md:pt-14 pb-8 md:pb-10">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-[58%_42%] gap-8 md:gap-12 items-start">
 
             {/* Text Column */}
             <div className="space-y-8 order-2 md:order-1">
@@ -82,11 +82,10 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 2: My Career Journey */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
+      <section className="py-10 md:py-12">
+        <div className="container mx-auto px-4 md:px-8">
             {/* Section Header */}
-            <div className="mb-12">
+            <div className="mb-10">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">
                 My Career Journey
               </div>
@@ -230,20 +229,19 @@ export function AboutStory() {
 
               </div>
             </div>
-          </div>
         </div>
       </section>
 
       {/* Spacing */}
-      <div className="h-12 md:h-16" />
+      <div className="h-10 md:h-12" />
 
       {/* Divider */}
       <div className="border-t border-border/40" />
 
       {/* Section 3: How I Work + What I Focus On */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-5xl">
+      <section className="py-10 md:py-12">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
 
             {/* LEFT COLUMN: How I Work */}
             <div className="space-y-8">
@@ -340,8 +338,8 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 4: Beyond the Role */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+      <section className="py-10 md:py-12">
+        <div className="container mx-auto px-4 md:px-8 max-w-3xl">
 
           {/* Section Header */}
           <div className="space-y-3 mb-10">
@@ -407,9 +405,8 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 5: Recommendations */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-5xl mx-auto">
+      <section className="py-10 md:py-12">
+        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
             {/* Section Header */}
             <div className="space-y-3 mb-12">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
@@ -472,7 +469,6 @@ export function AboutStory() {
                 See all recommendations →
               </Link>
             </div>
-          </div>
         </div>
       </section>
 
@@ -480,9 +476,8 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 6: Compact Closing CTA Band */}
-      <section className="py-8 md:py-12 bg-soft-peach dark:bg-soft-peach/5">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-5xl mx-auto">
+      <section className="py-6 md:py-8 bg-soft-peach dark:bg-soft-peach/5">
+        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center">
 
               {/* LEFT: Copy */}
@@ -511,7 +506,6 @@ export function AboutStory() {
               </div>
 
             </div>
-          </div>
         </div>
       </section>
     </>
