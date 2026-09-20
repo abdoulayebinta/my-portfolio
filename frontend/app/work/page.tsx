@@ -3,6 +3,7 @@ import React from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ProfessionalCaseStudies } from "@/components/sections/professional-case-studies";
+import { ExperimentsBuilds } from "@/components/sections/experiments-builds";
 import { Contact } from "@/components/sections/contact";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function WorkPage() {
       </section>
 
       <ProfessionalCaseStudies />
+      <ExperimentsBuilds />
       <Contact />
 
       <Footer />

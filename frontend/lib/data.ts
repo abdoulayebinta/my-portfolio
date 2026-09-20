@@ -67,7 +67,8 @@ export const caseStudies = [
       role: "Product Manager",
       timeline: "PRD Complete · In Development",
       team: "TFO (Télévision française de l'Ontario)",
-      stack: ["RAG", "LLMs", "Anonymous Class Code System", "idello.org"]
+      stack: ["RAG", "LLMs", "Anonymous Class Code System", "idello.org"],
+      projectType: "PROTOTYPE"
     },
     content: {
       context: "TFO's platform Idéllo hosts over 15,000 certified educational assets used by Franco-Ontarian teachers across Canada. Despite the richness of the content library, teachers struggled to discover and sequence relevant resources into coherent lesson plans — a process that could take hours.",
@@ -141,7 +142,8 @@ export const caseStudies = [
       role: "Senior PM",
       timeline: "8 Months",
       team: "3 AI Engineers, 2 Full Stack, 1 UX Researcher",
-      stack: ["OpenAI API", "Pinecone", "LangChain", "Next.js"]
+      stack: ["OpenAI API", "Pinecone", "LangChain", "Next.js"],
+      projectType: "PERSONAL BUILD"
     },
     content: {
       context: "Support costs were scaling linearly with user growth. CSAT scores were dropping due to long wait times.",
