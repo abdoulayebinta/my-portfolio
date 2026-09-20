@@ -83,15 +83,16 @@ export const caseStudies = [
   },
   {
     slug: "unmc-digital-health-screening",
-    title: "UNMC Project — Digital Health Platform for Sickle Cell & Malaria Screening",
-    description: "Led business analysis and product coordination for the SMART initiative with the University of Nebraska Medical Center, delivering a digital health platform for sickle cell and malaria screening in low-resource settings. Translated complex clinical workflows into scalable Android/Web applications integrated with portable diagnostic hardware, helping achieve 97.2% diagnostic accuracy and accelerating early intervention for at-risk children.",
-    tags: ["HealthTech", "Mobile Health", "Diagnostics", "Low-Resource Settings"],
+    title: "SMART / UNMC — Digital Health Screening Platform",
+    description: "Translated complex clinical and research workflows into requirements for an integrated Android and web platform supporting sickle cell and malaria screening in Nigeria.",
+    tags: ["HealthTech", "Diagnostics", "Mobile", "Integrations"],
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
     metadata: {
       role: "Business Analyst",
       timeline: "In Development",
       team: "University of Nebraska Medical Center (UNMC)",
-      stack: ["Android", "Web", "Portable Diagnostics", "Clinical Workflows"]
+      stack: ["Android", "Web", "Portable Diagnostics", "Clinical Workflows"],
+      keyOutcome: "97.2% diagnostic accuracy"
     },
     content: {
       context: "To be developed",
@@ -156,15 +157,17 @@ export const caseStudies = [
   },
   {
     slug: "healthcare-diagnostic-assistant",
-    title: "AI Diagnostic Assistant",
-    description: "Assisting radiologists in detecting early signs of anomalies in X-rays with Computer Vision.",
-    tags: ["Healthcare", "Computer Vision", "Regulated", "Mobile"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+    title: "Boukili — Digital Reading Platform Modernization",
+    description: "Modernizing a French-language digital reading platform for children with improved accessibility, user experience, platform capabilities, and new learning features.",
+    tags: ["EdTech", "Product Modernization", "Accessibility", "Platform"],
+    image: "/visuals/boukili-featured.png",
     metadata: {
-      role: "Product Lead",
-      timeline: "24 Months",
-      team: "4 Research Scientists, 3 Engineers, Clinical Partners",
-      stack: ["PyTorch", "DICOM", "Edge AI", "iPadOS"]
+      role: "Product Manager",
+      timeline: "Currently Building",
+      team: "TFO (Télévision française de l'Ontario)",
+      stack: ["React", "Next.js", "Node.js", "Educational Platform"],
+      keyOutcome: "2.2M+ reads since Jan 2026",
+      status: "Currently Building"
     },
     content: {
       context: "Radiologists are overworked, leading to burnout and potential diagnostic errors.",

@@ -49,12 +49,19 @@ export function ProfessionalCaseStudies() {
               className="group relative grid grid-cols-1 md:grid-cols-[45%_55%] gap-8 md:gap-6 items-center bg-secondary/20 dark:bg-secondary/10 rounded-3xl p-6 md:p-8 border border-border hover:border-primary/30 dark:hover:border-primary/30 transition-colors"
             >
               <div className="order-2 md:order-1 flex flex-col justify-between h-full">
-                {/* Role */}
-                {study.metadata?.role && (
-                  <div className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">
-                    Role · {study.metadata.role}
-                  </div>
-                )}
+                {/* Role & Status */}
+                <div className="flex items-center gap-3 mb-2">
+                  {study.metadata?.role && (
+                    <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                      Role · {study.metadata.role}
+                    </div>
+                  )}
+                  {study.metadata?.status && (
+                    <div className="text-xs font-medium text-primary uppercase tracking-wide">
+                      {study.metadata.status}
+                    </div>
+                  )}
+                </div>
 
                 {/* Title */}
                 <h3 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-primary transition-colors">
