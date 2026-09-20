@@ -337,138 +337,133 @@ export function AboutStory() {
       {/* Divider */}
       <div className="border-t border-border/40" />
 
-      {/* Section 4: Beyond the Role */}
+      {/* Section 4 & 5: Beyond the Role + Recommendations */}
       <section className="py-10 md:py-12">
-        <div className="container mx-auto px-4 md:px-8 max-w-3xl">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-[49%_1px_50%] gap-0 md:gap-8 items-start">
 
-          {/* Section Header */}
-          <div className="space-y-3 mb-10">
-            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-              Beyond the Role
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold">Beyond the Role</h2>
-            <p className="text-sm text-muted-foreground pt-1">
-              More than a job.
-            </p>
-          </div>
-
-          {/* Main Copy */}
-          <div className="space-y-5 mb-10">
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              I'm a builder by nature. I enjoy experimenting with new technologies, understanding how products work underneath the interface, and turning ideas into something tangible.
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Outside my day-to-day work, I use side projects to explore AI products, system design, APIs, data workflows, and new product ideas. Building keeps me close to the technology and improves the questions I ask as a Product Manager.
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              I'm also documenting what I learn through my portfolio, GitHub, LinkedIn, and video content as I continue developing toward deeper Technical Product Management leadership.
-            </p>
-          </div>
-
-          {/* Pull Quote */}
-          <div className="py-8 mb-10 border-y border-border/40">
-            <p className="text-2xl md:text-3xl text-foreground italic signature-name text-center">
-              Same curiosity. Bigger impact.
-            </p>
-          </div>
-
-          {/* Links */}
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
-            <a
-              href="https://github.com/abdoulayebinta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer]"
-            >
-              GitHub →
-            </a>
-            <Link
-              href="/product-thinking"
-              className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer]"
-            >
-              Product Thinking →
-            </Link>
-            <a
-              href="https://www.linkedin.com/in/abdoulayebintabah/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer]"
-            >
-              LinkedIn →
-            </a>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="border-t border-border/40" />
-
-      {/* Section 5: Recommendations */}
-      <section className="py-10 md:py-12">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-            {/* Section Header */}
-            <div className="space-y-3 mb-12">
-              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-                Recommendations
+            {/* LEFT — BEYOND THE ROLE */}
+            <div className="space-y-6">
+              {/* Header */}
+              <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
+                <h2 className="text-3xl md:text-4xl font-bold">Beyond the Role</h2>
+                <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest whitespace-nowrap pt-2 md:pt-0">
+                  More Than a Job
+                </p>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold">What colleagues say</h2>
-              <p className="text-sm text-muted-foreground pt-1">
-                Perspectives from people I've had the opportunity to work with.
-              </p>
+
+              {/* Copy with Left Accent Line */}
+              <div className="border-l-2 border-primary pl-4 md:pl-6 space-y-4">
+                <p className="text-base md:text-[15px] text-muted-foreground leading-[1.6]">
+                  I'm a builder by nature. I enjoy experimenting with new technologies, understanding how products work underneath the interface, and turning ideas into something tangible.
+                </p>
+                <p className="text-base md:text-[15px] text-muted-foreground leading-[1.6]">
+                  Outside my day-to-day work, I use side projects to explore AI products, system design, APIs, data workflows, and new product ideas. Building keeps me close to the technology and improves the questions I ask as a Product Manager.
+                </p>
+              </div>
+
+              {/* Pull Quote */}
+              <div className="pt-4">
+                <p className="text-xl md:text-2xl text-foreground signature-name leading-tight">
+                  Same curiosity.<br/>A bigger impact.
+                </p>
+              </div>
+
+              {/* Links */}
+              <div className="flex flex-col gap-2 pt-2">
+                <a
+                  href="https://github.com/abdoulayebinta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer] text-sm"
+                >
+                  GitHub →
+                </a>
+                <Link
+                  href="/product-thinking"
+                  className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer] text-sm"
+                >
+                  Product Thinking →
+                </Link>
+                <a
+                  href="https://www.linkedin.com/in/abdoulayebintabah/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer] text-sm"
+                >
+                  LinkedIn →
+                </a>
+              </div>
             </div>
 
-            {/* Testimonials Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              {/* Filter for specific testimonials */}
-              {[testimonials[0], testimonials[1], testimonials[4]].map((testimonial) => (
-                <div
-                  key={testimonial.id}
-                  className="p-6 rounded-[14px] bg-soft-peach dark:bg-soft-peach/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 flex flex-col"
-                >
-                  {/* Quote */}
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                    "{testimonial.content}"
+            {/* Vertical Divider */}
+            <div className="hidden md:block bg-border/30 h-full min-h-[300px]" />
+
+            {/* RIGHT — RECOMMENDATIONS */}
+            <div className="space-y-6 md:pl-4">
+              {/* Header with Controls */}
+              <div className="flex items-start justify-between">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-1">Recommendations</h2>
+                  <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                    Kind Words From People I've Worked With
                   </p>
+                </div>
+                {/* Previous/Next Controls */}
+                <div className="flex gap-2 md:gap-1">
+                  <button className="w-8 h-8 md:w-7 md:h-7 rounded-full border border-border/40 flex items-center justify-center hover:border-primary/40 transition-colors [cursor:pointer]">
+                    <span className="text-xs text-muted-foreground">←</span>
+                  </button>
+                  <button className="w-8 h-8 md:w-7 md:h-7 rounded-full border border-border/40 flex items-center justify-center hover:border-primary/40 transition-colors [cursor:pointer]">
+                    <span className="text-xs text-muted-foreground">→</span>
+                  </button>
+                </div>
+              </div>
 
-                  {/* Divider */}
-                  <div className="border-t border-[#EAE6E2] dark:border-border/30" />
+              {/* Testimonials Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Filter for specific testimonials */}
+                {[testimonials[0], testimonials[1], testimonials[4]].map((testimonial) => (
+                  <div
+                    key={testimonial.id}
+                    className="p-5 md:p-6 rounded-[12px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 flex flex-col h-full min-h-[200px]"
+                  >
+                    {/* Quote */}
+                    <p className="text-sm text-muted-foreground leading-[1.5] flex-1 line-clamp-4">
+                      {testimonial.content}
+                    </p>
 
-                  {/* Person Info */}
-                  <div className="flex items-center gap-3">
-                    {/* Avatar */}
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 bg-muted">
-                      <Image
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                    {/* Divider */}
+                    <div className="border-t border-[#EAE6E2] dark:border-border/30" />
 
-                    {/* Name and Role */}
-                    <div className="min-w-0">
-                      <h4 className="text-sm font-bold text-foreground truncate">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-xs text-muted-foreground line-clamp-2">
-                        {testimonial.role}
-                      </p>
+                    {/* Person Info */}
+                    <div className="flex items-center gap-3">
+                      {/* Avatar */}
+                      <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 bg-muted">
+                        <Image
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+
+                      {/* Name and Role */}
+                      <div className="min-w-0">
+                        <h4 className="text-sm font-semibold text-foreground truncate">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-xs text-muted-foreground line-clamp-1">
+                          {testimonial.role}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            {/* See All Link */}
-            <div>
-              <Link
-                href="#testimonials"
-                className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer] text-sm font-medium"
-              >
-                See all recommendations →
-              </Link>
-            </div>
+          </div>
         </div>
       </section>
 
