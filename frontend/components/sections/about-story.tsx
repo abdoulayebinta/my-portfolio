@@ -11,29 +11,29 @@ export function AboutStory() {
   return (
     <>
       {/* Section 1: About Me Introduction */}
-      <section className="pt-12 md:pt-14 pb-8 md:pb-10">
+      <section className="py-12 md:py-14">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-[58%_42%] gap-8 md:gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-[48%_48%] gap-8 md:gap-12 items-start md:gap-16">
 
             {/* Text Column */}
-            <div className="space-y-8 order-2 md:order-1">
+            <div className="space-y-6 order-2 md:order-1">
               {/* Eyebrow */}
-              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+              <div className="text-[12px] md:text-[13px] font-semibold text-muted-foreground uppercase tracking-widest">
                 About
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                 About Me
               </h1>
 
               {/* Subheading in Coral */}
-              <p className="text-lg md:text-xl font-semibold text-primary leading-relaxed">
+              <p className="text-xl md:text-2xl font-semibold text-primary leading-tight max-w-[640px]">
                 Building meaningful products at the intersection of people, technology, and complex systems.
               </p>
 
               {/* Body Copy */}
-              <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-4 text-base md:text-[17px] text-muted-foreground leading-[1.6] max-w-[640px]">
                 <p>
                   I'm Abdoulaye Bah, a Product Manager and builder with a background in software engineering and experience across healthcare and EdTech.
                 </p>
@@ -50,26 +50,31 @@ export function AboutStory() {
             </div>
 
             {/* Portrait Column */}
-            <div className="relative order-1 md:order-2">
-              {/* Portrait Container */}
-              <div className="relative space-y-6">
-                <div className="relative rounded-2xl overflow-hidden bg-soft-peach">
-                  <div className="aspect-[3/4] relative">
-                    <Image
-                      src="/visuals/abdoulaye-bah-pm.png"
-                      alt="Abdoulaye Bah"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                </div>
+            <div className="relative order-1 md:order-2 flex flex-col items-center md:items-start">
+              {/* Soft Peach Background */}
+              <div className="relative w-full max-w-[480px]">
+                <div className="absolute -inset-8 bg-soft-peach rounded-2xl opacity-60 -z-10" />
 
-                {/* Caption */}
-                <div className="text-center pt-2">
-                  <p className="text-[13px] md:text-sm text-muted-foreground italic signature-name leading-relaxed">
-                    Building at the intersection of product, systems, and impact.
-                  </p>
+                {/* Portrait Container */}
+                <div className="relative space-y-6">
+                  <div className="relative rounded-[14px] overflow-hidden bg-soft-peach border border-soft-peach/30">
+                    <div className="aspect-[4/5] relative">
+                      <Image
+                        src="/visuals/abdoulaye-bah-pm.png"
+                        alt="Abdoulaye Bah"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  </div>
+
+                  {/* Caption */}
+                  <div className="text-center md:text-left">
+                    <p className="text-[16px] md:text-[18px] text-foreground/80 italic signature-name leading-relaxed">
+                      Building at the intersection of product, systems, and impact.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
