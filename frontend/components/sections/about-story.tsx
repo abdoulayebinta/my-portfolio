@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Globe2, Zap, RefreshCw } from "lucide-react";
+import { ArrowRight, Globe2, Zap, RefreshCw, Heart } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
 export function AboutStory() {
@@ -247,91 +247,85 @@ export function AboutStory() {
       {/* Section 3: How I Work + What I Focus On */}
       <section className="py-10 md:py-12">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-[62%_1px_36%] gap-0 md:gap-8 items-start">
 
             {/* LEFT COLUMN: How I Work */}
-            <div className="space-y-8">
-              <div className="space-y-2">
-                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-                  How I Work
-                </div>
+            <div className="space-y-6">
+              {/* Header */}
+              <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
                 <h2 className="text-3xl md:text-4xl font-bold">How I Work</h2>
-                <p className="text-sm text-muted-foreground pt-2">
-                  Principles shaped by real product work.
+                <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest whitespace-nowrap pt-2 md:pt-0">
+                  Principles That Guide My Work Every Day
                 </p>
               </div>
 
-              {/* Principle Blocks */}
-              <div className="space-y-6">
+              {/* Principle Cards - Three in a Row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Principle 1 */}
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                      <Globe2 size={18} className="text-primary" />
-                    </div>
-                    <h3 className="text-base font-bold text-foreground">Design for real-world constraints</h3>
+                <div className="rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
+                  <div className="w-10 h-10 rounded-full bg-soft-peach dark:bg-soft-peach/10 flex items-center justify-center shrink-0">
+                    <Globe2 size={18} className="text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <h3 className="text-base md:text-[16px] font-bold text-foreground leading-tight">Design for real-world constraints</h3>
+                  <p className="text-sm text-muted-foreground leading-[1.5] flex-1">
                     Working on systems such as eIDSR taught me that connectivity, infrastructure, workflows, and operational realities need to shape product and technical decisions from the beginning.
                   </p>
                 </div>
 
                 {/* Principle 2 */}
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                      <Zap size={18} className="text-primary" />
-                    </div>
-                    <h3 className="text-base font-bold text-foreground">Bridge product and engineering</h3>
+                <div className="rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
+                  <div className="w-10 h-10 rounded-full bg-soft-peach dark:bg-soft-peach/10 flex items-center justify-center shrink-0">
+                    <Zap size={18} className="text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <h3 className="text-base md:text-[16px] font-bold text-foreground leading-tight">Bridge product and engineering</h3>
+                  <p className="text-sm text-muted-foreground leading-[1.5] flex-1">
                     My engineering background helps me translate between user needs, business goals, system design, data flows, integrations, and implementation trade-offs.
                   </p>
                 </div>
 
                 {/* Principle 3 */}
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                      <RefreshCw size={18} className="text-primary" />
-                    </div>
-                    <h3 className="text-base font-bold text-foreground">Modernize with care</h3>
+                <div className="rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
+                  <div className="w-10 h-10 rounded-full bg-soft-peach dark:bg-soft-peach/10 flex items-center justify-center shrink-0">
+                    <RefreshCw size={18} className="text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <h3 className="text-base md:text-[16px] font-bold text-foreground leading-tight">Modernize with care</h3>
+                  <p className="text-sm text-muted-foreground leading-[1.5] flex-1">
                     Improving an existing product means respecting current users, workflows, business rules, accessibility requirements, and platform constraints while creating space for what's next.
                   </p>
                 </div>
               </div>
             </div>
 
+            {/* Vertical Divider */}
+            <div className="hidden md:block bg-border/30 h-full min-h-[300px]" />
+
             {/* RIGHT COLUMN: What I Focus On */}
-            <div className="space-y-8">
-              <div className="space-y-2">
-                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-                  What I Focus On
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold">Areas I work across</h2>
+            <div className="space-y-5 md:pl-4">
+              {/* Header */}
+              <div className="flex flex-col">
+                <h2 className="text-3xl md:text-4xl font-bold mb-1">What I Focus On</h2>
+                <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                  Areas I'm Most Passionate About
+                </p>
               </div>
 
-              {/* Expertise Pills */}
-              <div className="flex flex-wrap gap-3">
+              {/* Focus Pills - 3x2 Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-2">
                 {[
-                  "Healthcare",
-                  "EdTech",
-                  "Platforms",
-                  "System Design",
-                  "Data",
-                  "APIs & Integrations",
-                  "AI Product Development",
-                  "Platform Modernization",
-                  "Accessibility & Quality"
-                ].map((expertise) => (
-                  <span
-                    key={expertise}
-                    className="px-3 py-1.5 text-xs font-medium rounded-full bg-soft-peach dark:bg-soft-peach/10 text-foreground dark:text-foreground border border-border/40"
+                  { icon: <Heart size={16} className="text-primary" />, label: "Healthcare" },
+                  { icon: <Heart size={16} className="text-primary" />, label: "EdTech" },
+                  { icon: <Heart size={16} className="text-primary" />, label: "Platforms" },
+                  { icon: <Heart size={16} className="text-primary" />, label: "Data" },
+                  { icon: <Heart size={16} className="text-primary" />, label: "Integrations" },
+                  { icon: <Heart size={16} className="text-primary" />, label: "AI" }
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="px-3 py-2 md:py-3 rounded-full bg-soft-peach dark:bg-soft-peach/10 border border-[#EAE6E2] dark:border-border/40 flex items-center justify-center gap-2 text-sm md:text-[15px] font-medium text-foreground whitespace-nowrap"
                   >
-                    {expertise}
-                  </span>
+                    <span className="flex-shrink-0">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </div>
                 ))}
               </div>
             </div>
