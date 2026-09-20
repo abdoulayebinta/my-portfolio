@@ -11,8 +11,8 @@ export function AboutStory() {
   return (
     <>
       {/* Section 1: About Me Introduction */}
-      <section className="py-12 md:py-14">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="pt-8 md:pt-10 pb-6 md:pb-8">
+        <div className="about-container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-[48%_48%] gap-8 md:gap-12 items-start md:gap-16">
 
             {/* Text Column */}
@@ -87,10 +87,10 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 2: My Career Journey */}
-      <section className="py-10 md:py-12">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="py-6 md:py-8">
+        <div className="about-container mx-auto">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-8 mb-12">
+          <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-8 mb-6">
             <h2 className="text-3xl md:text-[36px] font-bold">My Career Journey</h2>
             <p className="text-[11px] md:text-[12px] font-semibold text-muted-foreground uppercase tracking-[0.14em] whitespace-nowrap">
               A Path From Engineering to Product, Driven by Impact
@@ -238,15 +238,12 @@ export function AboutStory() {
         </div>
       </section>
 
-      {/* Spacing */}
-      <div className="h-10 md:h-12" />
-
       {/* Divider */}
       <div className="border-t border-border/40" />
 
       {/* Section 3: How I Work + What I Focus On */}
-      <section className="py-10 md:py-12">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="py-6 md:py-8">
+        <div className="about-container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-[62%_1px_36%] gap-0 md:gap-8 items-start">
 
             {/* LEFT COLUMN: How I Work */}
@@ -338,8 +335,8 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 4 & 5: Beyond the Role + Recommendations */}
-      <section className="py-10 md:py-12">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="py-6 md:py-8">
+        <div className="about-container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-[49%_1px_50%] gap-0 md:gap-8 items-start">
 
             {/* LEFT — BEYOND THE ROLE */}
@@ -472,7 +469,7 @@ export function AboutStory() {
 
       {/* Section 6: Compact Closing CTA Band */}
       <section className="py-8 md:py-10">
-        <div className="container mx-auto px-4 md:px-8">
+        <div className="about-container mx-auto">
           <div className="rounded-[14px] bg-[#FFF0E5] dark:bg-soft-peach/10 px-6 md:px-8 py-6 md:py-8 min-h-[100px] md:min-h-[110px] flex flex-col md:grid md:grid-cols-[auto_1px_1fr_auto] md:gap-6 md:items-center">
 
             {/* LEFT: Heading */}
