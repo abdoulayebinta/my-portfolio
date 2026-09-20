@@ -471,36 +471,39 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 6: Compact Closing CTA Band */}
-      <section className="py-6 md:py-8 bg-soft-peach dark:bg-soft-peach/5">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center">
+      <section className="py-8 md:py-10">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="rounded-[14px] bg-[#FFF0E5] dark:bg-soft-peach/10 px-6 md:px-8 py-6 md:py-8 min-h-[100px] md:min-h-[110px] flex flex-col md:grid md:grid-cols-[auto_1px_1fr_auto] md:gap-6 md:items-center">
 
-              {/* LEFT: Copy */}
-              <div className="space-y-3">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                  Let's build what's next.
-                </h2>
-                <p className="text-base text-muted-foreground leading-relaxed max-w-sm">
-                  I'm always open to meaningful conversations about product, technology, healthcare, EdTech, platforms, data, and AI.
-                </p>
-              </div>
-
-              {/* RIGHT: CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 items-start md:items-center">
-                <Link href="/contact">
-                  <Button variant="default" className="[cursor:pointer] whitespace-nowrap">
-                    Get In Touch →
-                  </Button>
-                </Link>
-                <Link
-                  href="/work"
-                  className="text-primary hover:text-primary/80 transition-colors duration-200 [cursor:pointer] text-sm font-medium pt-1 md:pt-0"
-                >
-                  View My Work →
-                </Link>
-              </div>
-
+            {/* LEFT: Heading */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
+                Let's build<br/>what's next.
+              </h2>
             </div>
+
+            {/* Vertical Divider */}
+            <div className="hidden md:block bg-primary/30 h-12" />
+
+            {/* CENTER: Copy */}
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed pt-4 md:pt-0">
+              I'm always open to meaningful conversations about product, impact, and opportunities to collaborate.
+            </p>
+
+            {/* RIGHT: Button */}
+            <Link href="/contact" className="pt-4 md:pt-0">
+              <Button
+                className="w-full md:w-auto [cursor:pointer] whitespace-nowrap"
+                style={{
+                  backgroundColor: "#F26A3D",
+                  color: "white"
+                }}
+              >
+                Get In Touch →
+              </Button>
+            </Link>
+
+          </div>
         </div>
       </section>
     </>
