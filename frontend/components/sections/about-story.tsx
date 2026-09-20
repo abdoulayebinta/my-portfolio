@@ -89,151 +89,152 @@ export function AboutStory() {
       {/* Section 2: My Career Journey */}
       <section className="py-10 md:py-12">
         <div className="container mx-auto px-4 md:px-8">
-            {/* Section Header */}
-            <div className="mb-10">
-              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">
-                My Career Journey
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-8 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">My Career Journey</h2>
+            <p className="text-[11px] md:text-xs font-semibold text-muted-foreground uppercase tracking-widest whitespace-nowrap">
+              A Path From Engineering to Product, Driven by Impact
+            </p>
+          </div>
+
+          {/* Timeline */}
+          <div className="relative">
+            {/* Desktop Connector Line */}
+            <div className="hidden md:block absolute top-5 left-0 right-0 h-0.5 bg-primary/30 z-0" />
+
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-3 relative z-10">
+
+              {/* Card 1: eHealth Africa */}
+              <div className="relative">
+                {/* Milestone Circle */}
+                <div className="absolute -top-7 left-3 md:left-1/2 md:-translate-x-1/2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs">
+                  01
+                </div>
+
+                {/* Card */}
+                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-3 h-full flex flex-col">
+                  <div className="space-y-1">
+                    <h3 className="text-[18px] md:text-[18px] font-semibold text-foreground">eHealth Africa</h3>
+                    <p className="text-[15px] text-muted-foreground font-medium">Software Developer</p>
+                    <p className="text-xs text-muted-foreground">eIDSR</p>
+                  </div>
+
+                  <p className="text-[14px] text-muted-foreground leading-[1.5]">
+                    Contributed to an offline-first national disease-surveillance platform in Liberia, designed to improve disease reporting and outbreak response in low-connectivity environments.
+                  </p>
+
+                  <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
+                    <p className="text-[14px] font-semibold text-primary">78 health facilities</p>
+                    <p className="text-xs text-muted-foreground">Pilot deployment</p>
+                  </div>
+
+                  <div className="mt-auto pt-2">
+                    <Link href="/case-studies/eidsr-digitizing-outbreak-response-west-africa" className="text-xs text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 [cursor:pointer]">
+                      View case study →
+                    </Link>
+                  </div>
+                </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-3">From engineering to product.</h2>
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl">
-                A path shaped by building, learning, and moving closer to the problems behind the technology.
-              </p>
-            </div>
 
-            {/* Milestone Cards */}
-            <div className="relative">
-              {/* Desktop Connector Line */}
-              <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 z-0" />
-
-              {/* Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 relative z-10">
-
-                {/* Card 1: eHealth Africa */}
-                <div className="relative">
-                  {/* Milestone Circle */}
-                  <div className="absolute -top-6 left-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
-                    01
-                  </div>
-
-                  {/* Card */}
-                  <div className="pt-8 p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 h-full flex flex-col">
-                    <div>
-                      <h3 className="text-base md:text-lg font-bold text-foreground mb-1">eHealth Africa</h3>
-                      <p className="text-sm text-muted-foreground">Software Developer · eIDSR</p>
-                    </div>
-
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Contributed to an offline-first national disease-surveillance platform in Liberia, designed to improve disease reporting and outbreak response in low-connectivity environments.
-                    </p>
-
-                    <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
-                      <p className="text-sm font-semibold text-foreground">78 health facilities<br/><span className="text-xs font-normal text-muted-foreground">Pilot deployment</span></p>
-                    </div>
-
-                    <div className="mt-auto pt-2">
-                      <Link href="/case-studies/eidsr-digitizing-outbreak-response-west-africa" className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
-                        View case study →
-                      </Link>
-                    </div>
-                  </div>
+              {/* Card 2: SMART / UNMC */}
+              <div className="relative">
+                {/* Milestone Circle */}
+                <div className="absolute -top-7 left-3 md:left-1/2 md:-translate-x-1/2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs">
+                  02
                 </div>
 
-                {/* Card 2: SMART / UNMC */}
-                <div className="relative">
-                  {/* Milestone Circle */}
-                  <div className="absolute -top-6 left-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
-                    02
+                {/* Card */}
+                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-3 h-full flex flex-col">
+                  <div className="space-y-1">
+                    <h3 className="text-[18px] md:text-[18px] font-semibold text-foreground">SMART / UNMC</h3>
+                    <p className="text-[15px] text-muted-foreground font-medium">Business Analyst</p>
                   </div>
 
-                  {/* Card */}
-                  <div className="pt-8 p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 h-full flex flex-col">
-                    <div>
-                      <h3 className="text-base md:text-lg font-bold text-foreground mb-1">SMART / UNMC</h3>
-                      <p className="text-sm text-muted-foreground">Business Analyst</p>
-                    </div>
+                  <p className="text-[14px] text-muted-foreground leading-[1.5]">
+                    Translated clinical and research workflows into requirements for an integrated Android and web platform supporting sickle-cell and malaria screening in Nigeria.
+                  </p>
 
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Translated clinical and research workflows into requirements for an integrated Android and web platform supporting sickle-cell and malaria screening in Nigeria.
-                    </p>
+                  <p className="text-xs italic text-muted-foreground">
+                    Translating technical systems into product decisions.
+                  </p>
 
-                    <p className="text-xs italic text-muted-foreground pt-1">
-                      Translating technical systems into product decisions.
-                    </p>
+                  <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
+                    <p className="text-[14px] font-semibold text-primary">97.2% screening accuracy</p>
+                  </div>
 
-                    <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
-                      <p className="text-sm font-semibold text-foreground">97.2% screening accuracy</p>
-                    </div>
-
-                    <div className="mt-auto pt-2">
-                      <Link href="/case-studies/unmc-digital-health-screening" className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
-                        View case study →
-                      </Link>
-                    </div>
+                  <div className="mt-auto pt-2">
+                    <Link href="/case-studies/unmc-digital-health-screening" className="text-xs text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 [cursor:pointer]">
+                      View case study →
+                    </Link>
                   </div>
                 </div>
-
-                {/* Card 3: WHO */}
-                <div className="relative">
-                  {/* Milestone Circle */}
-                  <div className="absolute -top-6 left-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
-                    03
-                  </div>
-
-                  {/* Card */}
-                  <div className="pt-8 p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 h-full flex flex-col">
-                    <div>
-                      <h3 className="text-base md:text-lg font-bold text-foreground mb-1">World Health Organization</h3>
-                      <p className="text-sm text-muted-foreground">Product Manager · Health Data Platforms</p>
-                    </div>
-
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Worked across global health data platforms, APIs, integrations, dashboards, and real-time information exchange supporting complex public-health environments.
-                    </p>
-
-                    <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
-                      <p className="text-sm font-semibold text-foreground">20+ countries</p>
-                    </div>
-
-                    <div className="mt-auto pt-2">
-                      <Link href="/work" className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
-                        View related work →
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 4: TFO / Boukili */}
-                <div className="relative">
-                  {/* Milestone Circle */}
-                  <div className="absolute -top-6 left-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
-                    04
-                  </div>
-
-                  {/* Card */}
-                  <div className="pt-8 p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 h-full flex flex-col">
-                    <div>
-                      <h3 className="text-base md:text-lg font-bold text-foreground mb-1">TFO / Boukili</h3>
-                      <p className="text-sm text-muted-foreground">Product Manager</p>
-                    </div>
-
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Leading product modernization work on a French-language digital reading platform, including UX, accessibility, platform capabilities, business rules, QA/UAT, and new learning experiences.
-                    </p>
-
-                    <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
-                      <p className="text-sm font-semibold text-foreground">2.2M+ book reads<br/><span className="text-xs font-normal text-muted-foreground">Since Jan 2026</span></p>
-                    </div>
-
-                    <div className="mt-auto pt-2">
-                      <Link href="/case-studies/healthcare-diagnostic-assistant" className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
-                        View case study →
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
               </div>
+
+              {/* Card 3: WHO */}
+              <div className="relative">
+                {/* Milestone Circle */}
+                <div className="absolute -top-7 left-3 md:left-1/2 md:-translate-x-1/2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs">
+                  03
+                </div>
+
+                {/* Card */}
+                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-3 h-full flex flex-col">
+                  <div className="space-y-1">
+                    <h3 className="text-[18px] md:text-[18px] font-semibold text-foreground">World Health Organization</h3>
+                    <p className="text-[15px] text-muted-foreground font-medium">Product Manager</p>
+                    <p className="text-xs text-muted-foreground">Health Data Platforms</p>
+                  </div>
+
+                  <p className="text-[14px] text-muted-foreground leading-[1.5]">
+                    Worked across global health data platforms, APIs, integrations, dashboards, and real-time information exchange supporting complex public-health environments.
+                  </p>
+
+                  <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
+                    <p className="text-[14px] font-semibold text-primary">20+ countries</p>
+                  </div>
+
+                  <div className="mt-auto pt-2">
+                    <Link href="/work" className="text-xs text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 [cursor:pointer]">
+                      View related work →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4: TFO / Boukili */}
+              <div className="relative">
+                {/* Milestone Circle */}
+                <div className="absolute -top-7 left-3 md:left-1/2 md:-translate-x-1/2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs">
+                  04
+                </div>
+
+                {/* Card */}
+                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-3 h-full flex flex-col">
+                  <div className="space-y-1">
+                    <h3 className="text-[18px] md:text-[18px] font-semibold text-foreground">TFO / Boukili</h3>
+                    <p className="text-[15px] text-muted-foreground font-medium">Product Manager</p>
+                  </div>
+
+                  <p className="text-[14px] text-muted-foreground leading-[1.5]">
+                    Leading product modernization work on a French-language digital reading platform, including UX, accessibility, platform capabilities, business rules, QA/UAT, and new learning experiences.
+                  </p>
+
+                  <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
+                    <p className="text-[14px] font-semibold text-primary">2.2M+ book reads</p>
+                    <p className="text-xs text-muted-foreground">Since Jan 2026</p>
+                  </div>
+
+                  <div className="mt-auto pt-2">
+                    <Link href="/case-studies/healthcare-diagnostic-assistant" className="text-xs text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 [cursor:pointer]">
+                      View case study →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
             </div>
+          </div>
         </div>
       </section>
 
