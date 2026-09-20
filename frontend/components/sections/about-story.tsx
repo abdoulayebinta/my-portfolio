@@ -4,34 +4,72 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe2, Zap, RefreshCw } from "lucide-react";
 
 export function AboutStory() {
   return (
     <>
       {/* Section 1: About Me Introduction */}
-      <section className="py-16 md:py-20">
+      <section className="pt-14 md:pt-16 pb-12 md:pb-16">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-[58%_42%] gap-8 md:gap-12 items-start max-w-5xl">
 
             {/* Text Column */}
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                A Product Thinker & Technical Builder
-              </h2>
-              <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-8 order-2 md:order-1">
+              {/* Eyebrow */}
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                About
+              </div>
+
+              {/* Main Heading */}
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                About Me
+              </h1>
+
+              {/* Subheading in Coral */}
+              <p className="text-lg md:text-xl font-semibold text-primary leading-relaxed">
+                Building meaningful products at the intersection of people, technology, and complex systems.
+              </p>
+
+              {/* Body Copy */}
+              <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Content to be added
+                  I'm Abdoulaye Bah, a Product Manager and builder with a background in software engineering and experience across healthcare and EdTech.
+                </p>
+                <p>
+                  I started my career close to the technology—building software for health systems and learning how infrastructure, connectivity, data quality, and real-world workflows determine whether a product actually works.
+                </p>
+                <p>
+                  Over time, I moved closer to the product decisions behind those systems: understanding users, translating complexity, aligning teams, and helping turn difficult problems into useful products.
+                </p>
+                <p>
+                  Today, I bring that engineering foundation into Product Management, combining technical depth with product judgment and execution.
                 </p>
               </div>
             </div>
 
             {/* Portrait Column */}
-            <div className="relative">
-              <div className="relative aspect-square rounded-2xl overflow-hidden bg-muted border border-border/40">
-                <p className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                  [Portrait image here]
-                </p>
+            <div className="relative order-1 md:order-2">
+              {/* Portrait Container */}
+              <div className="relative space-y-6">
+                <div className="relative rounded-2xl overflow-hidden bg-soft-peach">
+                  <div className="aspect-[3/4] relative">
+                    <Image
+                      src="/visuals/abdoulaye-bah-pm.png"
+                      alt="Abdoulaye Bah"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* Caption */}
+                <div className="text-center pt-2">
+                  <p className="text-[13px] md:text-sm text-muted-foreground italic signature-name leading-relaxed">
+                    Building at the intersection of product, systems, and impact.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -43,97 +81,253 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 2: My Career Journey */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">My Career Journey</h2>
-            <p className="text-lg text-muted-foreground">
-              Content to be added
-            </p>
-          </div>
-
-          <div className="space-y-12">
-            {/* Career milestone 1 */}
-            <div className="border-l-2 border-primary/30 pl-8">
-              <div className="flex gap-3 mb-2">
-                <div className="text-sm font-semibold text-primary">Timeline</div>
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="mb-12">
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">
+                My Career Journey
               </div>
-              <h3 className="text-xl font-bold mb-2">Role / Company</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Content to be added
+              <h2 className="text-3xl md:text-4xl font-bold mb-3">From engineering to product.</h2>
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl">
+                A path shaped by building, learning, and moving closer to the problems behind the technology.
               </p>
             </div>
 
-            {/* Career milestone 2 */}
-            <div className="border-l-2 border-primary/30 pl-8">
-              <div className="flex gap-3 mb-2">
-                <div className="text-sm font-semibold text-primary">Timeline</div>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Role / Company</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Content to be added
-              </p>
-            </div>
+            {/* Milestone Cards */}
+            <div className="relative">
+              {/* Desktop Connector Line */}
+              <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 z-0" />
 
-            {/* Career milestone 3 */}
-            <div className="border-l-2 border-primary/30 pl-8">
-              <div className="flex gap-3 mb-2">
-                <div className="text-sm font-semibold text-primary">Timeline</div>
+              {/* Cards Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 relative z-10">
+
+                {/* Card 1: eHealth Africa */}
+                <div className="relative">
+                  {/* Milestone Circle */}
+                  <div className="absolute -top-6 left-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
+                    01
+                  </div>
+
+                  {/* Card */}
+                  <div className="pt-8 p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 h-full flex flex-col">
+                    <div>
+                      <h3 className="text-base md:text-lg font-bold text-foreground mb-1">eHealth Africa</h3>
+                      <p className="text-sm text-muted-foreground">Software Developer · eIDSR</p>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Contributed to an offline-first national disease-surveillance platform in Liberia, designed to improve disease reporting and outbreak response in low-connectivity environments.
+                    </p>
+
+                    <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
+                      <p className="text-sm font-semibold text-foreground">78 health facilities<br/><span className="text-xs font-normal text-muted-foreground">Pilot deployment</span></p>
+                    </div>
+
+                    <div className="mt-auto pt-2">
+                      <Link href="/case-studies/eidsr-digitizing-outbreak-response-west-africa" className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
+                        View case study →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 2: SMART / UNMC */}
+                <div className="relative">
+                  {/* Milestone Circle */}
+                  <div className="absolute -top-6 left-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
+                    02
+                  </div>
+
+                  {/* Card */}
+                  <div className="pt-8 p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 h-full flex flex-col">
+                    <div>
+                      <h3 className="text-base md:text-lg font-bold text-foreground mb-1">SMART / UNMC</h3>
+                      <p className="text-sm text-muted-foreground">Business Analyst</p>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Translated clinical and research workflows into requirements for an integrated Android and web platform supporting sickle-cell and malaria screening in Nigeria.
+                    </p>
+
+                    <p className="text-xs italic text-muted-foreground pt-1">
+                      Translating technical systems into product decisions.
+                    </p>
+
+                    <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
+                      <p className="text-sm font-semibold text-foreground">97.2% screening accuracy</p>
+                    </div>
+
+                    <div className="mt-auto pt-2">
+                      <Link href="/case-studies/unmc-digital-health-screening" className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
+                        View case study →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 3: WHO */}
+                <div className="relative">
+                  {/* Milestone Circle */}
+                  <div className="absolute -top-6 left-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
+                    03
+                  </div>
+
+                  {/* Card */}
+                  <div className="pt-8 p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 h-full flex flex-col">
+                    <div>
+                      <h3 className="text-base md:text-lg font-bold text-foreground mb-1">World Health Organization</h3>
+                      <p className="text-sm text-muted-foreground">Product Manager · Health Data Platforms</p>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Worked across global health data platforms, APIs, integrations, dashboards, and real-time information exchange supporting complex public-health environments.
+                    </p>
+
+                    <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
+                      <p className="text-sm font-semibold text-foreground">20+ countries</p>
+                    </div>
+
+                    <div className="mt-auto pt-2">
+                      <Link href="/work" className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
+                        View related work →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 4: TFO / Boukili */}
+                <div className="relative">
+                  {/* Milestone Circle */}
+                  <div className="absolute -top-6 left-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
+                    04
+                  </div>
+
+                  {/* Card */}
+                  <div className="pt-8 p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 h-full flex flex-col">
+                    <div>
+                      <h3 className="text-base md:text-lg font-bold text-foreground mb-1">TFO / Boukili</h3>
+                      <p className="text-sm text-muted-foreground">Product Manager</p>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Leading product modernization work on a French-language digital reading platform, including UX, accessibility, platform capabilities, business rules, QA/UAT, and new learning experiences.
+                    </p>
+
+                    <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
+                      <p className="text-sm font-semibold text-foreground">2.2M+ book reads<br/><span className="text-xs font-normal text-muted-foreground">Since Jan 2026</span></p>
+                    </div>
+
+                    <div className="mt-auto pt-2">
+                      <Link href="/case-studies/healthcare-diagnostic-assistant" className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
+                        View case study →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-              <h3 className="text-xl font-bold mb-2">Role / Company</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Content to be added
-              </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Spacing */}
+      <div className="h-12 md:h-16" />
+
       {/* Divider */}
       <div className="border-t border-border/40" />
 
       {/* Section 3: How I Work + What I Focus On */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">How I Work + What I Focus On</h2>
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-5xl">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* LEFT COLUMN: How I Work */}
+            <div className="space-y-8">
+              <div className="space-y-2">
+                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                  How I Work
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold">How I Work</h2>
+                <p className="text-sm text-muted-foreground pt-2">
+                  Principles shaped by real product work.
+                </p>
+              </div>
 
-            {/* Subsection 1 */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold">Principles</h3>
-              <div className="space-y-3">
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <p className="text-muted-foreground">Content to be added</p>
+              {/* Principle Blocks */}
+              <div className="space-y-6">
+                {/* Principle 1 */}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Globe2 size={18} className="text-primary" />
+                    </div>
+                    <h3 className="text-base font-bold text-foreground">Design for real-world constraints</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Working on systems such as eIDSR taught me that connectivity, infrastructure, workflows, and operational realities need to shape product and technical decisions from the beginning.
+                  </p>
                 </div>
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <p className="text-muted-foreground">Content to be added</p>
+
+                {/* Principle 2 */}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Zap size={18} className="text-primary" />
+                    </div>
+                    <h3 className="text-base font-bold text-foreground">Bridge product and engineering</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    My engineering background helps me translate between user needs, business goals, system design, data flows, integrations, and implementation trade-offs.
+                  </p>
                 </div>
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <p className="text-muted-foreground">Content to be added</p>
+
+                {/* Principle 3 */}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <RefreshCw size={18} className="text-primary" />
+                    </div>
+                    <h3 className="text-base font-bold text-foreground">Modernize with care</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Improving an existing product means respecting current users, workflows, business rules, accessibility requirements, and platform constraints while creating space for what's next.
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Subsection 2 */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold">Focus Areas</h3>
-              <div className="space-y-3">
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <p className="text-muted-foreground">Content to be added</p>
+            {/* RIGHT COLUMN: What I Focus On */}
+            <div className="space-y-8">
+              <div className="space-y-2">
+                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                  What I Focus On
                 </div>
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <p className="text-muted-foreground">Content to be added</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <p className="text-muted-foreground">Content to be added</p>
-                </div>
+                <h2 className="text-3xl md:text-4xl font-bold">Areas I work across</h2>
+              </div>
+
+              {/* Expertise Pills */}
+              <div className="flex flex-wrap gap-3">
+                {[
+                  "Healthcare",
+                  "EdTech",
+                  "Platforms",
+                  "System Design",
+                  "Data",
+                  "APIs & Integrations",
+                  "AI Product Development",
+                  "Platform Modernization",
+                  "Accessibility & Quality"
+                ].map((expertise) => (
+                  <span
+                    key={expertise}
+                    className="px-3 py-1.5 text-xs font-medium rounded-full bg-soft-peach dark:bg-soft-peach/10 text-foreground dark:text-foreground border border-border/40"
+                  >
+                    {expertise}
+                  </span>
+                ))}
               </div>
             </div>
 
