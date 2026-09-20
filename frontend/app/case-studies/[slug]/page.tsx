@@ -14,6 +14,7 @@ import { CaseStudySection } from "@/components/case-study/section";
 import { MetricCard } from "@/components/case-study/metric-card";
 import { SystemArchitectureDiagram } from "@/components/case-study/diagram";
 import { IdellIaCaseStudy } from "@/components/case-study/idellia-case-study";
+import { CaseStudyNavigation } from "@/components/case-study/navigation";
 
 export default function CaseStudyPage() {
   const params = useParams();
@@ -72,12 +73,15 @@ export default function CaseStudyPage() {
         image={study.image}
       />
 
+      {/* Spacing between hero and content */}
+      <div className="h-16 md:h-20 lg:h-24" />
+
       <div className="container mx-auto px-4 md:px-6 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
+
           {/* Sidebar Navigation */}
           <div className="hidden lg:block lg:col-span-3">
-            <div className="sticky top-32 space-y-1 border-l border-border pl-6">
+            <div className="sticky space-y-1 border-l border-border pl-6" style={{ top: "calc(var(--navbar-height, 80px) + 24px)" }}>
               <p className="font-semibold mb-4 text-xs uppercase tracking-widest text-muted-foreground">Table of Contents</p>
               {(slug === "unmc-digital-health-screening" ? [
                 { id: "executive-summary", label: "1. Executive Summary" },
@@ -534,16 +538,7 @@ export default function CaseStudyPage() {
               </CaseStudySection>
             )}
 
-            <div className="mt-16 pt-8 border-t border-border flex justify-between items-center">
-              <Link href="/#case-studies">
-                <Button variant="ghost">
-                  <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies
-                </Button>
-              </Link>
-              <Button variant="default">
-                Next Case Study <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
+            <CaseStudyNavigation currentSlug={slug} />
 
           </div>
         </div>

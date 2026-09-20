@@ -158,6 +158,7 @@
     --spacing-6: 64px;
     --spacing-7: 80px;
     --spacing-8: 96px;
+    --navbar-height: 80px;
   }
 
   /* Container */
@@ -452,6 +453,11 @@
 }
 
 @layer utilities {
+  /* Scroll margin for anchor navigation - accounts for sticky header */
+  .scroll-mt-header {
+    scroll-margin-top: calc(var(--navbar-height, 80px) + 32px);
+  }
+
   /* Guaranteed cursor pointer class for interactive elements */
   .cursor-pointer-important {
     cursor: pointer !important;

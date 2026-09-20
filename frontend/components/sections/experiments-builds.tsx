@@ -22,7 +22,7 @@ export function ExperimentsBuilds() {
     .filter(Boolean);
 
   return (
-    <section id="experiments-builds" className="pt-0 pb-24 md:pb-24">
+    <section id="experiments-builds" className="pt-0 pb-24 md:pb-24 scroll-mt-header">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="section-header mb-16">

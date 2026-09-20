@@ -595,8 +595,8 @@ Structured lesson with 3–5 certified assets
 
             {/* Footer nav */}
             <div className="mt-16 pt-8 border-t border-border flex justify-between items-center">
-              <Link href="/#case-studies">
-                <Button variant="ghost">
+              <Link href="/work#experiments-builds">
+                <Button variant="ghost" className="[cursor:pointer]">
                   <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies
                 </Button>
               </Link>
