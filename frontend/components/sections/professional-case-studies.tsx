@@ -46,51 +46,55 @@ export function ProfessionalCaseStudies() {
             <Link
               key={study.slug}
               href={`/case-studies/${study.slug}`}
-              className="group relative grid grid-cols-1 md:grid-cols-[45%_55%] gap-8 md:gap-6 items-center bg-secondary/20 dark:bg-secondary/10 rounded-3xl p-6 md:p-8 border border-border hover:border-primary/30 dark:hover:border-primary/30 transition-colors"
+              className="group relative grid grid-cols-1 md:grid-cols-[45%_55%] gap-8 md:gap-10 items-start border rounded-[16px] p-7 md:p-8 dark:bg-card dark:border-border transition-colors overflow-hidden"
+              style={{
+                backgroundColor: "#FFF8F4",
+                borderColor: "#EAE6E2",
+              }}
             >
-              <div className="order-2 md:order-1 flex flex-col justify-between h-full">
-                {/* Role & Status */}
-                <div className="flex items-center gap-3 mb-2">
-                  {study.metadata?.role && (
-                    <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                      Role · {study.metadata.role}
-                    </div>
-                  )}
-                  {study.metadata?.status && (
-                    <div className="text-xs font-medium text-primary uppercase tracking-wide">
-                      {study.metadata.status}
-                    </div>
-                  )}
-                </div>
-
-                {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-primary transition-colors">
-                  {study.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-muted-foreground mb-2 text-base leading-relaxed">
-                  {study.description}
-                </p>
-
-                {/* Key Outcome */}
-                {study.metadata?.keyOutcome && (
-                  <div className="mb-2 text-base font-semibold text-primary dark:text-primary">
-                    {study.metadata.keyOutcome}
-                  </div>
-                )}
-
+              <div className="order-2 md:order-1 flex flex-col">
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-3">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-background dark:bg-background border border-border text-muted-foreground"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-soft-peach dark:bg-soft-peach/20 border border-border/40 text-foreground dark:text-foreground"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
+
+                {/* Title */}
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#171717] dark:text-foreground transition-colors">
+                  {study.title}
+                </h3>
+
+                {/* Role & Status */}
+                <div className="flex items-center gap-3 mb-5">
+                  {study.metadata?.role && (
+                    <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                      {study.metadata.role}
+                    </div>
+                  )}
+                  {study.metadata?.status && (
+                    <span className="text-xs font-medium text-primary uppercase tracking-wide">
+                      {study.metadata.status}
+                    </span>
+                  )}
+                </div>
+
+                {/* Description */}
+                <p className="text-muted-foreground mb-5 text-base leading-relaxed line-clamp-4">
+                  {study.description}
+                </p>
+
+                {/* Key Outcome */}
+                {study.metadata?.keyOutcome && (
+                  <div className="mb-5 text-base font-semibold text-primary dark:text-primary">
+                    {study.metadata.keyOutcome}
+                  </div>
+                )}
 
                 {/* CTA */}
                 <div className="text-sm font-medium text-primary dark:text-primary group-hover:text-primary/80 dark:group-hover:text-primary/80 transition-all inline-flex items-center gap-1">
@@ -101,13 +105,13 @@ export function ProfessionalCaseStudies() {
                 </div>
               </div>
 
-              <div className="order-1 md:order-2 relative aspect-video rounded-2xl overflow-hidden bg-muted">
+              <div className="order-1 md:order-2 relative aspect-video rounded-[12px] overflow-hidden bg-muted flex-shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent z-10 group-hover:opacity-0 transition-opacity duration-500" />
                 <Image
                   src={study.image}
                   alt={study.title}
                   fill
-                  className={`object-cover transform group-hover:scale-105 transition-transform duration-700 ${
+                  className={`object-cover group-hover:scale-105 transition-transform duration-700 ${
                     study.slug === "eidsr-digitizing-outbreak-response-west-africa"
                       ? "object-center-right"
                       : "object-right"
