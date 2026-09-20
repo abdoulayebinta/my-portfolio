@@ -464,6 +464,11 @@
   .cursor-text-important {
     cursor: text !important;
   }
+
+  /* Image positioning utilities */
+  .object-center-right {
+    object-position: 75% center;
+  }
 }
 
 /* Failsafe: Direct CSS rule with highest specificity for cursor behavior */

@@ -46,10 +46,35 @@ export function ProfessionalCaseStudies() {
             <Link
               key={study.slug}
               href={`/case-studies/${study.slug}`}
-              className="group relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-secondary/20 dark:bg-secondary/10 rounded-3xl p-6 md:p-8 border border-border hover:border-primary/30 dark:hover:border-primary/30 transition-colors"
+              className="group relative grid grid-cols-1 md:grid-cols-[45%_55%] gap-8 md:gap-6 items-center bg-secondary/20 dark:bg-secondary/10 rounded-3xl p-6 md:p-8 border border-border hover:border-primary/30 dark:hover:border-primary/30 transition-colors"
             >
-              <div className="order-2 md:order-1">
-                <div className="flex flex-wrap gap-2 mb-4">
+              <div className="order-2 md:order-1 flex flex-col justify-between h-full">
+                {/* Role */}
+                {study.metadata?.role && (
+                  <div className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">
+                    Role · {study.metadata.role}
+                  </div>
+                )}
+
+                {/* Title */}
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {study.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-muted-foreground mb-2 text-base leading-relaxed">
+                  {study.description}
+                </p>
+
+                {/* Key Outcome */}
+                {study.metadata?.keyOutcome && (
+                  <div className="mb-2 text-base font-semibold text-primary dark:text-primary">
+                    {study.metadata.keyOutcome}
+                  </div>
+                )}
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-3">
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
@@ -59,15 +84,14 @@ export function ProfessionalCaseStudies() {
                     </span>
                   ))}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-                  {study.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 text-base md:text-lg leading-relaxed">
-                  {study.description}
-                </p>
-                <Button variant="outline" className="group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
-                  Read Case Study
-                </Button>
+
+                {/* CTA */}
+                <div className="text-sm font-medium text-primary dark:text-primary group-hover:text-primary/80 dark:group-hover:text-primary/80 transition-all inline-flex items-center gap-1">
+                  View Case Study
+                  <span className="inline-block transform group-hover:translate-x-0.5 transition-transform">
+                    →
+                  </span>
+                </div>
               </div>
 
               <div className="order-1 md:order-2 relative aspect-video rounded-2xl overflow-hidden bg-muted">
@@ -76,8 +100,12 @@ export function ProfessionalCaseStudies() {
                   src={study.image}
                   alt={study.title}
                   fill
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className={`object-cover transform group-hover:scale-105 transition-transform duration-700 ${
+                    study.slug === "eidsr-digitizing-outbreak-response-west-africa"
+                      ? "object-center-right"
+                      : "object-right"
+                  }`}
+                  sizes="(max-width: 768px) 100vw, 55vw"
                 />
               </div>
             </Link>

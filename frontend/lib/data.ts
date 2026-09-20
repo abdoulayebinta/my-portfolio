@@ -107,15 +107,16 @@ export const caseStudies = [
   },
   {
     slug: "eidsr-digitizing-outbreak-response-west-africa",
-    title: "eidsr: Digitizing National Outbreak Response in West Africa",
-    description: "Transforming a manual, fragmented paper-and-Excel disease reporting system into a robust, offline-first digital framework for near-real-time outbreak detection.",
-    tags: ["HealthTech", "Offline-First", "DHIS2", "GovTech"],
-    image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2032&auto=format&fit=crop",
+    title: "eIDSR — National Disease Surveillance Platform",
+    description: "Digitizing fragmented disease reporting into an offline-first national surveillance platform designed to improve outbreak detection and response.",
+    tags: ["HealthTech", "Data Platform", "Offline-first", "Integrations"],
+    image: "/visuals/eidsr-card.png",
     metadata: {
-      role: "Software Developer (Founding Technical Team)",
+      role: "Software Developer",
       timeline: "Jan 2016 – Mar 2017",
       team: "eHealth Africa",
-      stack: ["DHIS2", "Windows Standalone (Offline Tracker)", "mHero (SMS)", "Web"]
+      stack: ["DHIS2", "Windows Standalone (Offline Tracker)", "mHero (SMS)", "Web"],
+      keyOutcome: "78 health facilities · Pilot deployment"
     },
     content: {
       context: "Following the 2014–2015 West African Ebola epidemic, the Liberian Ministry of Health prioritized WHO's Integrated Disease Surveillance and Response (IDSR) guidelines to safeguard national health security. The mission-critical objective was to detect potential outbreaks within a 24–48 hour window across a massive nationwide infrastructure of 745 facilities and 90 districts. I served on the founding technical team starting in early 2016 to architect a digital ecosystem for near-real-time data dissemination and rapid response.",
