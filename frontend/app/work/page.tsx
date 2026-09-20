@@ -17,7 +17,7 @@ export default function WorkPage() {
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
 
-      <section className="pt-12 md:pt-16 pb-16 md:pb-20">
+      <section className="pt-6 md:pt-8 pb-16 md:pb-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="section-eyebrow">Work</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Selected Product Work</h1>
@@ -31,7 +31,7 @@ export default function WorkPage() {
       <ExperimentsBuilds />
 
       {/* Final CTA Section */}
-      <section className="py-16 md:py-24">
+      <section className="pt-0 pb-24 md:pb-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -41,14 +41,20 @@ export default function WorkPage() {
               Explore my product thinking or get in touch to discuss products, opportunities, and ideas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/product-thinking">
-                <Button variant="secondary">
-                  Product Thinking →
+              <Link href="/product-thinking" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg dark:focus-visible:ring-offset-background">
+                <Button variant="secondary" className="[cursor:pointer] transition-all duration-200">
+                  Product Thinking
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.75 ml-1">
+                    →
+                  </span>
                 </Button>
               </Link>
-              <Link href="/contact">
-                <Button variant="default">
-                  Get in Touch →
+              <Link href="/contact" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg dark:focus-visible:ring-offset-background">
+                <Button variant="default" className="[cursor:pointer] transition-all duration-200">
+                  Get in Touch
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.75 ml-1">
+                    →
+                  </span>
                 </Button>
               </Link>
             </div>

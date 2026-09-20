@@ -22,7 +22,7 @@ export function ExperimentsBuilds() {
     .filter(Boolean);
 
   return (
-    <section id="experiments-builds" className="py-16 md:py-20 lg:py-24">
+    <section id="experiments-builds" className="pt-0 pb-24 md:pb-24">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="section-header mb-16">
@@ -36,12 +36,12 @@ export function ExperimentsBuilds() {
         </div>
 
         {/* Case Studies Grid */}
-        <div className="grid grid-cols-1 gap-12 md:gap-16">
+        <div className="grid grid-cols-1 gap-10 md:gap-12">
           {orderedStudies.map((study) => (
             <Link
               key={study.slug}
               href={`/case-studies/${study.slug}`}
-              className="group relative grid grid-cols-1 md:grid-cols-[45%_55%] gap-8 md:gap-10 items-start border rounded-[16px] p-7 md:p-8 dark:bg-card dark:border-border transition-colors overflow-hidden opacity-80 hover:opacity-100"
+              className="group relative grid grid-cols-1 md:grid-cols-[45%_55%] gap-8 md:gap-10 items-start border rounded-[16px] p-7 md:p-8 dark:bg-card dark:border-border overflow-hidden opacity-80 [cursor:pointer] transition-all duration-200 hover:opacity-100 hover:shadow-md hover:-translate-y-0.5 hover:border-primary/40 dark:hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background"
               style={{
                 backgroundColor: "#FFF8F4",
                 borderColor: "#EAE6E2",
@@ -86,9 +86,9 @@ export function ExperimentsBuilds() {
                 </p>
 
                 {/* CTA */}
-                <div className="text-sm font-medium text-primary dark:text-primary group-hover:text-primary/80 dark:group-hover:text-primary/80 transition-all inline-flex items-center gap-1">
+                <div className="text-sm font-medium text-primary dark:text-primary inline-flex items-center gap-1 transition-colors duration-200">
                   Explore
-                  <span className="inline-block transform group-hover:translate-x-0.5 transition-transform">
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.75">
                     →
                   </span>
                 </div>
