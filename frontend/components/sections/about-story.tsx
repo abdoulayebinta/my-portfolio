@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe2, Zap, RefreshCw } from "lucide-react";
+import { testimonials } from "@/lib/data";
 
 export function AboutStory() {
   return (
@@ -405,33 +406,111 @@ export function AboutStory() {
       {/* Divider */}
       <div className="border-t border-border/40" />
 
-      {/* Section 5: Closing CTA */}
-      <section className="py-20 md:py-24">
+      {/* Section 5: Recommendations */}
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Ready to Work Together?</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Content to be added
+          <div className="max-w-5xl mx-auto">
+            {/* Section Header */}
+            <div className="space-y-3 mb-12">
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                Recommendations
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold">What colleagues say</h2>
+              <p className="text-sm text-muted-foreground pt-1">
+                Perspectives from people I've had the opportunity to work with.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/work">
-                <Button variant="secondary" className="[cursor:pointer]">
-                  Explore My Work
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="default" className="[cursor:pointer]">
-                  Get in Touch
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+            {/* Testimonials Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+              {/* Filter for specific testimonials */}
+              {[testimonials[0], testimonials[1], testimonials[4]].map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="p-6 rounded-[14px] bg-soft-peach dark:bg-soft-peach/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 flex flex-col"
+                >
+                  {/* Quote */}
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                    "{testimonial.content}"
+                  </p>
+
+                  {/* Divider */}
+                  <div className="border-t border-[#EAE6E2] dark:border-border/30" />
+
+                  {/* Person Info */}
+                  <div className="flex items-center gap-3">
+                    {/* Avatar */}
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 bg-muted">
+                      <Image
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Name and Role */}
+                    <div className="min-w-0">
+                      <h4 className="text-sm font-bold text-foreground truncate">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-xs text-muted-foreground line-clamp-2">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
+            {/* See All Link */}
+            <div>
+              <Link
+                href="#testimonials"
+                className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer] text-sm font-medium"
+              >
+                See all recommendations →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="border-t border-border/40" />
+
+      {/* Section 6: Compact Closing CTA Band */}
+      <section className="py-8 md:py-12 bg-soft-peach dark:bg-soft-peach/5">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center">
+
+              {/* LEFT: Copy */}
+              <div className="space-y-3">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                  Let's build what's next.
+                </h2>
+                <p className="text-base text-muted-foreground leading-relaxed max-w-sm">
+                  I'm always open to meaningful conversations about product, technology, healthcare, EdTech, platforms, data, and AI.
+                </p>
+              </div>
+
+              {/* RIGHT: CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3 items-start md:items-center">
+                <Link href="/contact">
+                  <Button variant="default" className="[cursor:pointer] whitespace-nowrap">
+                    Get In Touch →
+                  </Button>
+                </Link>
+                <Link
+                  href="/work"
+                  className="text-primary hover:text-primary/80 transition-colors duration-200 [cursor:pointer] text-sm font-medium pt-1 md:pt-0"
+                >
+                  View My Work →
+                </Link>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
