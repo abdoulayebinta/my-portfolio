@@ -135,7 +135,7 @@ export const caseStudies = [
   {
     slug: "generative-customer-support",
     title: "GenAI Customer Support Agent",
-    description: "Reducing support ticket volume by 60% with a RAG-based conversational AI agent.",
+    description: "Designed a RAG-based conversational support assistant to explore retrieval, answer quality, and automated customer-service workflows.",
     tags: ["GenAI", "LLM", "RAG", "B2C"],
     image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2006&auto=format&fit=crop",
     metadata: {
