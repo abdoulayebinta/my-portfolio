@@ -134,11 +134,11 @@ export function AboutStory() {
                     <p className="text-xs text-muted-foreground">eIDSR</p>
                   </div>
 
-                  <p className="text-[14px] text-muted-foreground leading-[1.5]">
+                  <p className="text-[14px] text-muted-foreground leading-[1.5] line-clamp-3">
                     Contributed to an offline-first national disease-surveillance platform in Liberia, designed to improve disease reporting and outbreak response in low-connectivity environments.
                   </p>
 
-                  <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
+                  <div className="mt-auto pt-3 px-3 py-2 -mx-5 -mb-6 bg-soft-peach/40 rounded-b-[12px] flex flex-col">
                     <p className="text-[14px] font-semibold text-primary">78 health facilities</p>
                     <p className="text-xs text-muted-foreground">Pilot deployment</p>
                   </div>
@@ -273,20 +273,20 @@ export function AboutStory() {
               {/* Principle Cards - Three in a Row */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Principle 1 */}
-                <div className="rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
-                  <div className="w-10 h-10 rounded-full bg-soft-peach dark:bg-soft-peach/10 flex items-center justify-center shrink-0">
-                    <Globe2 size={18} className="text-primary" />
+                <div className="rounded-[12px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-[#EAE6E2]/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
+                  <div className="w-11 h-11 rounded-full bg-soft-peach dark:bg-soft-peach/20 flex items-center justify-center shrink-0">
+                    <Globe2 size={20} className="text-primary" />
                   </div>
                   <h3 className="text-base md:text-[16px] font-bold text-foreground leading-tight">Design for real-world constraints</h3>
-                  <p className="text-sm text-muted-foreground leading-[1.5] flex-1">
+                  <p className="text-sm text-muted-foreground leading-[1.5] flex-1 line-clamp-5">
                     Working on systems such as eIDSR taught me that connectivity, infrastructure, workflows, and operational realities need to shape product and technical decisions from the beginning.
                   </p>
                 </div>
 
                 {/* Principle 2 */}
-                <div className="rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
-                  <div className="w-10 h-10 rounded-full bg-soft-peach dark:bg-soft-peach/10 flex items-center justify-center shrink-0">
-                    <Zap size={18} className="text-primary" />
+                <div className="rounded-[12px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-[#EAE6E2]/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
+                  <div className="w-11 h-11 rounded-full bg-soft-peach dark:bg-soft-peach/20 flex items-center justify-center shrink-0">
+                    <Zap size={20} className="text-primary" />
                   </div>
                   <h3 className="text-base md:text-[16px] font-bold text-foreground leading-tight">Bridge product and engineering</h3>
                   <p className="text-sm text-muted-foreground leading-[1.5] flex-1">
