@@ -1,13 +1,30 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Settings, Users2, Leaf, Heart, BookOpen, Layers, BarChart3, Link2, Sparkles } from "lucide-react";
+import { ArrowRight, Settings, Users2, Leaf, Heart, BookOpen, Layers, BarChart3, Link2, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
 export function AboutStory() {
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  // Carousel logic: 3 cards per page on desktop, 2 on tablet, 1 on mobile
+  const cardsPerPage = 3;
+  const totalGroups = Math.ceil(testimonials.length / cardsPerPage);
+
+  const handleNext = () => {
+    setCarouselIndex((prev) => (prev + 1) % totalGroups);
+  };
+
+  const handlePrev = () => {
+    setCarouselIndex((prev) => (prev - 1 + totalGroups) % totalGroups);
+  };
+
+  const startIndex = carouselIndex * cardsPerPage;
+  const visibleTestimonials = testimonials.slice(startIndex, startIndex + cardsPerPage);
+
   return (
     <>
       {/* Section 1: About Me Introduction */}
@@ -373,12 +390,12 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 4 & 5: Beyond the Role + Recommendations */}
-      <section className="py-6 md:py-8">
+      <section className="py-7 md:py-7">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-[49%_1px_50%] gap-0 md:gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-[48%_1px_51%] gap-0 md:gap-6 items-start">
 
             {/* LEFT — BEYOND THE ROLE */}
-            <div className="space-y-6">
+            <div className="space-y-3">
               {/* Header */}
               <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
                 <h2 className="text-3xl md:text-[30px] font-bold">Beyond the Role</h2>
@@ -387,57 +404,32 @@ export function AboutStory() {
                 </p>
               </div>
 
-              {/* Copy with Left Accent Line */}
-              <div className="border-l-2 border-primary pl-4 md:pl-6 space-y-4">
-                <p className="text-base md:text-[15px] text-muted-foreground leading-[1.6]">
-                  I'm a builder by nature. I enjoy experimenting with new technologies, understanding how products work underneath the interface, and turning ideas into something tangible.
-                </p>
-                <p className="text-base md:text-[15px] text-muted-foreground leading-[1.6]">
-                  Outside my day-to-day work, I use side projects to explore AI products, system design, APIs, data workflows, and new product ideas. Building keeps me close to the technology and improves the questions I ask as a Product Manager.
-                </p>
-              </div>
+              {/* Content Row: Paragraph Left, Quote Right */}
+              <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-6 md:gap-4 items-start">
+                {/* Copy with Left Accent Line */}
+                <div className="border-l-2 border-primary pl-4 md:pl-5">
+                  <p className="text-[14px] md:text-[15px] text-muted-foreground leading-[1.5] md:leading-[1.55]">
+                    I'm bilingual (English / French), curious by nature, and always exploring new ideas. Outside of work, I enjoy side projects, reading, and continuous learning — whether it's through new technologies, different cultures, or conversations with inspiring people.
+                  </p>
+                </div>
 
-              {/* Pull Quote */}
-              <div className="pt-4">
-                <p className="text-xl md:text-2xl text-foreground signature-name leading-tight">
-                  Same curiosity.<br/>A bigger impact.
-                </p>
-              </div>
-
-              {/* Links */}
-              <div className="flex flex-col gap-2 pt-2">
-                <a
-                  href="https://github.com/abdoulayebinta"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer] text-sm"
-                >
-                  GitHub →
-                </a>
-                <Link
-                  href="/product-thinking"
-                  className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer] text-sm"
-                >
-                  Product Thinking →
-                </Link>
-                <a
-                  href="https://www.linkedin.com/in/abdoulayebintabah/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 transition-colors duration-200 inline-flex items-center gap-1 [cursor:pointer] text-sm"
-                >
-                  LinkedIn →
-                </a>
+                {/* Pull Quote with Underline */}
+                <div className="pt-0 md:pt-1">
+                  <p className="text-[22px] md:text-[26px] text-foreground signature-name leading-tight mb-2">
+                    Same curiosity.<br/>A bigger impact.
+                  </p>
+                  <div className="w-14 h-0.5 bg-primary/60" />
+                </div>
               </div>
             </div>
 
             {/* Vertical Divider */}
-            <div className="hidden md:block bg-border/30 h-full min-h-[300px]" />
+            <div className="hidden md:block bg-border/30 h-full min-h-[180px]" />
 
             {/* RIGHT — RECOMMENDATIONS */}
-            <div className="space-y-6 md:pl-4">
+            <div className="space-y-3 md:pl-4">
               {/* Header with Controls */}
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between gap-4">
                 <div>
                   <h2 className="text-3xl md:text-[30px] font-bold mb-1">Recommendations</h2>
                   <p className="text-[11px] md:text-[12px] font-semibold text-muted-foreground uppercase tracking-[0.14em]">
@@ -445,36 +437,43 @@ export function AboutStory() {
                   </p>
                 </div>
                 {/* Previous/Next Controls */}
-                <div className="flex gap-2 md:gap-1">
-                  <button className="w-8 h-8 md:w-7 md:h-7 rounded-full border border-border/40 flex items-center justify-center hover:border-primary/40 transition-colors [cursor:pointer]">
-                    <span className="text-xs text-muted-foreground">←</span>
+                <div className="flex gap-1 shrink-0">
+                  <button
+                    onClick={handlePrev}
+                    aria-label="Previous recommendations"
+                    className="w-6 h-6 md:w-5 md:h-5 rounded-full border border-border/30 flex items-center justify-center hover:bg-soft-peach/40 hover:border-primary/40 transition-colors [cursor:pointer] group"
+                  >
+                    <ChevronLeft size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
                   </button>
-                  <button className="w-8 h-8 md:w-7 md:h-7 rounded-full border border-border/40 flex items-center justify-center hover:border-primary/40 transition-colors [cursor:pointer]">
-                    <span className="text-xs text-muted-foreground">→</span>
+                  <button
+                    onClick={handleNext}
+                    aria-label="Next recommendations"
+                    className="w-6 h-6 md:w-5 md:h-5 rounded-full border border-border/30 flex items-center justify-center hover:bg-soft-peach/40 hover:border-primary/40 transition-colors [cursor:pointer] group"
+                  >
+                    <ChevronRight size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
                   </button>
                 </div>
               </div>
 
-              {/* Testimonials Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {/* Filter for specific testimonials */}
-                {[testimonials[0], testimonials[1], testimonials[4]].map((testimonial) => (
+              {/* Testimonials Carousel */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {visibleTestimonials.map((testimonial) => (
                   <div
                     key={testimonial.id}
-                    className="p-5 md:p-6 rounded-[12px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-4 flex flex-col h-full min-h-[200px]"
+                    className="p-3.5 md:p-4 rounded-[10px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 flex flex-col"
                   >
                     {/* Quote */}
-                    <p className="text-sm text-muted-foreground leading-[1.5] flex-1 line-clamp-4">
-                      {testimonial.content}
+                    <p className="text-[12px] md:text-[13px] text-muted-foreground leading-[1.45] mb-2.5 flex-1 line-clamp-5">
+                      "{testimonial.content}"
                     </p>
 
                     {/* Divider */}
-                    <div className="border-t border-[#EAE6E2] dark:border-border/30" />
+                    <div className="border-t border-[#EAE6E2] dark:border-border/30 mb-2.5" />
 
-                    {/* Person Info */}
-                    <div className="flex items-center gap-3">
+                    {/* Person Info with Avatar */}
+                    <div className="flex items-center gap-2.5">
                       {/* Avatar */}
-                      <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 bg-muted">
+                      <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 bg-muted">
                         <Image
                           src={testimonial.avatar}
                           alt={testimonial.name}
@@ -484,11 +483,11 @@ export function AboutStory() {
                       </div>
 
                       {/* Name and Role */}
-                      <div className="min-w-0">
-                        <h4 className="text-sm font-semibold text-foreground truncate">
+                      <div className="min-w-0 flex-1">
+                        <h4 className="text-[12px] md:text-[13px] font-semibold text-foreground leading-tight truncate">
                           {testimonial.name}
                         </h4>
-                        <p className="text-xs text-muted-foreground line-clamp-1">
+                        <p className="text-[11px] text-muted-foreground line-clamp-1">
                           {testimonial.role}
                         </p>
                       </div>
@@ -506,7 +505,7 @@ export function AboutStory() {
       <div className="border-t border-border/40" />
 
       {/* Section 6: Compact Closing CTA Band */}
-      <section className="py-8 md:py-10">
+      <section className="py-7 md:py-7">
         <div className="container mx-auto px-4 md:px-8">
           <div className="rounded-[14px] bg-[#FFF0E5] dark:bg-soft-peach/10 px-6 md:px-8 py-6 md:py-8 min-h-[100px] md:min-h-[110px] flex flex-col md:grid md:grid-cols-[auto_1px_1fr_auto] md:gap-6 md:items-center">
 
