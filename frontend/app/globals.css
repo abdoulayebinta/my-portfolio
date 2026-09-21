@@ -85,6 +85,15 @@
     font-family: 'Playfair Display', Georgia, serif;
   }
 
+  /* Reduce motion support - disable zoom animations */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   /* Headings - Manrope */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

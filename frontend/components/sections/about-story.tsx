@@ -28,8 +28,8 @@ export function AboutStory() {
               </h1>
 
               {/* Subheading in Coral - Editorial Serif */}
-              <p className="editorial-serif text-[22px] md:text-[26px] font-semibold text-primary leading-[1.2] tracking-[-0.01em] max-w-[540px] mb-6 md:mb-7">
-                Building meaningful products at the intersection of people, technology, and complex systems.
+              <p className="editorial-serif text-[22px] md:text-[26px] font-semibold text-primary leading-[1.22] tracking-[-0.01em] max-w-[540px] mb-6 md:mb-7">
+                From engineering roots to product—building for real-world complexity.
               </p>
 
               {/* Body Copy */}
@@ -57,8 +57,8 @@ export function AboutStory() {
                 <div className="absolute bottom-20 left-0 w-40 h-40 rounded-full bg-[#FFF8F4] opacity-30 blur-3xl -z-10" />
 
                 {/* Portrait Container */}
-                <div className="relative rounded-[14px] overflow-hidden bg-soft-peach border border-[#EAE6E2]/20">
-                  <div className="aspect-[4/5] relative max-h-[560px]">
+                <div className="group relative rounded-[14px] overflow-hidden bg-soft-peach border border-[#EAE6E2]/20">
+                  <div className="aspect-[4/5] relative max-h-[560px] object-cover transition-all duration-700 group-hover:scale-105">
                     <Image
                       src="/visuals/abdoulaye-bah-pm.png"
                       alt="Abdoulaye Bah"
