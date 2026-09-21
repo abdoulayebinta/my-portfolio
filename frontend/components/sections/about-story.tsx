@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Globe2, Zap, RefreshCw, Heart } from "lucide-react";
+import { ArrowRight, Settings, Users2, Leaf, Heart, BookOpen, Layers, BarChart3, Link2, Sparkles } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
 export function AboutStory() {
@@ -127,24 +127,30 @@ export function AboutStory() {
                 </div>
 
                 {/* Card */}
-                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-3 h-full flex flex-col">
-                  <div className="space-y-1">
-                    <h3 className="text-[18px] md:text-[20px] font-semibold text-foreground">eHealth Africa</h3>
-                    <p className="text-[15px] text-muted-foreground font-medium">Software Developer</p>
-                    <p className="text-xs text-muted-foreground">eIDSR</p>
-                  </div>
+                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 h-full flex flex-col">
+                  {/* Organization - Wordmark */}
+                  <p className="text-[17px] font-semibold text-foreground mb-2">eHealth Africa</p>
 
-                  <p className="text-[14px] text-muted-foreground leading-[1.5] line-clamp-3">
-                    Contributed to an offline-first national disease-surveillance platform in Liberia, designed to improve disease reporting and outbreak response in low-connectivity environments.
+                  {/* Role - Main Title */}
+                  <h3 className="text-[20px] font-bold text-foreground mb-1">Software Developer</h3>
+
+                  {/* Secondary Context */}
+                  <p className="text-[14px] text-muted-foreground mb-3">eIDSR</p>
+
+                  {/* Description - Concise */}
+                  <p className="text-[14px] text-muted-foreground leading-[1.5] mb-auto">
+                    Contributed to an offline-first national disease-surveillance platform in Liberia.
                   </p>
 
-                  <div className="mt-auto pt-3 px-3 py-2 -mx-5 -mb-6 bg-soft-peach/40 rounded-b-[12px] flex flex-col">
-                    <p className="text-[14px] font-semibold text-primary">78 health facilities</p>
-                    <p className="text-xs text-muted-foreground">Pilot deployment</p>
+                  {/* Metric Outcome Band */}
+                  <div className="mt-4 px-3 py-3 -mx-5 -mb-5 bg-[#FFF0E5] dark:bg-[#FFF8F4]/10 rounded-b-[12px] flex flex-col">
+                    <p className="text-[30px] font-bold text-primary">78+</p>
+                    <p className="text-[13px] text-muted-foreground">pilot health facilities</p>
                   </div>
 
-                  <div className="mt-auto pt-2">
-                    <Link href="/case-studies/eidsr-digitizing-outbreak-response-west-africa" className="text-xs text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 [cursor:pointer]">
+                  {/* Case Study Link */}
+                  <div className="mt-3 pt-3">
+                    <Link href="/case-studies/eidsr-digitizing-outbreak-response-west-africa" className="text-[13px] text-primary hover:underline transition-colors [cursor:pointer]">
                       View case study →
                     </Link>
                   </div>
@@ -159,26 +165,32 @@ export function AboutStory() {
                 </div>
 
                 {/* Card */}
-                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-3 h-full flex flex-col">
-                  <div className="space-y-1">
-                    <h3 className="text-[18px] md:text-[18px] font-semibold text-foreground">SMART / UNMC</h3>
-                    <p className="text-[15px] text-muted-foreground font-medium">Business Analyst</p>
-                  </div>
+                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 h-full flex flex-col">
+                  {/* Organization - Wordmark */}
+                  <p className="text-[17px] font-semibold text-foreground mb-2">SMART / UNMC</p>
 
-                  <p className="text-[14px] text-muted-foreground leading-[1.5]">
-                    Translated clinical and research workflows into requirements for an integrated Android and web platform supporting sickle-cell and malaria screening in Nigeria.
-                  </p>
+                  {/* Role - Main Title */}
+                  <h3 className="text-[20px] font-bold text-foreground mb-1">Business Analyst</h3>
 
-                  <p className="text-xs italic text-muted-foreground">
+                  {/* Bridge Line - Subtle */}
+                  <p className="text-[13px] italic text-muted-foreground mb-3">
                     Translating technical systems into product decisions.
                   </p>
 
-                  <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
-                    <p className="text-[14px] font-semibold text-primary">97.2% screening accuracy</p>
+                  {/* Description - Concise */}
+                  <p className="text-[14px] text-muted-foreground leading-[1.5] mb-auto">
+                    Translated clinical workflows into requirements for a digital health screening platform.
+                  </p>
+
+                  {/* Metric Outcome Band */}
+                  <div className="mt-4 px-3 py-3 -mx-5 -mb-5 bg-[#FFF0E5] dark:bg-[#FFF8F4]/10 rounded-b-[12px] flex flex-col">
+                    <p className="text-[30px] font-bold text-primary">97.2%</p>
+                    <p className="text-[13px] text-muted-foreground">screening accuracy</p>
                   </div>
 
-                  <div className="mt-auto pt-2">
-                    <Link href="/case-studies/unmc-digital-health-screening" className="text-xs text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 [cursor:pointer]">
+                  {/* Case Study Link */}
+                  <div className="mt-3 pt-3">
+                    <Link href="/case-studies/unmc-digital-health-screening" className="text-[13px] text-primary hover:underline transition-colors [cursor:pointer]">
                       View case study →
                     </Link>
                   </div>
@@ -193,23 +205,30 @@ export function AboutStory() {
                 </div>
 
                 {/* Card */}
-                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-3 h-full flex flex-col">
-                  <div className="space-y-1">
-                    <h3 className="text-[18px] md:text-[18px] font-semibold text-foreground">World Health Organization</h3>
-                    <p className="text-[15px] text-muted-foreground font-medium">Product Manager</p>
-                    <p className="text-xs text-muted-foreground">Health Data Platforms</p>
-                  </div>
+                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 h-full flex flex-col">
+                  {/* Organization - Wordmark */}
+                  <p className="text-[17px] font-semibold text-foreground mb-2">World Health Organization</p>
 
-                  <p className="text-[14px] text-muted-foreground leading-[1.5]">
-                    Worked across global health data platforms, APIs, integrations, dashboards, and real-time information exchange supporting complex public-health environments.
+                  {/* Role - Main Title */}
+                  <h3 className="text-[20px] font-bold text-foreground mb-1">Product Manager</h3>
+
+                  {/* Secondary Context */}
+                  <p className="text-[14px] text-muted-foreground mb-3">Health Data Platforms</p>
+
+                  {/* Description - Concise */}
+                  <p className="text-[14px] text-muted-foreground leading-[1.5] mb-auto">
+                    Worked across health data platforms, APIs, integrations, and real-time information exchange.
                   </p>
 
-                  <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
-                    <p className="text-[14px] font-semibold text-primary">20+ countries</p>
+                  {/* Metric Outcome Band */}
+                  <div className="mt-4 px-3 py-3 -mx-5 -mb-5 bg-[#FFF0E5] dark:bg-[#FFF8F4]/10 rounded-b-[12px] flex flex-col">
+                    <p className="text-[30px] font-bold text-primary">20+</p>
+                    <p className="text-[13px] text-muted-foreground">countries</p>
                   </div>
 
-                  <div className="mt-auto pt-2">
-                    <Link href="/work" className="text-xs text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 [cursor:pointer]">
+                  {/* Case Study Link */}
+                  <div className="mt-3 pt-3">
+                    <Link href="/work" className="text-[13px] text-primary hover:underline transition-colors [cursor:pointer]">
                       View related work →
                     </Link>
                   </div>
@@ -224,23 +243,28 @@ export function AboutStory() {
                 </div>
 
                 {/* Card */}
-                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 space-y-3 h-full flex flex-col">
-                  <div className="space-y-1">
-                    <h3 className="text-[18px] md:text-[18px] font-semibold text-foreground">TFO / Boukili</h3>
-                    <p className="text-[15px] text-muted-foreground font-medium">Product Manager</p>
-                  </div>
+                <div className="pt-8 p-5 md:p-6 rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 h-full flex flex-col">
+                  {/* Organization - Wordmark */}
+                  <p className="text-[17px] font-semibold text-foreground mb-2">TFO / Boukili</p>
 
-                  <p className="text-[14px] text-muted-foreground leading-[1.5]">
-                    Leading product modernization work on a French-language digital reading platform, including UX, accessibility, platform capabilities, business rules, QA/UAT, and new learning experiences.
+                  {/* Role - Main Title */}
+                  <h3 className="text-[20px] font-bold text-foreground mb-4">Product Manager</h3>
+
+                  {/* Description - Concise */}
+                  <p className="text-[14px] text-muted-foreground leading-[1.5] mb-auto">
+                    Leading the modernization of a French-language digital reading platform.
                   </p>
 
-                  <div className="pt-2 border-t border-[#EAE6E2] dark:border-border/30">
-                    <p className="text-[14px] font-semibold text-primary">2.2M+ book reads</p>
-                    <p className="text-xs text-muted-foreground">Since Jan 2026</p>
+                  {/* Metric Outcome Band */}
+                  <div className="mt-4 px-3 py-3 -mx-5 -mb-5 bg-[#FFF0E5] dark:bg-[#FFF8F4]/10 rounded-b-[12px] flex flex-col">
+                    <p className="text-[30px] font-bold text-primary">2.2M+</p>
+                    <p className="text-[13px] text-muted-foreground">book reads</p>
+                    <p className="text-[11px] text-muted-foreground/70 mt-0.5">Since Jan 2026</p>
                   </div>
 
-                  <div className="mt-auto pt-2">
-                    <Link href="/case-studies/healthcare-diagnostic-assistant" className="text-xs text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 [cursor:pointer]">
+                  {/* Case Study Link */}
+                  <div className="mt-3 pt-3">
+                    <Link href="/case-studies/healthcare-diagnostic-assistant" className="text-[13px] text-primary hover:underline transition-colors [cursor:pointer]">
                       View case study →
                     </Link>
                   </div>
@@ -272,35 +296,35 @@ export function AboutStory() {
 
               {/* Principle Cards - Three in a Row */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {/* Principle 1 */}
-                <div className="rounded-[12px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-[#EAE6E2]/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
-                  <div className="w-11 h-11 rounded-full bg-soft-peach dark:bg-soft-peach/20 flex items-center justify-center shrink-0">
-                    <Globe2 size={20} className="text-primary" />
+                {/* Principle 1: Design for real-world constraints */}
+                <div className="rounded-[12px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-[#EAE6E2]/40 p-5 md:p-6 h-full flex flex-col">
+                  <div className="w-12 h-12 rounded-full bg-[#FDF1E8] dark:bg-[#FFF0E5]/15 flex items-center justify-center shrink-0 mb-4">
+                    <Settings size={22} className="text-primary stroke-[1.5]" />
                   </div>
-                  <h3 className="text-base md:text-[16px] font-bold text-foreground leading-tight">Design for real-world constraints</h3>
-                  <p className="text-sm text-muted-foreground leading-[1.5] flex-1 line-clamp-5">
+                  <h3 className="text-[15px] md:text-[16px] font-bold text-foreground leading-tight mb-3">Design for real-world constraints</h3>
+                  <p className="text-[14px] text-muted-foreground leading-[1.6] flex-1">
                     Working on systems such as eIDSR taught me that connectivity, infrastructure, workflows, and operational realities need to shape product and technical decisions from the beginning.
                   </p>
                 </div>
 
-                {/* Principle 2 */}
-                <div className="rounded-[12px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-[#EAE6E2]/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
-                  <div className="w-11 h-11 rounded-full bg-soft-peach dark:bg-soft-peach/20 flex items-center justify-center shrink-0">
-                    <Zap size={20} className="text-primary" />
+                {/* Principle 2: Bridge product and engineering */}
+                <div className="rounded-[12px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-[#EAE6E2]/40 p-5 md:p-6 h-full flex flex-col">
+                  <div className="w-12 h-12 rounded-full bg-[#FDF1E8] dark:bg-[#FFF0E5]/15 flex items-center justify-center shrink-0 mb-4">
+                    <Users2 size={22} className="text-primary stroke-[1.5]" />
                   </div>
-                  <h3 className="text-base md:text-[16px] font-bold text-foreground leading-tight">Bridge product and engineering</h3>
-                  <p className="text-sm text-muted-foreground leading-[1.5] flex-1">
+                  <h3 className="text-[15px] md:text-[16px] font-bold text-foreground leading-tight mb-3">Bridge product and engineering</h3>
+                  <p className="text-[14px] text-muted-foreground leading-[1.6] flex-1">
                     My engineering background helps me translate between user needs, business goals, system design, data flows, integrations, and implementation trade-offs.
                   </p>
                 </div>
 
-                {/* Principle 3 */}
-                <div className="rounded-[14px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-border/40 p-4 md:p-5 space-y-3 h-full flex flex-col min-h-[200px]">
-                  <div className="w-10 h-10 rounded-full bg-soft-peach dark:bg-soft-peach/10 flex items-center justify-center shrink-0">
-                    <RefreshCw size={18} className="text-primary" />
+                {/* Principle 3: Modernize with care */}
+                <div className="rounded-[12px] bg-[#FFF8F4] dark:bg-[#FFF8F4]/5 border border-[#EAE6E2] dark:border-[#EAE6E2]/40 p-5 md:p-6 h-full flex flex-col">
+                  <div className="w-12 h-12 rounded-full bg-[#FDF1E8] dark:bg-[#FFF0E5]/15 flex items-center justify-center shrink-0 mb-4">
+                    <Leaf size={22} className="text-primary stroke-[1.5]" />
                   </div>
-                  <h3 className="text-base md:text-[16px] font-bold text-foreground leading-tight">Modernize with care</h3>
-                  <p className="text-sm text-muted-foreground leading-[1.5] flex-1">
+                  <h3 className="text-[15px] md:text-[16px] font-bold text-foreground leading-tight mb-3">Modernize with care</h3>
+                  <p className="text-[14px] text-muted-foreground leading-[1.6] flex-1">
                     Improving an existing product means respecting current users, workflows, business rules, accessibility requirements, and platform constraints while creating space for what's next.
                   </p>
                 </div>
@@ -321,21 +345,21 @@ export function AboutStory() {
               </div>
 
               {/* Focus Pills - 3x2 Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-3">
                 {[
-                  { icon: <Heart size={16} className="text-primary" />, label: "Healthcare" },
-                  { icon: <Heart size={16} className="text-primary" />, label: "EdTech" },
-                  { icon: <Heart size={16} className="text-primary" />, label: "Platforms" },
-                  { icon: <Heart size={16} className="text-primary" />, label: "Data" },
-                  { icon: <Heart size={16} className="text-primary" />, label: "Integrations" },
-                  { icon: <Heart size={16} className="text-primary" />, label: "AI" }
+                  { icon: <Heart size={20} className="text-primary stroke-[1.5]" />, label: "Healthcare" },
+                  { icon: <BookOpen size={20} className="text-primary stroke-[1.5]" />, label: "EdTech" },
+                  { icon: <Layers size={20} className="text-primary stroke-[1.5]" />, label: "Platforms" },
+                  { icon: <BarChart3 size={20} className="text-primary stroke-[1.5]" />, label: "Data" },
+                  { icon: <Link2 size={20} className="text-primary stroke-[1.5]" />, label: "Integrations" },
+                  { icon: <Sparkles size={20} className="text-primary stroke-[1.5]" />, label: "AI" }
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="px-3 py-2 md:py-3 rounded-full bg-soft-peach dark:bg-soft-peach/10 border border-[#EAE6E2] dark:border-border/40 flex items-center justify-center gap-2 text-sm md:text-[15px] font-medium text-foreground whitespace-nowrap"
+                    className="h-14 md:h-16 px-4 md:px-5 rounded-full bg-[#FDF1E8] dark:bg-[#FFF0E5]/10 border-0 flex items-center gap-3 text-[14px] md:text-[15px] font-medium text-foreground"
                   >
-                    <span className="flex-shrink-0">{item.icon}</span>
-                    <span>{item.label}</span>
+                    <span className="flex-shrink-0 flex items-center justify-center">{item.icon}</span>
+                    <span className="flex-1">{item.label}</span>
                   </div>
                 ))}
               </div>
