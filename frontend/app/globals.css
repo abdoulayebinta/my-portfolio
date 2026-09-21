@@ -174,14 +174,6 @@
     padding-right: var(--spacing-4);
   }
 
-  /* About page content width - slightly wider for editorial layout */
-  .about-container {
-    @apply w-full mx-auto;
-    max-width: 1300px;
-    padding-left: var(--spacing-4);
-    padding-right: var(--spacing-4);
-  }
-
   @media (max-width: 768px) {
     .container {
       padding-left: var(--spacing-3);
