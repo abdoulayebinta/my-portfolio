@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Settings, Users2, Leaf, Heart, BookOpen, Layers, BarChart3, Link2, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Settings, Users2, Leaf, Heart, BookOpen, Layers, BarChart3, Link2, Sparkles, ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
 export function AboutStory() {
@@ -484,9 +484,22 @@ export function AboutStory() {
 
                       {/* Name and Role */}
                       <div className="min-w-0 flex-1">
-                        <h4 className="text-[12px] md:text-[13px] font-semibold text-foreground leading-tight truncate">
-                          {testimonial.name}
-                        </h4>
+                        <div className="flex items-center gap-1.5">
+                          <h4 className="text-[12px] md:text-[13px] font-semibold text-foreground leading-tight truncate">
+                            {testimonial.name}
+                          </h4>
+                          {testimonial.linkedinUrl && (
+                            <a
+                              href={testimonial.linkedinUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`View ${testimonial.name}'s LinkedIn profile`}
+                              className="shrink-0 flex items-center justify-center text-muted-foreground hover:text-[#0A66C2] transition-colors duration-200 [cursor:pointer] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-1"
+                            >
+                              <Linkedin size={14} className="stroke-[1.5]" />
+                            </a>
+                          )}
+                        </div>
                         <p className="text-[11px] text-muted-foreground line-clamp-1">
                           {testimonial.role}
                         </p>
