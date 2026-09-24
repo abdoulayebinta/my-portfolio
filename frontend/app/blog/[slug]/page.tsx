@@ -1,113 +1,67 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import type { Metadata } from "next";
-import { useParams, notFound } from "next/navigation";
-import { blogPosts as localPosts } from "@/lib/data";
+import { notFound } from "next/navigation";
+import { getProductThinkingPostBySlug, getStaticParamsForProductThinking } from "@/lib/product-thinking";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-import { getPostBySlug, getFeaturedImage, getTags, formatDate } from "@/lib/wordpress";
 import Image from "next/image";
 
-// Define a type for the post state to avoid 'any'
-interface PostState {
-  slug: string;
-  title: string;
-  date: string;
-  readTime: string;
-  tags: string[];
-  image: string;
-  content: string;
-  isHtml: boolean;
-  excerpt?: string;
-}
-
-export default function BlogPostPage() {
-  const params = useParams();
-  const slug = params.slug as string;
-  
-  const [post, setPost] = useState<PostState | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadPost() {
-      setLoading(true);
-      
-      // Try fetching from WordPress first
-      const wpPost = await getPostBySlug(slug);
-      
-      if (wpPost) {
-        setPost({
-          slug: wpPost.slug,
-          title: wpPost.title.rendered,
-          date: formatDate(wpPost.date),
-          readTime: "5 min read",
-          tags: getTags(wpPost),
-          image: getFeaturedImage(wpPost),
-          content: wpPost.content.rendered,
-          isHtml: true
-        });
-      } else {
-        // Fallback to local data
-        const localPost = localPosts.find((p) => p.slug === slug);
-        if (localPost) {
-          setPost({ ...localPost, isHtml: false });
-        }
-      }
-      setLoading(false);
-    }
-
-    if (slug) {
-      loadPost();
-    }
-  }, [slug]);
-
-  if (loading) {
-    return (
-      <main className="min-h-screen bg-background text-foreground">
-        <Navbar />
-        <div className="pt-32 pb-24 container mx-auto px-4 flex justify-center">
-          <div className="w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" />
-        </div>
-        <Footer />
-      </main>
-    );
-  }
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = getProductThinkingPostBySlug(params.slug);
 
   if (!post) {
-    return notFound();
+    return {
+      title: "Article | Abdoulaye Bah",
+      description: "Article not found",
+    };
   }
 
-  // Simple markdown parser for the content (since we're using a string in data.ts)
-  const renderLocalContent = (content: string) => {
-    return content.split('\n').map((line, index) => {
-      if (line.trim().startsWith('### ')) {
-        return <h3 key={index} className="text-2xl font-bold mt-8 mb-4">{line.replace('### ', '')}</h3>;
-      }
-      if (line.trim().startsWith('## ')) {
-        return <h2 key={index} className="text-3xl font-bold mt-12 mb-6 text-foreground">{line.replace('## ', '')}</h2>;
-      }
-      if (line.trim().startsWith('1. ')) {
-        return <li key={index} className="ml-6 list-decimal mb-2 pl-2" dangerouslySetInnerHTML={{ __html: line.replace('1. ', '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />;
-      }
-      if (line.trim() === '') {
-        return <br key={index} />;
-      }
-      return <p key={index} className="mb-4 text-lg text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') }} />;
-    });
+  return {
+    title: `${post.seoTitle || post.title} | Abdoulaye Bah`,
+    description: post.seoDescription || post.summary,
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      type: "article",
+      publishedTime: post.publishedAt,
+      ...(post.image && { images: [{ url: post.image, alt: post.imageAlt || post.title }] }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.summary,
+      ...(post.image && { image: post.image }),
+    },
   };
+}
+
+export async function generateStaticParams() {
+  return getStaticParamsForProductThinking();
+}
+
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = getProductThinkingPostBySlug(params.slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const publishedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
-      
+
       <article className="pt-32 pb-24">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          
           <Link href="/#insights">
             <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Insights
@@ -116,8 +70,12 @@ export default function BlogPostPage() {
 
           <div>
             <div className="flex flex-wrap gap-4 items-center text-sm text-muted-foreground mb-6">
-              <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
-              <span className="flex items-center gap-1"><Clock size={14} /> {post.readTime}</span>
+              <span className="flex items-center gap-1">
+                <Calendar size={14} /> {publishedDate}
+              </span>
+              <span className="flex items-center gap-1">
+                <Clock size={14} /> {post.readingTime}
+              </span>
               <div className="flex gap-2">
                 {post.tags.map((tag: string) => (
                   <span key={tag} className="bg-secondary px-2 py-1 rounded-md text-xs text-secondary-foreground">
@@ -127,10 +85,7 @@ export default function BlogPostPage() {
               </div>
             </div>
 
-            <h1 
-              className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-              dangerouslySetInnerHTML={{ __html: post.title }}
-            />
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">{post.title}</h1>
 
             <div className="flex items-center justify-between border-y border-border py-6 mb-12">
               <div className="flex items-center gap-3">
@@ -153,24 +108,21 @@ export default function BlogPostPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden mb-12 shadow-lg relative aspect-video">
-              <Image 
-                src={post.image} 
-                alt={post.title} 
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+            {post.image && (
+              <div className="rounded-2xl overflow-hidden mb-12 shadow-lg relative aspect-video">
+                <Image
+                  src={post.image}
+                  alt={post.imageAlt || post.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
 
             <div className="prose prose-lg dark:prose-invert max-w-none">
-              {post.isHtml ? (
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
-              ) : (
-                renderLocalContent(post.content)
-              )}
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
-
           </div>
         </div>
       </article>
@@ -179,4 +131,3 @@ export default function BlogPostPage() {
     </main>
   );
 }
-

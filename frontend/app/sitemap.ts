@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
-import { caseStudies, blogPosts } from '@/lib/data';
+import { caseStudies } from '@/lib/data';
+import { getAllProductThinkingPosts } from '@/lib/product-thinking';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://alex.pm';
@@ -11,9 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const blogPostUrls = blogPosts.map((post) => ({
+  const posts = getAllProductThinkingPosts();
+  const blogPostUrls = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.publishedAt),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));

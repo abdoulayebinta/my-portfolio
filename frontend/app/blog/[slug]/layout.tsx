@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { blogPosts as localPosts } from "@/lib/data";
+import { getProductThinkingPostBySlug } from "@/lib/product-thinking";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = localPosts.find((p) => p.slug === params.slug);
+  const post = getProductThinkingPostBySlug(params.slug);
 
   if (!post) {
     return {
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   return {
     title: `${post.title} | Abdoulaye Bah`,
-    description: post.excerpt || post.content?.substring(0, 150) || "",
+    description: post.summary,
   };
 }
 

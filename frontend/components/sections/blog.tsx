@@ -1,43 +1,29 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { blogPosts as localPosts } from "@/lib/data";
+import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, Calendar, Clock, PlayCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/language-context";
-import { getPosts, getFeaturedImage, getTags, formatDate, BlogPost } from "@/lib/wordpress";
 import Image from "next/image";
+import type { ProductThinkingPost } from "@/lib/product-thinking";
 
-export function Blog() {
-  const { t, language } = useLanguage();
-  const [posts, setPosts] = useState<any[]>(localPosts);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isUsingWordPress, setIsUsingWordPress] = useState(false);
+interface BlogPost {
+  slug: string;
+  title: string;
+  summary: string;
+  readingTime: string;
+  publishedAt: string;
+  tags: string[];
+  image?: string;
+}
 
-  useEffect(() => {
-    async function fetchWPPosts() {
-      // getPosts currently doesn't use the language parameter, so we remove it to fix the type error
-      const wpPosts = await getPosts();
-      if (wpPosts && wpPosts.length > 0) {
-        // Transform WP posts to match our local data structure for the UI
-        const transformedPosts = wpPosts.map((post: BlogPost) => ({
-          slug: post.slug,
-          title: post.title.rendered,
-          excerpt: post.excerpt.rendered.replace(/<[^>]*>?/gm, '').slice(0, 150) + '...',
-          date: formatDate(post.date),
-          readTime: "5 min read", // Placeholder as WP doesn't provide this by default
-          tags: getTags(post),
-          image: getFeaturedImage(post),
-          content: post.content.rendered
-        }));
-        setPosts(transformedPosts);
-        setIsUsingWordPress(true);
-      }
-    }
+interface BlogProps {
+  posts: BlogPost[];
+}
 
-    fetchWPPosts();
-  }, [language]);
+export function Blog({ posts }: BlogProps) {
+  const { t } = useLanguage();
 
   return (
     <section id="insights" className="py-24 bg-secondary/30">
@@ -61,30 +47,34 @@ export function Blog() {
               className="group flex flex-col bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg hover:border-purple-500/30 transition-all duration-300 h-full"
             >
               <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
-                <div className="aspect-[16/9] overflow-hidden relative">
-                  <Image 
-                    src={post.image} 
-                    alt={post.title} 
-                    fill
-                    className="object-cover transform group-hover:scale-105 transition-transform duration-500"
-                  />
+                <div className="aspect-[16/9] overflow-hidden relative bg-muted">
+                  {post.image && (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                  )}
                   <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {t.insights.readBtn} <ArrowUpRight size={12} />
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                    <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
-                    <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
+                    <span className="flex items-center gap-1"><Calendar size={12} /> {new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                    <span className="flex items-center gap-1"><Clock size={12} /> {post.readingTime}</span>
                   </div>
-                  <h3 
+                  <h3
                     className="text-xl font-bold mb-3 group-hover:text-purple-500 transition-colors line-clamp-2"
-                    dangerouslySetInnerHTML={{ __html: post.title }}
-                  />
-                  <div 
+                  >
+                    {post.title}
+                  </h3>
+                  <div
                     className="text-muted-foreground text-sm line-clamp-3 mb-6 flex-grow"
-                    dangerouslySetInnerHTML={{ __html: post.excerpt }}
-                  />
+                  >
+                    {post.summary}
+                  </div>
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {post.tags.slice(0, 2).map((tag: string) => (
                       <span key={tag} className="text-[10px] uppercase tracking-wider font-medium bg-secondary px-2 py-1 rounded-md text-secondary-foreground border border-border">

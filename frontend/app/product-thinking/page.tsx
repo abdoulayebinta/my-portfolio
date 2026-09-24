@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Blog } from "@/components/sections/blog";
 import { Contact } from "@/components/sections/contact";
+import { getAllProductThinkingPosts } from "@/lib/product-thinking";
 
 export const metadata: Metadata = {
   title: "Product Thinking | Abdoulaye Bah",
@@ -11,6 +12,16 @@ export const metadata: Metadata = {
 };
 
 export default function ProductThinkingPage() {
+  const posts = getAllProductThinkingPosts().map(post => ({
+    slug: post.slug,
+    title: post.title,
+    summary: post.summary,
+    readingTime: post.readingTime,
+    publishedAt: post.publishedAt,
+    tags: post.tags,
+    image: post.image
+  }));
+
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
@@ -26,7 +37,7 @@ export default function ProductThinkingPage() {
         </div>
       </section>
 
-      <Blog />
+      <Blog posts={posts} />
       <Contact />
 
       <Footer />
