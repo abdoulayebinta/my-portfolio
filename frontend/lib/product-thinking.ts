@@ -26,6 +26,12 @@ export interface ProductThinkingPost {
   articleStructure?: 'framework' | 'fieldNote' | 'decisionMemo';
   relatedCaseStudy?: string;
   video?: string;
+  // Video support
+  videoUrl?: string;
+  videoTitle?: string;
+  videoDuration?: string;
+  videoPoster?: string;
+  videoProvider?: string;
   tradeOff?: string;
   outcomeOrMeasurement?: string;
 }

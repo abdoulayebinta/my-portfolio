@@ -12,6 +12,10 @@ import { ArticleVisionFramework } from "@/components/product-thinking/article-vi
 import { ArticleVisionTesting } from "@/components/product-thinking/article-vision-testing";
 import { ArticleVisionMistakes } from "@/components/product-thinking/article-vision-mistakes";
 import { ArticleVisionExample } from "@/components/product-thinking/article-vision-example";
+import { ArticleVisionTemplate } from "@/components/product-thinking/article-vision-template";
+import { ArticleVisionSummary } from "@/components/product-thinking/article-vision-summary";
+import { ArticleVideo } from "@/components/product-thinking/article-video";
+import { ArticleNextSteps } from "@/components/product-thinking/article-next-steps";
 import { DecisionSummary } from "@/components/product-thinking/decision-summary";
 import { ArticleTableOfContents } from "@/components/product-thinking/article-toc";
 import { ArticleFramework } from "@/components/product-thinking/article-framework";
@@ -120,6 +124,16 @@ export default function ProductThinkingArticlePage({ params }: { params: { slug:
         <ArticleVisionExample />
       )}
 
+      {/* Template Section - Only for Product Vision Framework */}
+      {post.slug === "product-vision-framework" && (
+        <ArticleVisionTemplate />
+      )}
+
+      {/* Summary Section - Only for Product Vision Framework */}
+      {post.slug === "product-vision-framework" && (
+        <ArticleVisionSummary />
+      )}
+
       {/* Decision Summary - Hidden for Product Vision Framework */}
       {post.slug !== "product-vision-framework" && (
         <DecisionSummary post={post} />
@@ -149,6 +163,12 @@ export default function ProductThinkingArticlePage({ params }: { params: { slug:
           </div>
         </section>
       )}
+
+      {/* Optional Video Section - Renders only when videoUrl exists */}
+      <ArticleVideo post={post} />
+
+      {/* Next Steps Navigation */}
+      <ArticleNextSteps />
 
       {/* Related Navigation */}
       <RelatedNavigation post={post} nextPost={nextPost} />
