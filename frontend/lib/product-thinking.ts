@@ -17,6 +17,17 @@ export interface ProductThinkingPost {
   seoTitle?: string;
   seoDescription?: string;
   content: string;
+  // Decision-specific fields
+  lifecycle?: 'Product Vision' | 'Ideation' | 'Discovery' | 'Prioritization' | 'Roadmapping' | 'Execution' | 'Measurement & Learning';
+  keyDecision?: string;
+  context?: string;
+  myRole?: string;
+  format?: 'Framework' | 'Playbook' | 'Mental Model' | 'Technical Deep Dive' | 'Field Note' | 'Decision Memo' | 'Experiment' | 'Teardown';
+  articleStructure?: 'framework' | 'fieldNote' | 'decisionMemo';
+  relatedCaseStudy?: string;
+  video?: string;
+  tradeOff?: string;
+  outcomeOrMeasurement?: string;
 }
 
 const contentDir = path.join(process.cwd(), 'content', 'product-thinking');
@@ -85,6 +96,13 @@ function parsePost(filename: string): ProductThinkingPost | null {
       seoTitle: metadata.seoTitle,
       seoDescription: metadata.seoDescription,
       content: content.trim(),
+      lifecycle: metadata.lifecycle,
+      keyDecision: metadata.keyDecision,
+      context: metadata.context,
+      myRole: metadata.myRole,
+      format: metadata.format,
+      tradeOff: metadata.tradeOff,
+      outcomeOrMeasurement: metadata.outcomeOrMeasurement,
     };
   } catch (error) {
     console.error(`Error parsing ${filename}:`, error);
@@ -118,6 +136,18 @@ export function getFeaturedProductThinkingPosts(limit: number = 3): ProductThink
   return getAllProductThinkingPosts()
     .filter(post => post.featured)
     .slice(0, limit);
+}
+
+export function getFeaturedProductThinkingPost(): ProductThinkingPost | null {
+  // Get all posts including drafts to find featured piece
+  const filenames = getPostFilenames();
+  for (const filename of filenames) {
+    const post = parsePost(filename);
+    if (post && post.featured) {
+      return post;
+    }
+  }
+  return null;
 }
 
 export function getProductThinkingPostsByCategory(category: ProductThinkingPost['category']): ProductThinkingPost[] {

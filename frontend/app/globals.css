@@ -25,6 +25,9 @@
   --soft-peach: #FFF0E5;
   --soft-surface: #FFF8F4;
 
+  /* Accessible Colors for WCAG AA */
+  --coral-accessible: #B8431C;
+
   /* Text Colors */
   --text-primary: #171717;
   --text-secondary: #6B6B6B;
@@ -51,6 +54,9 @@
   --secondary: #6B3827;
   --soft-peach: #35231D;
   --soft-surface: #1D1A18;
+
+  /* Accessible Colors for WCAG AA */
+  --coral-accessible: #FF8058;
 
   /* Text Colors - optimized for dark background */
   --text-primary: #FAF8F6;
